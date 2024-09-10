@@ -8,6 +8,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
-
+  resources :events   # Generates all routes for events (index, show, new, edit, create, update, destroy)
 
 end
