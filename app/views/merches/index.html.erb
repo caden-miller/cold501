@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Merchandise</h1>
+
+<div id="merches">
+  <% @merches.each do |merch| %>
+    <%= render merch %>
+    <p>
+      <%= link_to "Show this merch", merch %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New merch", new_merch_path %>
