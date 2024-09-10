@@ -1,6 +1,11 @@
 # Cold501 - a Ruby on Rails website for HEAT @ TAMU using pgSQL 
 ## Caden Miller, Erik Achtermann, James Guandolo, Shanti Patel
 
+### Specs
+
+- Rails Version
+	- 3.1.2
+
 ### Setup
 
 1. Clone GitHub repo in your projects folder (called csce431 from here on out)
@@ -63,5 +68,3 @@
 
 2. Update the database
 	- rails db:migrate
-
-
