@@ -1,6 +1,11 @@
 # Cold501 - a Ruby on Rails website for HEAT @ TAMU using pgSQL 
 ## Caden Miller, Erik Achtermann, James Guandolo, Shanti Patel
 
+### Specs
+
+- Rails Version
+	- 3.1.2
+
 ### Setup
 
 1. Clone GitHub repo in your projects folder (called csce431 from here on out)
@@ -58,10 +63,8 @@
 ### How to Create a New Model
 
 1. Scaffold the model
-	- rails g scaffold User username:string name:string 
+	- rails generate scaffold User name:string image:string email:string password:string role:string committee:string points:integer uid:string token:text provider:string
 	- this will generate a user model and some views for user as well as update the routes so that the views are shown.
 
 2. Update the database
 	- rails db:migrate
-
-
