@@ -1,0 +1,478 @@
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (547.9ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (486.6ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240910190607)
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "image" character varying, "email" character varying, "password" character varying, "role" character varying, "committee" character varying, "points" integer, "uid" character varying, "token" text, "provider" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910190607"]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-10 19:12:15.777510"], ["updated_at", "2024-09-10 19:12:15.777510"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:38:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 5745)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 5856)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 11284)
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<ActionView::Base:0x0000000000aff0>
+
+'.freeze; if logged_in? 
+             ^^^^^^^^^^
+Did you mean?  logger?):
+    1: <h1>Home#index</h1>
+    2: <p>Find me in app/views/home/index.html.erb</p>
+    3: 
+    4: <% if logged_in? %>
+    5:   <p>Welcome, <% current_user.name %></p>
+    6:   <%= link_to "Log Out", logout_path, method: :delete %>
+    7: <% else %>
+  
+app/views/home/index.html.erb:4
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:41:27 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1109)
+  Rendered layout layouts/application.html.erb (Duration: 166.5ms | Allocations: 76795)
+Completed 200 OK in 173ms (Views: 168.3ms | ActiveRecord: 0.0ms | Allocations: 80911)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:41:31 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:41:32 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:41:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:41:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:44:07 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1240)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 33932)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms | Allocations: 38048)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:44:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:46:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1243)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 33757)
+Completed 200 OK in 35ms (Views: 31.3ms | ActiveRecord: 0.0ms | Allocations: 37873)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:46:21 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:46:37 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:48:25 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:48:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:48:28 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:48:29 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 616)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 32912)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.0ms | Allocations: 35267)
+
+
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:48:30 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:53:14 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:53:19 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 5253)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 5343)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 7649)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<ActionView::Base:0x0000000000b1a8>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=( button_to "Log in with Google", '/auth/google_oauth2', method: post, data: { turbo: "false" }  );@output_buffer.safe_append='
+                                                                                                                              ^^^^):
+     5:   <p>Welcome, <%= current_user.name %></p>
+     6:   <%= link_to "Log Out", logout_path, method: :delete %>
+     7: <% else %>
+     8:   <%= button_to "Log in with Google", '/auth/google_oauth2', method: post, data: { turbo: "false" }  %>
+     9: <% end %>
+    10: 
+    11: <%= link_to "View Users", users_path %>
+  
+app/views/home/index.html.erb:8
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:53:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1289)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 33785)
+Completed 200 OK in 33ms (Views: 28.7ms | ActiveRecord: 0.0ms | Allocations: 37901)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:53:43 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:54:35 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 19:58:41 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1107)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 33654)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 37760)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 19:58:42 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:01:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1295)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 33924)
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 38040)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:01:01 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 431)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1767)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 2076)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:01:02 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:02:33 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1259)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 33697)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 37813)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:02:34 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:04:06 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 457)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 1903)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2229)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:04:08 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:25:46 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 19.4ms | Allocations: 1768)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 1880)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms | Allocations: 5970)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% if logged_in? %>
+  <p>Welcome, <%= current_user.name %></p>
+  <%= link_to "Log Out", logout_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in with Google", '/auth/google_oauth2', method: :post, turbo: { "false" } %>
+
+<% end %>
+
+<%= link_to "View Users", users_path %>
+
+):
+1:    <h1>Home#index</h1>
+2:    <p>Find me in app/views/home/index.html.erb</p>
+3:    
+4:    <% if logged_in? %>
+5:      <p>Welcome, <%= current_user.name %></p>
+6:      <%= link_to "Log Out", logout_path, method: :delete %>
+7:    <% else %>
+8:      <%= button_to "Sign in with Google", '/auth/google_oauth2', method: :post, turbo: { "false" } %>
+9:    
+10:    <% end %>
+11:    
+12:    <%= link_to "View Users", users_path %>
+  
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:25:47 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1204)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 1285)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1562)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<% if logged_in? %>
+  <p>Welcome, <%= current_user.name %></p>
+  <%= link_to "Log Out", logout_path, method: :delete %>
+<% else %>
+  <%= button_to "Sign in with Google", '/auth/google_oauth2', method: :post, turbo: { "false" } %>
+
+<% end %>
+
+<%= link_to "View Users", users_path %>
+
+):
+1:    <h1>Home#index</h1>
+2:    <p>Find me in app/views/home/index.html.erb</p>
+3:    
+4:    <% if logged_in? %>
+5:      <p>Welcome, <%= current_user.name %></p>
+6:      <%= link_to "Log Out", logout_path, method: :delete %>
+7:    <% else %>
+8:      <%= button_to "Sign in with Google", '/auth/google_oauth2', method: :post, turbo: { "false" } %>
+9:    
+10:    <% end %>
+11:    
+12:    <%= link_to "View Users", users_path %>
+  
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:8: syntax error, unexpected '}', expecting =>
+app/views/home/index.html.erb:10: syntax error, unexpected `end', expecting ')'
+app/views/home/index.html.erb:15: syntax error, unexpected `end', expecting ')'
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:27:24 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1194)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 33819)
+Completed 200 OK in 35ms (Views: 28.9ms | ActiveRecord: 0.0ms | Allocations: 37968)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:27:25 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:32:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:32:50 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:38:56 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 572)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 33421)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 37570)
+
+
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:38:57 +0000
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:38:57 +0000
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:38:59 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:41:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1162)
+  Rendered layout layouts/application.html.erb (Duration: 74.4ms | Allocations: 33606)
+Completed 200 OK in 81ms (Views: 76.9ms | ActiveRecord: 0.0ms | Allocations: 37755)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:41:51 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 498)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1947)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2274)
+
+
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:41:51 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:42:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1186)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 33631)
+Completed 200 OK in 32ms (Views: 28.5ms | ActiveRecord: 0.0ms | Allocations: 37780)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:42:21 +0000
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:42:23 +0000
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:42:24 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:42:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1203)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 33760)
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 0.0ms | Allocations: 37909)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:42:50 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 500)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1948)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2275)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-10 20:42:51 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 394)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1729)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1997)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:42:52 +0000

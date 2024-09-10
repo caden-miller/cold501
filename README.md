@@ -63,7 +63,7 @@
 ### How to Create a New Model
 
 1. Scaffold the model
-	- rails g scaffold User username:string name:string 
+	- rails generate scaffold User name:string image:string email:string password:string role:string committee:string points:integer uid:string token:text provider:string
 	- this will generate a user model and some views for user as well as update the routes so that the views are shown.
 
 2. Update the database
