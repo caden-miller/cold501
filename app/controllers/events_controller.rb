@@ -40,8 +40,9 @@ class EventsController < ApplicationController
 
   # Delete an event
   def destroy
+    @event = Event.find(params[:id])
     @event.destroy
-    redirect_to events_url, notice: 'Event was successfully deleted.'
+    redirect_to events_path, notice: 'Event was successfully deleted.'
   end
 
   private
