@@ -476,3 +476,1876 @@ Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1997)
 
 
 Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 20:42:52 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (553.8ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (493.9ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240910190607)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "image" character varying, "email" character varying, "password" character varying, "role" character varying, "committee" character varying, "points" integer, "uid" character varying, "token" text, "provider" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910190607"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-10 21:01:50.229735"], ["updated_at", "2024-09-10 21:01:50.229735"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:02:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1159)
+  Rendered layout layouts/application.html.erb (Duration: 88.4ms | Allocations: 40058)
+Completed 200 OK in 100ms (Views: 92.0ms | ActiveRecord: 0.0ms | Allocations: 45532)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:02:19 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:11:58 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1206)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 33254)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.0ms | Allocations: 37402)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:12:00 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:13:26 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:14:52 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1242)
+  Rendered layout layouts/application.html.erb (Duration: 74.3ms | Allocations: 33153)
+Completed 200 OK in 86ms (Views: 77.7ms | ActiveRecord: 0.0ms | Allocations: 37301)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:14:54 +0000
+Cannot render console from 172.17.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:18:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1185)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 33824)
+Completed 200 OK in 32ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 37972)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:18:42 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:21:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 15.6ms | Allocations: 1200)
+  Rendered layout layouts/application.html.erb (Duration: 58.8ms | Allocations: 33480)
+Completed 200 OK in 77ms (Views: 72.6ms | ActiveRecord: 0.0ms | Allocations: 37629)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:21:06 +0000
+Started GET "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:21:40 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/auth/google_oauth2"):
+  
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:22:55 +0000
+[dotenv] Set [36mGOOGLE_CLIENT_ID[0m and [36mGOOGLE_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:34:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1191)
+  Rendered layout layouts/application.html.erb (Duration: 78.3ms | Allocations: 33734)
+Completed 200 OK in 84ms (Views: 80.1ms | ActiveRecord: 0.0ms | Allocations: 37883)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:34:27 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:34:30 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 435)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1881)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 2207)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:34:42 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-10 21:39:46 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1744)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2012)
+
+
+Started POST "/auth/google_oauth2" for 172.17.0.1 at 2024-09-10 21:41:00 +0000
+  [1m[35m (516.1ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (497.2ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240910190607)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "full_name" character varying, "email" character varying NOT NULL, "password" character varying, "role" character varying, "committee" character varying, "points" integer, "uid" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910190607"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20240911012326)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20240911012326)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar_url" character varying[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911012326"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-11 01:28:51.685380"], ["updated_at", "2024-09-11 01:28:51.685380"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 3357)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 305)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 240)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 228)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 228)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 252)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 216)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 276)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:41 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 222)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 246)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 252)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 261)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 258)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 267)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 243)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 222)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:42 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 261)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 261)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 246)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 258)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 246)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 222)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 228)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 234)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 237)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:46:43 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms | Allocations: 249)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:49:34 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 2694)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 01:49:34 +0000
+  
+ActionController::RoutingError (uninitialized constant Admins
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 01:49:35 +0000
+  
+ActionController::RoutingError (uninitialized constant Admins
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 01:50:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 823)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2531)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.3ms | Allocations: 15849)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>HEAT Website</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .flash__alert { color: red; }
+      .flash__notice { color: blue; }
+      .flash__success { color: green; }
+    </style>
+  </head>
+
+  <body>
+    <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+      <% end -%>
+    <%= yield %>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>HEAT Website</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:    
+9:        <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+10:        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+11:        <style>
+12:          .flash__alert { color: red; }
+13:          .flash__notice { color: blue; }
+14:          .flash__success { color: green; }
+15:        </style>
+16:      </head>
+17:    
+18:      <body>
+19:        <% if flash.any? %>
+20:          <% flash.each do |key, value| -%>
+21:            <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+22:          <% end -%>
+23:        <%= yield %>
+24:      </body>
+25:    </html>
+  
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 01:50:26 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 271)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1671)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2389)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>HEAT Website</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .flash__alert { color: red; }
+      .flash__notice { color: blue; }
+      .flash__success { color: green; }
+    </style>
+  </head>
+
+  <body>
+    <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+      <% end -%>
+    <%= yield %>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>HEAT Website</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:    
+9:        <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+10:        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+11:        <style>
+12:          .flash__alert { color: red; }
+13:          .flash__notice { color: blue; }
+14:          .flash__success { color: green; }
+15:        </style>
+16:      </head>
+17:    
+18:      <body>
+19:        <% if flash.any? %>
+20:          <% flash.each do |key, value| -%>
+21:            <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+22:          <% end -%>
+23:        <%= yield %>
+24:      </body>
+25:    </html>
+  
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 01:50:28 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 217)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1611)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2211)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <!DOCTYPE html>
+<html>
+  <head>
+    <title>HEAT Website</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      .flash__alert { color: red; }
+      .flash__notice { color: blue; }
+      .flash__success { color: green; }
+    </style>
+  </head>
+
+  <body>
+    <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+      <% end -%>
+    <%= yield %>
+  </body>
+</html>
+
+):
+1:    <!DOCTYPE html>
+2:    <html>
+3:      <head>
+4:        <title>HEAT Website</title>
+5:        <meta name="viewport" content="width=device-width,initial-scale=1">
+6:        <%= csrf_meta_tags %>
+7:        <%= csp_meta_tag %>
+8:    
+9:        <%= stylesheet_link_tag "application", media: 'all', "data-turbolinks-track": "reload" %>
+10:        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+11:        <style>
+12:          .flash__alert { color: red; }
+13:          .flash__notice { color: blue; }
+14:          .flash__success { color: green; }
+15:        </style>
+16:      </head>
+17:    
+18:      <body>
+19:        <% if flash.any? %>
+20:          <% flash.each do |key, value| -%>
+21:            <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+22:          <% end -%>
+23:        <%= yield %>
+24:      </body>
+25:    </html>
+  
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+app/views/layouts/application.html.erb:28: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 172.17.0.1 at 2024-09-11 01:52:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 2682)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 01:52:03 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 785)
+  Rendered layout layouts/application.html.erb (Duration: 69.1ms | Allocations: 33776)
+Completed 200 OK in 83ms (Views: 72.7ms | ActiveRecord: 2.2ms | Allocations: 44484)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 01:52:05 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-11 02:00:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 2724)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:00:42 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 774)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 21648)
+Completed 200 OK in 38ms (Views: 23.9ms | ActiveRecord: 3.1ms | Allocations: 32406)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:00:44 +0000
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:02:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 810)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 21668)
+Completed 200 OK in 39ms (Views: 26.0ms | ActiveRecord: 2.6ms | Allocations: 34830)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:02:23 +0000
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:03:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 810)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 21742)
+Completed 200 OK in 39ms (Views: 25.5ms | ActiveRecord: 2.3ms | Allocations: 34893)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:03:30 +0000
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:04:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:06:03 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 810)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 21589)
+Completed 200 OK in 40ms (Views: 26.2ms | ActiveRecord: 3.4ms | Allocations: 34757)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:06:04 +0000
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:07:12 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 810)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 21505)
+Completed 200 OK in 40ms (Views: 25.3ms | ActiveRecord: 2.9ms | Allocations: 34655)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:07:13 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:08:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 808)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 21088)
+Completed 200 OK in 39ms (Views: 25.5ms | ActiveRecord: 2.9ms | Allocations: 34183)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:08:33 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 268)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2807)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 3601)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:08:33 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2644)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3310)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:08:34 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2644)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3301)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:08:34 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:12:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (525.2ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (470.9ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240910190607)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "role" character varying, "committee" character varying, "points" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910190607"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20240911012326)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar_url" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "created_at" timestamp(6) NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20240911012326)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar_url" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "created_at" timestamp(6) NOT NULL[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (529.8ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (482.8ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20240910190607)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "role" character varying, "committee" character varying, "points" integer)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910190607"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20240911012326)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "full_name" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" character varying[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "avatar_url" character varying[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "created_at" timestamp(6) NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "updated_at" timestamp(6) NOT NULL[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911012326"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-11 02:18:34.457287"], ["updated_at", "2024-09-11 02:18:34.457287"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 02:19:06 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 3541)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:19:06 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 880)
+  Rendered layout layouts/application.html.erb (Duration: 57.3ms | Allocations: 30969)
+Completed 200 OK in 74ms (Views: 63.1ms | ActiveRecord: 2.4ms | Allocations: 42278)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:19:08 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (510.8ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (475.7ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240910190687)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "role" character varying, "committee" character varying, "points" integer, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910190687"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-11 02:22:17.202002"], ["updated_at", "2024-09-11 02:22:17.202002"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:22:32 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240911023215)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (495.4ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (484.6ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240911023215)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911023215"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-11 02:36:25.452556"], ["updated_at", "2024-09-11 02:36:25.452556"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:45:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/users/sign_in".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 0ms (ActiveRecord: 0.0ms | Allocations: 876)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/users/sign_in".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.4) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.4) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+devise (4.9.4) app/controllers/devise_controller.rb:117:in `require_no_authentication'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:45:27 +0000
+Processing by Users::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/users/sign_in".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 705)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/users/sign_in".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.4) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.4) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+devise (4.9.4) app/controllers/devise_controller.rb:117:in `require_no_authentication'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:45:29 +0000
+Processing by Users::SessionsController#new as HTML
+[Devise] Could not find devise mapping for path "/users/sign_in".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 691)
+
+
+  
+AbstractController::ActionNotFound (Could not find devise mapping for path "/users/sign_in".
+This may happen for two reasons:
+
+1) You forgot to wrap your route inside the scope block. For example:
+
+  devise_scope :user do
+    get "/some/route" => "some_devise_controller"
+  end
+
+2) You are testing a Devise controller bypassing the router.
+   If so, you can explicitly tell Devise which mapping to use:
+
+   @request.env["devise.mapping"] = Devise.mappings[:user]
+
+):
+  
+devise (4.9.4) app/controllers/devise_controller.rb:104:in `unknown_action!'
+devise (4.9.4) app/controllers/devise_controller.rb:79:in `assert_is_devise_resource!'
+devise (4.9.4) app/controllers/devise_controller.rb:117:in `require_no_authentication'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.8.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 02:46:43 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 3139)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:46:43 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 772)
+  Rendered layout layouts/application.html.erb (Duration: 59.4ms | Allocations: 31569)
+Completed 200 OK in 74ms (Views: 62.5ms | ActiveRecord: 2.5ms | Allocations: 42585)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:46:46 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:56:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 02:58:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 808)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 21651)
+Completed 200 OK in 40ms (Views: 25.9ms | ActiveRecord: 2.4ms | Allocations: 34746)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:58:19 +0000
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 02:59:38 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:03:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 808)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 21477)
+Completed 200 OK in 41ms (Views: 26.9ms | ActiveRecord: 2.3ms | Allocations: 34581)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:03:23 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 268)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2807)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 3610)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:03:24 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:06:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 2526)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:06:58 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 783)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 21593)
+Completed 200 OK in 35ms (Views: 24.0ms | ActiveRecord: 2.2ms | Allocations: 32346)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:07:00 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:09:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 2726)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:09:53 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 772)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 21654)
+Completed 200 OK in 37ms (Views: 25.2ms | ActiveRecord: 2.2ms | Allocations: 32424)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:09:54 +0000
+Started GET "/users/auth/google_oauth2/callback?state=4fde583250469481ea52503248e8494a3d98dc97568cf086&code=4%2F0AQlEd8ysc439EWJYkqHNznSJcZ7FOokUwKi6cuLEjSeLwQ0aZWWy0tvEq4o40tYSE6BiOg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-11 03:10:14 +0000
+  
+NameError (uninitialized constant Devise::OmniauthCallbackController
+
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbackController
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Did you mean?  Devise::OmniauthCallbacksController):
+  
+app/controllers/users/omniauth_callbacks_controller.rb:1:in `<main>'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:13:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/google_oauth2/callback?state=f06ce9a622d4db26ca578cc24d9aff37c2044f00c729149d&code=4%2F0AQlEd8z5KWXDKEPvoqfnt2C1M2EP-9yVbQjlrP0xhL8JCXf-64Wg0NXiELTL16Gp0aP3pw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-11 03:13:06 +0000
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"f06ce9a622d4db26ca578cc24d9aff37c2044f00c729149d", "code"=>"4/0AQlEd8z5KWXDKEPvoqfnt2C1M2EP-9yVbQjlrP0xhL8JCXf-64Wg0NXiELTL16Gp0aP3pw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 2812)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:13:06 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 762)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 21377)
+Completed 200 OK in 39ms (Views: 26.6ms | ActiveRecord: 2.6ms | Allocations: 32246)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:14:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 2720)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:14:45 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 772)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 21612)
+Completed 200 OK in 37ms (Views: 24.8ms | ActiveRecord: 2.8ms | Allocations: 32393)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:14:47 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:15:51 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/google_oauth2/callback?state=6c7c6695e79ddd5094e53911b5ca9479a8ee89cc551fb346&code=4%2F0AQlEd8zI0RcnKfK3L4t3qbX0BwUS8HiPM6pvo-8rGsDGNbk_NwsGiKzeIl5Ax7K9DkjhXw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-11 03:15:56 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"6c7c6695e79ddd5094e53911b5ca9479a8ee89cc551fb346", "code"=>"4/0AQlEd8zI0RcnKfK3L4t3qbX0BwUS8HiPM6pvo-8rGsDGNbk_NwsGiKzeIl5Ax7K9DkjhXw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:7:in `from_google'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:7:in `from_google'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "cadenmiller@tamu.edu"], ["full_name", "Caden Miller"], ["uid", "110587362859503381956"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtypYllV1cCpAtHIsvKzEEhNn7BTSVhBTowhqrxfrF6g=s96-c"], ["committee", nil], ["points", nil], ["dues", nil], ["role", nil], ["created_at", "2024-09-11 03:15:57.272607"], ["updated_at", "2024-09-11 03:15:57.272607"]]
+  ↳ app/models/user.rb:7:in `from_google'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:7:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 22ms (ActiveRecord: 4.8ms | Allocations: 16644)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:15:57 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 20923)
+Completed 200 OK in 33ms (Views: 26.9ms | ActiveRecord: 0.3ms | Allocations: 24951)
+
+
+Started GET "/users/sign_out" for 172.17.0.1 at 2024-09-11 03:16:01 +0000
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/sign_in
+Completed 303 See Other in 4ms (ActiveRecord: 0.4ms | Allocations: 2195)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:16:01 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 508)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3127)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4712)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:16:02 +0000
+Started GET "/users/auth/google_oauth2/callback?state=2263e5fb81ca545f979e83ba7eb6bfc475a392c43d1bd829&code=4%2F0AQlEd8x_jWL9ACroRsgj-w1DLg6l7kODOjOXUTfZ5OM2v74XDeuRTZpScpdEbJvJxAutOQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-11 03:16:05 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"2263e5fb81ca545f979e83ba7eb6bfc475a392c43d1bd829", "code"=>"4/0AQlEd8x_jWL9ACroRsgj-w1DLg6l7kODOjOXUTfZ5OM2v74XDeuRTZpScpdEbJvJxAutOQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:7:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1141)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:16:06 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2495)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 4143)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/index" for 172.17.0.1 at 2024-09-11 03:18:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UsersController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/index" for 172.17.0.1 at 2024-09-11 03:25:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 23ms (ActiveRecord: 3.5ms | Allocations: 14861)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=index):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:25:57 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 296)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 21234)
+Completed 200 OK in 32ms (Views: 25.0ms | ActiveRecord: 0.3ms | Allocations: 23956)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:27:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.7ms | Allocations: 15827)
+
+
+  
+NameError (uninitialized constant UsersController::Uesr
+
+    @users = Uesr.order(:id)
+             ^^^^):
+  
+app/controllers/users_controller.rb:3:in `index'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:28:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 5.2ms | Allocations: 7010)
+  Rendered users/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 8877)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 8973)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 3.0ms | Allocations: 25274)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 1, email: "cadenmiller@tamu.edu", full_name: "Caden Miller", uid: "110587362859503381956", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtyp...", committee: nil, points: nil, dues: nil, role: nil, created_at: "2024-09-11 03:15:57.272607000 +0000", updated_at: "2024-09-11 03:15:57.272607000 +0000">):
+    1: <div id="<%= dom_id user %>">
+    2:   <p>
+    3:     <strong>Name:</strong>
+    4:     <%= user.name %>
+    5:   </p>
+    6: 
+    7:   <p>
+  
+app/views/users/_user.html.erb:4
+app/views/users/index.html.erb:10
+app/views/users/index.html.erb:9
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:30:46 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 5.8ms | Allocations: 7011)
+  Rendered users/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 8812)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 8908)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.2ms | Allocations: 25208)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 1, email: "cadenmiller@tamu.edu", full_name: "Caden Miller", uid: "110587362859503381956", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtyp...", committee: nil, points: nil, dues: nil, role: nil, created_at: "2024-09-11 03:15:57.272607000 +0000", updated_at: "2024-09-11 03:15:57.272607000 +0000">):
+    1: <div id="<%= dom_id user %>">
+    2:   <p>
+    3:     <strong>Name:</strong>
+    4:     <%= user.name %>
+    5:   </p>
+    6: 
+    7:   <p>
+  
+app/views/users/_user.html.erb:4
+app/views/users/index.html.erb:10
+app/views/users/index.html.erb:9
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:30:48 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 4.4ms | Allocations: 6156)
+  Rendered users/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 6910)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6990)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.6ms | Allocations: 8832)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 1, email: "cadenmiller@tamu.edu", full_name: "Caden Miller", uid: "110587362859503381956", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtyp...", committee: nil, points: nil, dues: nil, role: nil, created_at: "2024-09-11 03:15:57.272607000 +0000", updated_at: "2024-09-11 03:15:57.272607000 +0000">):
+    1: <div id="<%= dom_id user %>">
+    2:   <p>
+    3:     <strong>Name:</strong>
+    4:     <%= user.name %>
+    5:   </p>
+    6: 
+    7:   <p>
+  
+app/views/users/_user.html.erb:4
+app/views/users/index.html.erb:10
+app/views/users/index.html.erb:9
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:30:50 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 4.1ms | Allocations: 6108)
+  Rendered users/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 6821)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 6901)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 8518)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 1, email: "cadenmiller@tamu.edu", full_name: "Caden Miller", uid: "110587362859503381956", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtyp...", committee: nil, points: nil, dues: nil, role: nil, created_at: "2024-09-11 03:15:57.272607000 +0000", updated_at: "2024-09-11 03:15:57.272607000 +0000">):
+    1: <div id="<%= dom_id user %>">
+    2:   <p>
+    3:     <strong>Name:</strong>
+    4:     <%= user.name %>
+    5:   </p>
+    6: 
+    7:   <p>
+  
+app/views/users/_user.html.erb:4
+app/views/users/index.html.erb:10
+app/views/users/index.html.erb:9
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:31:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 7.9ms | Allocations: 6968)
+  Rendered users/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 8769)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 8865)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.5ms | Allocations: 25165)
+
+
+  
+ActionView::Template::Error (undefined method `password' for #<User id: 1, email: "cadenmiller@tamu.edu", full_name: "Caden Miller", uid: "110587362859503381956", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtyp...", committee: nil, points: nil, dues: nil, role: nil, created_at: "2024-09-11 03:15:57.272607000 +0000", updated_at: "2024-09-11 03:15:57.272607000 +0000">):
+    16: 
+    17:   <p>
+    18:     <strong>Password:</strong>
+    19:     <%= user.password %>
+    20:   </p>
+    21: 
+    22:   <p>
+  
+app/views/users/_user.html.erb:19
+app/views/users/index.html.erb:10
+app/views/users/index.html.erb:9
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:31:49 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 6.5ms | Allocations: 6130)
+  Rendered users/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 6884)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 6964)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 8806)
+
+
+  
+ActionView::Template::Error (undefined method `password' for #<User id: 1, email: "cadenmiller@tamu.edu", full_name: "Caden Miller", uid: "110587362859503381956", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtyp...", committee: nil, points: nil, dues: nil, role: nil, created_at: "2024-09-11 03:15:57.272607000 +0000", updated_at: "2024-09-11 03:15:57.272607000 +0000">):
+    16: 
+    17:   <p>
+    18:     <strong>Password:</strong>
+    19:     <%= user.password %>
+    20:   </p>
+    21: 
+    22:   <p>
+  
+app/views/users/_user.html.erb:19
+app/views/users/index.html.erb:10
+app/views/users/index.html.erb:9
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:32:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 393)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2318)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 23006)
+Completed 200 OK in 47ms (Views: 24.9ms | ActiveRecord: 3.2ms | Allocations: 39360)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:32:16 +0000
+Started GET "/users/auth/google_oauth2/callback?state=88eeb1f7856c49b5ee0e7e0305c9e45ac79d4906bf36b5a3&code=4%2F0AQlEd8xmsVf4yxE9AHv5CPWhTRsWMLJgh9x8TTe6Iy8zCcga5-O00FMtARRuAuj2zZENGQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 03:32:21 +0000
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"88eeb1f7856c49b5ee0e7e0305c9e45ac79d4906bf36b5a3", "code"=>"4/0AQlEd8xmsVf4yxE9AHv5CPWhTRsWMLJgh9x8TTe6Iy8zCcga5-O00FMtARRuAuj2zZENGQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 641)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:32:21 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3135)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.0ms | Allocations: 5024)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:32:27 +0000
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 334)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:32:27 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 259)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2804)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 3572)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 03:32:29 +0000
+Started GET "/users/auth/google_oauth2/callback?state=6ec8bdfadd6ce4309e476e5af539fc50f6c99a630d0cb3cc&code=4%2F0AQlEd8x_YnN7nPZiWF5yuaauGXh7JyTN_DL4nw51GFoddpl5u1x5Y_dI5V3rF_PQ6K1CKQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 03:32:32 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"6ec8bdfadd6ce4309e476e5af539fc50f6c99a630d0cb3cc", "code"=>"4/0AQlEd8x_YnN7nPZiWF5yuaauGXh7JyTN_DL4nw51GFoddpl5u1x5Y_dI5V3rF_PQ6K1CKQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:7:in `from_google'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:7:in `from_google'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "cadenmiller40@gmail.com"], ["full_name", "caden"], ["uid", "107799066142544091561"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx9mRRF8LatYhmbAzmI-sWXMsRKqjvA_E6pigPLG4tif=s96-c"], ["committee", nil], ["points", nil], ["dues", nil], ["role", nil], ["created_at", "2024-09-11 03:32:33.086441"], ["updated_at", "2024-09-11 03:32:33.086441"]]
+  ↳ app/models/user.rb:7:in `from_google'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:7:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.7ms | Allocations: 5065)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 03:32:33 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 244)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 2912)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 5026)
+
+
+Started GET "/users/index" for 172.17.0.1 at 2024-09-11 03:32:38 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms | Allocations: 3113)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=index):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 03:32:43 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 23)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 992)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3532)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 5405)
+
+

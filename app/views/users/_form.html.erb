@@ -12,23 +12,18 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :full_name, style: "display: block" %>
+    <%= form.text_field :full_name %>
   </div>
 
   <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+    <%= form.label :avatar_url, style: "display: block" %>
+    <%= form.text_field :avatar_url %>
   </div>
 
   <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
   </div>
 
   <div>
@@ -47,18 +42,13 @@
   </div>
 
   <div>
+    <%= form.label :dues, style: "display: block" %>
+    <%= form.numer_field :dues %>
+  </div>
+
+  <div>
     <%= form.label :uid, style: "display: block" %>
     <%= form.text_field :uid %>
-  </div>
-
-  <div>
-    <%= form.label :token, style: "display: block" %>
-    <%= form.text_area :token %>
-  </div>
-
-  <div>
-    <%= form.label :provider, style: "display: block" %>
-    <%= form.text_field :provider %>
   </div>
 
   <div>

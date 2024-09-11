@@ -1,12 +1,9 @@
 class User < ApplicationRecord
-  has_secure_password
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
 
-  def self.from_omniauth(response)
-    User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
-      u.username = response[:info][:name]
-      u.email = response[:info][:email]
-      u.image = response[:info][:image]
-      u.password = SecureRandom.hex(15)
-    end
+  def self.from_google(email:, full_name:, uid:, avatar_url:)
+    create_with(uid: uid, full_name: full_name, avatar_url: avatar_url).find_or_create_by!(email: email)
   end
 end
