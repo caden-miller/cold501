@@ -2,8 +2,8 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  
-  config.web_console.permissions = ['127.0.0.1', '172.17.0.1']
+
+  config.web_console.permissions = '172.17.0.0/16'
 
 
   # In the development environment your application's code is reloaded any time
@@ -70,4 +70,6 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  #
+  
 end
