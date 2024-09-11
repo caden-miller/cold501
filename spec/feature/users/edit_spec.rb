@@ -4,7 +4,7 @@ require 'rails_helper'
 RSpec.feature "Edit User", type: :feature do
   let!(:user) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee') }
 
-  scenario "User edits their profile successfully" do
+  scenario "succeeds" do
     # Simulate user login (assuming you are using Devise)
     login_as(user, scope: :user)
 
@@ -29,7 +29,7 @@ RSpec.feature "Edit User", type: :feature do
     expect(user.committee).to eq('New Committee')
   end
 
-  scenario "User fails to update profile due to validation errors" do
+  scenario "fails" do
     login_as(user, scope: :user)
     visit edit_user_path(user)
 
