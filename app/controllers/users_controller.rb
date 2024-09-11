@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :authenticate_admin!, except: [:leaderboard]
+
   def index
     @users = User.order(:id)
   end
@@ -14,7 +17,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'Successfully updated a user'
+      redirect_to user_path(@user), notice: 'User updated successfully.'
     else
       render('edit')
     end
@@ -27,7 +30,11 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path, notice: 'Successfully deleted a user'
+    redirect_to users_path
+  end
+
+  def leaderboard
+    @users = User.order([:id])
   end
 
   private
@@ -38,8 +45,8 @@ class UsersController < ApplicationController
       :committee,
       :points,
       :role,
-      :avatar_url,
       :dues
     )
   end
+    
 end

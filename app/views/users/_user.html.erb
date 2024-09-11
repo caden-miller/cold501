@@ -1,42 +1,20 @@
 <div id="<%= dom_id user %>">
-  <p>
-    <strong>Full Name:</strong>
-    <%= user.full_name %>
-  </p>
+  <!-- Avatar Image -->
+    <div class="avatar">
+      <img src="<%= user.avatar_url %>" alt="<%= user.full_name %>'s Avatar" />
+    </div>
 
-  <p>
-    <strong>Avatar URL:</strong>
-    <%= user.avatar_url %>
-  </p>
+    <!-- User Information -->
+    <div class="user-info">
+      <h2><%= user.full_name %></h2>
 
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-
-  <p>
-    <strong>Role:</strong>
-    <%= user.role %>
-  </p>
-
-  <p>
-    <strong>Committee:</strong>
-    <%= user.committee %>
-  </p>
-
-  <p>
-    <strong>Points:</strong>
-    <%= user.points %>
-  </p>
-
-  <p>
-    <strong>Uid:</strong>
-    <%= user.uid %>
-  </p>
-
-  <p>
-    <strong>Dues:</strong>
-    <%= user.dues %>
-  </p>
+      <ul>
+        <!-- Render all other fields dynamically -->
+        <% user.attributes.each do |key, value| %>
+          <% unless %w[id avatar_url full_name updated_at uid].include?(key) %> <!-- Exclude certain fields -->
+            <li><strong><%= key.humanize %>:</strong> <%= value %></li>
+          <% end %>
+        <% end %>
+      </ul>
 
 </div>

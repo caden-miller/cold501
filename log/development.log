@@ -2349,3 +2349,1268 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 5405)
 
 
+Started GET "/users/1" for 172.17.0.1 at 2024-09-11 03:37:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 608)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3028)
+Completed 200 OK in 9ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 5250)
+
+
+Started DELETE "/users/1" for 172.17.0.1 at 2024-09-11 03:38:01 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `destroy'
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms | Allocations: 3701)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:38:01 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 801)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3236)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 4873)
+
+
+Started GET "/users/2" for 172.17.0.1 at 2024-09-11 03:38:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 401)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2821)
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.6ms | Allocations: 4922)
+
+
+Started DELETE "/users/2" for 172.17.0.1 at 2024-09-11 03:38:04 +0000
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:29:in `destroy'
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/users_controller.rb:29:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:29:in `destroy'
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 2.7ms | Allocations: 3569)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 03:38:04 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms | Allocations: 1359)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 03:38:04 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 220)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2657)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 3327)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (522.7ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (477.4ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240911023215)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911023215"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-11 05:49:11.082217"], ["updated_at", "2024-09-11 05:49:11.082217"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:07:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:1:in `<main>'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:08:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:1:in `<main>'
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:08:36 +0000
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:1:in `<main>'
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:08:37 +0000
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:1:in `<main>'
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:08:38 +0000
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:12: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/home_controller.rb:1:in `<main>'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:09:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/home_controller.rb:1:in `<main>'
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:09:05 +0000
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/home_controller.rb:1:in `<main>'
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:09:12 +0000
+  
+SyntaxError (/csce431/cold501/app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'You are not authorized.' un...
+...                         ^~~~~~
+/csce431/cold501/app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+...  redirect_to_root_path, alert: 'Create an account by loggin...
+...                         ^~~~~~
+):
+  
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:3: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:7: syntax error, unexpected label, expecting '='
+app/controllers/application_controller.rb:11: syntax error, unexpected label, expecting '='
+app/controllers/home_controller.rb:1:in `<main>'
+Started POST "/__web_console/repl_sessions/d9f5ffdcf7f06e26a9551e5b777bc575/trace" for 172.17.0.1 at 2024-09-11 06:09:42 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:10:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 531)
+  Rendered layout layouts/application.html.erb (Duration: 208.8ms | Allocations: 32650)
+Completed 200 OK in 217ms (Views: 210.9ms | ActiveRecord: 0.0ms | Allocations: 37528)
+
+
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 06:10:34 +0000
+Processing by UsersController#index as HTML
+Redirected to http://0.0.0.0:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 687)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:10:34 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 2799)
+Completed 200 OK in 21ms (Views: 20.8ms | ActiveRecord: 0.0ms | Allocations: 3115)
+
+
+Started GET "/users/sign_out" for 172.17.0.1 at 2024-09-11 06:10:39 +0000
+Processing by Users::SessionsController#destroy as HTML
+Redirected to http://0.0.0.0:3000/users/sign_in
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 2ms (ActiveRecord: 0.0ms | Allocations: 835)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:10:39 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 503)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3122)
+Completed 200 OK in 20ms (Views: 5.6ms | ActiveRecord: 3.3ms | Allocations: 12486)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:10:41 +0000
+Started GET "/users/auth/google_oauth2/callback?state=b60c5f251ad75e732cfc5e7bf7fe9b3b437953681afc3e6d&code=4%2F0AQlEd8zfsDIz3JwzUqN1w8iOBnjrcxkpRSaRn-alTwsAcRb_8mqIKoUFxTgEOs2BTmxdpw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 06:10:45 +0000
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"b60c5f251ad75e732cfc5e7bf7fe9b3b437953681afc3e6d", "code"=>"4/0AQlEd8zfsDIz3JwzUqN1w8iOBnjrcxkpRSaRn-alTwsAcRb_8mqIKoUFxTgEOs2BTmxdpw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 493)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:10:45 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.6ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2797)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3549)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:10:47 +0000
+Started GET "/users/auth/google_oauth2/callback?state=321a9f1eded65e5ae06b844a9bafaa6a19ef884fad3bd7b8&code=4%2F0AQlEd8yqaMTGRvtk0kKWRgNtoQ34SCHwlxqOHlsYvplSvayZ0w9R2enc6OFqe9k8SyVYXw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 06:10:51 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"321a9f1eded65e5ae06b844a9bafaa6a19ef884fad3bd7b8", "code"=>"4/0AQlEd8yqaMTGRvtk0kKWRgNtoQ34SCHwlxqOHlsYvplSvayZ0w9R2enc6OFqe9k8SyVYXw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `from_google'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:8:in `from_google'
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "cadenmiller40@gmail.com"], ["full_name", "caden"], ["uid", "107799066142544091561"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx9mRRF8LatYhmbAzmI-sWXMsRKqjvA_E6pigPLG4tif=s96-c"], ["committee", nil], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 06:10:51.611000"], ["updated_at", "2024-09-11 06:10:51.611000"]]
+  ↳ app/models/user.rb:8:in `from_google'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:8:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 3.5ms | Allocations: 6649)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:10:51 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2863)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3181)
+
+
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 06:10:56 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `authenticate_admin!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1301)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:10:56 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 2693)
+Completed 200 OK in 45ms (Views: 41.5ms | ActiveRecord: 0.0ms | Allocations: 2962)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/sign_out" for 172.17.0.1 at 2024-09-11 06:11:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/sign_in
+Completed 303 See Other in 21ms (ActiveRecord: 3.6ms | Allocations: 13793)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:11:17 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 768)
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 21640)
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.0ms | Allocations: 24797)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:11:22 +0000
+Started GET "/users/auth/google_oauth2/callback?state=41c5b74a607f3bc08ec5822eebb3490e9f9c924553dc4da0&code=4%2F0AQlEd8yMHMwWBUSP74eBx35IpbTUZ0EBStXfvG6yw1U1RtvBndGSXdmvtyq8sL0HuZWkIA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 06:11:27 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"41c5b74a607f3bc08ec5822eebb3490e9f9c924553dc4da0", "code"=>"4/0AQlEd8yMHMwWBUSP74eBx35IpbTUZ0EBStXfvG6yw1U1RtvBndGSXdmvtyq8sL0HuZWkIA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms | Allocations: 1492)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:11:28 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3149)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4020)
+
+
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 06:11:33 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `authenticate_admin!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms | Allocations: 1504)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:11:33 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2829)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3141)
+
+
+Started GET "/users/sign_out" for 172.17.0.1 at 2024-09-11 06:11:50 +0000
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/sign_in
+Completed 303 See Other in 3ms (ActiveRecord: 0.3ms | Allocations: 1660)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:11:50 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 230)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 2668)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 3322)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:12:29 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/auth/google_oauth2/callback?state=7f8adcc954e2be192733b5841fa561ab7061312c751722a1&code=4%2F0AQlEd8xIwAn1UzvyjKklb35XlI4x1vhYiyFSwX52LGLe7X2ls9iC8pNwnubyrbMQgbBUpA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 06:12:33 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"7f8adcc954e2be192733b5841fa561ab7061312c751722a1", "code"=>"4/0AQlEd8xIwAn1UzvyjKklb35XlI4x1vhYiyFSwX52LGLe7X2ls9iC8pNwnubyrbMQgbBUpA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:8:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 63ms (ActiveRecord: 12.3ms | Allocations: 12851)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:12:33 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 485)
+  Rendered layout layouts/application.html.erb (Duration: 70.0ms | Allocations: 20976)
+Completed 200 OK in 80ms (Views: 75.0ms | ActiveRecord: 0.0ms | Allocations: 23309)
+
+
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 06:12:37 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 381)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 2330)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4964)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.5ms | Allocations: 5957)
+
+
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 06:13:47 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `authenticate_admin!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms | Allocations: 4824)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:13:47 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 105)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3001)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3649)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:13:48 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2667)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 2957)
+
+
+Started GET "/users/" for 172.17.0.1 at 2024-09-11 06:13:53 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `authenticate_admin!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1265)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:13:53 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2671)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2940)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:17:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 531)
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 21700)
+Completed 200 OK in 31ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 26144)
+
+
+Started GET "/users/sign_out" for 172.17.0.1 at 2024-09-11 06:17:19 +0000
+Processing by Users::SessionsController#destroy as HTML
+Redirected to http://0.0.0.0:3000/users/sign_in
+Filter chain halted as :verify_signed_out_user rendered or redirected
+Completed 303 See Other in 2ms (ActiveRecord: 0.0ms | Allocations: 933)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:17:19 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 503)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 3123)
+Completed 200 OK in 16ms (Views: 3.8ms | ActiveRecord: 3.0ms | Allocations: 12248)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:17:20 +0000
+Started GET "/users/auth/google_oauth2/callback?state=7dc1af933f43ca1d3aca2eda3a6752c527ae6c7bbb203a44&code=4%2F0AQlEd8z2KgjrbFFoJTUPTK6HlLEch2APlOXfILVzz03wmxJkw-pR5k_Y9MP39z4WJ814oQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-11 06:17:24 +0000
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"7dc1af933f43ca1d3aca2eda3a6752c527ae6c7bbb203a44", "code"=>"4/0AQlEd8z2KgjrbFFoJTUPTK6HlLEch2APlOXfILVzz03wmxJkw-pR5k_Y9MP39z4WJ814oQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 494)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:17:24 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2798)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 3551)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:17:26 +0000
+Started GET "/users/auth/google_oauth2/callback?state=4868537191838600f0ced4457ec5af5830a9b3d5310171b8&code=4%2F0AQlEd8z9EuZUe5Km5manOJ7RP2TOepuy6h8TCvp8ZVrOcv-3x3hM6fYDY-XGuT_VVTjrdQ&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-11 06:17:30 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"4868537191838600f0ced4457ec5af5830a9b3d5310171b8", "code"=>"4/0AQlEd8z9EuZUe5Km5manOJ7RP2TOepuy6h8TCvp8ZVrOcv-3x3hM6fYDY-XGuT_VVTjrdQ", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `from_google'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:12:in `from_google'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "cadenmiller@tamu.edu"], ["full_name", "Caden Miller"], ["uid", "110587362859503381956"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJQkoPtypYllV1cCpAtHIsvKzEEhNn7BTSVhBTowhqrxfrF6g=s96-c"], ["committee", nil], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 06:17:30.751444"], ["updated_at", "2024-09-11 06:17:30.751444"]]
+  ↳ app/models/user.rb:12:in `from_google'
+  [1m[36mTRANSACTION (33.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:12:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 42ms (ActiveRecord: 34.1ms | Allocations: 6683)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:17:30 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2840)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 3158)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:17:34 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `authenticate_admin!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1656)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:17:34 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 63)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 2809)
+Completed 200 OK in 16ms (Views: 16.1ms | ActiveRecord: 0.0ms | Allocations: 3122)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:23:14 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 533)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 21324)
+Completed 200 OK in 43ms (Views: 23.5ms | ActiveRecord: 3.0ms | Allocations: 36253)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:23:15 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 74)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 2630)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 4082)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:23:16 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2483)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.5ms | Allocations: 3674)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:23:16 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 44)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2483)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 3689)
+
+
+Started GET "/users/sign_out" for 172.17.0.1 at 2024-09-11 06:23:18 +0000
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/sign_in
+Completed 303 See Other in 3ms (ActiveRecord: 0.2ms | Allocations: 2334)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-11 06:23:18 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 514)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3134)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-11 06:23:20 +0000
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/auth/google_oauth2/callback?state=049f8adf516ff2762759752827645ed0c089d6ae16fd97cd&code=4%2F0AQlEd8x0NExEI30XM1oGNkpnyqyUW-GOIGQy03Y09yk2aG1Mp4OkaNmFdfpoRU4PURRQXw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-11 06:23:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"049f8adf516ff2762759752827645ed0c089d6ae16fd97cd", "code"=>"4/0AQlEd8x0NExEI30XM1oGNkpnyqyUW-GOIGQy03Y09yk2aG1Mp4OkaNmFdfpoRU4PURRQXw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 3.0ms | Allocations: 12867)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:23:55 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 5407)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 5517)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 9077)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_role' for #<ActionView::Base:0x0000000000c990>
+
+<h2>Your current role is: '.freeze;@output_buffer.append=( user_role );@output_buffer.safe_append=' </h2> 
+                                                           ^^^^^^^^^
+Did you mean?  user_url):
+    3: 
+    4: <h1>You're logged in! Welcome to the Home page!</h1>
+    5: 
+    6: <h2>Your current role is: <%= user_role %> </h2> 
+    7: 
+    8: <%= link_to "Sign out", destroy_user_session_path %>
+  
+app/views/home/index.html.erb:6
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:24:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 559)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 21026)
+Completed 200 OK in 41ms (Views: 23.3ms | ActiveRecord: 2.9ms | Allocations: 35954)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:25:07 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3:in `authenticate_admin!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1575)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:25:07 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 66)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2619)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 3856)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:28:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 559)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 21136)
+Completed 200 OK in 43ms (Views: 23.4ms | ActiveRecord: 3.3ms | Allocations: 36056)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:28:19 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 79)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2635)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 4083)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:28:24 +0000
+  
+SyntaxError (/csce431/cold501/app/controllers/users_controller.rb:55: syntax error, unexpected string literal, expecting `do' or '{' or '('
+... redirect_to root_path, alert 'You are not authorized to acc...
+...                              ^
+):
+  
+app/controllers/users_controller.rb:55: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:55: syntax error, unexpected string literal, expecting `do' or '{' or '('
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:28:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `authenticate_user!'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 3.0ms | Allocations: 17426)
+
+
+  
+NoMethodError (undefined method `user?' for #<User id: 1, email: "cadenmiller40@gmail.com", full_name: "caden", uid: "107799066142544091561", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx...", committee: nil, points: nil, dues: nil, role: "admin", created_at: "2024-09-11 06:10:51.611000000 +0000", updated_at: "2024-09-11 06:10:51.611000000 +0000">):
+  
+app/controllers/application_controller.rb:11:in `authenticate_user!'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:30:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `authenticate_user!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 16ms (ActiveRecord: 3.2ms | Allocations: 12207)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:30:26 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 506)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 21400)
+Completed 200 OK in 29ms (Views: 22.5ms | ActiveRecord: 0.5ms | Allocations: 25757)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:30:28 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2486)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 3901)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:30:34 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:11:in `authenticate_user!'
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1124)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:30:34 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2492)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 3694)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-11 06:37:27 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 548)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 21482)
+Completed 200 OK in 42ms (Views: 22.8ms | ActiveRecord: 2.9ms | Allocations: 36479)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:37:31 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 7623)
+
+
+  
+NoMethodError (undefined method `check_user_role' for #<UsersController:0x0000000000ca08>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  check_admin_role):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+turbo-rails (2.0.6) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.6) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:39:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 389)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2539)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 23468)
+Completed 200 OK in 47ms (Views: 28.2ms | ActiveRecord: 3.4ms | Allocations: 38562)
+
+
+Started GET "/users/leaderboard" for 172.17.0.1 at 2024-09-11 06:40:42 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"leaderboard"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2740)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=leaderboard):
+  
+app/controllers/users_controller.rb:10:in `show'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:43:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 389)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 25)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2539)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 23405)
+Completed 200 OK in 47ms (Views: 27.7ms | ActiveRecord: 3.2ms | Allocations: 38496)
+
+
+Started GET "/users/leaderboard" for 172.17.0.1 at 2024-09-11 06:44:04 +0000
+Processing by UsersController#leaderboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/leaderboard.html.erb within layouts/application
+  Rendered users/leaderboard.html.erb within layouts/application (Duration: 0.3ms | Allocations: 119)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 2697)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 4258)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:49:20 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:10
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 603)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 202)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2996)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 23767)
+Completed 200 OK in 48ms (Views: 28.0ms | ActiveRecord: 3.9ms | Allocations: 38870)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:52:36 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 603)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 202)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2997)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 23739)
+Completed 200 OK in 44ms (Views: 25.5ms | ActiveRecord: 3.2ms | Allocations: 38863)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:52:37 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 217)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 202)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1456)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3996)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.8ms | Allocations: 5488)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:52:38 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 203)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 202)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1386)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3815)
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 5067)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:52:39 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 203)
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 202)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1386)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3815)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 5076)
+
+
+Started GET "/users/1/edit" for 172.17.0.1 at 2024-09-11 06:52:57 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.8ms | Allocations: 7156)
+  Rendered users/edit.html.erb within layouts/application (Duration: 11.4ms | Allocations: 7473)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 7554)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms | Allocations: 10026)
+
+
+  
+ActionView::Template::Error (undefined method `numer_field' for #<ActionView::Helpers::FormBuilder:0x0000727318b181d8 @nested_child_index={}, @options={:allow_method_names_outside_object=>true, :skip_default_ids=>false}, @template=#<ActionView::Base:0x0000000000cc38>, @object=#<User id: 1, email: "cadenmiller40@gmail.com", full_name: "caden", uid: "107799066142544091561", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx...", committee: nil, points: nil, dues: nil, role: "admin", created_at: "2024-09-11 06:10:51.611000000 +0000", updated_at: "2024-09-11 06:10:51.611000000 +0000">, @object_name="user", @default_options={:skip_default_ids=>false, :allow_method_names_outside_object=>true}, @default_html_options={}, @multipart=nil, @index=nil>
+
+    '.freeze;@output_buffer.append=( form.numer_field :dues );@output_buffer.safe_append='
+                                         ^^^^^^^^^^^^
+Did you mean?  number_field
+               time_field):
+    43: 
+    44:   <div>
+    45:     <%= form.label :dues, style: "display: block" %>
+    46:     <%= form.numer_field :dues %>
+    47:   </div>
+    48: 
+    49:   <div>
+  
+app/views/users/_form.html.erb:46
+app/views/users/_form.html.erb:1
+app/views/users/edit.html.erb:3
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/1/edit" for 172.17.0.1 at 2024-09-11 06:55:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:14:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.5ms | Allocations: 4496)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5188)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 26137)
+Completed 200 OK in 49ms (Views: 27.8ms | ActiveRecord: 3.2ms | Allocations: 42405)
+
+
+Started PATCH "/users/1" for 172.17.0.1 at 2024-09-11 06:56:06 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"caden", "avatar_url"=>"https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx9mRRF8LatYhmbAzmI-sWXMsRKqjvA_E6pigPLG4tif=s96-c", "email"=>"cadenmiller40@gmail.com", "role"=>"admin", "committee"=>"Environmental", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:18:in `update'
+[31mUnpermitted parameter: :email. Context: { controller: UsersController, action: update, request: #<ActionDispatch::Request:0x0000783612816af8>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"caden", "avatar_url"=>"https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx9mRRF8LatYhmbAzmI-sWXMsRKqjvA_E6pigPLG4tif=s96-c", "email"=>"cadenmiller40@gmail.com", "role"=>"admin", "committee"=>"Environmental", "points"=>"", "dues"=>""}, "commit"=>"Update User", "controller"=>"users", "action"=>"update", "id"=>"1"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:19:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "committee" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["committee", "Environmental"], ["updated_at", "2024-09-11 06:56:06.155713"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:19:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:19:in `update'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms | Allocations: 5462)
+
+
+Started GET "/users/1" for 172.17.0.1 at 2024-09-11 06:56:06 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 546)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1540)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4075)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 5956)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/1" for 172.17.0.1 at 2024-09-11 06:59:18 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 685)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2102)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 22624)
+Completed 200 OK in 47ms (Views: 26.3ms | ActiveRecord: 3.6ms | Allocations: 38917)
+
+
+Started GET "/users/1" for 172.17.0.1 at 2024-09-11 06:59:20 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 243)
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 691)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3211)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 5190)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 06:59:39 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:9
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 216)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 213)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1734)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4163)
+Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 5518)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
