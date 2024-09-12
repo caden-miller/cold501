@@ -3614,3 +3614,105 @@ Completed 200 OK in 8ms (Views: 4.8ms | ActiveRecord: 0.6ms | Allocations: 5518)
 
 [dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (522.8ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (475.0ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20240911023215)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911023215"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-12 20:59:23.451907"], ["updated_at", "2024-09-12 20:59:23.451907"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:32:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3427)
+
+
+  
+NoMethodError (undefined method `role' for nil:NilClass
+
+    @role = current_user.role
+                        ^^^^^):
+  
+app/controllers/application_controller.rb:25:in `set_role'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:32:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 622)
+  Rendered layout layouts/application.html.erb (Duration: 104.2ms | Allocations: 37398)
+Completed 200 OK in 111ms (Views: 105.9ms | ActiveRecord: 0.0ms | Allocations: 41950)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-12 21:32:55 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 509)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3128)
+Completed 200 OK in 17ms (Views: 4.4ms | ActiveRecord: 2.7ms | Allocations: 12777)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-12 21:32:56 +0000
+Started GET "/users/auth/google_oauth2/callback?state=06b29fa2be97c6b245d702ecdb0929f04a145211885df847&code=4%2F0AQlEd8wLT7ZVA6E9pXgmSkahDVcYq4hK1AuNVvIzyLC12PXfi_f7Jd4cG0MHIniQGn0_Zw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-12 21:33:01 +0000
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"06b29fa2be97c6b245d702ecdb0929f04a145211885df847", "code"=>"4/0AQlEd8wLT7ZVA6E9pXgmSkahDVcYq4hK1AuNVvIzyLC12PXfi_f7Jd4cG0MHIniQGn0_Zw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 665)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-12 21:33:01 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 258)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2804)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 3588)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-12 21:33:03 +0000
+Started GET "/users/auth/google_oauth2/callback?state=7bc6f0d772997b21e309aa7a66374634663737b4267e247b&code=4%2F0AQlEd8z4Ijs2XlkBVfOZvLOl979AoAY0Ozml-xo6l6iaOtiP9X9PHJcKz00JsYK2qFRVHw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for 172.17.0.1 at 2024-09-12 21:33:07 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"7bc6f0d772997b21e309aa7a66374634663737b4267e247b", "code"=>"4/0AQlEd8z4Ijs2XlkBVfOZvLOl979AoAY0Ozml-xo6l6iaOtiP9X9PHJcKz00JsYK2qFRVHw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `from_google'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:13:in `from_google'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "cadenmiller40@gmail.com"], ["full_name", "caden"], ["uid", "107799066142544091561"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJE7tCEkx9mRRF8LatYhmbAzmI-sWXMsRKqjvA_E6pigPLG4tif=s96-c"], ["committee", nil], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-12 21:33:08.423414"], ["updated_at", "2024-09-12 21:33:08.423414"]]
+  ↳ app/models/user.rb:13:in `from_google'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:13:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms | Allocations: 6730)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:33:08 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:20:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2635)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 4110)
+
+
