@@ -1,0 +1,9 @@
+.upload-button {
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.upload-button:hover {
+    background-color: #007AFF;
+    color: white;
+}

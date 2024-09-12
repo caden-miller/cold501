@@ -1647,3 +1647,701 @@ Processing by MerchandisesController#index as HTML
 Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 2514)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMerchandises (20240912004859)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "merchandises" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240912004859"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2024-09-12 20:36:25 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1332)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 33944)
+Completed 200 OK in 61ms (Views: 54.2ms | ActiveRecord: 0.0ms | Allocations: 38176)
+
+
+Started GET "/" for 192.168.65.1 at 2024-09-12 20:36:28 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 539)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 1875)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 2184)
+
+
+Started GET "/merch" for 192.168.65.1 at 2024-09-12 20:36:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant MerchController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UsersController
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+Started GET "/merchandise" for 192.168.65.1 at 2024-09-12 20:36:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/merchandise"):
+  
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 20:36:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.8ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1541)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3091)
+Completed 200 OK in 16ms (Views: 9.1ms | ActiveRecord: 1.8ms | Allocations: 4724)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:36:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 14.4ms | Allocations: 3693)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 4028)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 5492)
+Completed 200 OK in 47ms (Views: 23.2ms | ActiveRecord: 10.4ms | Allocations: 11671)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 20:41:36 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.0ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 16.3ms | Allocations: 985)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | Allocations: 2320)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 1.0ms | Allocations: 2646)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:41:38 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.3ms | Allocations: 1781)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1872)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3213)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3509)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 20:41:52 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.7ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 923)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2257)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.7ms | Allocations: 2540)
+
+
+Started POST "/merchandises" for 192.168.65.1 at 2024-09-12 20:45:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"", "title"=>"", "description"=>"", "image"=>"", "stock"=>""}, "commit"=>"Create Merchandise"}
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mMerchandise Create (9.6ms)[0m  [1m[32mINSERT INTO "merchandises" ("link", "title", "description", "image", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["link", ""], ["title", ""], ["description", ""], ["image", ""], ["stock", nil], ["created_at", "2024-09-12 20:45:43.901620"], ["updated_at", "2024-09-12 20:45:43.901620"]]
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/merchandises/1
+Completed 302 Found in 25ms (ActiveRecord: 11.4ms | Allocations: 4094)
+
+
+Started GET "/merchandises/1" for 192.168.65.1 at 2024-09-12 20:45:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchandise Load (1.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.7ms | Allocations: 300)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1840)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3532)
+Completed 200 OK in 18ms (Views: 10.9ms | ActiveRecord: 1.4ms | Allocations: 7028)
+
+
+Started DELETE "/merchandises/1" for 192.168.65.1 at 2024-09-12 20:45:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mMerchandise Load (0.7ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mMerchandise Destroy (2.6ms)[0m  [1m[31mDELETE FROM "merchandises" WHERE "merchandises"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/merchandises
+Completed 302 Found in 14ms (ActiveRecord: 4.1ms | Allocations: 2823)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 20:45:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1163)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2498)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms | Allocations: 2884)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:45:52 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 6.0ms | Allocations: 2279)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2562)
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 3896)
+Completed 200 OK in 16ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 4238)
+
+
+Started POST "/merchandises" for 192.168.65.1 at 2024-09-12 20:46:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"link", "title"=>"title ", "description"=>"desc", "image"=>"img", "stock"=>"1"}, "commit"=>"Create Merchandise"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mMerchandise Create (1.0ms)[0m  [1m[32mINSERT INTO "merchandises" ("link", "title", "description", "image", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["link", "link"], ["title", "title "], ["description", "desc"], ["image", "img"], ["stock", 1], ["created_at", "2024-09-12 20:46:07.763507"], ["updated_at", "2024-09-12 20:46:07.763507"]]
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/merchandises/2
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms | Allocations: 2569)
+
+
+Started GET "/merchandises/2" for 192.168.65.1 at 2024-09-12 20:46:07 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2039)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 2825)
+
+
+Started DELETE "/merchandises/2" for 192.168.65.1 at 2024-09-12 20:46:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mMerchandise Destroy (0.6ms)[0m  [1m[31mDELETE FROM "merchandises" WHERE "merchandises"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/merchandises
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms | Allocations: 2552)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 20:46:10 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 930)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2264)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 2546)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:46:29 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.5ms | Allocations: 1747)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1834)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3168)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3452)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:48:01 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.3ms | Allocations: 1770)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1857)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3191)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3475)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:55:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 24.5ms | Allocations: 5007)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 26.9ms | Allocations: 5345)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 7091)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 8028)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:55:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.4ms | Allocations: 1601)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1692)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3027)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3357)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:55:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.0ms | Allocations: 1571)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1658)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2992)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3274)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:55:41 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.8ms | Allocations: 1812)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3240)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3523)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 20:57:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.9ms | Allocations: 2464)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2791)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4500)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 5456)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:00:48 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 65.0ms | Allocations: 18101)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 66.6ms | Allocations: 18392)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 18477)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms | Allocations: 19431)
+
+
+  
+ActionView::Template::Error (Asset `merchandises.css` was not declared to be precompiled in production.
+Declare links to your assets in `app/assets/config/manifest.js`.
+
+  //= link merchandises.css
+
+and restart your server):
+    1: <%= stylesheet_link_tag 'merchandises', media: 'all'%>
+    2: 
+    3: <%= form_with(model: merchandise) do |form| %>
+    4:   <% if merchandise.errors.any? %>
+  
+app/views/merchandises/_form.html.erb:1
+app/views/merchandises/new.html.erb:3
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:03:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.4ms | Allocations: 4128)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4754)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 7288)
+Completed 200 OK in 29ms (Views: 13.4ms | ActiveRecord: 5.1ms | Allocations: 18046)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:03:51 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.4ms | Allocations: 1817)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1908)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2542)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 2879)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:03:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.0ms | Allocations: 1806)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1893)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2526)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 2815)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:04:03 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.9ms | Allocations: 1785)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1872)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2505)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2794)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:04:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.2ms | Allocations: 4110)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4736)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 7270)
+Completed 200 OK in 30ms (Views: 13.7ms | ActiveRecord: 5.4ms | Allocations: 18028)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:04:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.6ms | Allocations: 4122)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 9.1ms | Allocations: 4748)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 7282)
+Completed 200 OK in 30ms (Views: 13.9ms | ActiveRecord: 5.0ms | Allocations: 18040)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:07:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.3ms | Allocations: 4125)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 4751)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7285)
+Completed 200 OK in 29ms (Views: 13.3ms | ActiveRecord: 5.2ms | Allocations: 18043)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:08:04 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.5ms | Allocations: 4113)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4739)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7273)
+Completed 200 OK in 29ms (Views: 13.6ms | ActiveRecord: 5.0ms | Allocations: 18031)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:08:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.3ms | Allocations: 4134)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4760)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 7294)
+Completed 200 OK in 30ms (Views: 13.6ms | ActiveRecord: 5.0ms | Allocations: 18052)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:28:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.5ms | Allocations: 4113)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4739)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 7273)
+Completed 200 OK in 30ms (Views: 13.4ms | ActiveRecord: 5.4ms | Allocations: 18031)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:29:47 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.5ms | Allocations: 4128)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4754)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 7288)
+Completed 200 OK in 29ms (Views: 13.4ms | ActiveRecord: 5.2ms | Allocations: 18046)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 21:30:27 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1340)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 1974)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 1.2ms | Allocations: 2459)
+
+
+Started POST "/merchandises" for 192.168.65.1 at 2024-09-12 21:30:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"link", "title"=>"t", "description"=>"d", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffffaea6d50 @tempfile=#<Tempfile:/tmp/RackMultipart20240912-1710-iw2jx1.png>, @content_type="image/png", @original_filename="Screenshot 2024-09-12 at 4.30.14 PM.png", @headers="Content-Disposition: form-data; name=\"merchandise[image]\"; filename=\"Screenshot 2024-09-12 at 4.30.14 PM.png\"\r\nContent-Type: image/png\r\n">, "stock"=>"1"}, "commit"=>"Create Merchandise"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mMerchandise Create (8.4ms)[0m  [1m[32mINSERT INTO "merchandises" ("link", "title", "description", "image", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["link", "link"], ["title", "t"], ["description", "d"], ["image", "#<ActionDispatch::Http::UploadedFile:0x00007ffffaea6d50>"], ["stock", 1], ["created_at", "2024-09-12 21:30:34.447266"], ["updated_at", "2024-09-12 21:30:34.447266"]]
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/merchandises/3
+Completed 302 Found in 21ms (ActiveRecord: 10.3ms | Allocations: 4068)
+
+
+Started GET "/merchandises/3" for 192.168.65.1 at 2024-09-12 21:30:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mMerchandise Load (1.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 301)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1741)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2399)
+Completed 200 OK in 9ms (Views: 3.8ms | ActiveRecord: 1.3ms | Allocations: 5333)
+
+
+Started GET "/merchandises/3/edit" for 192.168.65.1 at 2024-09-12 21:30:41 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/edit.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.8ms | Allocations: 2016)
+  Rendered merchandises/edit.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2295)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2921)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 3875)
+
+
+Started DELETE "/merchandises/3" for 192.168.65.1 at 2024-09-12 21:30:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mMerchandise Load (0.7ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mMerchandise Destroy (2.8ms)[0m  [1m[31mDELETE FROM "merchandises" WHERE "merchandises"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/merchandises
+Completed 302 Found in 15ms (ActiveRecord: 5.6ms | Allocations: 2740)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 21:30:43 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 952)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1585)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms | Allocations: 1870)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 21:30:49 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 1538)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.6ms | Allocations: 1815)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:31:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.0ms | Allocations: 1785)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1872)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2504)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 2792)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:31:34 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.9ms | Allocations: 1782)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1869)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2501)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 2785)
+
+
+Started POST "/merchandises" for 192.168.65.1 at 2024-09-12 21:31:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"l", "title"=>"t", "description"=>"d", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffff802cf38 @tempfile=#<Tempfile:/tmp/RackMultipart20240912-1710-n2e1na.png>, @content_type="image/png", @original_filename="Screenshot 2024-09-12 at 4.30.14 PM.png", @headers="Content-Disposition: form-data; name=\"merchandise[image]\"; filename=\"Screenshot 2024-09-12 at 4.30.14 PM.png\"\r\nContent-Type: image/png\r\n">, "stock"=>"1"}, "commit"=>"Create Merchandise"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mMerchandise Create (0.8ms)[0m  [1m[32mINSERT INTO "merchandises" ("link", "title", "description", "image", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["link", "l"], ["title", "t"], ["description", "d"], ["image", "#<ActionDispatch::Http::UploadedFile:0x00007ffff802cf38>"], ["stock", 1], ["created_at", "2024-09-12 21:31:50.415011"], ["updated_at", "2024-09-12 21:31:50.415011"]]
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/merchandises/4
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms | Allocations: 2575)
+
+
+Started GET "/merchandises/4" for 192.168.65.1 at 2024-09-12 21:31:50 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1374)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.4ms | Allocations: 2159)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 21:31:52 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.8ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1068)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 1700)
+Completed 200 OK in 11ms (Views: 7.6ms | ActiveRecord: 0.8ms | Allocations: 1979)
+
+
+Started GET "/merchandises/4" for 192.168.65.1 at 2024-09-12 21:32:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMerchandise Load (0.7ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 714)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1338)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 2120)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-09-12 21:32:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 19.8ms | Allocations: 1790)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 20.5ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 2510)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.0ms | Allocations: 2795)
+
+
+Started GET "/merchandises/4" for 192.168.65.1 at 2024-09-12 21:32:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMerchandise Load (0.7ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 690)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1314)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.7ms | Allocations: 2096)
+
+
+Started GET "/merchandises/4/edit" for 192.168.65.1 at 2024-09-12 21:32:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMerchandise Load (0.5ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/edit.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.3ms | Allocations: 1869)
+  Rendered merchandises/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1992)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2616)
+Completed 200 OK in 10ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 3398)
+
+
+Started DELETE "/merchandises/4" for 192.168.65.1 at 2024-09-12 21:32:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"4"}
+  [1m[36mMerchandise Load (0.5ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:63:in `set_merchandise'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mMerchandise Destroy (0.7ms)[0m  [1m[31mDELETE FROM "merchandises" WHERE "merchandises"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/merchandises
+Completed 302 Found in 11ms (ActiveRecord: 3.0ms | Allocations: 2558)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-09-12 21:32:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.1, 172.17.0.1, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1580)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1862)
+
+
