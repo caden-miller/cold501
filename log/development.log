@@ -2372,3 +2372,1570 @@ Processing by EventsController#show as HTML
 Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 2638)
 
 
+Started GET "/" for 172.17.0.1 at 2024-09-11 02:23:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1383)
+  Rendered layout layouts/application.html.erb (Duration: 124.5ms | Allocations: 34454)
+Completed 200 OK in 138ms (Views: 127.7ms | ActiveRecord: 0.0ms | Allocations: 38672)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-11 02:23:40 +0000
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 2844)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:6:in `index'
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:23:40 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 34.0ms | Allocations: 5932)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 7858)
+Completed 200 OK in 46ms (Views: 30.8ms | ActiveRecord: 9.7ms | Allocations: 9345)
+
+
+Started GET "/events/1/edit" for 172.17.0.1 at 2024-09-11 02:23:42 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 19.1ms | Allocations: 6357)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 7820)
+Completed 200 OK in 36ms (Views: 22.7ms | ActiveRecord: 2.0ms | Allocations: 10763)
+
+
+Started PATCH "/events/1" for 172.17.0.1 at 2024-09-11 02:23:45 +0000
+Processing by EventsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"11", "date(4i)"=>"01", "date(5i)"=>"58"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 5310)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6742)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.7ms | Allocations: 9585)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:23:46 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 969)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2603)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 2884)
+
+
+Started PATCH "/events/1" for 172.17.0.1 at 2024-09-11 02:23:47 +0000
+Processing by EventsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"11", "date(4i)"=>"01", "date(5i)"=>"58"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 5072)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6399)
+Completed 200 OK in 14ms (Views: 9.7ms | ActiveRecord: 0.5ms | Allocations: 8575)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:23:48 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 938)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2596)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 2875)
+
+
+Started GET "/events/1/edit" for 172.17.0.1 at 2024-09-11 02:23:49 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.3ms | Allocations: 4523)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 5849)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 6629)
+
+
+Started PATCH "/events/1" for 172.17.0.1 at 2024-09-11 02:23:53 +0000
+Processing by EventsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Ran", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"11", "date(4i)"=>"01", "date(5i)"=>"58"}, "commit"=>"Update Event", "id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mEvent Update (1.1ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["name", "Ran"], ["updated_at", "2024-09-11 02:23:53.149815"], ["id", 1]]
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:34:in `update'
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 13ms (ActiveRecord: 5.2ms | Allocations: 4172)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-11 02:23:53 +0000
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 464)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2093)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.7ms | Allocations: 2948)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:23:56 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2585)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 2864)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-11 02:23:58 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1838)
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 2618)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:23:59 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2570)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.8ms | Allocations: 2849)
+
+
+Started GET "/events/1/edit" for 172.17.0.1 at 2024-09-11 02:24:00 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 25.0ms | Allocations: 4562)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 5895)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.4ms | Allocations: 6676)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-11 02:24:01 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1853)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 2633)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:24:02 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 2567)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.9ms | Allocations: 2846)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-11 02:24:03 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1847)
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 2627)
+
+
+Started GET "/events/2/edit" for 172.17.0.1 at 2024-09-11 02:24:04 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 4560)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5886)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 6667)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:24:06 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2579)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 2858)
+
+
+Started PATCH "/events/2" for 172.17.0.1 at 2024-09-11 02:24:07 +0000
+Processing by EventsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"11", "date(4i)"=>"01", "date(5i)"=>"58"}, "commit"=>"Update Event", "id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 3.7ms | Allocations: 5071)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 6404)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 8570)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:24:08 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 938)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2569)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 2848)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-11 02:24:10 +0000
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 4817)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 6151)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 6516)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:24:12 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 2555)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 1.1ms | Allocations: 2834)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 02:24:13 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 588)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1922)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 2190)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-11 02:24:13 +0000
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 4462)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 5796)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 6077)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-11 02:24:14 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1853)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.6ms | Allocations: 2633)
+
+
+Started GET "/events/2/edit" for 172.17.0.1 at 2024-09-11 02:24:15 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 9.3ms | Allocations: 4554)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 5880)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.7ms | Allocations: 6660)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-11 02:24:16 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 2576)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 1.1ms | Allocations: 2855)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-11 02:24:16 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1896)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 2163)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-12 20:20:42 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1371)
+  Rendered layout layouts/application.html.erb (Duration: 163.8ms | Allocations: 34144)
+Completed 200 OK in 180ms (Views: 166.9ms | ActiveRecord: 0.0ms | Allocations: 38362)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:21:25 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 35.2ms | Allocations: 5943)
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 7860)
+Completed 200 OK in 46ms (Views: 28.6ms | ActiveRecord: 12.5ms | Allocations: 9600)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:21:25 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 992)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 2624)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 1.1ms | Allocations: 2947)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:21:26 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 947)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2591)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.1ms | Allocations: 2877)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:21:26 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 533)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2331)
+Completed 200 OK in 14ms (Views: 5.5ms | ActiveRecord: 1.2ms | Allocations: 5236)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:21:30 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1824)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.6ms | Allocations: 2634)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:21:32 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1839)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 2635)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:21:33 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1847)
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 2628)
+
+
+Started GET "/events/2/edit" for 172.17.0.1 at 2024-09-12 20:21:34 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 14.8ms | Allocations: 6334)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 7795)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 8654)
+
+
+Started PATCH "/events/2" for 172.17.0.1 at 2024-09-12 20:21:40 +0000
+Processing by EventsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"Play", "date(1i)"=>"2020", "date(2i)"=>"9", "date(3i)"=>"11", "date(4i)"=>"01", "date(5i)"=>"58"}, "commit"=>"Update Event", "id"=>"2"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mEvent Update (1.8ms)[0m  [1m[33mUPDATE "events" SET "name" = $1, "date" = $2, "updated_at" = $3 WHERE "events"."id" = $4[0m  [["name", "Play"], ["date", "2020-09-11 01:58:00"], ["updated_at", "2024-09-12 20:21:40.221953"], ["id", 2]]
+  ↳ app/controllers/events_controller.rb:34:in `update'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:34:in `update'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 15ms (ActiveRecord: 5.6ms | Allocations: 4730)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:21:40 +0000
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 246)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1986)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 2854)
+
+
+Started GET "/events/2/edit" for 172.17.0.1 at 2024-09-12 20:21:40 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 7.9ms | Allocations: 4628)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 5954)
+Completed 200 OK in 16ms (Views: 11.7ms | ActiveRecord: 0.7ms | Allocations: 6734)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:21:47 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 957)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2603)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.9ms | Allocations: 2884)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:22:01 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1859)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.6ms | Allocations: 2639)
+
+
+Started GET "/events/2/edit" for 172.17.0.1 at 2024-09-12 20:22:02 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4562)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 5888)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.6ms | Allocations: 6668)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:22:03 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2570)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2849)
+
+
+Started GET "/events/1/edit" for 172.17.0.1 at 2024-09-12 20:22:05 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4548)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 5874)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 0.8ms | Allocations: 6654)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:22:08 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1931)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.7ms | Allocations: 2914)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-12 20:22:08 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 570)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1904)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2172)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:22:09 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1850)
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 2630)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:22:10 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:52:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1853)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 2633)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-12 20:53:30 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1398)
+  Rendered layout layouts/application.html.erb (Duration: 80.5ms | Allocations: 33983)
+Completed 200 OK in 94ms (Views: 83.8ms | ActiveRecord: 0.0ms | Allocations: 38201)
+
+
+Started GET "/users" for 172.17.0.1 at 2024-09-12 20:53:34 +0000
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.0ms | Allocations: 2844)
+
+
+  
+LoadError (cannot load such file -- bcrypt):
+  
+app/models/user.rb:2:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:6:in `index'
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:53:34 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 33.0ms | Allocations: 5933)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 7841)
+Completed 200 OK in 43ms (Views: 29.8ms | ActiveRecord: 9.5ms | Allocations: 9328)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:53:36 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 2352)
+Completed 200 OK in 14ms (Views: 5.6ms | ActiveRecord: 1.0ms | Allocations: 5288)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:53:37 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1851)
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.7ms | Allocations: 2658)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:53:38 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 1848)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 2644)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:53:44 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 1859)
+Completed 200 OK in 18ms (Views: 9.9ms | ActiveRecord: 0.7ms | Allocations: 2639)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:53:54 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (2.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 1859)
+Completed 200 OK in 18ms (Views: 9.3ms | ActiveRecord: 2.7ms | Allocations: 2639)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:55:55 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 942)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 33899)
+Completed 200 OK in 145ms (Views: 57.3ms | ActiveRecord: 4.9ms | Allocations: 45958)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:55:59 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1393)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3198)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 3625)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:56:02 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1875)
+Completed 200 OK in 10ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 2701)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 20:56:03 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1446)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1541)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.9ms | Allocations: 2992)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= lint_to("Back to List", events_path, :class = 'back-link') %>
+
+<div class="events delete">
+  <h2>Delete Event</h2>
+
+  <%= form_for(@event, method: 'delete') do |f| %>
+    <% # url: event_path(@event), method: 'post' %>
+
+    <p>Are you sure you want to permanently delte this event?</p>
+    <p><%= @event.title %>
+
+    <div class="form-buttons">
+        <%= f.submit("Delete Event") %>
+    </div>
+  <% end %>
+</div>
+):
+1:    <%= lint_to("Back to List", events_path, :class = 'back-link') %>
+2:    
+3:    <div class="events delete">
+4:      <h2>Delete Event</h2>
+5:    
+6:      <%= form_for(@event, method: 'delete') do |f| %>
+7:        <% # url: event_path(@event), method: 'post' %>
+8:    
+9:        <p>Are you sure you want to permanently delte this event?</p>
+10:        <p><%= @event.title %>
+11:    
+12:        <div class="form-buttons">
+13:            <%= f.submit("Delete Event") %>
+14:        </div>
+15:      <% end %>
+16:    </div>
+  
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 20:58:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1681)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1793)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 4.9ms | Allocations: 13747)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= link_to("Back to List", events_path, :class = 'back-link') %>
+
+<div class="events delete">
+  <h2>Delete Event</h2>
+
+  <%= form_for(@event, method: 'delete') do |f| %>
+    <% # url: event_path(@event), method: 'post' %>
+
+    <p>Are you sure you want to permanently delte this event?</p>
+    <p><%= @event.title %>
+
+    <div class="form-buttons">
+        <%= f.submit("Delete Event") %>
+    </div>
+  <% end %>
+</div>
+):
+1:    <%= link_to("Back to List", events_path, :class = 'back-link') %>
+2:    
+3:    <div class="events delete">
+4:      <h2>Delete Event</h2>
+5:    
+6:      <%= form_for(@event, method: 'delete') do |f| %>
+7:        <% # url: event_path(@event), method: 'post' %>
+8:    
+9:        <p>Are you sure you want to permanently delte this event?</p>
+10:        <p><%= @event.title %>
+11:    
+12:        <div class="form-buttons">
+13:            <%= f.submit("Delete Event") %>
+14:        </div>
+15:      <% end %>
+16:    </div>
+  
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 172.17.0.1 at 2024-09-12 20:58:30 +0000
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 74.2ms | Allocations: 33328)
+Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 0.0ms | Allocations: 34205)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 20:58:32 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1466)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 3173)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.7ms | Allocations: 3563)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 20:58:32 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 2081)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 0.7ms | Allocations: 3573)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 20:58:33 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1851)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 2647)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 20:58:34 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1197)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1277)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.8ms | Allocations: 2028)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= link_to("Back to List", events_path, :class = 'back-link') %>
+
+<div class="events delete">
+  <h2>Delete Event</h2>
+
+  <%= form_for(@event, method: 'delete') do |f| %>
+    <% # url: event_path(@event), method: 'post' %>
+
+    <p>Are you sure you want to permanently delte this event?</p>
+    <p><%= @event.title %>
+
+    <div class="form-buttons">
+        <%= f.submit("Delete Event") %>
+    </div>
+  <% end %>
+</div>
+):
+1:    <%= link_to("Back to List", events_path, :class = 'back-link') %>
+2:    
+3:    <div class="events delete">
+4:      <h2>Delete Event</h2>
+5:    
+6:      <%= form_for(@event, method: 'delete') do |f| %>
+7:        <% # url: event_path(@event), method: 'post' %>
+8:    
+9:        <p>Are you sure you want to permanently delte this event?</p>
+10:        <p><%= @event.title %>
+11:    
+12:        <div class="form-buttons">
+13:            <%= f.submit("Delete Event") %>
+14:        </div>
+15:      <% end %>
+16:    </div>
+  
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+app/views/events/delete.html.erb:1: syntax error, unexpected '=', expecting ')'
+app/views/events/delete.html.erb:1: syntax error, unexpected ')', expecting `end'
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:00:28 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1359)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 33952)
+Completed 200 OK in 60ms (Views: 52.8ms | ActiveRecord: 0.0ms | Allocations: 38170)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:00:29 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 27.1ms | Allocations: 5939)
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 7865)
+Completed 200 OK in 40ms (Views: 31.1ms | ActiveRecord: 5.2ms | Allocations: 9604)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 21:00:29 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 533)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2325)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 1.3ms | Allocations: 5262)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:00:30 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1851)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 2658)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:00:31 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 29.2ms | Allocations: 6294)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 6388)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.5ms | Allocations: 7799)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Event id: 1, name: "Ran", date: "2024-09-11 01:58:00.000000000 +0000", created_at: "2024-09-11 01:58:32.621633000 +0000", updated_at: "2024-09-11 02:23:53.149815000 +0000">):
+     6:     <% # url: event_path(@event), method: 'post' %>
+     7: 
+     8:     <p>Are you sure you want to permanently delte this event?</p>
+     9:     <p><%= @event.title %>
+    10: 
+    11:     <div class="form-buttons">
+    12:         <%= f.submit("Delete Event") %>
+  
+app/views/events/delete.html.erb:9
+app/views/events/delete.html.erb:5
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:01:01 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1377)
+  Rendered layout layouts/application.html.erb (Duration: 163.8ms | Allocations: 33860)
+Completed 200 OK in 183ms (Views: 169.8ms | ActiveRecord: 0.0ms | Allocations: 38078)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:01:02 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 32.4ms | Allocations: 5942)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 7838)
+Completed 200 OK in 49ms (Views: 32.8ms | ActiveRecord: 8.3ms | Allocations: 9577)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 21:01:03 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 533)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2331)
+Completed 200 OK in 14ms (Views: 6.3ms | ActiveRecord: 1.2ms | Allocations: 5246)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:01:03 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1851)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.5ms | Allocations: 2661)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:01:04 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1540)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1635)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 3047)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check # <%= link_to("Back to List", events_path, :class => 'back-link') %>
+# <div class="events delete">
+#   <h2>Delete Event</h2>
+
+#   <%= form_for(@event, method: 'delete') do |f| %>
+#     <% # url: event_path(@event), method: 'post' %>
+
+#     <p>Are you sure you want to permanently delte this event?</p>
+#     <p><%= @event.title %>
+
+#     <div class="form-buttons">
+#         <%= f.submit("Delete Event") %>
+#     </div>
+#   <% end %>
+# </div>
+
+#Chat GPT
+<%= link_to("Back to List", events_path, class: 'back-link') %>
+
+<div class="events delete">
+  <h2>Delete Event</h2>
+
+  <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+    <p>Are you sure you want to permanently delete this event?</p>
+    <p><%= @event.title %></p>
+
+    <div class="form-buttons">
+        <%= f.submit("Delete Event") %>
+    </div>
+  <% end %>
+</div>
+):
+1:    # <%= link_to("Back to List", events_path, :class => 'back-link') %>
+2:    # <div class="events delete">
+3:    #   <h2>Delete Event</h2>
+4:    
+5:    #   <%= form_for(@event, method: 'delete') do |f| %>
+6:    #     <% # url: event_path(@event), method: 'post' %>
+7:    
+8:    #     <p>Are you sure you want to permanently delte this event?</p>
+9:    #     <p><%= @event.title %>
+10:    
+11:    #     <div class="form-buttons">
+12:    #         <%= f.submit("Delete Event") %>
+13:    #     </div>
+14:    #   <% end %>
+15:    # </div>
+16:    
+17:    #Chat GPT
+18:    <%= link_to("Back to List", events_path, class: 'back-link') %>
+19:    
+20:    <div class="events delete">
+21:      <h2>Delete Event</h2>
+22:    
+23:      <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+24:        <p>Are you sure you want to permanently delete this event?</p>
+25:        <p><%= @event.title %></p>
+26:    
+27:        <div class="form-buttons">
+28:            <%= f.submit("Delete Event") %>
+29:        </div>
+30:      <% end %>
+31:    </div>
+  
+app/views/events/delete.html.erb:18: syntax error, unexpected local variable or method, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:20: syntax error, unexpected '<', expecting `end'
+app/views/events/delete.html.erb:21: syntax error, unexpected '<'
+app/views/events/delete.html.erb:21: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:24: unknown regexp option - p
+app/views/events/delete.html.erb:25: syntax error, unexpected '<'
+app/views/events/delete.html.erb:29: unknown regexp options - dv
+app/views/events/delete.html.erb:33: unterminated regexp meets end of file
+app/views/events/delete.html.erb:33: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected local variable or method, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:20: syntax error, unexpected '<', expecting `end'
+app/views/events/delete.html.erb:21: syntax error, unexpected '<'
+app/views/events/delete.html.erb:21: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:24: unknown regexp option - p
+app/views/events/delete.html.erb:25: syntax error, unexpected '<'
+app/views/events/delete.html.erb:29: unknown regexp options - dv
+app/views/events/delete.html.erb:33: unterminated regexp meets end of file
+app/views/events/delete.html.erb:33: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected local variable or method, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:20: syntax error, unexpected '<', expecting `end'
+app/views/events/delete.html.erb:21: syntax error, unexpected '<'
+app/views/events/delete.html.erb:21: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:24: unknown regexp option - p
+app/views/events/delete.html.erb:25: syntax error, unexpected '<'
+app/views/events/delete.html.erb:29: unknown regexp options - dv
+app/views/events/delete.html.erb:33: unterminated regexp meets end of file
+app/views/events/delete.html.erb:33: syntax error, unexpected end-of-input, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected local variable or method, expecting `end'
+app/views/events/delete.html.erb:18: syntax error, unexpected string literal, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:20: syntax error, unexpected '<', expecting `end'
+app/views/events/delete.html.erb:21: syntax error, unexpected '<'
+app/views/events/delete.html.erb:21: syntax error, unexpected constant, expecting `do' or '{' or '('
+app/views/events/delete.html.erb:24: unknown regexp option - p
+app/views/events/delete.html.erb:25: syntax error, unexpected '<'
+app/views/events/delete.html.erb:29: unknown regexp options - dv
+app/views/events/delete.html.erb:33: unterminated regexp meets end of file
+app/views/events/delete.html.erb:33: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:01:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1365)
+  Rendered layout layouts/application.html.erb (Duration: 51.9ms | Allocations: 33925)
+Completed 200 OK in 66ms (Views: 55.1ms | ActiveRecord: 0.0ms | Allocations: 38143)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:01:50 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 5939)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 7880)
+Completed 200 OK in 33ms (Views: 21.3ms | ActiveRecord: 6.1ms | Allocations: 9619)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:01:51 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 533)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2331)
+Completed 200 OK in 11ms (Views: 3.8ms | ActiveRecord: 1.0ms | Allocations: 5269)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:01:52 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 16.9ms | Allocations: 6993)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 7087)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms | Allocations: 8507)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Event id: 1, name: "Ran", date: "2024-09-11 01:58:00.000000000 +0000", created_at: "2024-09-11 01:58:32.621633000 +0000", updated_at: "2024-09-11 02:23:53.149815000 +0000">):
+    22: 
+    23: #   <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+    24: #     <p>Are you sure you want to permanently delete this event?</p>
+    25: #     <p><%= @event.title %></p>
+    26: 
+    27: #     <div class="form-buttons">
+    28: #         <%= f.submit("Delete Event") %>
+  
+app/views/events/delete.html.erb:25
+app/views/events/delete.html.erb:23
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:03:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1374)
+  Rendered layout layouts/application.html.erb (Duration: 141.1ms | Allocations: 34177)
+Completed 200 OK in 158ms (Views: 145.5ms | ActiveRecord: 0.0ms | Allocations: 38395)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:03:23 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 25.1ms | Allocations: 5948)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 7853)
+Completed 200 OK in 37ms (Views: 25.2ms | ActiveRecord: 6.2ms | Allocations: 9593)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 21:03:24 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 533)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2325)
+Completed 200 OK in 14ms (Views: 6.0ms | ActiveRecord: 1.2ms | Allocations: 5262)
+
+
+Started GET "/events/2/edit" for 172.17.0.1 at 2024-09-12 21:03:24 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 23.7ms | Allocations: 6348)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 7810)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 1.4ms | Allocations: 8695)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:03:25 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 228)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1871)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 2772)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:03:26 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 8.4ms | Allocations: 6844)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 6937)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms | Allocations: 8415)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Event id: 1, name: "Ran", date: "2024-09-11 01:58:00.000000000 +0000", created_at: "2024-09-11 01:58:32.621633000 +0000", updated_at: "2024-09-11 02:23:53.149815000 +0000">):
+    22: 
+    23: #   <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+    24: #     <p>Are you sure you want to permanently delete this event?</p>
+    25: #     <p><%= @event.title %></p>
+    26: 
+    27: #     <div class="form-buttons">
+    28: #         <%= f.submit("Delete Event") %>
+  
+app/views/events/delete.html.erb:25
+app/views/events/delete.html.erb:23
+Started GET "/" for 172.17.0.1 at 2024-09-12 21:04:41 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1380)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 33879)
+Completed 200 OK in 64ms (Views: 54.8ms | ActiveRecord: 0.0ms | Allocations: 38097)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:04:43 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 22.8ms | Allocations: 5940)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 7848)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 5.2ms | Allocations: 9587)
+
+
+Started GET "/events/1/edit" for 172.17.0.1 at 2024-09-12 21:04:44 +0000
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/edit.html.erb within layouts/application (Duration: 8.2ms | Allocations: 6378)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 7841)
+Completed 200 OK in 17ms (Views: 11.4ms | ActiveRecord: 0.9ms | Allocations: 10785)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:04:45 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 476)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2080)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.6ms | Allocations: 3056)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:04:48 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 12.9ms | Allocations: 6806)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 6900)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.5ms | Allocations: 8375)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Event id: 1, name: "Ran", date: "2024-09-11 01:58:00.000000000 +0000", created_at: "2024-09-11 01:58:32.621633000 +0000", updated_at: "2024-09-11 02:23:53.149815000 +0000">):
+    22: 
+    23: #   <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+    24: #     <p>Are you sure you want to permanently delete this event?</p>
+    25: #     <p><%= @event.title %></p>
+    26: 
+    27: #     <div class="form-buttons">
+    28: #         <%= f.submit("Delete Event") %>
+  
+app/views/events/delete.html.erb:25
+app/views/events/delete.html.erb:23
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:04:59 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 2062)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.4ms | Allocations: 2946)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:05:02 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 966)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2615)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 2896)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:05:03 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 17.0ms | Allocations: 6078)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 6157)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.6ms | Allocations: 6907)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Event id: 1, name: "Ran", date: "2024-09-11 01:58:00.000000000 +0000", created_at: "2024-09-11 01:58:32.621633000 +0000", updated_at: "2024-09-11 02:23:53.149815000 +0000">):
+    22: 
+    23: #   <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+    24: #     <p>Are you sure you want to permanently delete this event?</p>
+    25: #     <p><%= @event.title %></p>
+    26: 
+    27: #     <div class="form-buttons">
+    28: #         <%= f.submit("Delete Event") %>
+  
+app/views/events/delete.html.erb:25
+app/views/events/delete.html.erb:23
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:05:06 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 1836)
+Completed 200 OK in 12ms (Views: 7.7ms | ActiveRecord: 0.7ms | Allocations: 2614)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:05:06 +0000
+Processing by EventsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 2567)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 3.0ms | Allocations: 2846)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-12 21:05:08 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 221)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1868)
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.7ms | Allocations: 2648)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:05:10 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 6.8ms | Allocations: 6069)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 6148)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 6891)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Event id: 1, name: "Ran", date: "2024-09-11 01:58:00.000000000 +0000", created_at: "2024-09-11 01:58:32.621633000 +0000", updated_at: "2024-09-11 02:23:53.149815000 +0000">):
+    22: 
+    23: #   <%= form_for(@event, url: event_path(@event), method: :delete) do |f| %>
+    24: #     <p>Are you sure you want to permanently delete this event?</p>
+    25: #     <p><%= @event.title %></p>
+    26: 
+    27: #     <div class="form-buttons">
+    28: #         <%= f.submit("Delete Event") %>
+  
+app/views/events/delete.html.erb:25
+app/views/events/delete.html.erb:23
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-12 21:05:58 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1819)
+  Rendered layout layouts/application.html.erb (Duration: 47.1ms | Allocations: 34060)
+Completed 200 OK in 75ms (Views: 50.4ms | ActiveRecord: 4.8ms | Allocations: 46072)
+
+
+Started DELETE "/events/1" for 172.17.0.1 at 2024-09-12 21:06:15 +0000
+Processing by EventsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Delete Event", "id"=>"1"}
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:48:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:49:in `destroy'
+  [1m[36mEvent Destroy (0.9ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:49:in `destroy'
+Redirected to http://localhost:3000/events
+Completed 302 Found in 16ms (ActiveRecord: 5.5ms | Allocations: 4104)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:06:15 +0000
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1248)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 2995)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 3440)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-12 21:06:17 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  Rendered events/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 439)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2072)
+Completed 200 OK in 11ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 2924)
+
+
+Started GET "/events/2/delete" for 172.17.0.1 at 2024-09-12 21:06:18 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:43:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 2.0ms | Allocations: 706)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2033)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.5ms | Allocations: 2819)
+
+
+Started DELETE "/events/2" for 172.17.0.1 at 2024-09-12 21:06:19 +0000
+Processing by EventsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Delete Event", "id"=>"2"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:57:in `set_event'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:48:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:49:in `destroy'
+  [1m[36mEvent Destroy (0.7ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/events_controller.rb:49:in `destroy'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:49:in `destroy'
+Redirected to http://localhost:3000/events
+Completed 302 Found in 12ms (ActiveRecord: 5.0ms | Allocations: 2961)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-12 21:06:19 +0000
+Processing by EventsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 632)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 2273)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.6ms | Allocations: 2556)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-12 21:06:20 +0000
+Processing by EventsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/new.html.erb within layouts/application (Duration: 17.9ms | Allocations: 6058)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7530)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.0ms | Allocations: 7917)
+
+
