@@ -1,44 +1,21 @@
-<%= form_with(model: user) do |form| %>
+<%= simple_form_for user, html: { class: "user form" } do |f| %>
   <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div class="error-message">
+      <%= user.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :full_name, style: "display: block" %>
-    <%= form.text_field :full_name %>
-  </div>
+  <%= f.input :full_name, input_html: { autofocus: true } %>
+  
+  <%= f.input :role,
+    collection: [['Admin', 'admin'], ['Member', 'member'],  ['Officer', 'officer'], ['User', 'user']],
+              include_blank: false %>
 
-  <!-- Maybe add a way to change avatar later -->
+  <%= f.input :committee %>
+  
+  <%= f.input :points %>
+  
+  <%= f.input :dues %>
 
-  <div>
-    <%= form.label :role, style: 'display: block' %>
-    <%= form.select :role, options_for_select([['Admin', 'admin'], ['Officer', 'officer'], ['User', 'user']], selected: @user.role) %>
-  </div>
-
-  <div>
-    <%= form.label :committee, style: "display: block" %>
-    <%= form.text_field :committee %>
-  </div>
-
-  <div>
-    <%= form.label :points, style: "display: block" %>
-    <%= form.number_field :points %>
-  </div>
-
-  <div>
-    <%= form.label :dues, style: "display: block" %>
-    <%= form.number_field :dues %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= f.submit class: "btn btn--secondary" %>
 <% end %>

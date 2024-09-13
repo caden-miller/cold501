@@ -1,10 +1,9 @@
-<h1>Editing user</h1>
+<main class="contrainer">
+  <%= link_to sanitize("&larr; Back to user"), user_path(@user) %>
 
-<%= render "form", user: @user %>
+  <div class="header">
+    <h1>Edit user</h1>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
-</div>
+  <%= render "form", user: @user %>
+</main>

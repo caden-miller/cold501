@@ -7,12 +7,14 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <style>
       .flash__alert { color: red; }
       .flash__notice { color: blue; }
       .flash__success { color: green; }
     </style>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body>

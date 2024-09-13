@@ -1,10 +1,47 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @user %>
-
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
+<main class="container">
+  <%= link_to sanitize("&larr; Back to users"), users_path %>
+  <div class="header">
+    <h1>
+      <%= @user.full_name %>
+    </h1>
+  </div>
+  <div class="user__info">
+    <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+    <div class="stack">
+      <div class="item">
+        <h2>
+          Role:
+        </h2>
+        <a>
+          <%= @user.role %>
+        </a>
+      </div>
+      <div class="item">
+        <h2>
+          Committee:
+        </h2>
+        <a>
+          <%= @user.committee %>
+        </a>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="item">
+        <h2>
+          Points:
+        </h2>
+        <a>
+          <%= @user.points %>
+        </a>
+      </div>
+      <div class="item">
+        <h2>
+          Dues:
+        </h2>
+        <a>
+          <%= @user.dues %>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
