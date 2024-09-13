@@ -1,8 +1,8 @@
 <p style="color: green"><%= notice %></p>
-
+<%= controller_name %>
 <h1>Ideas</h1>
 
-<div id="ideas">
+<div id="ideas" classname="ideas-board">
   <% @ideas.each do |idea| %>
     <%= render idea %>
     <p>

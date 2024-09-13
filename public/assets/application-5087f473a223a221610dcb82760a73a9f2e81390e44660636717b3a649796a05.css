@@ -1,3 +1,8 @@
+
+.ideas-board{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
 .upload-button {
     cursor: pointer;
     border-radius: 4px;
@@ -6,7 +11,13 @@
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Small, light shadow */
     padding-left: 5px;
     padding-right: 5px;
-    
+
+}
+
+form {
+    border: 10px black;
+    text-align: center;
+    color: green;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
