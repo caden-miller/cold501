@@ -11,6 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_09_10_213910) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_11_023215) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,18 +23,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_10_213910) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.string "email"
-    t.string "password"
-    t.string "role"
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
     t.string "committee"
     t.integer "points"
-    t.string "uid"
-    t.text "token"
-    t.string "provider"
+    t.integer "dues"
+    t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
