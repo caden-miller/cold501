@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
 
   # set instance variable for role
   def set_role
-    @role = current_user.role
+    @role = current_user&.role
   end
 end
