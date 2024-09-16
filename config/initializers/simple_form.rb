@@ -5,6 +5,7 @@ SimpleForm.setup do |config|
     b.use :placeholder
     b.use :label, class: "visually-hidden"
     b.use :input, class: "form__input", error_class: "form__input--invalid"
+    b.use :select, class: "form__input", error_class: "form__input--invalid"
   end
 
   # Default configuration

@@ -2,44 +2,37 @@
   <%= link_to root_path do %>
     <%= image_tag 'heat_logo.jpg', alt: 'HEAT TAMU Logo', class: 'navbar__logo' %>
   <% end %>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="navbar__menu__content">
     <ul class="navbar__menu">
-      <li class="navbar__item">
-        <%= link_to sanitize("Home"), root_path, class: 'nav-link' %>
-      </li>
-
-      <% if user_signed_in? and current_user.member? %>
         <li class="navbar__item">
-          <%= link_to sanitize("Events"), events_path, class: 'nav-link' %>
+            <%= link_to sanitize("Home"), root_path, class: 'btn btn--primary' %>
         </li>
-        <li class="navbar__item">
-          <%= link_to sanitize("Notifications"), notifications_path, class: 'nav-link' %>
-        </li>
-        <li class="navbar__item">
-          <%= link_to sanitize("Leaderboard"), leaderboard_users_path, class: 'nav-link' %>
-        </li>
-        <li class="navbar__item">
-          <%= link_to sanitize("My Profile"), user_path(current_user), class: 'nav-link' %>
-        </li>
-      <% elsif user_signed_in? and current_user.admin? %>
-        <li class="navbar__item">
-          <%= link_to sanitize("Users"), users_path, class: 'nav-link' %>
-        </li>
-      <% end %>
+        <% if user_signed_in? && (@role == 'member' || @role == 'officer' || @role == 'admin') %>
+            <li class="navbar__item">
+            <%= link_to sanitize("Events"), events_path, class: 'btn btn--primary' %>
+            </li>
+            <li class="navbar__item">
+            <%= link_to sanitize("Leaderboard"), leaderboard_users_path, class: 'btn btn--primary' %>
+            </li>
+            <li class="navbar__item">
+            <%= link_to sanitize("My Profile"), edit_user_path(current_user), class: 'btn btn--primary' %>
+            </li>
+        <% end %>
+        <% if user_signed_in? && @role == 'admin' %>
+            <li class="navbar__item">
+            <%= link_to sanitize("Users"), users_path, class: 'btn btn--primary' %>
+            </li>
+        <% end %>
     </ul>
   </div>
 
   <div class="navbar__actions">
     <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn--primary' %>
     <% else %>
-      <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
-      <%= link_to 'Sign Up', new_user_session_path, class: 'nav-link' %>
+      <%= link_to 'Login', new_user_session_path, class: 'btn btn--primary' %>
+      <%= link_to 'Sign Up', new_user_session_path, class: 'btn btn--primary' %>
     <% end %>
   </div>
 </nav>

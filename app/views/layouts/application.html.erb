@@ -17,7 +17,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body class="container">
+  <body>
     <%= render "layouts/navbar" %>
     <% if flash.any? %>
       <% flash.each do |key, value| -%>

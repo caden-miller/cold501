@@ -1,21 +1,53 @@
-<%= simple_form_for user, html: { class: "user form" } do |f| %>
-  <% if user.errors.any? %>
+<!-- Simple Form for editing user -->
+<%= simple_form_for @user, html: { class: "user form" } do |f| %>
+  <% if @user.errors.any? %>
     <div class="error-message">
-      <%= user.errors.full_messages.to_sentence.capitalize %>
+      <%= @user.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
+  <div class="user__stack">
+    <div class="user__item">
+      <%= f.input :full_name %>
+    </div>
+    <div class="user__item avatar"> 
+      <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+    </div>
+  </div>
+    
+  </div>
+  <!-- User Info Section -->
+  <div class="user__info">
+    
 
-  <%= f.input :full_name, input_html: { autofocus: true } %>
-  
-  <%= f.input :role,
-    collection: [['Admin', 'admin'], ['Member', 'member'],  ['Officer', 'officer'], ['User', 'user']],
-              include_blank: false %>
+    <!-- Editable User Fields -->
+    <div class="user__stack">
+      <div class="user__item">
+        <%= f.label :role %>
+        <%= f.input :role, collection: [['Admin', 'admin'], ['Member', 'member'],  ['Officer', 'officer'], ['User', 'user']], include_blank: false %>
+      </div>
+      <div class="user__item">
+        <%= f.label :committee %>
+        <%= f.input :committee %>
+      </div>
+    </div>
 
-  <%= f.input :committee %>
-  
-  <%= f.input :points %>
-  
-  <%= f.input :dues %>
+    
+    <% if @user.role == 'admin' %>
+      <div class="user__stack">
+        <div class="user__item">
+          <%= f.label :points %>
+          <%= f.input :points %>
+        </div>
+        <div class="user__item">
+            <%= f.label :dues %>
+            <%= f.input :dues %>
+          </div>
+          <div>
+      </div>
+    <% end %>
+  </div>
 
-  <%= f.submit class: "btn btn--secondary" %>
+  <!-- Submit Button -->
+  <%= f.submit "Save Changes", class: "btn btn--secondary" %>
+
 <% end %>

@@ -5,3 +5,4 @@
 !/app/assets/builds/.keep
 
 /node_modules
+log/development.log
