@@ -5,4 +5,7 @@
 
 <h2>Your current role is: <%= @user.role %> </h2> 
 
+<%= link_to 'View All Events', events_path, class: 'btn btn-primary' %>
+
+<%= link_to "View Users", users_path %>
 <%= link_to "Sign out", destroy_user_session_path %>
