@@ -6,11 +6,12 @@
     <h2>Hello, <%= @user.full_name %> </h2>
     <h2>Your current role is: <%= @user.role %> </h2>
     <h3>You have access to these pages: </h3>
-    <ul>
+    <ul class="stack">
       <% if @role == 'admin' %>
         <li><%= link_to sanitize("Users"), users_path, class: 'btn btn--light' %> </li>
       <% end %>
       <li><%= link_to sanitize("Leaderboard"), leaderboard_users_path, class: 'btn btn--light' %> </li>
+      <li><%= link_to sanitize('View All Events'), events_path, class: 'btn btn-primary' %></li>
       <!-- TODO: ADD MORE LINKS HERE -->
     </ul>
 
@@ -20,3 +21,4 @@
     <%= link_to sanitize("Log in"), new_user_session_path, class: 'btn btn--light' %>
   <% end %>
 </main>
+

@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  resources :events do   # Generates all routes for events (index, show, new, edit, create, update, destroy)
+    member do
+      get 'delete'
+    end
+  end
+
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   devise_scope :user do
     get 'users/sign_in', to: 'users/sessions#new', as: :new_user_session

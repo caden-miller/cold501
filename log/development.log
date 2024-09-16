@@ -7699,3 +7699,838 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 5355)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-09-16 01:13:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20240910213910_create_events.rb
+
+
+):
+  
+activerecord (7.0.8.4) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8.4) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8.4) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for ::1 at 2024-09-16 01:13:21 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20240910213910_create_events.rb
+
+
+):
+  
+activerecord (7.0.8.4) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8.4) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8.4) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateEvents (20240910213910)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "date" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910213910"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-09-16 01:13:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1567)
+  Rendered layout layouts/application.html.erb (Duration: 46.1ms | Allocations: 23174)
+Completed 200 OK in 67ms (Views: 47.7ms | ActiveRecord: 2.9ms | Allocations: 37989)
+
+
+Started GET "/users/leaderboard" for ::1 at 2024-09-16 01:13:35 -0500
+Processing by UsersController#leaderboard as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/leaderboard.html.erb within layouts/application
+  Rendered users/leaderboard.html.erb within layouts/application (Duration: 0.6ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3082)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 5162)
+
+
+Started GET "/users/leaderboard" for ::1 at 2024-09-16 01:13:35 -0500
+Processing by UsersController#leaderboard as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/leaderboard.html.erb within layouts/application
+  Rendered users/leaderboard.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2725)
+Completed 200 OK in 12ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 4162)
+
+
+Started GET "/events" for ::1 at 2024-09-16 01:13:36 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1125)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4050)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.9ms | Allocations: 6665)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-09-16 01:15:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1567)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 25788)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 3.7ms | Allocations: 40536)
+
+
+  
+ActionView::Template::Error (Missing partial home/_navbar, application/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/caden/School/code/cs431/cold501/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/devise-4.9.4/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/turbo-rails-1.5.0/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/actiontext-7.0.8.4/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/actionmailbox-7.0.8.4/app/views"
+
+Did you mean?  layouts/navbar
+               action_text/attachables/missing_attachable
+               action_text/contents/content
+               active_storage/blobs/blob
+               layouts/action_text/contents/content
+               users/user):
+    18:   </head>
+    19: 
+    20:   <body>
+    21:     <%= render "navbar" %>
+    22:     <% if flash.any? %>
+    23:       <% flash.each do |key, value| -%>
+    24:         <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+  
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:15:11 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 741)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 5849)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.3ms | Allocations: 7231)
+
+
+  
+ActionView::Template::Error (Missing partial home/_navbar, application/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/caden/School/code/cs431/cold501/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/devise-4.9.4/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/turbo-rails-1.5.0/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/actiontext-7.0.8.4/app/views"
+  * "/home/caden/.rvm/gems/ruby-3.1.2/gems/actionmailbox-7.0.8.4/app/views"
+
+Did you mean?  layouts/navbar
+               action_text/attachables/missing_attachable
+               action_text/contents/content
+               active_storage/blobs/blob
+               layouts/action_text/contents/content
+               users/user):
+    18:   </head>
+    19: 
+    20:   <body>
+    21:     <%= render "navbar" %>
+    22:     <% if flash.any? %>
+    23:       <% flash.each do |key, value| -%>
+    24:         <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+  
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:15:29 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1125)
+  Rendered layouts/_navbar.html.erb (Duration: 8.6ms | Allocations: 5766)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 10250)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms | Allocations: 12069)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `photos_path' for #<ActionView::Base:0x0000000000df20>
+
+        '.freeze;@output_buffer.append=( link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^):
+    11:         <%= link_to sanitize("Home"), root_path, class: 'nav-link' %>
+    12:       </li>
+    13:       <li class="navbar__item">
+    14:         <%= link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' %>
+    15:       </li>
+    16: 
+    17:       <% if user_signed_in? and current_user.member? %>
+  
+app/views/layouts/_navbar.html.erb:14
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:16:23 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1126)
+  Rendered layouts/_navbar.html.erb (Duration: 8.9ms | Allocations: 5604)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 10084)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.4ms | Allocations: 12100)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `photos_path' for #<ActionView::Base:0x0000000000e2b8>
+
+        '.freeze;@output_buffer.append=( link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^):
+    11:         <%= link_to sanitize("Home"), root_path, class: 'nav-link' %>
+    12:       </li>
+    13:       <li class="navbar__item">
+    14:         <%= link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' %>
+    15:       </li>
+    16: 
+    17:       <% if user_signed_in? and current_user.member? %>
+  
+app/views/layouts/_navbar.html.erb:14
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:16:25 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 8.6ms | Allocations: 5147)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 8586)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.3ms | Allocations: 9941)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `photos_path' for #<ActionView::Base:0x0000000000e5d8>
+
+        '.freeze;@output_buffer.append=( link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^):
+    11:         <%= link_to sanitize("Home"), root_path, class: 'nav-link' %>
+    12:       </li>
+    13:       <li class="navbar__item">
+    14:         <%= link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' %>
+    15:       </li>
+    16: 
+    17:       <% if user_signed_in? and current_user.member? %>
+  
+app/views/layouts/_navbar.html.erb:14
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:16:26 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 7.4ms | Allocations: 5146)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 8583)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 9726)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `photos_path' for #<ActionView::Base:0x0000000000e8a8>
+
+        '.freeze;@output_buffer.append=( link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^):
+    11:         <%= link_to sanitize("Home"), root_path, class: 'nav-link' %>
+    12:       </li>
+    13:       <li class="navbar__item">
+    14:         <%= link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' %>
+    15:       </li>
+    16: 
+    17:       <% if user_signed_in? and current_user.member? %>
+  
+app/views/layouts/_navbar.html.erb:14
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:18:18 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1125)
+  Rendered layouts/_navbar.html.erb (Duration: 8.4ms | Allocations: 5684)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 10162)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms | Allocations: 11960)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `photos_path' for #<ActionView::Base:0x0000000000ec40>
+
+        '.freeze;@output_buffer.append=( link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^):
+    12:       </li>
+    13:       <!--
+    14:       <li class="navbar__item">
+    15:         <%= link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' %>
+    16:       </li>
+    17:       -->
+    18: 
+  
+app/views/layouts/_navbar.html.erb:15
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:18:19 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 8.7ms | Allocations: 5174)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 8611)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms | Allocations: 9947)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `photos_path' for #<ActionView::Base:0x0000000000ef10>
+
+        '.freeze;@output_buffer.append=( link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                                            ^^^^^^^^^^^):
+    12:       </li>
+    13:       <!--
+    14:       <li class="navbar__item">
+    15:         <%= link_to sanitize("Photo Gallery"), photos_path, class: 'nav-link' %>
+    16:       </li>
+    17:       -->
+    18: 
+  
+app/views/layouts/_navbar.html.erb:15
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:19:34 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1125)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 807)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 5328)
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 0.5ms | Allocations: 7194)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:19:35 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 393)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3826)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 5200)
+
+
+Started GET "/users/leaderboard" for ::1 at 2024-09-16 01:20:07 -0500
+Processing by UsersController#leaderboard as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/leaderboard.html.erb within layouts/application
+  Rendered users/leaderboard.html.erb within layouts/application (Duration: 2.0ms | Allocations: 124)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 912)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4439)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.2ms | Allocations: 6768)
+
+
+Started GET "/users/sign_out" for ::1 at 2024-09-16 01:20:08 -0500
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/sign_in
+Completed 303 See Other in 3ms (ActiveRecord: 0.2ms | Allocations: 2344)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:20:08 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 511)
+  Rendered layouts/_navbar.html.erb (Duration: 14.0ms | Allocations: 5677)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 9117)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 10727)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registration_path' for #<ActionView::Base:0x0000000000f500>
+
+      '.freeze;@output_buffer.append=( link_to 'Sign Up', new_user_registration_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Did you mean?  new_user_session_path):
+    37:       <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+    38:     <% else %>
+    39:       <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
+    40:       <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+    41:     <% end %>
+    42:   </div>
+    43: </nav>
+  
+app/views/layouts/_navbar.html.erb:40
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:20:14 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 642)
+  Rendered layouts/_navbar.html.erb (Duration: 13.3ms | Allocations: 5501)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 9123)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 10023)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_registration_path' for #<ActionView::Base:0x0000000000f820>
+
+      '.freeze;@output_buffer.append=( link_to 'Sign Up', new_user_registration_path, class: 'nav-link' );@output_buffer.safe_append='
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Did you mean?  new_user_session_path):
+    37:       <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+    38:     <% else %>
+    39:       <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
+    40:       <%= link_to 'Sign Up', new_user_registration_path, class: 'nav-link' %>
+    41:     <% end %>
+    42:   </div>
+    43: </nav>
+  
+app/views/layouts/_navbar.html.erb:40
+app/views/layouts/application.html.erb:21
+Started GET "/" for ::1 at 2024-09-16 01:20:39 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 643)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 681)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4719)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 5913)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:20:40 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3252)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3807)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:20:41 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 456)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 356)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3763)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5006)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:21:26 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3237)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3774)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:21:27 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3236)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3702)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:21:27 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 3236)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3702)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:21:52 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 42.2ms | Allocations: 8366)
+Completed 200 OK in 43ms (Views: 42.5ms | ActiveRecord: 0.0ms | Allocations: 8841)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:21:55 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3299)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3959)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:21:57 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3299)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3945)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:21:58 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3299)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 3957)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:22:08 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3281)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3755)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:22:09 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 275)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3281)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3743)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:26:28 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 643)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4891)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 6021)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:26:29 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 354)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3360)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3896)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:26:30 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 354)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3360)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3823)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:28:37 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 643)
+  Rendered layouts/_navbar.html.erb (Duration: 18.4ms | Allocations: 19784)
+  Rendered layout layouts/application.html.erb (Duration: 23.5ms | Allocations: 23833)
+Completed 200 OK in 26ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 24963)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:28:38 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3833)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4364)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:30:24 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 8066)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.0ms | Allocations: 8538)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:30:32 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 44.2ms | Allocations: 8222)
+Completed 200 OK in 46ms (Views: 44.8ms | ActiveRecord: 0.0ms | Allocations: 8679)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:30:46 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 828)
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 8470)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.0ms | Allocations: 8951)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:30:47 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3849)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 4324)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:30:51 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 8474)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 8946)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:31:02 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 36.7ms | Allocations: 8450)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 8928)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:31:06 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 187)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3837)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4299)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:31:06 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 459)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 915)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4376)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 5599)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:31:07 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3855)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4588)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 01:31:08 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 213)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 824)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3855)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4507)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-09-16 01:31:10 -0500
+Started GET "/users/auth/google_oauth2/callback?state=d5e20be6841d13b9e68ae840eea95f89e5fd38762cad05f3&code=4%2F0AQlEd8xy7_KRK4S7xVjIozz7dVYLORnLXvdIhJtK-VDnKw4h5TjBIWtgB0KpgwcuTutUHg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for ::1 at 2024-09-16 01:31:13 -0500
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"d5e20be6841d13b9e68ae840eea95f89e5fd38762cad05f3", "code"=>"4/0AQlEd8xy7_KRK4S7xVjIozz7dVYLORnLXvdIhJtK-VDnKw4h5TjBIWtgB0KpgwcuTutUHg", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms (ActiveRecord: 4.4ms | Allocations: 4672)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:31:14 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 746)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 957)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 4654)
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.3ms | Allocations: 5940)
+
+
+Started GET "/" for ::1 at 2024-09-16 01:31:21 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 945)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 4430)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 5607)
+
+
+Started GET "/events" for ::1 at 2024-09-16 01:31:27 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1124)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 1042)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 5205)
+Completed 200 OK in 12ms (Views: 7.0ms | ActiveRecord: 1.0ms | Allocations: 7767)
+
+
