@@ -1,0 +1,30 @@
+<h1>Photos</h1>
+
+<%= link_to 'New Photo', new_photo_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @photos.each do |photo| %>
+      <tr>
+        <td><%= photo.title %></td>
+        <td><%= photo.description %></td>
+        <td><%= image_tag photo.image_url if photo.image %></td>
+        <td>
+          <%= link_to 'Show', photo %>
+          <%= link_to 'Edit', edit_photo_path(photo) %>
+          <%= link_to 'Delete', photo_path(photo), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

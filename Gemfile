@@ -51,6 +51,12 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 
+# For Shrine Photo Upload
+gem 'shrine'
+gem 'aws-sdk-s3'
+gem 'image_processing'
+gem 'jquery-rails'
+
 # For frontend 
 gem "sassc-rails"
 gem "simple_form", "~> 5.1.0"
