@@ -1,3 +1,24 @@
+
+.ideas-board{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.upload-button {
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: #007AFF;
+    color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Small, light shadow */
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+form {
+    border: 10px black;
+    text-align: center;
+    color: green;
+}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -10,6 +31,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */

@@ -1,0 +1,54 @@
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-small);
+  margin-bottom: var(--space-m);
+  padding: var(--space-xs);
+
+  @include media(tabletAndUp) {
+    padding: var(--space-xs) var(--space-m);
+  }
+
+  &__actions {
+    display: flex;
+    flex: 0 0 auto;
+    gap: var(--space-xxxxl);
+    justify-content: center;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: var(--space-m);
+  }
+
+  &__stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xxxl);
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+
+.user .avatar {
+  width: 15vh;
+  height: 15vh;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--color-gray);
+}

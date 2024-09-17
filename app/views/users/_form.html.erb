@@ -1,44 +1,54 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<!-- Simple Form for editing user -->
+<%= simple_form_for @user, html: { class: "user form" } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="error-message">
+      <%= @user.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
+  <div class="user__stack">
+    <div class="user__item">
+      <%= f.label :full_name %>
+      <%= f.input :full_name %>
+    </div>
+    <div class="user__item avatar"> 
+      <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+    </div>
+  </div>
+    
+  </div>
+  <!-- User Info Section -->
+  <div class="user__info">
+    
 
-  <div>
-    <%= form.label :full_name, style: "display: block" %>
-    <%= form.text_field :full_name %>
+    <!-- Editable User Fields -->
+    <div class="user__stack">
+      <div class="user__item">
+        <%= f.label :role %>
+        <%= f.input :role, collection: [['Admin', 'admin'], ['Member', 'member'],  ['Officer', 'officer'], ['User', 'user']], include_blank: false %>
+      </div>
+      <div class="user__item">
+        <%= f.label :committee %>
+        <%= f.input :committee %>
+      </div>
+    </div>
+
+    
+    <% if @user.role == 'admin' %>
+      <div class="user__stack">
+        <div class="user__item">
+          <%= f.label :points %>
+          <%= f.input :points %>
+        </div>
+        <div class="user__item">
+            <%= f.label :dues %>
+            <%= f.input :dues %>
+          </div>
+          <div>
+      </div>
+    <% end %>
   </div>
 
-  <!-- Maybe add a way to change avatar later -->
+  <!-- Submit Button -->
+  <%= f.submit "Save Changes", class: "btn btn--secondary" %>
 
-  <div>
-    <%= form.label :role, style: 'display: block' %>
-    <%= form.select :role, options_for_select([['Admin', 'admin'], ['Officer', 'officer'], ['User', 'user']], selected: @user.role) %>
-  </div>
-
-  <div>
-    <%= form.label :committee, style: "display: block" %>
-    <%= form.text_field :committee %>
-  </div>
-
-  <div>
-    <%= form.label :points, style: "display: block" %>
-    <%= form.number_field :points %>
-  </div>
-
-  <div>
-    <%= form.label :dues, style: "display: block" %>
-    <%= form.number_field :dues %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

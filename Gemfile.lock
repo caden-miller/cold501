@@ -68,12 +68,31 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    ast (2.4.2)
+    aws-eventstream (1.3.0)
+    aws-partitions (1.974.0)
+    aws-sdk-core (3.205.0)
+      aws-eventstream (~> 1, >= 1.3.0)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.9)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-kms (1.91.0)
+      aws-sdk-core (~> 3, >= 3.205.0)
+      aws-sigv4 (~> 1.5)
+    aws-sdk-s3 (1.162.0)
+      aws-sdk-core (~> 3, >= 3.205.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.5)
+    aws-sigv4 (1.9.1)
+      aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
       msgpack (~> 1.2)
+    brakeman (6.2.1)
+      racc
     builder (3.3.0)
     capybara (3.40.0)
       addressable
@@ -85,6 +104,7 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     concurrent-ruby (1.3.4)
+    content_disposition (1.0.0)
     crass (1.0.6)
     date (3.3.4)
     debug (1.9.2)
@@ -101,6 +121,8 @@ GEM
     dotenv-rails (3.1.2)
       dotenv (= 3.1.2)
       railties (>= 6.1)
+    down (5.4.2)
+      addressable (~> 2.8)
     erubi (1.13.0)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
@@ -112,11 +134,15 @@ GEM
       logger
     faraday-net_http (3.3.0)
       net-http
+    ffi (1.17.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    image_processing (1.13.0)
+      mini_magick (>= 4.9.5, < 5)
+      ruby-vips (>= 2.0.17, < 3)
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -128,8 +154,17 @@ GEM
     jbuilder (2.12.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jmespath (1.6.2)
+    jquery-rails (4.6.0)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
+    jsbundling-rails (1.3.1)
+      railties (>= 6.0.0)
+    json (2.7.2)
     jwt (2.8.2)
       base64
+    language_server-protocol (3.17.0.3)
     logger (1.6.1)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -142,6 +177,7 @@ GEM
     marcel (1.0.4)
     matrix (0.4.2)
     method_source (1.1.0)
+    mini_magick (4.13.2)
     mini_mime (1.1.5)
     minitest (5.25.1)
     msgpack (1.7.2)
@@ -159,6 +195,8 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.3)
+    nokogiri (1.16.7-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.16.7-x86_64-linux)
       racc (~> 1.4)
     oauth2 (2.0.9)
@@ -184,6 +222,10 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
+    parallel (1.26.3)
+    parser (3.3.5.0)
+      ast (~> 2.4.1)
+      racc
     pg (1.5.8)
     psych (5.1.2)
       stringio
@@ -225,6 +267,7 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
       zeitwerk (~> 2.5)
+    rainbow (3.1.1)
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
@@ -252,11 +295,41 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
+    rubocop (1.66.1)
+      json (~> 2.3)
+      language_server-protocol (>= 3.17.0)
+      parallel (~> 1.10)
+      parser (>= 3.3.0.2)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 2.4, < 3.0)
+      rubocop-ast (>= 1.32.2, < 2.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 2.4.0, < 3.0)
+    rubocop-ast (1.32.3)
+      parser (>= 3.3.1.0)
+    ruby-progressbar (1.13.0)
+    ruby-vips (2.2.2)
+      ffi (~> 1.12)
+      logger
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shrine (3.6.0)
+      content_disposition (~> 1.0)
+      down (~> 5.1)
+    simple_form (5.1.0)
+      actionpack (>= 5.2)
+      activemodel (>= 5.2)
     snaky_hash (2.0.1)
       hashie
       version_gem (~> 1.1, >= 1.1.1)
@@ -271,13 +344,15 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.1)
     thor (1.3.2)
+    tilt (2.4.0)
     timeout (0.4.1)
-    turbo-rails (2.0.6)
+    turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unicode-display_width (2.6.0)
     uri (0.13.1)
     version_gem (1.1.4)
     warden (1.2.9)
@@ -300,17 +375,23 @@ GEM
     zeitwerk (2.6.18)
 
 PLATFORMS
+  arm64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
+  aws-sdk-s3
   bootsnap
+  brakeman
   capybara (>= 3.26)
   debug
   devise
   dotenv-rails
   factory_bot_rails
+  image_processing
   importmap-rails
   jbuilder
+  jquery-rails
+  jsbundling-rails
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
@@ -319,10 +400,14 @@ DEPENDENCIES
   rails (~> 7.0.3)
   rexml
   rspec-rails
+  rubocop
+  sassc-rails
   selenium-webdriver
+  shrine
+  simple_form (~> 5.1.0)
   sprockets-rails
   stimulus-rails
-  turbo-rails
+  turbo-rails (~> 1.0)
   tzinfo-data
   web-console
   webdrivers

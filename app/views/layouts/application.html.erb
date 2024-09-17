@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <% if controller_name == 'merchandises' %>
+      <%= stylesheet_link_tag 'merchandise', media: 'all', 'data-turbo-track': 'reload' %>
+    <% end %>
 
+    <% if controller_name == 'ideas' %>
+      <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
+    <% end %>
+
+
+    <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "turbo", type: "module" %>
     <style>
       .flash__alert { color: red; }
       .flash__notice { color: blue; }
       .flash__success { color: green; }
     </style>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body>
+    <%= render "layouts/navbar" %>
     <% if flash.any? %>
       <% flash.each do |key, value| -%>
         <section class="flash flash__<%= key %>"><%= value.html_safe %></section>

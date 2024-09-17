@@ -1,0 +1,38 @@
+<nav class="navbar">
+  <%= link_to root_path do %>
+    <%= image_tag 'heat_logo.jpg', alt: 'HEAT TAMU Logo', class: 'navbar__logo' %>
+  <% end %>
+
+  <div class="navbar__menu__content">
+    <ul class="navbar__menu">
+        <li class="navbar__item">
+            <%= link_to sanitize("Home"), root_path, class: 'btn btn--primary' %>
+        </li>
+        <% if user_signed_in? && (@role == 'member' || @role == 'officer' || @role == 'admin') %>
+            <li class="navbar__item">
+            <%= link_to sanitize("Events"), events_path, class: 'btn btn--primary' %>
+            </li>
+            <li class="navbar__item">
+            <%= link_to sanitize("Leaderboard"), leaderboard_users_path, class: 'btn btn--primary' %>
+            </li>
+            <li class="navbar__item">
+            <%= link_to sanitize("My Profile"), edit_user_path(current_user), class: 'btn btn--primary' %>
+            </li>
+        <% end %>
+        <% if user_signed_in? && @role == 'admin' %>
+            <li class="navbar__item">
+            <%= link_to sanitize("Users"), users_path, class: 'btn btn--primary' %>
+            </li>
+        <% end %>
+    </ul>
+  </div>
+
+  <div class="navbar__actions">
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn--primary' %>
+    <% else %>
+      <%= link_to 'Login', new_user_session_path, class: 'btn btn--primary' %>
+      <%= link_to 'Sign Up', new_user_session_path, class: 'btn btn--primary' %>
+    <% end %>
+  </div>
+</nav>
