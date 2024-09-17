@@ -9788,3 +9788,181 @@ Completed 200 OK in 11ms (Views: 6.2ms | ActiveRecord: 0.4ms | Allocations: 4387
 >>>>>>> Stashed changes
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (4.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "cadenmiller@tamu.edu"], ["full_name", "Caden Miller"], ["uid", "1"], ["avatar_url", "www.test.com"], ["committee", "Computer Science Club"], ["points", 12], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "erikachtermann@tamu"], ["full_name", "Erik Achtermann"], ["uid", "2"], ["avatar_url", "www.test.com"], ["committee", "Computer Science Club"], ["points", 12], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "jimmy57guandolo@tamu.edu"], ["full_name", "James Guandolo"], ["uid", "3"], ["avatar_url", "www.test.com"], ["committee", "Computer Science Club"], ["points", 12], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "scpanakin@tamu.edu"], ["full_name", "Shanti Patel"], ["uid", "4"], ["avatar_url", "www.test.com"], ["committee", "Computer Science Club"], ["points", 12], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-09-16 19:00:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1082)
+  Rendered layouts/_navbar.html.erb (Duration: 10.1ms | Allocations: 1344)
+  Rendered layout layouts/application.html.erb (Duration: 332.5ms | Allocations: 30107)
+Completed 200 OK in 392ms (Views: 343.7ms | ActiveRecord: 0.0ms | Allocations: 34854)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 19:00:07 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 494)
+  Rendered layouts/_navbar.html.erb (Duration: 5.5ms | Allocations: 918)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 4425)
+Completed 200 OK in 189ms (Views: 101.7ms | ActiveRecord: 23.3ms | Allocations: 13792)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-09-16 19:00:08 -0500
+Started GET "/users/auth/google_oauth2/callback?state=6647c037b1901d2a4d047257ff34d50adda665be697c6320&code=4%2F0AQlEd8x2nt6pXVdb7tGfzZVnaXr4h74MDxuRyQhy-s2JLKDoEetO85eUR1t8wwb9dCBW1Q&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-09-16 19:00:14 -0500
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"6647c037b1901d2a4d047257ff34d50adda665be697c6320", "code"=>"4/0AQlEd8x2nt6pXVdb7tGfzZVnaXr4h74MDxuRyQhy-s2JLKDoEetO85eUR1t8wwb9dCBW1Q", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 647)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 19:00:15 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 258)
+  Rendered layouts/_navbar.html.erb (Duration: 9.3ms | Allocations: 883)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 4078)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 4864)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-09-16 19:00:17 -0500
+Started GET "/users/auth/google_oauth2/callback?state=34bc603f8a48a085de3abbf32986b3818fc0c911cb91ae95&code=4%2F0AQlEd8xA6RQYHlt7QSU6pEC2XhNW31b_kTnAF4vMOaX9JmhUojUDm0KjHdWqIxnHg1wYww&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-09-16 19:00:22 -0500
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"34bc603f8a48a085de3abbf32986b3818fc0c911cb91ae95", "code"=>"4/0AQlEd8xA6RQYHlt7QSU6pEC2XhNW31b_kTnAF4vMOaX9JmhUojUDm0KjHdWqIxnHg1wYww", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:13:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 25ms (ActiveRecord: 3.9ms | Allocations: 2969)
+
+
+Started GET "/" for ::1 at 2024-09-16 19:00:23 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 8.6ms | Allocations: 751)
+  Rendered layouts/_navbar.html.erb (Duration: 11.5ms | Allocations: 1458)
+  Rendered layout layouts/application.html.erb (Duration: 40.8ms | Allocations: 5162)
+Completed 200 OK in 59ms (Views: 43.4ms | ActiveRecord: 1.6ms | Allocations: 6629)
+
+
+Started GET "/users" for ::1 at 2024-09-16 19:00:26 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_user.html.erb (Duration: 7.7ms | Allocations: 669)
+  Rendered users/_user.html.erb (Duration: 2.8ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 2.2ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 2.4ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 2.3ms | Allocations: 315)
+  Rendered users/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 4186)
+  Rendered layouts/_navbar.html.erb (Duration: 10.9ms | Allocations: 1512)
+  Rendered layout layouts/application.html.erb (Duration: 71.5ms | Allocations: 8691)
+Completed 200 OK in 94ms (Views: 74.7ms | ActiveRecord: 4.2ms | Allocations: 10785)
+
+
+Started GET "/www.test.com" for ::1 at 2024-09-16 19:00:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/www.test.com"):
+  
+Started GET "/users/2" for ::1 at 2024-09-16 19:00:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 933)
+  Rendered layouts/_navbar.html.erb (Duration: 11.9ms | Allocations: 1432)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 5302)
+Completed 200 OK in 79ms (Views: 54.1ms | ActiveRecord: 2.9ms | Allocations: 7977)
+
+
+Started GET "/" for ::1 at 2024-09-16 19:00:39 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 10.7ms | Allocations: 1422)
+  Rendered layout layouts/application.html.erb (Duration: 35.0ms | Allocations: 4907)
+Completed 200 OK in 50ms (Views: 36.9ms | ActiveRecord: 1.5ms | Allocations: 6091)
+
+
+Started GET "/" for ::1 at 2024-09-16 19:32:16 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 659)
+  Rendered layouts/_navbar.html.erb (Duration: 8.3ms | Allocations: 1426)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 4915)
+Completed 200 OK in 143ms (Views: 53.9ms | ActiveRecord: 30.2ms | Allocations: 9299)
+
+
+Started GET "/www.test.com" for ::1 at 2024-09-16 19:32:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/www.test.com"):
+  
+Started GET "/users" for ::1 at 2024-09-16 19:32:18 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_user.html.erb (Duration: 5.6ms | Allocations: 328)
+  Rendered users/_user.html.erb (Duration: 2.0ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 1.6ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 1.9ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 1.9ms | Allocations: 315)
+  Rendered users/index.html.erb within layouts/application (Duration: 28.3ms | Allocations: 3048)
+  Rendered layouts/_navbar.html.erb (Duration: 10.1ms | Allocations: 1424)
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 7291)
+Completed 200 OK in 71ms (Views: 54.2ms | ActiveRecord: 4.4ms | Allocations: 8514)
+
+
+Started GET "/www.test.com" for ::1 at 2024-09-16 19:32:18 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/www.test.com"):
+  
