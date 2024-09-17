@@ -1,13 +1,14 @@
 <p style="color: green"><%= notice %></p>
-<%= controller_name %>
 <h1>Ideas</h1>
 
-<div id="ideas" classname="ideas-board">
+<div id="ideas" class="ideas-board">
   <% @ideas.each do |idea| %>
+    <div class="idea-wrapper">
     <%= render idea %>
     <p>
       <%= link_to "Show this idea", idea %>
     </p>
+    </div>
   <% end %>
 </div>
 
