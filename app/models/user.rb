@@ -2,7 +2,8 @@ class User < ApplicationRecord
   ROLES =%w[admin officer user].freeze
 
   validates :role, inclusion: { in: ROLES }
-  validates :full_name, presence: true 
+  validates :full_name, presence: true
+  has_many :photos 
   
   # ensure devise works with omniauth-google_oauth2
   devise :omniauthable, omniauth_providers: [:google_oauth2]

@@ -50,6 +50,12 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'dotenv-rails'
 
+# For Shrine Photo Upload
+gem 'shrine'
+gem 'aws-sdk-s3'
+gem 'image_processing'
+gem 'jquery-rails'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
