@@ -1,20 +1,17 @@
-<div id="<%= dom_id user %>">
+<div class="user" id="<%= dom_id user %>">
   <!-- Avatar Image -->
     <div class="avatar">
       <img src="<%= user.avatar_url %>" alt="<%= user.full_name %>'s Avatar" />
     </div>
 
-    <!-- User Information -->
-    <div class="user-info">
-      <h2><%= user.full_name %></h2>
-
-      <ul>
-        <!-- Render all other fields dynamically -->
-        <% user.attributes.each do |key, value| %>
-          <% unless %w[id avatar_url full_name updated_at uid].include?(key) %> <!-- Exclude certain fields -->
-            <li><strong><%= key.humanize %>:</strong> <%= value %></li>
-          <% end %>
-        <% end %>
-      </ul>
-
+    <%= link_to user.full_name, user_path(user) %>
+    <div class="user__actions">
+      <%= button_to "Delete",
+                    user_path(user),
+                    method: :delete,
+                    class: "btn btn--light" %>
+      <%= link_to "Edit",
+                  edit_user_path(user),
+                  class: "btn btn--light" %>
+    </div>
 </div>

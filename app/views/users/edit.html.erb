@@ -1,45 +1,9 @@
-<h1>Editing user</h1>
+<main class="container">
+  <%= link_to sanitize("&larr; Back to user"), user_path(@user) %>
 
-<%= render "form", user: @user %>
-
-<br>
-
-
-
-
-<%= form_with(model: @event, local: true) do |form| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-      <ul>
-        <% @event.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+  <div class="header">
+    <h1>Edit user</h1>
   </div>
 
-  <div>
-    <%= form.label :date %><br>
-    <%= form.datetime_select :date %>
-  </div>
-
-  <div>
-    <%= form.submit 'Update Event' %>
-  </div>
-<% end %>
-
-<%= link_to 'Back to Events', events_path %>
-
-
-
-
-<div>
-  <%= link_to "Show this user", @user %> |
-  <%= link_to "Back to users", users_path %>
-</div>
+  <%= render "form", user: @user %>
+</main>
