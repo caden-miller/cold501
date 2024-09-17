@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  
+  # Defines the root path route ("/")
+
+  resources :events do   # Generates all routes for events (index, show, new, edit, create, update, destroy)
+    member do
+      get 'delete'
+    end
+  end
+
   root to: 'home#index'
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }

@@ -19,3 +19,21 @@
 </div>
 
 <%= link_to "New user", new_user_path %>
+
+<h1>All Events</h1>
+
+<%= link_to 'Create New Event', new_event_path %>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= link_to event.name, event_path(event) %>
+      (<%= event.date.strftime("%B %d, %Y") %>)
+      <%= link_to 'Edit', edit_event_path(event) %> |
+      <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+
+
