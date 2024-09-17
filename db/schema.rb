@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
+ActiveRecord::Schema[7.0].define(version: 2024_09_13_160322) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,27 +22,17 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "attendances", force: :cascade do |t|
-    t.bigint "event_id", null: false
-    t.bigint "user_id", null: false
-    t.boolean "present"
-    t.string "passcode"
-    t.datetime "checked_in_at"
+  create_table "books", force: :cascade do |t|
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["event_id"], name: "index_attendances_on_event_id"
-    t.index ["user_id"], name: "index_attendances_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "passcode"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string "location"
-    t.boolean "archived", default: false, null: false
   end
 
   create_table "ideas", force: :cascade do |t|
@@ -99,17 +89,18 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "full_name"
-    t.string "uid"
-    t.string "avatar_url"
+    t.string "name"
+    t.string "image"
+    t.string "email"
+    t.string "password"
+    t.string "role"
     t.string "committee"
     t.integer "points"
-    t.integer "dues"
-    t.string "role"
+    t.string "uid"
+    t.text "token"
+    t.string "provider"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "attendances", "events", on_delete: :cascade

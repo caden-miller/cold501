@@ -2,14 +2,10 @@
 .ideas-board{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 1em;
+    background-color: #FFFF00;
 }
 
 form {
     border: 10px black;
     text-align: center;
-}
-
-.idea-wrapper{
-    background-color: #FFFF00;
 }
