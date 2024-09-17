@@ -1,14 +1,39 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Users</h1>
+<h1>Hello <%= @user.full_name %>! Welcome to the Users Screen!</h1>
+<%= link_to "Sign Out", destroy_user_session_path %>
+<span></span>
+<%= link_to "Leaderboard", leaderboard_users_path %>
 
 <div id="users">
+  <hr>
   <% @users.each do |user| %>
     <%= render user %>
     <p>
       <%= link_to "Show this user", user %>
     </p>
+    <p>
+      <%= link_to "Edit this user", edit_user_path(user) %>
+    </p>
+    <hr>
   <% end %>
 </div>
 
 <%= link_to "New user", new_user_path %>
+
+<h1>All Events</h1>
+
+<%= link_to 'Create New Event', new_event_path %>
+
+<ul>
+  <% @events.each do |event| %>
+    <li>
+      <%= link_to event.name, event_path(event) %>
+      (<%= event.date.strftime("%B %d, %Y") %>)
+      <%= link_to 'Edit', edit_event_path(event) %> |
+      <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+
+

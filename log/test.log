@@ -1,0 +1,396 @@
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (25.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test_app_test"[0m
+  [1m[35m (491.5ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20240911023215)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2024-09-11 07:15:10.159595"], ["updated_at", "2024-09-11 07:15:10.159595"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "19cb75fdd607b2fbb4a362ed4bb8c008bbc95805"], ["created_at", "2024-09-11 07:15:10.165078"], ["updated_at", "2024-09-11 07:15:10.165078"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", nil], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-09-11 07:20:08.618134"], ["updated_at", "2024-09-11 07:20:08.618134"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/1/edit" for 127.0.0.1 at 2024-09-11 07:20:08 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1647)
+Started GET "/" for 127.0.0.1 at 2024-09-11 07:20:08 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 488)
+  Rendered layout layouts/application.html.erb (Duration: 427.9ms | Allocations: 70098)
+Completed 200 OK in 435ms (Views: 429.6ms | ActiveRecord: 0.5ms | Allocations: 74084)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", nil], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-09-11 07:20:09.109721"], ["updated_at", "2024-09-11 07:20:09.109721"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/2/edit" for 127.0.0.1 at 2024-09-11 07:20:09 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/" for 127.0.0.1 at 2024-09-11 07:20:09 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1697)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 2489)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-09-11 07:22:45.201523"], ["updated_at", "2024-09-11 07:22:45.201523"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/3/edit" for 127.0.0.1 at 2024-09-11 07:22:45 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 1647)
+Started GET "/" for 127.0.0.1 at 2024-09-11 07:22:45 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 488)
+  Rendered layout layouts/application.html.erb (Duration: 117.9ms | Allocations: 20818)
+Completed 200 OK in 125ms (Views: 119.9ms | ActiveRecord: 0.4ms | Allocations: 24781)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-09-11 07:22:45.364756"], ["updated_at", "2024-09-11 07:22:45.364756"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/4/edit" for 127.0.0.1 at 2024-09-11 07:22:45 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+Started GET "/" for 127.0.0.1 at 2024-09-11 07:22:45 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 57)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | Allocations: 1694)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 2457)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:25:02.523557"], ["updated_at", "2024-09-11 07:25:02.523557"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/5/edit" for 127.0.0.1 at 2024-09-11 07:25:02 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.0ms | Allocations: 3576)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4231)
+  Rendered layout layouts/application.html.erb (Duration: 144.8ms | Allocations: 24542)
+Completed 200 OK in 169ms (Views: 146.9ms | ActiveRecord: 0.5ms | Allocations: 29456)
+Started PATCH "/users/5" for 127.0.0.1 at 2024-09-11 07:25:02 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"New Name", "role"=>"admin", "committee"=>"New Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "committee" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["full_name", "New Name"], ["committee", "New Committee"], ["updated_at", "2024-09-11 07:25:02.718224"], ["id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/5
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1877)
+Started GET "/users/5" for 127.0.0.1 at 2024-09-11 07:25:02 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 563)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1407)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3027)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 3941)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:25:02.743834"], ["updated_at", "2024-09-11 07:25:02.743834"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/6/edit" for 127.0.0.1 at 2024-09-11 07:25:02 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.5ms | Allocations: 1643)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1757)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 3382)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 3833)
+Started PATCH "/users/6" for 127.0.0.1 at 2024-09-11 07:25:02 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"", "role"=>"admin", "committee"=>"Test Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"6"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.9ms | Allocations: 2515)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2615)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4187)
+Completed 200 OK in 35ms (Views: 11.8ms | ActiveRecord: 4.1ms | Allocations: 5359)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:27:31.244761"], ["updated_at", "2024-09-11 07:27:31.244761"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/7/edit" for 127.0.0.1 at 2024-09-11 07:27:31 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.6ms | Allocations: 3577)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.5ms | Allocations: 4232)
+  Rendered layout layouts/application.html.erb (Duration: 68.5ms | Allocations: 24429)
+Completed 200 OK in 76ms (Views: 70.2ms | ActiveRecord: 0.4ms | Allocations: 29346)
+Started PATCH "/users/7" for 127.0.0.1 at 2024-09-11 07:27:31 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"New Name", "role"=>"admin", "committee"=>"New Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "committee" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["full_name", "New Name"], ["committee", "New Committee"], ["updated_at", "2024-09-11 07:27:31.416229"], ["id", 7]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/7
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms | Allocations: 1910)
+Started GET "/users/7" for 127.0.0.1 at 2024-09-11 07:27:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 563)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1404)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 3030)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 3960)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:27:31.441546"], ["updated_at", "2024-09-11 07:27:31.441546"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/8/edit" for 127.0.0.1 at 2024-09-11 07:27:31 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.3ms | Allocations: 1643)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1757)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 3382)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 3833)
+Started PATCH "/users/8" for 127.0.0.1 at 2024-09-11 07:27:31 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"", "role"=>"admin", "committee"=>"Test Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"8"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 15.7ms | Allocations: 2515)
+  Rendered users/edit.html.erb within layouts/application (Duration: 16.0ms | Allocations: 2615)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 4187)
+Completed 200 OK in 33ms (Views: 17.2ms | ActiveRecord: 4.7ms | Allocations: 5359)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:28:31.807793"], ["updated_at", "2024-09-11 07:28:31.807793"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/9/edit" for 127.0.0.1 at 2024-09-11 07:28:31 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.5ms | Allocations: 3576)
+  Rendered users/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4231)
+  Rendered layout layouts/application.html.erb (Duration: 114.6ms | Allocations: 24379)
+Completed 200 OK in 124ms (Views: 117.0ms | ActiveRecord: 0.5ms | Allocations: 29294)
+Started PATCH "/users/9" for 127.0.0.1 at 2024-09-11 07:28:31 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"New Name", "role"=>"admin", "committee"=>"New Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "committee" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["full_name", "New Name"], ["committee", "New Committee"], ["updated_at", "2024-09-11 07:28:31.964565"], ["id", 9]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/9
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1910)
+Started GET "/users/9" for 127.0.0.1 at 2024-09-11 07:28:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 563)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1407)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3033)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.5ms | Allocations: 3955)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:28:31.991122"], ["updated_at", "2024-09-11 07:28:31.991122"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/10/edit" for 127.0.0.1 at 2024-09-11 07:28:31 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.7ms | Allocations: 1643)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1757)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3382)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 3834)
+Started PATCH "/users/10" for 127.0.0.1 at 2024-09-11 07:28:32 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"", "role"=>"admin", "committee"=>"Test Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.3ms | Allocations: 2515)
+  Rendered users/edit.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2615)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 4187)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 5344)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:37:11.775421"], ["updated_at", "2024-09-11 07:37:11.775421"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/11/edit" for 127.0.0.1 at 2024-09-11 07:37:11 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 3576)
+  Rendered users/edit.html.erb within layouts/application (Duration: 4.3ms | Allocations: 4231)
+  Rendered layout layouts/application.html.erb (Duration: 137.1ms | Allocations: 24567)
+Completed 200 OK in 144ms (Views: 138.6ms | ActiveRecord: 0.4ms | Allocations: 29482)
+Started PATCH "/users/11" for 127.0.0.1 at 2024-09-11 07:37:11 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"New Name", "role"=>"admin", "committee"=>"New Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "committee" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["full_name", "New Name"], ["committee", "New Committee"], ["updated_at", "2024-09-11 07:37:11.948072"], ["id", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/users/11
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 1892)
+Started GET "/users/11" for 127.0.0.1 at 2024-09-11 07:37:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 563)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1407)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3033)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 3964)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", nil], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-11 07:37:11.972217"], ["updated_at", "2024-09-11 07:37:11.972217"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/12/edit" for 127.0.0.1 at 2024-09-11 07:37:11 +0000
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.4ms | Allocations: 1643)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1757)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 3382)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 3834)
+Started PATCH "/users/12" for 127.0.0.1 at 2024-09-11 07:37:11 +0000
+Processing by UsersController#update as HTML
+  Parameters: {"user"=>{"full_name"=>"", "role"=>"admin", "committee"=>"Test Committee", "points"=>"", "dues"=>""}, "commit"=>"Update User", "id"=>"12"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 17.6ms | Allocations: 2515)
+  Rendered users/edit.html.erb within layouts/application (Duration: 17.8ms | Allocations: 2615)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 4187)
+Completed 200 OK in 34ms (Views: 19.2ms | ActiveRecord: 3.2ms | Allocations: 5344)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m

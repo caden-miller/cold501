@@ -1,12 +1,28 @@
 class User < ApplicationRecord
-  has_secure_password
+  ROLES =%w[admin officer user].freeze
 
-  def self.from_omniauth(response)
-    User.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
-      u.username = response[:info][:name]
-      u.email = response[:info][:email]
-      u.image = response[:info][:image]
-      u.password = SecureRandom.hex(15)
-    end
+  validates :role, inclusion: { in: ROLES }
+  validates :full_name, presence: true
+  has_many :photos 
+  
+  # ensure devise works with omniauth-google_oauth2
+  devise :omniauthable, omniauth_providers: [:google_oauth2]
+  
+  # create self from Google OAuth (from Pratik's guide) 
+  # TODO: change the default role from admin to member 
+  def self.from_google(email:, full_name:, uid:, avatar_url:)
+    create_with(uid: uid, full_name: full_name, avatar_url: avatar_url, role: 'admin').find_or_create_by!(email: email)
+  end
+  
+  def admin?
+    role == 'admin'
+  end
+
+  def officer?
+    role == 'officer'
+  end
+
+  def member?
+    role == 'member'
   end
 end

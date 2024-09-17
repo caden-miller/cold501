@@ -12,28 +12,15 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :full_name, style: "display: block" %>
+    <%= form.text_field :full_name %>
   </div>
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
-  </div>
+  <!-- Maybe add a way to change avatar later -->
 
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
-  </div>
-
-  <div>
-    <%= form.label :role, style: "display: block" %>
-    <%= form.text_field :role %>
+    <%= form.label :role, style: 'display: block' %>
+    <%= form.select :role, options_for_select([['Admin', 'admin'], ['Officer', 'officer'], ['User', 'user']], selected: @user.role) %>
   </div>
 
   <div>
@@ -47,18 +34,8 @@
   </div>
 
   <div>
-    <%= form.label :uid, style: "display: block" %>
-    <%= form.text_field :uid %>
-  </div>
-
-  <div>
-    <%= form.label :token, style: "display: block" %>
-    <%= form.text_area :token %>
-  </div>
-
-  <div>
-    <%= form.label :provider, style: "display: block" %>
-    <%= form.text_field :provider %>
+    <%= form.label :dues, style: "display: block" %>
+    <%= form.number_field :dues %>
   </div>
 
   <div>
