@@ -9966,3 +9966,269 @@ Started GET "/www.test.com" for ::1 at 2024-09-16 19:32:18 -0500
   
 ActionController::RoutingError (No route matches [GET] "/www.test.com"):
   
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-09-16 20:52:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1082)
+  Rendered layouts/_navbar.html.erb (Duration: 3.6ms | Allocations: 1362)
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 24759)
+Completed 200 OK in 96ms (Views: 87.9ms | ActiveRecord: 0.0ms | Allocations: 29538)
+
+
+Started GET "/users" for ::1 at 2024-09-16 20:52:28 -0500
+Processing by UsersController#index as HTML
+Redirected to http://[::1]:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 697)
+
+
+Started GET "/" for ::1 at 2024-09-16 20:52:28 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 261)
+  Rendered layouts/_navbar.html.erb (Duration: 13.5ms | Allocations: 834)
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 4054)
+Completed 200 OK in 73ms (Views: 71.9ms | ActiveRecord: 0.0ms | Allocations: 4610)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 20:52:30 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 491)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 917)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4417)
+Completed 200 OK in 20ms (Views: 5.8ms | ActiveRecord: 3.2ms | Allocations: 13785)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-09-16 20:52:31 -0500
+Started GET "/users/auth/google_oauth2/callback?state=95684d7497d20a87b3e05927ba532af087e829ad60815ae3&code=4%2F0AQlEd8wBwwUx-LVcj7vaCOAg4B3_q2cDg2MQVn40pxotu5Nxro6xMYG1p7XSKx0FikPqMg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-09-16 20:52:35 -0500
+Processing by Users::OmniauthCallbacksController#failure as HTML
+  Parameters: {"state"=>"95684d7497d20a87b3e05927ba532af087e829ad60815ae3", "code"=>"4/0AQlEd8wBwwUx-LVcj7vaCOAg4B3_q2cDg2MQVn40pxotu5Nxro6xMYG1p7XSKx0FikPqMg", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms | Allocations: 3189)
+
+
+Started GET "/users/sign_in" for ::1 at 2024-09-16 20:52:35 -0500
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1623)
+
+
+Started GET "/" for ::1 at 2024-09-16 20:52:35 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 750)
+  Rendered layouts/_navbar.html.erb (Duration: 6.1ms | Allocations: 1469)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 5202)
+Completed 200 OK in 17ms (Views: 13.8ms | ActiveRecord: 0.3ms | Allocations: 6461)
+
+
+Started GET "/users" for ::1 at 2024-09-16 20:52:37 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:14
+  Rendered users/_user.html.erb (Duration: 1.9ms | Allocations: 671)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 315)
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 315)
+  Rendered users/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 4187)
+  Rendered layouts/_navbar.html.erb (Duration: 2.7ms | Allocations: 1514)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 8696)
+Completed 200 OK in 26ms (Views: 20.2ms | ActiveRecord: 1.4ms | Allocations: 10422)
+
+
+Started GET "/www.test.com" for ::1 at 2024-09-16 20:52:37 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/www.test.com"):
+  
+Started GET "/users/1/edit" for ::1 at 2024-09-16 20:52:39 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 14.0ms | Allocations: 15148)
+  Rendered users/edit.html.erb within layouts/application (Duration: 15.7ms | Allocations: 15668)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 15748)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms | Allocations: 18391)
+
+
+  
+ActionView::Template::Error (wrong argument type Hash (expected Array)):
+     7:   <% end %>
+     8:   <div class="user__stack">
+     9:     <div class="user__item">
+    10:       <%= f.input :full_name %>
+    11:     </div>
+    12:     <div class="user__item avatar"> 
+    13:       <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+  
+app/views/users/_form.html.erb:10
+app/views/users/_form.html.erb:2
+app/views/users/edit.html.erb:8
+Started GET "/users/1/www.test.com" for ::1 at 2024-09-16 20:52:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/www.test.com"):
+  
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/1/edit" for ::1 at 2024-09-16 20:53:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 15.8ms | Allocations: 16002)
+  Rendered users/edit.html.erb within layouts/application (Duration: 17.6ms | Allocations: 17067)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 17163)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 3.4ms | Allocations: 33354)
+
+
+  
+ActionView::Template::Error (wrong argument type Hash (expected Array)):
+     8:   <div class="user__stack">
+     9:     <div class="user__item">
+    10:       <%= f.label :full_name %>
+    11:       <%= f.input :full_name %>
+    12:     </div>
+    13:     <div class="user__item avatar"> 
+    14:       <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+  
+app/views/users/_form.html.erb:11
+app/views/users/_form.html.erb:2
+app/views/users/edit.html.erb:8
+Started GET "/users/1/edit" for ::1 at 2024-09-16 20:53:51 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.0ms | Allocations: 8152)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.8ms | Allocations: 8461)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 8541)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.2ms | Allocations: 10479)
+
+
+  
+ActionView::Template::Error (wrong argument type Hash (expected Array)):
+     8:   <div class="user__stack">
+     9:     <div class="user__item">
+    10:       <%= f.label :full_name %>
+    11:       <%= f.input :full_name %>
+    12:     </div>
+    13:     <div class="user__item avatar"> 
+    14:       <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+  
+app/views/users/_form.html.erb:11
+app/views/users/_form.html.erb:2
+app/views/users/edit.html.erb:8
+Started GET "/users/1/edit" for ::1 at 2024-09-16 20:53:52 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.3ms | Allocations: 8038)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.1ms | Allocations: 8261)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 8341)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 1.3ms | Allocations: 10038)
+
+
+  
+ActionView::Template::Error (wrong argument type Hash (expected Array)):
+     8:   <div class="user__stack">
+     9:     <div class="user__item">
+    10:       <%= f.label :full_name %>
+    11:       <%= f.input :full_name %>
+    12:     </div>
+    13:     <div class="user__item avatar"> 
+    14:       <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+  
+app/views/users/_form.html.erb:11
+app/views/users/_form.html.erb:2
+app/views/users/edit.html.erb:8
+Started GET "/users/1/edit" for ::1 at 2024-09-16 20:53:52 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 7.2ms | Allocations: 8038)
+  Rendered users/edit.html.erb within layouts/application (Duration: 7.8ms | Allocations: 8261)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 8341)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 10038)
+
+
+  
+ActionView::Template::Error (wrong argument type Hash (expected Array)):
+     8:   <div class="user__stack">
+     9:     <div class="user__item">
+    10:       <%= f.label :full_name %>
+    11:       <%= f.input :full_name %>
+    12:     </div>
+    13:     <div class="user__item avatar"> 
+    14:       <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
+  
+app/views/users/_form.html.erb:11
+app/views/users/_form.html.erb:2
+app/views/users/edit.html.erb:8
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, and [36mDATABASE_USER[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users/1/edit" for ::1 at 2024-09-16 20:55:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:25:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 56.6ms | Allocations: 30239)
+  Rendered users/edit.html.erb within layouts/application (Duration: 58.8ms | Allocations: 31302)
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 2025)
+  Rendered layout layouts/application.html.erb (Duration: 103.3ms | Allocations: 55514)
+Completed 200 OK in 130ms (Views: 106.0ms | ActiveRecord: 3.1ms | Allocations: 71587)
+
+
