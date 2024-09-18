@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get 'delete'
     end
+    resources :attendances, only: [:create]
   end
 
   root to: 'home#index'
