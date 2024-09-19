@@ -1,44 +1,38 @@
-<%= form_with(model: user) do |form| %>
+<%= form_with(model: user, data: { controller: "form" }) do |form| %>
   <% if user.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+    <div class="modal__error-header">
+      <h3 class="modal__error-title">Please fix the following errors:</h3>
+      <ul class="modal__error-list">
+        <% user.errors.full_messages.each do |message| %>
+          <li class="modal__error-item"><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :full_name, style: "display: block" %>
-    <%= form.text_field :full_name %>
+  <!-- Form fields -->
+  <div class="form-group">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :role %>
+    <%= form.select :role, User::ROLES, {}, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :committee %>
+    <%= form.text_field :committee, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :dues %>
+    <%= form.number_field :dues, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.label :points %>
+    <%= form.number_field :points, class: 'form-control' %>
   </div>
 
-  <!-- Maybe add a way to change avatar later -->
-
-  <div>
-    <%= form.label :role, style: 'display: block' %>
-    <%= form.select :role, options_for_select([['Admin', 'admin'], ['Officer', 'officer'], ['User', 'user']], selected: @user.role) %>
-  </div>
-
-  <div>
-    <%= form.label :committee, style: "display: block" %>
-    <%= form.text_field :committee %>
-  </div>
-
-  <div>
-    <%= form.label :points, style: "display: block" %>
-    <%= form.number_field :points %>
-  </div>
-
-  <div>
-    <%= form.label :dues, style: "display: block" %>
-    <%= form.number_field :dues %>
-  </div>
-
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>

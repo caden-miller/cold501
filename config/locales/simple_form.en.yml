@@ -1,0 +1,23 @@
+en:
+  simple_form:
+    labels:
+      user:
+        full_name: "Full Name"
+        role: "User Role"
+        committee: "Committee"
+        points: "Points"
+        dues: "Membership Dues"
+    hints:
+      user:
+        full_name: "Enter the user's full name."
+        role: "Select the appropriate role."
+        committee: "Specify the committee name."
+        points: "Assign points to the user."
+        dues: "Enter the dues amount remaining to be paid."
+    placeholders:
+      user:
+        full_name: "e.g., John Doe"
+        committee: "e.g., Marketing"
+        points: "e.g., 100"
+        dues: "e.g., 50"
+

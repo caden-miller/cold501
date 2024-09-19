@@ -12,13 +12,13 @@ RSpec.feature "Edit User", type: :feature do
     visit edit_user_path(user)
 
     # Ensure the form contains the current user's data
-    expect(page).to have_field('Full name', with: 'Test User')
+    expect(page).to have_field('Full Name', with: 'Test User')
     expect(page).to have_field('Committee', with: 'Test Committee')
 
     # Fill in new details and submit the form
-    fill_in 'Full name', with: 'New Name'
+    fill_in 'Full Name', with: 'New Name'
     fill_in 'Committee', with: 'New Committee'
-    click_button 'Update User'
+    click_button 'Save Changes'
 
     # Ensure the page redirects and shows a success message
     expect(page).to have_content('User updated successfully.')
@@ -34,8 +34,8 @@ RSpec.feature "Edit User", type: :feature do
     visit edit_user_path(user)
 
     # Fill in invalid data
-    fill_in 'Full name', with: ''
-    click_button 'Update User'
+    fill_in 'Full Name', with: ''
+    click_button 'Save Changes'
 
     # Ensure the form re-renders with error messages
     expect(page).to have_content("Full name can't be blank")
