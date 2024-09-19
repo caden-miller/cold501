@@ -6,3 +6,7 @@
 
 /node_modules
 log/development.log
+master.key
+/public/assets
+/public/packs
+/public/uploads

@@ -1,8 +1,18 @@
 class ApplicationController < ActionController::Base
-  before_action :set_user, :set_role
+  before_action :set_user, :set_role, :set_navbar_variables
   
   def authenticate_admin!
-    redirect_to root_path, alert: 'You are not authorized.' unless @role == 'admin'
+    unless @role == 'admin'
+      respond_to do |format|
+        format.html do
+          if turbo_frame_request?
+            render partial: 'shared/unauthorized', status: :unauthorized
+          else
+            redirect_to users_path, alert: 'Access denied.'
+          end
+        end
+      end
+    end
   end
 
   def authenticate_member!
@@ -29,6 +39,37 @@ class ApplicationController < ActionController::Base
   # set instance variable for role
   def set_role
     @role = current_user&.role
+  end
+
+  def set_navbar_variables
+    @nav_links = [
+      { name: 'Home', path: root_path },
+      { name: 'Events', path: events_path },
+      { name: 'Photo Gallery', path: photos_path },
+      { name: 'Leaderboard', path: leaderboard_users_path },
+      { name: 'Merchandise', path: merchandises_path },
+      { name: 'Idea Board', path: ideas_path },
+      { name: 'Member Management', path: users_path }
+    ]
+
+    links_to_reject = case @role 
+                      when 'admin'
+                        []
+                      when 'member'
+                        ['Member Management']
+                      when 'officer'
+                        ['Member Management']
+                      else
+                        ['Events', 'Leaderboard', 'Merchandise', 'Idea Board', 'Member Management']
+                      end
+
+    @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
+  
+    @auth_link = if current_user
+                   { name: 'Logout', path: destroy_user_session_path, method: :delete }
+                 else
+                   { name: 'Login', path: new_user_session_path }
+                 end
   end
 
 end

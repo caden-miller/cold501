@@ -2,11 +2,14 @@
 <html>
   <head>
     <title>HEAT Website</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
+    <!-- Application Stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+    <!-- Controller-Specific Stylesheets -->
     <% if controller_name == 'merchandises' %>
       <%= stylesheet_link_tag 'merchandise', media: 'all', 'data-turbo-track': 'reload' %>
     <% end %>
@@ -15,18 +18,15 @@
       <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
     <% end %>
 
-
+    <!-- Importmap for JavaScript -->
     <%= javascript_importmap_tags %>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <!-- link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css" -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "turbo", type: "module" %>
+
+    <!-- Inline Styles (Consider moving to a CSS file) -->
     <style>
       .flash__alert { color: red; }
       .flash__notice { color: blue; }
       .flash__success { color: green; }
     </style>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
   <body>

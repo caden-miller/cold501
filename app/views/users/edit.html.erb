@@ -1,9 +1,10 @@
-<main class="container">
-  <%= link_to sanitize("&larr; Back to user"), user_path(@user) %>
+<h1>Edit User</h1>
 
-  <div class="header">
-    <h1>Edit user</h1>
-  </div>
+<%= render 'form', user: @user %>
 
-  <%= render "form", user: @user %>
-</main>
+<br>
+
+<div>
+  <%= link_to 'Show this photo', @user %>
+  <%= link_to 'Back to users', users_path %>
+</div>
