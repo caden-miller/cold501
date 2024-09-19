@@ -1,24 +1,33 @@
 <main class="container">
-  <h1>Home#index</h1>
-  <p>Find me in app/views/home/index.html.erb</p>
+  <section id="about-organization" style="background-color: #f7f7f7; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); max-width: 800px; margin: 20px auto;">
+    <h2 style="text-align: center; color: #333;">Texas A&M HEAT</h2>
+    
+    <div style="background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+    <%= image_tag("heat.png", alt: "", class: "heat-home-pic", height: "504px", width: "672px") %>
+    
+      <br>
+        <p><strong>Abbreviation(s):</strong> H.E.A.T.</p>
+        <p><strong>Purpose:</strong> H.E.A.T. is a student service organization dedicated to improving humanitarian, environmental, and animal welfare issues through positive activism. The Human Environmental Animal Team is committed to making a difference in all areas of service.</p>
+      
+        <p>Texas A&M H.E.A.T. chapter was founded in the spring of 2013 by Jacob Alpuerto. Since then, our chapter has grown to include a variety of students, each with a very unique background and a passion for making the world better.</p>
+      
+        <p>Even as our chapter continues to grow, there remains a place for everyone in H.E.A.T. At Texas A&M University, H.E.A.T. is a hardworking group that wants to better the world and affect positive change through volunteering and educating our peers. This organization allows us to take part in projects we care about, meet new people, and to be a part of something important. As a member of H.E.A.T., you get to make friendships that grow to feel like family, connections throughout the Aggie community, and change in the lives of those that we work with and for. It's not only rewarding but really fun!</p>
+      
+      <p>Some of our favorite projects include building ramps for people in need, working at food banks, cleaning up litter both locally and on beaches, and volunteering with a variety of animal rescues and sanctuaries that work with wolfdogs, tigers, reptiles and amphibians, and companion animals.</p>
+    
+      <p>Our goals for the upcoming year include increasing membership numbers and participation, improving our relationships with each other through more socials, and expanding our outreach to establish new projects with new organizations. If you would like us to help you with a project near the Bryan/College Station area, please reach out to one of our executives or contact us at <a href="mailto:heattamu@gmail.com">heattamu@gmail.com</a>.</p>
+    
+      <p><strong>Year Founded:</strong> 2013</p>
+      <p><strong>Membership Dues:</strong> $20/semester for new members; $15/semester for returning members</p>
+      <p><strong>Admits Members:</strong> First Quarter of Each Semester</p>
+      <p><strong>Meeting Locations:</strong> TBA</p>
 
-  <% if user_signed_in? %>
-    <h2>Hello, <%= @user.full_name %> </h2>
-    <h2>Your current role is: <%= @user.role %> </h2>
-    <h3>You have access to these pages: </h3>
-    <ul class="stack">
-      <% if @role == 'admin' %>
-        <li><%= link_to sanitize("Users"), users_path, class: 'btn btn--light' %> </li>
-      <% end %>
-      <li><%= link_to sanitize("Leaderboard"), leaderboard_users_path, class: 'btn btn--light' %> </li>
-      <li><%= link_to sanitize('View All Events'), events_path, class: 'btn btn-primary' %></li>
-      <!-- TODO: ADD MORE LINKS HERE -->
-    </ul>
-
-    <%= link_to sanitize("Sign out"), destroy_user_session_path, class: 'btn btn--light' %>
-  <% else %>
-    <p>Please log in.</p>
-    <%= link_to sanitize("Log in"), new_user_session_path, class: 'btn btn--light' %>
-  <% end %>
+    
+      <h3>Group Contact Information</h3>
+      <p><strong>Website:</strong> <a href="http://heatestablishment.tamu.edu">heatestablishment.tamu.edu</a>, <a href="https://www.instagram.com/heattamu/?hl=en">Instagram</a></p>
+      <p><strong>Email:</strong> <a href="mailto:heattamu@gmail.com">heattamu@gmail.com</a></p>
+    </div>
+  </section>
 </main>
+
 

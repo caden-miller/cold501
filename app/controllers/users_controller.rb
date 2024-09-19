@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :delete]
   before_action :set_role
   before_action :authenticate_user!
   before_action :authenticate_admin!, except: [:leaderboard]
@@ -7,38 +8,39 @@ class UsersController < ApplicationController
     @users = User.order(:id)
   end
 
-  def show
-    @user = User.find(params[:id])
+  def show    
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'User updated successfully.'
+      redirect_to @user, notice: 'User was successfully updated.'
     else
-      render('edit', status: :unprocessable_entity)
+      render :edit, status: :unprocessable_entity
     end
   end
 
+
   def delete
-    @user = User.find(params[:id])
   end
 
+
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+    flash[:success] = "User was successfully deleted."
   end
 
   def leaderboard
-    @users = User.order([:id])
+    @users = User.order(:id)
   end
 
   private
+
+  def set_user 
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(
@@ -49,5 +51,4 @@ class UsersController < ApplicationController
       :dues
     )
   end
-    
 end

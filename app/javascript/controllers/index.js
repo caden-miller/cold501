@@ -1,13 +1,9 @@
-import { application } from "./application"
+// Import and register all your controllers from the importmap via controllers/**/*_controller
+import { application } from "controllers/application"
 
-// Dynamically import all controllers
-const modules = import.meta.glob("./**/*_controller.js")
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
 
-for (const path in modules) {
-  modules[path]().then((module) => {
-    const controllerName = path
-      .replace(/^\.\/(.*)_controller\.js$/, "$1")
-      .replace(/\//g, "--")
-    application.register(controllerName, module.default)
-  })
-}
+
+import ModalController from "./modal_controller"
+application.register("modal", ModalController)
