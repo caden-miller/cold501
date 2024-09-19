@@ -39,6 +39,7 @@ class ApplicationController < ActionController::Base
   # set instance variable for role
   def set_role
     @role = current_user&.role
+    puts "Current user role: #{@role}"
   end
 
   def set_navbar_variables

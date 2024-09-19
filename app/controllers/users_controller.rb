@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :delete]
-  before_action :set_role
-  before_action :authenticate_user!
+  before_action :get_user, only: [:show, :edit, :update, :destroy, :delete]
+  before_action :set_role, :set_navbar_variables
+  before_action :authenticate_member!, only: [:leaderboard]
   before_action :authenticate_admin!, except: [:leaderboard]
 
   def index
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user 
+  def get_user 
     @user = User.find(params[:id])
   end
 
