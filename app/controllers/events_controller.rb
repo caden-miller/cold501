@@ -8,6 +8,7 @@ class EventsController < ApplicationController
 
   # Show a single event
   def show
+    @attendance = Attendance.where(event: @event)
   end
 
   # Initialize a new event object
@@ -50,6 +51,9 @@ class EventsController < ApplicationController
     redirect_to events_path, notice: 'Event was successfully deleted.'
   end
 
+  def attendance
+    @attendance = @event.attendances 
+  end
   private
 
   # Find event by ID for show, edit, update, and destroy actions
