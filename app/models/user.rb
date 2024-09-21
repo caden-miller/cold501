@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
   validates :role, inclusion: { in: ROLES }
   validates :full_name, presence: true
+  validates :email, presence: true, uniqueness: true
   has_many :photos 
   
   # ensure devise works with omniauth-google_oauth2

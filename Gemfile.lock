@@ -225,6 +225,10 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.8)
+    phlex (1.10.3)
+    phlex-rails (1.2.1)
+      phlex (~> 1.10.0)
+      railties (>= 6.1, < 8)
     psych (5.1.2)
       stringio
     public_suffix (6.0.1)
@@ -350,6 +354,11 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    ultimate_turbo_modal (1.6.1)
+      phlex-rails (>= 1.0, < 2.0)
+      rails (>= 7)
+      stimulus-rails
+      turbo-rails
     unicode-display_width (2.6.0)
     uri (0.13.1)
     version_gem (1.1.4)
@@ -406,6 +415,7 @@ DEPENDENCIES
   stimulus-rails
   turbo-rails (~> 1.0)
   tzinfo-data
+  ultimate_turbo_modal (~> 1.6)
   web-console
   webdrivers
 

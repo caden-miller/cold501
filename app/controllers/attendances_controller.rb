@@ -4,7 +4,7 @@ class AttendancesController < ApplicationController
   def create
     @attendance = Attendance.find_or_initialize_by(event: @event, user: current_user)
 
-    if @event.passcode == params[:attendance][:passcode] && @event.date.today?
+    if @event.passcode == params[:passcode] && @event.date.today?
       @attendance.update(present: true, checked_in_at: Time.current)
       redirect_to event_path(@event), notice: 'Successfully checked in.'
     else

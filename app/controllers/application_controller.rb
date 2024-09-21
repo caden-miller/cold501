@@ -3,15 +3,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_admin!
     unless @role == 'admin'
-      respond_to do |format|
-        format.html do
-          if turbo_frame_request?
-            render partial: 'shared/unauthorized', status: :unauthorized
-          else
-            redirect_to users_path, alert: 'Access denied.'
-          end
-        end
-      end
+      redirect_to root_path, alert: 'You are not authorized.'
     end
   end
 
