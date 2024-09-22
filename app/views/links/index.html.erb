@@ -1,0 +1,23 @@
+<h1>Links</h1>
+
+<%= link_to 'New Link', new_link_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link_to link.title, link.link, target: '_blank' %></td>
+        <td>
+          <%= link_to 'Edit', edit_link_path(link) %> |
+          <%= link_to 'Delete', link_path(link), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

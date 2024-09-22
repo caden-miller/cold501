@@ -33,7 +33,8 @@ class ApplicationController < ActionController::Base
       { name: 'Leaderboard', path: leaderboard_users_path },
       { name: 'Merchandise', path: merchandises_path },
       { name: 'Idea Board', path: ideas_path },
-      { name: 'Member Management', path: users_path }
+      { name: 'Member Management', path: users_path },
+      { name: 'Links', path: links_path }
     ] || []
 
     links_to_reject = case @role 
