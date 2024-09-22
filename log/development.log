@@ -9232,3 +9232,12 @@ Processing by LinksController#index as TURBO_STREAM
 Completed 200 OK in 124ms (Views: 12.2ms | ActiveRecord: 1.1ms | Allocations: 3191)
 
 
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
