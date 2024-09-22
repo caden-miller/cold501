@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HEAT Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- Application Stylesheet -->
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "turbo", type: "module" %>
+
+    <!-- Controller-Specific Stylesheets -->
+    <% if controller_name == 'merchandises' %>
+      <%= stylesheet_link_tag 'merchandises', media: 'all', 'data-turbo-track': 'reload' %>
+    <% end %>
+
+    <% if controller_name == 'ideas' %>
+      <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
+    <% end %>
+
+
+    <!-- Importmap for JavaScript -->
+    <%= javascript_importmap_tags %>
+
+    <!-- Inline Styles (Consider moving to a CSS file) -->
+    <style>
+      .flash__alert { color: red; }
+      .flash__notice { color: blue; }
+      .flash__success { color: green; }
+    </style>
+  </head>
+
+  <body>
+    <%= render "layouts/navbar" %>
+    <% if flash.any? %>
+      <% flash.each do |key, value| -%>
+        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+      <% end -%>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
