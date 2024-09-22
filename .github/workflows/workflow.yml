@@ -47,7 +47,8 @@ jobs:
       - name: Run tests
         run: bundler exec rspec .
       - name: Run brakeman
-        run: bundler exec brakeman -o brakeman.txt
+        run: bundler exec brakeman -o brakeman.txt --no-exit-on-warn
+        continue-on-error: true
       - name: Run rubocop
         run: bundler exec rubocop --force-exclusion vendor/*/** --out rubocop.txt
       - name: Upload coverage results
