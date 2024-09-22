@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [:show, :edit, :update, :destroy, :delete]
+  before_action :get_user, except: [:index, :leaderboard]
   before_action :set_role, :set_navbar_variables
   before_action :authenticate_member!, only: [:leaderboard]
   before_action :authenticate_admin!, except: [:leaderboard]
@@ -29,7 +29,10 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    flash[:success] = "User was successfully deleted."
+    respond_to do |format|
+      format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
+      format.turbo_stream # Responds to Turbo Stream requests
+    end
   end
 
   def leaderboard
