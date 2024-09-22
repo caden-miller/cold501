@@ -12,21 +12,12 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
-    <%= form.label :date %><br>
-    <%= form.datetime_select :date %>
-  </div>
-
-  <div>
-    <%= form.submit 'Update Event' %>
-  </div>
+<%= render 'form' %>
 <% end %>
 
 <%= link_to 'Back to Events', events_path %>
 <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
+
+
+
+

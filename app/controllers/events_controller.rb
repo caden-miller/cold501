@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, :set_role, :set_navbar_variables
 
   # Display all events
   def index
@@ -8,6 +9,7 @@ class EventsController < ApplicationController
 
   # Show a single event
   def show
+    @attendance = Attendance.where(event: @event)
   end
 
   # Initialize a new event object
@@ -50,6 +52,9 @@ class EventsController < ApplicationController
     redirect_to events_path, notice: 'Event was successfully deleted.'
   end
 
+  def attendance
+    @attendance = @event.attendances 
+  end
   private
 
   # Find event by ID for show, edit, update, and destroy actions
@@ -62,7 +67,7 @@ class EventsController < ApplicationController
 
   # Strong parameters to prevent mass assignment issues
   def event_params
-    params.require(:event).permit(:name, :date)
+    params.require(:event).permit(:name, :date, :passcode)
   end
 end
 

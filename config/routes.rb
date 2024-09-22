@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     member do
       get 'delete'
     end
+    resources :attendances, only: [:create]
   end
 
   root to: 'home#index'
@@ -28,7 +29,6 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :delete
-      get :show
     end
 
     collection do

@@ -1,0 +1,15 @@
+.home {
+
+    &__hero {
+        display: flex;
+        align-self: center;
+        border-radius: var(--border-radius);
+        width: 100%;
+        height: auto;
+
+        @include media(mobile) {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
