@@ -43,11 +43,11 @@ class LinksController < ApplicationController
     def destroy
         @link = Link.find(params[:id])
         if @link.destroy
-            flash[:success] = "Photo was successfully deleted."
-            redirect_to links_path  # Redirect to index or some other page after deletion
+            flash[:success] = "Link was successfully deleted."
+            redirect_to links_path  
           else
-            flash[:error] = "Photo could not be deleted."
-            redirect_to links_path  # Redirect back to the photo's show page if it couldn't be deleted
+            flash[:error] = "Link could not be deleted."
+            redirect_to links_path  
           end
     end
   
