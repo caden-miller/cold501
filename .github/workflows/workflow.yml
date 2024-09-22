@@ -11,6 +11,13 @@ jobs:
   rspec-test:
     name: RSpec
     runs-on: ubuntu-latest
+    env:
+        AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
+        AWS_BUCKET: ${{ env.AWS_BUCKET }}
+        AWS_REGION: ${{ env.AWS_REGION }}
+        AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
+        GOOGLE_OAUTH_CLIENT_ID: ${{ env.GOOGLE_OAUTH_CLIENT_ID }}
+        GOOGLE_OAUTH_CLIENT_SECRET: ${{ env.GOOGLE_OAUTH_CLIENT_SECRET }} 
     services:
       postgres:
         image: postgres:12
@@ -19,12 +26,6 @@ jobs:
         env:
           POSTGRES_USER: ${{ env.POSTGRES_USER }}
           POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
-          AWS_ACCESS_KEY_ID: ${{ env.AWS_ACCESS_KEY_ID }}
-          AWS_BUCKET: ${{ env.AWS_BUCKET }}
-          AWS_REGION: ${{ env.AWS_REGION }}
-          AWS_SECRET_ACCESS_KEY: ${{ env.AWS_SECRET_ACCESS_KEY }}
-          GOOGLE_OAUTH_CLIENT_ID: ${{ env.GOOGLE_OAUTH_CLIENT_ID }}
-          GOOGLE_OAUTH_CLIENT_SECRET: ${{ env.GOOGLE_OAUTH_CLIENT_SECRET }} 
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
