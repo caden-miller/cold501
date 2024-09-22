@@ -13,7 +13,7 @@ User.create!([
   {email: "erikachtermann@tamu",
    full_name: "Erik Achtermann", 
    uid: "2",
-   avatar_url: "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png", 
+   avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJ56OzJMcpYDm3gLwARkJ2P8iBLIXH61GdZgzi_nVLBOJXf8A=s96-c", 
    committee: "Computer Science Club", 
    points: "12", 
    dues: "0", 
