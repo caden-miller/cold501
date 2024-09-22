@@ -19,7 +19,7 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET'], {
     scope: 'userinfo.email, userinfo.profile',
     prompt: 'select_account',
-    redirect_uri: 'http://localhost:3000/users/auth/google_oauth2/callback'
+    redirect_uri: "#{ENV['HOST_URL']}/users/auth/google_oauth2/callback"
   }
 
   # ==> Controller configuration
