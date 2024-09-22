@@ -1,0 +1,24 @@
+<main class="container">  
+  <header class="header">
+    <h1 class="header__title">User Management</h1>
+  </header>
+
+  <table class="users-table">
+    <thead class="users-table__header">
+      <tr class="users-table__row">
+      <th class="users-table__cell users-table__cell--header">Avatar</th>
+        <th class="users-table__cell users-table__cell--header">Full Name</th>
+        <th class="users-table__cell users-table__cell--header">Role</th>
+        <th class="users-table__cell users-table__cell--header">Committee</th>
+        <th class="users-table__cell users-table__cell--header">Points</th>
+        <th class="users-table__cell users-table__cell--header">Dues</th>
+        <th class="users-table__cell users-table__cell--header">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="users-table__body" id="users">
+      <% @users.each do |user| %>
+        <%= render user %>
+      <% end %>
+    </tbody>
+  </table>
+</main>

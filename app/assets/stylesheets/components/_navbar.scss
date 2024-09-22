@@ -1,0 +1,87 @@
+/* app/assets/stylesheets/application.scss */
+
+.navbar {
+  background-color: var(--color-primary);
+  padding: 0.5em 1em;
+  position: sticky;
+  top: 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    border-radius: 100%;
+    max-width: 75px;
+    height: auto;
+
+    @include media(mobile) {
+      max-width: 50px;
+    }
+  }
+
+  &__navigation {
+    position: relative;
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: var(--color-white);
+    cursor: pointer;
+
+    @include media(mobile) {
+      display: block;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--border-radius);
+
+    @include media(mobile) {
+      display: none;
+      flex-direction: column;
+      background-color: var(--color-secondary);
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 200px;
+    }
+
+    &.is-active {
+      display: flex;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin: 0 0.5em;
+    align-self: center;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      margin: 0;
+    }
+  }
+
+  &__link {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+    border-radius: var(--border-radius);
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+  }
+}
+
