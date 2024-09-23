@@ -148,6 +148,9 @@
           null,
           1,
           null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -227,6 +230,8 @@
         "lines": [
           null,
           null,
+          null,
+          1,
           null,
           1,
           null,
@@ -699,6 +704,16 @@
           null
         ]
       },
+      "/home/caden/School/code/cs431/cold501/spec/factories/links.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/home/caden/School/code/cs431/cold501/spec/factories/photos.rb": {
         "lines": [
           1,
@@ -729,6 +744,7 @@
         "lines": [
           1,
           null,
+          1,
           1,
           1,
           1,
@@ -820,6 +836,12 @@
         ]
       },
       "/home/caden/School/code/cs431/cold501/app/helpers/ideas_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/caden/School/code/cs431/cold501/app/helpers/links_helper.rb": {
         "lines": [
           1,
           null
@@ -969,6 +991,25 @@
           null
         ]
       },
+      "/home/caden/School/code/cs431/cold501/spec/helpers/links_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/home/caden/School/code/cs431/cold501/spec/models/attendance_spec.rb": {
         "lines": [
           1,
@@ -984,6 +1025,32 @@
           1,
           1,
           null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/caden/School/code/cs431/cold501/spec/models/link_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/caden/School/code/cs431/cold501/app/models/link.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/caden/School/code/cs431/cold501/spec/requests/links_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
           1,
           null,
           null
@@ -1064,6 +1131,7 @@
           null,
           null,
           null,
+          null,
           15,
           null,
           9,
@@ -1075,7 +1143,7 @@
           4,
           null,
           null,
-          120,
+          135,
           null,
           15,
           15,
@@ -1149,6 +1217,6 @@
         ]
       }
     },
-    "timestamp": 1726984167
+    "timestamp": 1727053278
   }
 }

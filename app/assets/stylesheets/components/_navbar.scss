@@ -17,7 +17,7 @@
     max-width: 75px;
     height: auto;
 
-    @include media(mobile) {
+    @media (max-width: 1170px) {
       max-width: 50px;
     }
   }
@@ -34,7 +34,7 @@
     color: var(--color-white);
     cursor: pointer;
 
-    @include media(mobile) {
+    @media (max-width: 1170px) {
       display: block;
     }
   }
@@ -46,7 +46,7 @@
     padding: 0;
     border-radius: var(--border-radius);
 
-    @include media(mobile) {
+    @media (max-width: 1170px) {
       display: none;
       flex-direction: column;
       background-color: var(--color-secondary);
@@ -78,9 +78,10 @@
     padding: 0.5em 1em;
     display: block;
     border-radius: var(--border-radius);
+    background-color: var(--color-secondary);
 
     &:hover {
-      background-color: var(--color-secondary);
+      background-color: var(--color-secondary-rotate);
     }
   }
 }

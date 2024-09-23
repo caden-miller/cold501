@@ -70,4 +70,17 @@
       color: var(--color-white);
     }
   }
+
+  &--tertiary {
+    color: var(--color-white);
+    background-color: var(--color-tertiary);
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-white);
+      filter: saturate(1.1) brightness(105%);
+    }
+  }
 }

@@ -1,38 +1,39 @@
-<%= form_with(model: user, data: { controller: "form" }) do |form| %>
+<%= simple_form_for user, html: { class: "user form" } do |form| %>
   <% if user.errors.any? %>
-    <div class="modal__error-header">
-      <h3 class="modal__error-title">Please fix the following errors:</h3>
-      <ul class="modal__error-list">
-        <% user.errors.full_messages.each do |message| %>
-          <li class="modal__error-item"><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+    <%= form.error_notification %>
   <% end %>
 
-  <!-- Form fields -->
-  <div class="form-group">
-    <%= form.label :full_name %>
-    <%= form.text_field :full_name, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :role %>
-    <%= form.select :role, User::ROLES, {}, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :committee %>
-    <%= form.text_field :committee, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :dues %>
-    <%= form.number_field :dues, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :points %>
-    <%= form.number_field :points, class: 'form-control' %>
+  <div class="user__info">
+    <%= image_tag user.avatar_url, alt: "User Avatar", class: "user__avatar" %>
+
+    <div class="user__stack">
+      <div class="user__item">
+        <%= form.label :full_name %>
+        <%= form.input :full_name %>
+      </div>
+      <div class="user__item">
+        <%= form.label :role %>
+        <%= form.select :role, User::ROLES, {} %>
+      </div>
+      <div class="user__item">
+        <%= form.label :committee %>
+        <%= form.input :committee %>
+      </div>
+    </div>
+
+    <div class="user__stack">
+      <div class="user__item">
+        <%= form.label :dues %>
+        <%= form.input :dues %>
+      </div>
+      <div class="user__item">
+        <%= form.label :points %>
+        <%= form.input :points %>
+      </div>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="user__actions">
+    <%= form.submit class: 'btn btn--tertiary' %>
   </div>
 <% end %>
