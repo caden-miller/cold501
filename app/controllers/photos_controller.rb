@@ -36,7 +36,7 @@ class PhotosController < ApplicationController
     if @photo.update(photo_params)
       redirect_to @photo, notice: 'Photo was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
   
