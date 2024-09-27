@@ -7,9 +7,10 @@
     padding-bottom: var(--space-s);
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 0px;
     font-size: 14px;
     border-top: 1px solid var(--color-secondary-rotate);
-    margin-top: 20px;
     display: flex;
     flex-wrap: wrap; /* Enable wrapping of items */
     justify-content: space-between;
