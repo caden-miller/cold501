@@ -17,19 +17,19 @@
   </div>
 
   <div>
-    <%= form.label :date %><br>
-    <%= form.datetime_select :date %>
+    <%= form.label :date, "Event Date" %><br>
+    <%= form.datetime_select :date %> 
   </div>
 
-  <% if current_user.admin? %>
-    <div>
-      <%= form.label :passcode, "Attendance Passcode" %><br>
-      <%= form.text_field :passcode %>
-    </div>
+
+  <% if current_user.role == "admin" %>
+  <div>
+    <%= form.label :passcode, "Attendance Passcode" %><br>
+    <%= form.text_field :passcode %>
+  </div>
   <% end %>
 
   <div>
     <%= form.submit %>
   </div>
 <% end %>
-

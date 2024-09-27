@@ -17030,3 +17030,877 @@ ActionView::Template::Error (undefined method `each' for nil:NilClass
   
 app/views/layouts/_navbar.html.erb:13
 app/views/layouts/application.html.erb:33
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (358.0ms)[0m  [1m[35mCREATE DATABASE "test_app_development" ENCODING = 'unicode'[0m
+  [1m[35m (278.2ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (21.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMerches (20240910213808)
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (25.7ms)[0m  [1m[35mCREATE TABLE "merches" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910213808"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20240910213910)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "date" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240910213910"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20240911023215)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911023215"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePhotos (20240911193256)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "image_data" text, "title" character varying, "description" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c79d76afc0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE INDEX "index_photos_on_user_id" ON "photos" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240911193256"]]
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMerchandises (20240912004859)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "merchandises" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240912004859"]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateIdeas (20240912213549)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240912213549"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAnnoucements (20240913160322)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "annoucements" ("id" bigserial primary key, "title" character varying, "description" text, "created_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240913160322"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAttendances (20240918113149)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" bigserial primary key, "event_id" bigint NOT NULL, "user_id" bigint NOT NULL, "present" boolean, "passcode" character varying, "checked_in_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_777eb7170a"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+, CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_event_id" ON "attendances" ("event_id")[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240918113149"]]
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasscodeToEvents (20240918113704)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "events" ADD "passcode" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240918113704"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2024-09-27 02:53:37.957649"], ["updated_at", "2024-09-27 02:53:37.957649"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:31:37 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 139.5ms | Allocations: 724)
+Importmap skipped missing path: ultimate_turbo_modal.js
+Importmap skipped missing path: ultimate_turbo_modal.js
+  Rendered layouts/_navbar.html.erb (Duration: 71.0ms | Allocations: 511)
+  Rendered layout layouts/application.html.erb (Duration: 512.1ms | Allocations: 8025)
+Completed 200 OK in 2409ms (Views: 743.4ms | ActiveRecord: 0.0ms | Allocations: 15253)
+
+
+Started GET "/users/sign_in" for 172.17.0.1 at 2024-09-27 03:31:47 +0000
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 44.2ms | Allocations: 471)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered layout layouts/application.html.erb (Duration: 50.1ms | Allocations: 1546)
+Completed 200 OK in 259ms (Views: 83.3ms | ActiveRecord: 6.8ms | Allocations: 10965)
+
+
+Started POST "/users/auth/google_oauth2" for 172.17.0.1 at 2024-09-27 03:31:50 +0000
+Started GET "/users/auth/google_oauth2/callback?state=45493a475f6581ca16c04aac77196cab801f9758054ea730&code=4%2F0AQlEd8y6prJxE4Z1jnYI0HxHGsJRXQz5Bb_QW95lk-4xJDZ-3AaVfFPzoyvgd5PYIvTOrg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=1&hd=tamu.edu&prompt=consent" for 172.17.0.1 at 2024-09-27 03:31:56 +0000
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"45493a475f6581ca16c04aac77196cab801f9758054ea730", "code"=>"4/0AQlEd8y6prJxE4Z1jnYI0HxHGsJRXQz5Bb_QW95lk-4xJDZ-3AaVfFPzoyvgd5PYIvTOrg", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"1", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jimmy57guandolo@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `from_google'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:16:in `from_google'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jimmy57guandolo@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:16:in `from_google'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "jimmy57guandolo@tamu.edu"], ["full_name", "James Guandolo"], ["uid", "102089774367416708582"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocIKE2JmJvgZRYmIz810MlmTspAphAy9Kq90x_W9ssxS-jib8Q=s96-c"], ["committee", nil], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-09-27 03:31:59.040042"], ["updated_at", "2024-09-27 03:31:59.040042"]]
+  ↳ app/models/user.rb:16:in `from_google'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:16:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 400ms (ActiveRecord: 11.9ms | Allocations: 8293)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:31:59 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 116)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 352)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1235)
+Completed 200 OK in 244ms (Views: 7.9ms | ActiveRecord: 1.4ms | Allocations: 2898)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 03:32:03 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 86.3ms | Allocations: 5920)
+  Rendered events/index.html.erb within layouts/application (Duration: 237.0ms | Allocations: 7778)
+  Rendered layout layouts/application.html.erb (Duration: 239.2ms | Allocations: 7863)
+Completed 500 Internal Server Error in 994ms (ActiveRecord: 2.1ms | Allocations: 13373)
+
+
+  
+ActionView::Template::Error (undefined method `name' for Mon, 26 Aug 2024:Date
+
+    '.freeze;@output_buffer.append=( link_to event.name, event_path(event) );@output_buffer.safe_append='<br>
+                                                  ^^^^^):
+    23:         <tr>
+    24:           <% week.each do |day| %>
+    25:             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
+    26:               <% instance_exec(day, calendar.sorted_events_for(day), &passed_block) %>
+    27:             <% end %>
+    28:           <% end %>
+    29:         </tr>
+  
+app/views/events/index.html.erb:7
+app/views/events/index.html.erb:6
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:50:41 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:50:41 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:50:41 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:50:41 +0000
+Started GET "/" for 172.17.0.1 at 2024-09-27 03:50:41 +0000
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 11.8ms | Allocations: 360)
+  Rendered home/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 445)
+  Rendering layout layouts/application.html.erb
+  Rendered layouts/_navbar.html.erb (Duration: 13.5ms | Allocations: 1450)
+  Rendered layouts/_navbar.html.erb (Duration: 12.8ms | Allocations: 1102)
+  Rendering home/index.html.erb within layouts/application
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 5480)
+  Rendered layout layouts/application.html.erb (Duration: 60.1ms | Allocations: 5892)
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+Completed 200 OK in 274ms (Views: 78.8ms | ActiveRecord: 17.7ms | Allocations: 13857)
+
+
+Completed 200 OK in 229ms (Views: 83.6ms | ActiveRecord: 0.0ms | Allocations: 13463)
+
+
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 3222)
+Completed 200 OK in 138ms (Views: 24.2ms | ActiveRecord: 0.0ms | Allocations: 13578)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1145)
+Completed 200 OK in 209ms (Views: 7.8ms | ActiveRecord: 28.7ms | Allocations: 18855)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1143)
+Completed 200 OK in 128ms (Views: 5.4ms | ActiveRecord: 0.6ms | Allocations: 15185)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-27 16:01:38 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 102.5ms | Allocations: 615)
+Importmap skipped missing path: ultimate_turbo_modal.js
+Importmap skipped missing path: ultimate_turbo_modal.js
+  Rendered layouts/_navbar.html.erb (Duration: 66.1ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 475.7ms | Allocations: 7977)
+Completed 200 OK in 1583ms (Views: 612.7ms | ActiveRecord: 16.2ms | Allocations: 22851)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:01:49 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 13.1ms | Allocations: 10102)
+  Rendered events/index.html.erb within layouts/application (Duration: 183.5ms | Allocations: 12080)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 353)
+  Rendered layout layouts/application.html.erb (Duration: 188.5ms | Allocations: 13312)
+Completed 200 OK in 531ms (Views: 201.0ms | ActiveRecord: 3.1ms | Allocations: 16154)
+
+
+Started GET "/events?start_date=2024-09-27" for 172.17.0.1 at 2024-09-27 16:02:04 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2024-09-27"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 15.2ms | Allocations: 10866)
+  Rendered events/index.html.erb within layouts/application (Duration: 26.4ms | Allocations: 11828)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 12900)
+Completed 200 OK in 246ms (Views: 35.2ms | ActiveRecord: 2.9ms | Allocations: 14435)
+
+
+Started GET "/events?start_date=2024-10-07" for 172.17.0.1 at 2024-09-27 16:02:07 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2024-10-07"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.2ms | Allocations: 8727)
+  Rendered events/index.html.erb within layouts/application (Duration: 37.8ms | Allocations: 9664)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 46.7ms | Allocations: 10736)
+Completed 200 OK in 285ms (Views: 50.3ms | ActiveRecord: 1.5ms | Allocations: 12115)
+
+
+Started GET "/events?start_date=2024-09-29" for 172.17.0.1 at 2024-09-27 16:02:13 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2024-09-29"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 19.8ms | Allocations: 10866)
+  Rendered events/index.html.erb within layouts/application (Duration: 27.2ms | Allocations: 11810)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 12881)
+Completed 200 OK in 258ms (Views: 39.1ms | ActiveRecord: 1.7ms | Allocations: 14275)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:02:16 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 153.4ms | Allocations: 11012)
+  Rendered events/new.html.erb within layouts/application (Duration: 687.4ms | Allocations: 17466)
+  Rendered layout layouts/application.html.erb (Duration: 689.4ms | Allocations: 17547)
+Completed 500 Internal Server Error in 889ms (ActiveRecord: 6.4ms | Allocations: 22073)
+
+
+  
+ActionView::Template::Error (undefined method `admin?' for #<User id: 1, email: "jimmy57guandolo@tamu.edu", full_name: "James Guandolo", uid: "102089774367416708582", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocIKE2JmJv...", committee: nil, points: nil, dues: nil, role: "admin", created_at: "2024-09-27 03:31:59.040042000 +0000", updated_at: "2024-09-27 03:31:59.040042000 +0000">):
+    21:     <%= form.datetime_select :date %>
+    22:   </div>
+    23: 
+    24:   <% if current_user.admin? %>
+    25:     <div>
+    26:       <%= form.label :passcode, "Attendance Passcode" %><br>
+    27:       <%= form.text_field :passcode %>
+  
+app/views/events/_form.html.erb:24
+app/views/events/_form.html.erb:1
+app/views/events/new.html.erb:32
+Started GET "/events?start_date=2024-09-29" for 172.17.0.1 at 2024-09-27 16:03:50 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2024-09-29"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 21.8ms | Allocations: 11353)
+  Rendered events/index.html.erb within layouts/application (Duration: 192.3ms | Allocations: 13123)
+  Rendered layouts/_navbar.html.erb (Duration: 74.1ms | Allocations: 601)
+  Rendered layout layouts/application.html.erb (Duration: 401.3ms | Allocations: 15050)
+Completed 200 OK in 603ms (Views: 427.8ms | ActiveRecord: 4.0ms | Allocations: 17312)
+
+
+Started GET "/events?start_date=2024-10-07" for 172.17.0.1 at 2024-09-27 16:03:56 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2024-10-07"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.0ms | Allocations: 8722)
+  Rendered events/index.html.erb within layouts/application (Duration: 26.0ms | Allocations: 9658)
+  Rendered layouts/_navbar.html.erb (Duration: 2.0ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 10729)
+Completed 200 OK in 220ms (Views: 38.6ms | ActiveRecord: 3.2ms | Allocations: 12239)
+
+
+Started GET "/events?start_date=2024-09-29" for 172.17.0.1 at 2024-09-27 16:03:58 +0000
+Processing by EventsController#index as HTML
+  Parameters: {"start_date"=>"2024-09-29"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 33.6ms | Allocations: 10866)
+  Rendered events/index.html.erb within layouts/application (Duration: 39.6ms | Allocations: 11810)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 44.0ms | Allocations: 12881)
+Completed 200 OK in 299ms (Views: 46.2ms | ActiveRecord: 2.1ms | Allocations: 14246)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:04:02 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 90.1ms | Allocations: 4759)
+  Rendered events/new.html.erb within layouts/application (Duration: 208.1ms | Allocations: 9539)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 213.6ms | Allocations: 10618)
+Completed 200 OK in 385ms (Views: 215.9ms | ActiveRecord: 0.6ms | Allocations: 12053)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:05:16 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"1st Meeting", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"27", "date(4i)"=>"16", "date(5i)"=>"04", "passcode"=>"Hi"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:27:in `create'
+  [1m[36mEvent Create (4.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "created_at", "updated_at", "passcode") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "1st Meeting"], ["date", "2024-09-27 16:04:00"], ["created_at", "2024-09-27 16:05:16.677229"], ["updated_at", "2024-09-27 16:05:16.677229"], ["passcode", "Hi"]]
+  ↳ app/controllers/events_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:27:in `create'
+Redirected to http://localhost:3000/events/1
+Completed 302 Found in 189ms (ActiveRecord: 8.5ms | Allocations: 4935)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-27 16:05:17 +0000
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:62:in `set_event'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mAttendance Load (2.5ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:32
+  Rendered events/show.html.erb within layouts/application (Duration: 190.1ms | Allocations: 1580)
+  Rendered layouts/_navbar.html.erb (Duration: 23.2ms | Allocations: 609)
+  Rendered layout layouts/application.html.erb (Duration: 264.0ms | Allocations: 3581)
+Completed 200 OK in 888ms (Views: 300.8ms | ActiveRecord: 6.7ms | Allocations: 9793)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:05:27 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered events/index.html.erb within layouts/application (Duration: 59.4ms | Allocations: 7600)
+  Rendered layout layouts/application.html.erb (Duration: 61.8ms | Allocations: 7679)
+Completed 500 Internal Server Error in 336ms (ActiveRecord: 1.7ms | Allocations: 9191)
+
+
+  
+ActionView::Template::Error (undefined method `start_time' for #<Event id: 1, name: "1st Meeting", date: "2024-09-27 16:04:00.000000000 +0000", created_at: "2024-09-27 16:05:16.677229000 +0000", updated_at: "2024-09-27 16:05:16.677229000 +0000", passcode: "Hi">):
+    3: <%= link_to 'Create New Event', new_event_path %>
+    4: 
+    5: <ul>
+    6:   <%= month_calendar(events: @events) do |date, events| %>
+    7:     <div>
+    8:       <%= date.day %> <!-- Display the date -->
+    9:       <% events.each do |event| %> <!-- Loop through each event for this date -->
+  
+app/views/events/index.html.erb:6
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddStartTimeToEvents (20240927161218)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mALTER TABLE "events" ADD "start_time" timestamp(6)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20240927161218"]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, and [36mGOOGLE_OAUTH_CLIENT_SECRET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-09-27 16:17:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 112.7ms | Allocations: 615)
+Importmap skipped missing path: ultimate_turbo_modal.js
+Importmap skipped missing path: ultimate_turbo_modal.js
+  Rendered layouts/_navbar.html.erb (Duration: 30.5ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 418.5ms | Allocations: 7977)
+Completed 200 OK in 1602ms (Views: 566.1ms | ActiveRecord: 9.4ms | Allocations: 22829)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:17:34 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 13.1ms | Allocations: 10101)
+  Rendered events/index.html.erb within layouts/application (Duration: 193.0ms | Allocations: 15865)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 350)
+  Rendered layout layouts/application.html.erb (Duration: 199.0ms | Allocations: 17093)
+Completed 200 OK in 578ms (Views: 208.5ms | ActiveRecord: 8.5ms | Allocations: 19918)
+
+
+Started GET "/events/1" for 172.17.0.1 at 2024-09-27 16:17:45 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:62:in `set_event'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mAttendance Load (0.9ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 1]]
+  ↳ app/views/events/show.html.erb:32
+  Rendered events/show.html.erb within layouts/application (Duration: 32.0ms | Allocations: 1514)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 346)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 2651)
+Completed 200 OK in 527ms (Views: 41.3ms | ActiveRecord: 6.0ms | Allocations: 8014)
+
+
+Started GET "/events/1/delete" for 172.17.0.1 at 2024-09-27 16:17:48 +0000
+Processing by EventsController#delete as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:45:in `delete'
+  Rendering layout layouts/application.html.erb
+  Rendering events/delete.html.erb within layouts/application
+  Rendered events/delete.html.erb within layouts/application (Duration: 84.2ms | Allocations: 748)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 89.6ms | Allocations: 1821)
+Completed 200 OK in 335ms (Views: 92.9ms | ActiveRecord: 1.9ms | Allocations: 4428)
+
+
+Started DELETE "/events/1" for 172.17.0.1 at 2024-09-27 16:17:51 +0000
+Processing by EventsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Delete Event", "id"=>"1"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:62:in `set_event'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:50:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:51:in `destroy'
+  [1m[36mEvent Destroy (4.8ms)[0m  [1m[31mDELETE FROM "events" WHERE "events"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/events_controller.rb:51:in `destroy'
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:51:in `destroy'
+Redirected to http://localhost:3000/events
+Completed 302 Found in 380ms (ActiveRecord: 12.4ms | Allocations: 4293)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:17:53 +0000
+Processing by EventsController#index as TURBO_STREAM
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.3ms | Allocations: 8581)
+  Rendered events/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 9599)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 10715)
+Completed 200 OK in 262ms (Views: 27.3ms | ActiveRecord: 2.1ms | Allocations: 12209)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:17:58 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 26.6ms | Allocations: 4888)
+  Rendered events/new.html.erb within layouts/application (Duration: 359.8ms | Allocations: 13322)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 365.8ms | Allocations: 14452)
+Completed 200 OK in 618ms (Views: 368.5ms | ActiveRecord: 0.8ms | Allocations: 15969)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:19:44 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"2nd Meeting", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"18", "passcode"=>"lol"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+[31mUnpermitted parameters: :start_time(1i), :start_time(2i), :start_time(3i), :start_time(4i), :start_time(5i). Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f3038bf81e0>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"2nd Meeting", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"18", "passcode"=>"lol"}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 74.1ms | Allocations: 4692)
+  Rendered events/new.html.erb within layouts/application (Duration: 83.8ms | Allocations: 9812)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 89.0ms | Allocations: 10884)
+Completed 200 OK in 292ms (Views: 91.4ms | ActiveRecord: 0.8ms | Allocations: 13450)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:19:49 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"2nd Meeting", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"18", "passcode"=>"lol"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+[31mUnpermitted parameters: :start_time(1i), :start_time(2i), :start_time(3i), :start_time(4i), :start_time(5i). Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f303b42eec0>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"2nd Meeting", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"18", "passcode"=>"lol"}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 12.1ms | Allocations: 4690)
+  Rendered events/new.html.erb within layouts/application (Duration: 18.4ms | Allocations: 9718)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 10789)
+Completed 200 OK in 153ms (Views: 22.8ms | ActiveRecord: 0.6ms | Allocations: 12917)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:19:53 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 11.1ms | Allocations: 8544)
+  Rendered events/index.html.erb within layouts/application (Duration: 17.1ms | Allocations: 9477)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 10549)
+Completed 200 OK in 217ms (Views: 23.6ms | ActiveRecord: 1.7ms | Allocations: 11913)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-27 16:19:58 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 339)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1142)
+Completed 200 OK in 258ms (Views: 8.1ms | ActiveRecord: 1.3ms | Allocations: 2510)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:20:00 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.8ms | Allocations: 8513)
+  Rendered events/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 9423)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 21.6ms | Allocations: 10494)
+Completed 200 OK in 188ms (Views: 22.7ms | ActiveRecord: 1.4ms | Allocations: 11891)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:20:03 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.6ms | Allocations: 4333)
+  Rendered events/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 8512)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 9591)
+Completed 200 OK in 296ms (Views: 37.6ms | ActiveRecord: 1.2ms | Allocations: 10975)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:20:05 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"27", "start_time(4i)"=>"16", "start_time(5i)"=>"20", "passcode"=>""}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+[31mUnpermitted parameters: :start_time(1i), :start_time(2i), :start_time(3i), :start_time(4i), :start_time(5i). Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f3039108ef0>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"27", "start_time(4i)"=>"16", "start_time(5i)"=>"20", "passcode"=>""}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 13.5ms | Allocations: 5531)
+  Rendered events/new.html.erb within layouts/application (Duration: 22.6ms | Allocations: 11423)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 12494)
+Completed 200 OK in 310ms (Views: 35.5ms | ActiveRecord: 0.7ms | Allocations: 14624)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:20:20 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"1st Meeting", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"20", "passcode"=>"Meet"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+[31mUnpermitted parameters: :start_time(1i), :start_time(2i), :start_time(3i), :start_time(4i), :start_time(5i). Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f3039042750>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"1st Meeting", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"20", "passcode"=>"Meet"}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.6ms | Allocations: 4690)
+  Rendered events/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 9718)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 10789)
+Completed 200 OK in 227ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 12927)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:20:24 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 9.1ms | Allocations: 8510)
+  Rendered events/index.html.erb within layouts/application (Duration: 20.7ms | Allocations: 9420)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 10491)
+Completed 200 OK in 243ms (Views: 28.6ms | ActiveRecord: 1.8ms | Allocations: 11869)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:21:05 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 4.4ms | Allocations: 4333)
+  Rendered events/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 8512)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 9591)
+Completed 200 OK in 259ms (Views: 20.2ms | ActiveRecord: 0.8ms | Allocations: 10974)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:21:06 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 14.7ms | Allocations: 8508)
+  Rendered events/index.html.erb within layouts/application (Duration: 26.0ms | Allocations: 9418)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 10489)
+Completed 200 OK in 375ms (Views: 42.5ms | ActiveRecord: 1.9ms | Allocations: 11869)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:21:09 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.8ms | Allocations: 4333)
+  Rendered events/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 8512)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 9591)
+Completed 200 OK in 130ms (Views: 14.7ms | ActiveRecord: 0.6ms | Allocations: 10983)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:21:18 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"aaa", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"21", "passcode"=>"aaa"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+[31mUnpermitted parameters: :start_time(1i), :start_time(2i), :start_time(3i), :start_time(4i), :start_time(5i). Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f3038d13d68>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"aaa", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"21", "passcode"=>"aaa"}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 3.6ms | Allocations: 4689)
+  Rendered events/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 9715)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 10786)
+Completed 200 OK in 179ms (Views: 14.6ms | ActiveRecord: 0.7ms | Allocations: 12934)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:22:55 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"aaa", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"21", "passcode"=>"aaa"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+[31mUnpermitted parameters: :start_time(1i), :start_time(2i), :start_time(3i), :start_time(4i), :start_time(5i). Context: { controller: EventsController, action: create, request: #<ActionDispatch::Request:0x00007f3038c5ae08>, params: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"aaa", "start_time(1i)"=>"2024", "start_time(2i)"=>"9", "start_time(3i)"=>"28", "start_time(4i)"=>"16", "start_time(5i)"=>"21", "passcode"=>"aaa"}, "commit"=>"Create Event", "controller"=>"events", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.4ms | Allocations: 4689)
+  Rendered events/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 9715)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 10786)
+Completed 200 OK in 254ms (Views: 25.1ms | ActiveRecord: 1.0ms | Allocations: 12910)
+
+
+Started GET "/" for 172.17.0.1 at 2024-09-27 16:35:10 +0000
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 57.8ms | Allocations: 337)
+  Rendered layouts/_navbar.html.erb (Duration: 73.3ms | Allocations: 626)
+  Rendered layout layouts/application.html.erb (Duration: 259.4ms | Allocations: 2257)
+Completed 200 OK in 613ms (Views: 301.4ms | ActiveRecord: 17.9ms | Allocations: 7411)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:37:11 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:37:15 +0000
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 10.7ms | Allocations: 9864)
+  Rendered events/index.html.erb within layouts/application (Duration: 170.2ms | Allocations: 12174)
+Importmap skipped missing path: ultimate_turbo_modal.js
+Importmap skipped missing path: ultimate_turbo_modal.js
+  Rendered layouts/_navbar.html.erb (Duration: 20.6ms | Allocations: 601)
+  Rendered layout layouts/application.html.erb (Duration: 435.1ms | Allocations: 19232)
+Completed 200 OK in 845ms (Views: 467.5ms | ActiveRecord: 11.2ms | Allocations: 25761)
+
+
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 38.0ms | Allocations: 8483)
+  Rendered events/new.html.erb within layouts/application (Duration: 115.5ms | Allocations: 8826)
+Importmap skipped missing path: ultimate_turbo_modal.js
+Importmap skipped missing path: ultimate_turbo_modal.js
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 357)
+  Rendered layout layouts/application.html.erb (Duration: 552.5ms | Allocations: 15175)
+Completed 200 OK in 888ms (Views: 557.5ms | ActiveRecord: 9.2ms | Allocations: 22988)
+
+
+Started GET "/events/new" for 172.17.0.1 at 2024-09-27 16:38:11 +0000
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 96.1ms | Allocations: 4859)
+  Rendered events/new.html.erb within layouts/application (Duration: 228.3ms | Allocations: 5185)
+Importmap skipped missing path: ultimate_turbo_modal.js
+Importmap skipped missing path: ultimate_turbo_modal.js
+  Rendered layouts/_navbar.html.erb (Duration: 27.2ms | Allocations: 605)
+  Rendered layout layouts/application.html.erb (Duration: 594.3ms | Allocations: 12250)
+Completed 200 OK in 1048ms (Views: 634.2ms | ActiveRecord: 13.3ms | Allocations: 20489)
+
+
+Started POST "/events" for 172.17.0.1 at 2024-09-27 16:38:32 +0000
+Processing by EventsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "event"=>{"name"=>"aaa", "date(1i)"=>"2024", "date(2i)"=>"9", "date(3i)"=>"28", "date(4i)"=>"16", "date(5i)"=>"38", "passcode"=>"aaa"}, "commit"=>"Create Event"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/events_controller.rb:27:in `create'
+  [1m[36mEvent Create (1.9ms)[0m  [1m[32mINSERT INTO "events" ("name", "date", "created_at", "updated_at", "passcode", "start_time") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "aaa"], ["date", "2024-09-28 16:38:00"], ["created_at", "2024-09-27 16:38:33.162300"], ["updated_at", "2024-09-27 16:38:33.162300"], ["passcode", "aaa"], ["start_time", nil]]
+  ↳ app/controllers/events_controller.rb:27:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/events_controller.rb:27:in `create'
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 344ms (ActiveRecord: 9.1ms | Allocations: 5091)
+
+
+Started GET "/events/2" for 172.17.0.1 at 2024-09-27 16:38:33 +0000
+Processing by EventsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:62:in `set_event'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mAttendance Load (1.2ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."event_id" = $1[0m  [["event_id", 2]]
+  ↳ app/views/events/show.html.erb:32
+  Rendered events/show.html.erb within layouts/application (Duration: 176.2ms | Allocations: 1488)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 346)
+  Rendered layout layouts/application.html.erb (Duration: 181.8ms | Allocations: 2678)
+Completed 200 OK in 526ms (Views: 184.4ms | ActiveRecord: 5.1ms | Allocations: 7598)
+
+
+Started GET "/events" for 172.17.0.1 at 2024-09-27 16:38:38 +0000
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:18:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/events/index.html.erb:6
+  Rendered /usr/local/bundle/gems/simple_calendar-3.0.4/app/views/simple_calendar/_month_calendar.html.erb (Duration: 14.7ms | Allocations: 9853)
+  Rendered events/index.html.erb within layouts/application (Duration: 55.4ms | Allocations: 11597)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 63.2ms | Allocations: 12668)
+Completed 200 OK in 421ms (Views: 66.0ms | ActiveRecord: 1.8ms | Allocations: 14177)
+
+

@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :merchandises
   resources :merch
 
-
   resources :events do   # Generates all routes for events (index, show, new, edit, create, update, destroy)
     member do
       get 'delete'

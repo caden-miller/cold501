@@ -3,13 +3,24 @@
 <%= link_to 'Create New Event', new_event_path %>
 
 <ul>
+  <%= month_calendar(events: @events) do |date, events| %>
+    <div>
+      <%= date.day %> <!-- Display the date -->
+      <% events.each do |event| %> <!-- Loop through each event for this date -->
+        <%= link_to event.name, event_path(event) %><br>
+        <%= event.start_time.strftime("%B %d, %Y %l:%M %p") %> - <%= event.end_time.strftime("%l:%M %p") %>
+      <% end %>
+    </div>
+  <% end %>
+
   <% @events.each do |event| %>
     <li>
       <%= link_to event.name, event_path(event) %>
-      (<%= event.date.strftime("%B %d, %Y") %>)
+      <%= event.date.strftime("%B %d, %Y %l:%M %p") %>
       <%= link_to 'Edit', edit_event_path(event) %> |
       <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
+  
 </ul>
 <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
