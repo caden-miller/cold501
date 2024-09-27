@@ -1,0 +1,106 @@
+.footer {
+    background-color: var(--color-secondary);
+    width: 100%;
+    padding-right: var(--space-xs);
+    padding-left: var(--space-xs);
+    padding-top: var(--space-s);
+    padding-bottom: var(--space-s);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+    border-top: 1px solid var(--color-secondary-rotate);
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping of items */
+    justify-content: space-between;
+    align-items: center; /* Align items to the start of the flex container */
+
+    /* Individual container styling */
+    &__logo-container,
+    &__git,
+    &__instagram-container {
+        flex: 1 1 33%; /* Make sure each section can grow and take 100% width on small screens */
+    }
+
+    &__links-container {
+        flex: 0 0 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .footer__link:not(:last-child)::after {
+        content: ""; /* Required to show the pseudo-element */
+        display: inline-block;
+        width: 1px;
+        height: 20px; /* Adjust the height as needed */
+        background-color: var(--color-tertiary); /* Line color */
+        margin-left: 10px; /* Space between the link and the line */
+        margin-right: 10px; /* Space between the line and the next link */
+        vertical-align: middle; /* Align the line with the text */
+    }
+
+    &__logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    &__instagram-container {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    
+
+    &__logo {
+        border-radius: 100%;
+        max-width: 75px;
+        height: auto;
+
+        @include media(mobile) {
+          max-width: 50px;
+        }
+    }
+
+    &___link {
+        color: var(--color-tertiary);
+        text-decoration: none;
+        margin: 0 10px;
+        width: auto;
+    }
+
+    &__link:hover {
+        color: var(--color-glint);
+    }
+
+    &__git {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    &__text {
+        margin: 0;
+        color: var(--color-primary);
+    }
+
+    &__copyright {
+        width: 100%;
+        text-align: center; /* Center the copyright text */
+        margin-top: 20px; /* Add space from the elements above */
+        border-top: 1px solid var(--color-secondary-rotate);
+        color: var(--color-primary-rotate);
+        padding-top: 10px; /* Padding for visual spacing */
+        order: 2; /* Place it at the end in flex order */
+    }
+
+    @include media(tabletAndUp) {
+        padding-right: 20vw;
+        padding-left: 20vw;
+    }
+}

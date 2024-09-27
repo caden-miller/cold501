@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_user, :set_role, :set_navbar_variables
+  before_action :set_user, :set_role, :set_navbar_variables, :set_links
   
   def authenticate_admin!
     unless @role == 'admin'
@@ -27,13 +27,12 @@ class ApplicationController < ActionController::Base
 
   def set_navbar_variables
     @nav_links = [
-      { name: 'Home', path: root_path },
+      { name: 'Photos', path: photos_path },
       { name: 'Events', path: events_path },
-      { name: 'Photo Gallery', path: photos_path },
       { name: 'Leaderboard', path: leaderboard_users_path },
-      { name: 'Merchandise', path: merchandises_path },
-      { name: 'Idea Board', path: ideas_path },
-      { name: 'Member Management', path: users_path },
+      { name: 'Merch', path: merchandises_path },
+      { name: 'Ideas', path: ideas_path },
+      { name: 'Members', path: users_path },
       { name: 'Links', path: links_path }
     ] || []
 
@@ -41,11 +40,11 @@ class ApplicationController < ActionController::Base
                       when 'admin'
                         []
                       when 'member'
-                        ['Member Management']
+                        ['Members']
                       when 'officer'
-                        ['Member Management']
+                        ['Members']
                       else
-                        ['Events', 'Leaderboard', 'Merchandise', 'Idea Board', 'Member Management']
+                        ['Events', 'Leaderboard', 'Merch', 'Idea Board', 'Members']
                       end
 
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
@@ -57,4 +56,7 @@ class ApplicationController < ActionController::Base
                  end
   end
 
+  def set_links
+    @links = Link.all
+  end
 end

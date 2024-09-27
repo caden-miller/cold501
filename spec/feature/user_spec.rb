@@ -108,3 +108,4 @@ RSpec.feature "View Users on Leaderboard", type: :feature do
     expect(page).to have_content('You are not authorized, tell your higher-ups to make you a member')
   end
 end
+

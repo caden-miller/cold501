@@ -20,3 +20,19 @@ RSpec.feature "View Nav", type: :feature do
     expect(page).to_not have_content('Member Management')
   end
 end
+
+RSpec.feature "Login vs Logout", type: :feature do
+  let!(:member) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'member', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
+
+  scenario "from non-user to member" do
+    visit root_path
+
+    expect(page).to have_content('Login')
+
+    login_as(member, scope: :user)
+
+    visit root_path
+
+    expect(page).to have_content('Logout')
+  end
+end
