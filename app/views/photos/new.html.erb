@@ -1,9 +1,16 @@
-<h1>New photo</h1>
+<%= turbo_frame_tag "modal" do %>
+  <div class= "modal">
+    <h1>New photo</h1>
 
-<%= render "form", photo: @photo %>
+    <%= render "form", photo: @photo %>
 
-<br>
+    <br>
 
-<div>
-  <%= link_to "Back to photos", photos_path %>
-</div>
+    <div>
+      <%= link_to "Cancel", "#", data: {
+        controller: "modals", 
+        action: "modals#close"
+      }, class: "modal__cancel-button" %>
+    </div>
+  </div>
+<% end %>

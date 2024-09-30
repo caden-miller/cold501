@@ -7,4 +7,4 @@ application.register("navbar", NavbarController)
 import ModalsController from "./modals_controller"
 application.register("modals", ModalsController)
 
-
+;

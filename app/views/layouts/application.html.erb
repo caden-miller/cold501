@@ -31,6 +31,7 @@
   </head>
 
   <body>
+    <%= turbo_frame_tag "modal" %>
     <%= render "layouts/navbar" %>
     <% if flash.any? %>
       <% flash.each do |key, value| -%>
