@@ -20,7 +20,7 @@
         <td><%= image_tag photo.image_url if photo.image %></td>
         <td>
           <%= link_to 'Show', photo %>
-          <%= link_to 'Edit', edit_photo_path(photo) %>
+          <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: "modal" } %>
           <%= link_to 'Delete', photo_path(photo), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
         </td>
       </tr>

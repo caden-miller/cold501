@@ -13,6 +13,6 @@
   <%= image_tag @photo.image_url if @photo.image %>
 </p>
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Edit', edit_photo_path(@photo), data: { turbo_frame: "modal" } %> |
 <%= link_to 'Back', photos_path %>
 
