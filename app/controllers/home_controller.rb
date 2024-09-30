@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class HomeController < ApplicationController
-  def index
+  before_action :set_user, :set_role, :set_navbar_variables
+  def index;
   end
 end

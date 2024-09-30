@@ -1,14 +1,19 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   before_action :set_user, :set_role, :set_navbar_variables, :set_links
-  
+
   def authenticate_admin!
-    unless @role == 'admin'
-      redirect_to root_path, alert: 'You are not authorized.'
-    end
+    return if @role == 'admin'
+
+    redirect_to root_path, alert: 'You are not authorized.'
   end
 
   def authenticate_member!
-    redirect_to root_path, alert: 'You are not authorized, tell your higher-ups to make you a member' unless @role == 'admin' || @role == 'member' ||  @role == 'officer'
+    return if @role == 'admin' || @role == 'member' || @role == 'officer'
+
+    redirect_to root_path,
+                alert: 'You are not authorized, tell your higher-ups to make you a member'
   end
 
   private
@@ -18,11 +23,11 @@ class ApplicationController < ActionController::Base
     @user = current_user
     set_role if @user
   end
-  
 
   # set instance variable for role
   def set_role
     @role ||= current_user&.role || 'guest'
+    puts @role
   end
 
   def set_navbar_variables
@@ -36,7 +41,7 @@ class ApplicationController < ActionController::Base
       { name: 'Links', path: links_path }
     ] || []
 
-    links_to_reject = case @role 
+    links_to_reject = case @role
                       when 'admin'
                         []
                       when 'member'
@@ -48,7 +53,7 @@ class ApplicationController < ActionController::Base
                       end
 
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
-  
+
     @auth_link = if current_user
                    { name: 'Logout', path: destroy_user_session_path, method: :delete }
                  else

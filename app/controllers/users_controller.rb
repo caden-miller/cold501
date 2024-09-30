@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :get_user, except: [:index, :leaderboard]
+  before_action :get_user, except: %i[index leaderboard]
   before_action :set_role, :set_navbar_variables
   before_action :authenticate_member!, only: [:leaderboard]
   before_action :authenticate_admin!, except: [:leaderboard]
@@ -8,11 +10,9 @@ class UsersController < ApplicationController
     @users = User.order(:id)
   end
 
-  def show    
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @user.update(user_params)
@@ -22,10 +22,7 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def delete
-  end
-
+  def delete; end
 
   def destroy
     @user.destroy
@@ -41,7 +38,7 @@ class UsersController < ApplicationController
 
   private
 
-  def get_user 
+  def get_user
     @user = User.find(params[:id])
   end
 
