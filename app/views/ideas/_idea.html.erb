@@ -1,14 +1,13 @@
 <div id="<%= dom_id idea %>">
-  <p>
-    <strong>Title:</strong>
+  <p class="item-title">
     <%= idea.title %>
   </p>
 
-  <p>
-    <strong>Description:</strong>
+  <p class="idea-desc">
     <%= idea.description %>
   </p>
 
+  <div class="idea-footer">
   <p>
     <strong>Created by:</strong>
     <%= idea.created_by %>
@@ -18,5 +17,6 @@
     <strong>Created at:</strong>
     <%= idea.created_at %>
   </p>
+  </div>
 
 </div>
