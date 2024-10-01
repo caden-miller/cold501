@@ -5,8 +5,13 @@
 <ul>
   <%= month_calendar(events: @events) do |date, events| %>
     <div>
-      <%= date.day %> <!-- Display the date -->
-      <% events.each do |event| %> <!-- Loop through each event for this date -->
+      <% if events.any? %> 
+        <span class="event-date"><%= date.day %></span> 
+      <% else %>
+        <%= date.day %> 
+      <% end %>
+      
+      <% events.each do |event| %> 
         <%= link_to event.name, event_path(event) %><br>
         <%= event.start_time.strftime("%B %d, %Y %l:%M %p") %> - <%= event.end_time.strftime("%l:%M %p") %>
       <% end %>
