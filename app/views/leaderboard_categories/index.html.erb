@@ -8,7 +8,6 @@
           <th>Points</th>
         </tr>
       </thead>
-      <div class="page-layout__leaderboard">
       <tbody>
         <% @users.each do |user| %>
           <% category = LeaderboardCategory.category_for_user(user.points) %>
@@ -18,10 +17,8 @@
           </tr>
         <% end %>
       </tbody>
-      </div>
     </table>
   </div>
-  
 
   <!-- Categories table -->
   <div class="page-layout__categories">
@@ -32,7 +29,6 @@
           <th>Category Name</th>
           <th>Minimum Points</th>
           <th>Color</th>
-          <th colspan="3"></th>
         </tr>
       </thead>
       <tbody>
@@ -40,11 +36,7 @@
           <tr>
             <td><%= category.category_name %></td>
             <td><%= category.min_points %></td>
-            <!-- Color column with background color but without displaying hex text -->
             <td class="color-example" style="background-color: <%= category.color %>"></td>
-            <td><%= link_to 'Show', leaderboard_category_path(category), class: 'btn btn-primary' %></td>
-            <td><%= link_to 'Edit', edit_leaderboard_category_path(category), class: 'btn btn-primary' %></td>
-            <td><%= link_to 'Delete', leaderboard_category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary' %></td>
           </tr>
         <% end %>
       </tbody>
