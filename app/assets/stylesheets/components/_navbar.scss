@@ -14,11 +14,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-m);
 
     @include media(mobile) {
       width: 100%;
-      justify-content: space-evenly;
+      justify-content: space-between; // Change this to space-between
       align-items: center;
+      padding: 0 1rem; // Add padding for spacing
     }
   }
 
@@ -33,8 +35,8 @@
     
 
     @include media(mobile) {
-    
       display: block;
+      order: 3; // Ensure toggle is the last item
     }
   }
 
@@ -45,13 +47,19 @@
 
     @include media(mobile) {
       max-width: 75px;
+      position: absolute;
+      top: .5em;
+      left: 50%;
+      transform: translateX(-50%); // Center the logo horizontally
+      order: 2; // Ensure logo appears in the center
     }
   }
 
   &__list {
     display: flex; 
-    list-style: none;
+    flex: 1 1 auto;
     align-items: center;
+    justify-content: space-evenly;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -65,30 +73,46 @@
       right: 0;
       width: 200px;
     }
+
+    &.is-active {
+      display: flex !important;
+      flex-direction: column;
+      background-color: var(--color-secondary);
+      position: absolute;
+      top: 100%;
+      width: 200px;
+      border-left: 1px solid var(--color-primary-rotate);
+      border-right: 1px solid var(--color-primary-rotate);
+      border-bottom: 1px solid var(--color-primary-rotate);
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      overflow: hidden;
+
+      .navbar__link {
+        border-bottom: 1px solid var(--color-secondary-rotate);
+        border-radius: 0;
+      }
+    }
   }
 
-  &__list .is-active {
-    display: block;
-    flex-direction: column;
-    background-color: var(--color-secondary);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-  }
-
-  &__list .is-active:last-of-type {
+  &__link:first-of-type {
+    border-top-left-radius: var(--border-radius);
     border-bottom-left-radius: var(--border-radius);
+  }
+
+  &__link:last-of-type {
+    border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
   }
 
   &__link {
     color: var(--color-primary-rotate);
-    text-decoration: none;
-    padding: 0.5em 2em;
     height: 6em;
-    padding-top: 2.25em;
-    vertical-align: middle;
+    padding: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     
 
     @include media(mobile) {
@@ -101,7 +125,7 @@
   }
 
   &__link:not(:last-child) {
-    border-right: 1px solid var(--color-primary-rotate);
+    border-right: 1px solid var(--color-secondary-rotate);
 
     @include media(mobile) {
       border-right: none;

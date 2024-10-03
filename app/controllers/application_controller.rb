@@ -32,24 +32,24 @@ class ApplicationController < ActionController::Base
 
   def set_navbar_variables
     @nav_links = [
-      { name: 'Photos', path: photos_path },
-      { name: 'Events', path: events_path },
-      { name: 'Leaderboard', path: leaderboard_users_path },
-      { name: 'Merch', path: merchandises_path },
-      { name: 'Ideas', path: ideas_path },
-      { name: 'Members', path: users_path },
-      { name: 'Links', path: links_path }
+      { name: 'photos', path: photos_path },
+      { name: 'events', path: events_path },
+      { name: 'leaderboard', path: leaderboard_users_path },
+      { name: 'merch', path: merchandises_path },
+      { name: 'ideas', path: ideas_path },
+      { name: 'members', path: users_path },
+      { name: 'links', path: links_path }
     ] || []
 
     links_to_reject = case @role
                       when 'admin'
                         []
                       when 'member'
-                        ['Members']
+                        ['members']
                       when 'officer'
-                        ['Members']
+                        ['members']
                       else
-                        ['Events', 'Leaderboard', 'Merch', 'Idea Board', 'Members']
+                        ['events', 'leaderboard', 'merch', 'ideas', 'members']
                       end
 
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
