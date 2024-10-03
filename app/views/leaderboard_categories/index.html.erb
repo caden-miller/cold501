@@ -8,6 +8,7 @@
           <th>Points</th>
         </tr>
       </thead>
+      <div class="page-layout__leaderboard">
       <tbody>
         <% @users.each do |user| %>
           <% category = LeaderboardCategory.category_for_user(user.points) %>
@@ -17,8 +18,10 @@
           </tr>
         <% end %>
       </tbody>
+      </div>
     </table>
   </div>
+  
 
   <!-- Categories table -->
   <div class="page-layout__categories">

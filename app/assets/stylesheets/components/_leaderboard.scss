@@ -1,66 +1,67 @@
 // Parent container for both tables
 .page-layout {
-    display: flex;
-    padding: 20px;
-    
-    // Leaderboard table (70% of the page, left side)
-    &__leaderboard {
-      width: 70%;
-      margin-right: 20px;
-  
-      table {
-        width: 100%;
-        border-collapse: collapse;
-  
-        th, td {
-          padding: 10px;
-          text-align: left;
-        }
-  
-        tbody tr {
-          // Apply category background color to highlight the user in the given category
-          &--highlighted {
-            background-color: inherit; // Will be set dynamically in HTML
-          }
-        }
+  display: flex;
+  padding: 20px;
+
+  // Leaderboard table (70% of the page, left side)
+  &__leaderboard {
+    width: 70%;
+    margin-right: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 10px;
+        text-align: left;
       }
-    }
-  
-    // Categories table (30% of the page, right side)
-    &__categories {
-      width: 30%;
-      padding: 20px;
-      text-align: center; // Center all content
-  
-      table {
-        width: 100%;
-        border-collapse: collapse;
-  
-        th, td {
-          padding: 10px;
-        }
-  
-        // Color column background
-        td.color-example {
-          position: relative;
-          color: transparent; // Ensures the hex code text is not visible
-  
-          // Render a color block in the background using a pseudo-element
-          &::before {
-            content: '';  // No text content
-            display: inline-block;
-            width: 50px;
-            height: 20px;
-            background-color: inherit; // Inherit color dynamically from HTML
-            border-radius: 3px;
-          }
-        }
+
+      tbody {
+        display: block;
+        border-radius: 10px; // Apply rounding to tbody only
+        overflow: hidden; // Ensure content stays inside the rounded corners
       }
-  
-      h1 {
-        margin-bottom: 20px;
-        font-size: 24px;
+
+      tbody tr {
+        display: table; // Ensure rows remain in the correct layout inside the block tbody
+        width: 100%;
       }
     }
   }
-  
+
+  // Categories table (30% of the page, right side)
+  &__categories {
+    width: 30%;
+    padding: 20px;
+    text-align: center; // Center all content
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 10px;
+      }
+
+      td.color-example {
+        position: relative;
+        color: transparent;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 50px;
+          height: 20px;
+          background-color: inherit;
+          border-radius: 10px; // Rounded corners for color block
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+  }
+}
