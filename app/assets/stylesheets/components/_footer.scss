@@ -18,9 +18,12 @@
 
     /* Individual container styling */
     &__logo-container,
-    &__git,
     &__instagram-container {
-        flex: 1 1 33%; /* Make sure each section can grow and take 100% width on small screens */
+        flex: 0 0 100px; /* Make sure each section can grow and take 100% width on small screens */
+    }
+
+    &__info-container {
+        flex: 1 1 200px; 
     }
 
     &__links-container {
@@ -67,21 +70,22 @@
         }
     }
 
-    &___link {
-        color: var(--color-tertiary);
-        text-decoration: none;
-        margin: 0 10px;
-        width: auto;
+    &__link:hover {
+        color: var(--color-primary-bg);
     }
 
-    &__link:hover {
-        color: var(--color-glint);
+    &__info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
     }
 
     &__git {
+        flex: 0 0 100%;
         display: flex;
-        align-items: center;
-        justify-content: center;
+        flex-direction: row;
         gap: 10px;
     }
 
@@ -104,4 +108,10 @@
         padding-right: 20vw;
         padding-left: 20vw;
     }
+}
+
+
+a {
+    color: var(--color-glint);
+    text-decoration: none;
 }

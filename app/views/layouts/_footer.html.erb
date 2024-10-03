@@ -1,15 +1,6 @@
 <footer class='footer'>
   <!-- Render Non-Instagram Links -->
-  <div class="footer__links-container">
-    <% instagram_link = nil %>
-    <% @links.each do |link| %>
-      <% if link[:title] == "Instagram" %>
-        <% instagram_link = link %>
-      <% else %>
-        <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
-      <% end %>
-    <% end %>
-  </div>
+  
     
   <div class="footer__logo-container">
     <%= link_to root_path do %>
@@ -18,9 +9,22 @@
   </div>
   
   <!-- GitHub Link Section -->
-  <div class='footer__git'>
-    <p class='footer__text'>Open Source on: </p>
-    <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+
+  <div class='footer__info-container'>
+    <div class="footer__links-container">
+      <% instagram_link = nil %>
+      <% @links.each do |link| %>
+        <% if link[:title] == "Instagram" %>
+          <% instagram_link = link %>
+        <% else %>
+          <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="footer__git">
+      <p class='footer__text'>Open Source on: </p>
+      <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+    </div>
   </div>
 
   <!-- Render Instagram Link if Exists -->
