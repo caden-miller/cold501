@@ -1,24 +1,25 @@
-<main class="container">  
+<!-- app/views/users/index.html.erb -->
+<main class="container">
   <header class="header">
-    <h1 class="header__title">User Management</h1>
+    <h1 class="header">MEMBERS</h1>
   </header>
 
-  <table class="users-table">
-    <thead class="users-table__header">
-      <tr class="users-table__row">
-      <th class="users-table__cell users-table__cell--header">Avatar</th>
-        <th class="users-table__cell users-table__cell--header">Full Name</th>
-        <th class="users-table__cell users-table__cell--header">Role</th>
-        <th class="users-table__cell users-table__cell--header">Committee</th>
-        <th class="users-table__cell users-table__cell--header">Points</th>
-        <th class="users-table__cell users-table__cell--header">Dues</th>
-        <th class="users-table__cell users-table__cell--header">Actions</th>
-      </tr>
-    </thead>
-    <tbody class="users-table__body" id="users">
+  <div class="user__table">
+    <div class="user__table-header">
+      <div class="user__table-row">
+        <div class="user__table-cell">Avatar</div>
+        <div class="user__table-cell">Full Name</div>
+        <div class="user__table-cell">Role</div>
+        <div class="user__table-cell">Committee</div>
+        <div class="user__table-cell">Points</div>
+        <div class="user__table-cell">Dues</div>
+        <div class="user__table-cell">Actions</div>
+      </div>
+    </div>
+    <div class="user__table-body" id="users">
       <% @users.each do |user| %>
-        <%= render user %>
+        <%= render partial: 'user', locals: { user: user } %>
       <% end %>
-    </tbody>
-  </table>
+    </div>
+  </div>
 </main>

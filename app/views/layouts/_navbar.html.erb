@@ -1,24 +1,18 @@
 <header class="navbar">
-  <div class="navbar__container">
-    <div>
+    <nav class="navbar__navigation" data-controller="navbar">
       <%= link_to root_path do %>
         <%= image_tag 'logo-gray.jpg' , alt: 'heat logo', class: 'navbar__logo' %>
       <% end %>
-    </div>
-    <nav class="navbar__navigation" data-controller="navbar">
+      <div class="navbar__list" data-navbar-target="list">
+        <% @nav_links.each do |link| %>
+          <%= link_to link[:name], link[:path], class: 'navbar__link' %>
+        <% end %>
+      </div>
+      <div class="navbar__profile">
+          <%= link_to @auth_link[:name], @auth_link[:path], method: @auth_link[:method] %>
+      </div>
       <button class="navbar__toggle" data-action="navbar#toggle">
         ☰
       </button>
-      <ul class="navbar__list" data-navbar-target="list">
-        <% @nav_links.each do |link| %>
-          <li class="navbar__item">
-            <%= link_to link[:name], link[:path], class: 'navbar__link' %>
-          </li>
-        <% end %>
-        <li class="navbar__item">
-          <%= link_to @auth_link[:name], @auth_link[:path], method: @auth_link[:method], class: 'navbar__link' %>
-        </li>
-      </ul>
     </nav>
-  </div>
 </header>

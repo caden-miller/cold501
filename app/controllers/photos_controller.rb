@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PhotosController < ApplicationController
-  before_action :set_photo, only: [:show, :edit, :update, :destroy, :delete]
+  before_action :set_photo, only: %i[show edit update destroy delete]
   before_action :authenticate_user!
 
   # GET /photos
@@ -8,8 +10,7 @@ class PhotosController < ApplicationController
   end
 
   # GET /photos/1
-  def show
-  end
+  def show; end
 
   # GET /photos/new
   def new
@@ -17,8 +18,7 @@ class PhotosController < ApplicationController
   end
 
   # GET /photos/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /photos
   def create
@@ -39,10 +39,8 @@ class PhotosController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
-  
-  def delete
-    
-  end
+
+  def delete; end
 
   def destroy
     # @photo.destroy
@@ -52,11 +50,11 @@ class PhotosController < ApplicationController
     #   format.json { head :no_content }
 
     if @photo.destroy
-      flash[:success] = "Photo was successfully deleted."
-      redirect_to photos_path  # Redirect to index or some other page after deletion
+      flash[:success] = 'Photo was successfully deleted.'
+      redirect_to photos_path # Redirect to index or some other page after deletion
     else
-      flash[:error] = "Photo could not be deleted."
-      redirect_to @photo  # Redirect back to the photo's show page if it couldn't be deleted
+      flash[:error] = 'Photo could not be deleted.'
+      redirect_to @photo # Redirect back to the photo's show page if it couldn't be deleted
     end
   end
 
@@ -72,4 +70,3 @@ class PhotosController < ApplicationController
     params.require(:photo).permit(:title, :description, :image)
   end
 end
-

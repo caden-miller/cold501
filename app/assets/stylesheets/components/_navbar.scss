@@ -1,15 +1,43 @@
 /* app/assets/stylesheets/application.scss */
 
 .navbar {
-  background-color: var(--color-primary);
-  padding: 0.5em 1em;
+  background-color: var(--color-secondary);
   position: sticky;
   top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  &__container {
+  &__navigation {
+    width: 70rem;
+    height: 6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-m);
+
+    @include media(mobile) {
+      width: 100%;
+      justify-content: space-between; // Change this to space-between
+      align-items: center;
+      padding: 0 1rem; // Add padding for spacing
+    }
+  }
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    max-width: 100px;
+    font-size: 3em;
+    color: var(--color-white);
+    cursor: pointer;
+    
+
+    @include media(mobile) {
+      display: block;
+      order: 3; // Ensure toggle is the last item
+    }
   }
 
   &__logo {
@@ -17,36 +45,26 @@
     max-width: 75px;
     height: auto;
 
-    @media (max-width: 1170px) {
-      max-width: 50px;
-    }
-  }
-
-  &__navigation {
-    position: relative;
-  }
-
-  &__toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    color: var(--color-white);
-    cursor: pointer;
-
-    @media (max-width: 1170px) {
-      display: block;
+    @include media(mobile) {
+      max-width: 75px;
+      position: absolute;
+      top: .5em;
+      left: 50%;
+      transform: translateX(-50%); // Center the logo horizontally
+      order: 2; // Ensure logo appears in the center
     }
   }
 
   &__list {
-    display: flex;
-    list-style: none;
+    display: flex; 
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
     margin: 0;
     padding: 0;
-    border-radius: var(--border-radius);
 
-    @media (max-width: 1170px) {
+    @include media(mobile) {
       display: none;
       flex-direction: column;
       background-color: var(--color-secondary);
@@ -57,32 +75,87 @@
     }
 
     &.is-active {
-      display: flex;
+      display: flex !important;
+      flex-direction: column;
+      background-color: var(--color-secondary);
+      position: absolute;
+      top: 100%;
+      width: 200px;
+      border-left: 1px solid var(--color-primary-rotate);
+      border-right: 1px solid var(--color-primary-rotate);
+      border-bottom: 1px solid var(--color-primary-rotate);
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
+      overflow: hidden;
+
+      .navbar__link {
+        border-bottom: 1px solid var(--color-secondary-rotate);
+        border-radius: 0;
+      }
     }
   }
 
-  &__item {
-    display: flex;
-    margin: 0 0.5em;
-    align-self: center;
-    text-align: center;
+  &__link:first-of-type {
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
 
-    @media (max-width: 768px) {
-      margin: 0;
-    }
+  &__link:last-of-type {
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
   }
 
   &__link {
-    color: #ecf0f1;
-    text-decoration: none;
-    padding: 0.5em 1em;
-    display: block;
-    border-radius: var(--border-radius);
-    background-color: var(--color-secondary);
+    color: var(--color-primary-rotate);
+    height: 6em;
+    padding: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    @include media(mobile) {
+      margin: 0;
+    }
 
     &:hover {
       background-color: var(--color-secondary-rotate);
     }
+  }
+
+  &__link:not(:last-child) {
+    border-right: 1px solid var(--color-secondary-rotate);
+
+    @include media(mobile) {
+      border-right: none;
+    }
+  }
+
+  &__profile {
+    color: var(--color-primary-rotate);
+    background-color: var(--color-tertiary);
+    padding: 0.5em 1em;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+
+    @include media(mobile) {
+      display: none;
+    }
+  }
+
+  &__profile:hover {
+    background-color: var(--color-glint);
+  }
+
+  &__profile a {
+    color: var(--color-primary-rotate);
+    text-decoration: none;
+  }
+
+  &__profile a:hover {
+    color: var(--color-primary-rotate);
+    text-decoration: none;
   }
 }
 
