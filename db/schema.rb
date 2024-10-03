@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_09_27_161218) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_03_133002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,17 +36,32 @@ ActiveRecord::Schema[7.0].define(version: 2024_09_27_161218) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
-    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "passcode"
     t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "ideas", force: :cascade do |t|
     t.string "title"
     t.string "description"
     t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leaderboard_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.integer "min_points"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.string "title"
+    t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

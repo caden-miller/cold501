@@ -1,31 +1,31 @@
 <h1>All Events</h1>
 
-<%= link_to 'Create New Event', new_event_path %>
+<%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary' %>
 
-<ul>
-  <%= month_calendar(events: @events) do |date, events| %>
-    <div>
-      <% if events.any? %> 
-        <span class="event-date"><%= date.day %></span> 
+<div class="calendar">
+  <%= month_calendar events: @events do |date, events| %>
+    <div class="day">
+      <% if events.any? %>
+        <%= link_to date.day, event_path(events.first), class: 'event-date' %>
       <% else %>
-        <%= date.day %> 
-      <% end %>
-      
-      <% events.each do |event| %> 
-        <%= link_to event.name, event_path(event) %><br>
-        <%= event.start_time.strftime("%B %d, %Y %l:%M %p") %> - <%= event.end_time.strftime("%l:%M %p") %>
+        <span class="no-event"><%= date.day %></span>
       <% end %>
     </div>
   <% end %>
+</div>
 
+<ul>
   <% @events.each do |event| %>
     <li>
       <%= link_to event.name, event_path(event) %>
-      <%= event.date.strftime("%B %d, %Y %l:%M %p") %>
-      <%= link_to 'Edit', edit_event_path(event) %> |
-      <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= event.start_time.strftime("%B %d, %Y %l:%M %p") %>
+      <% if event.respond_to?(:end_time) && event.end_time.present? %>
+        - <%= event.end_time.strftime("%l:%M %p") %>
+      <% end %>
+      <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-secondary' %> |
+      <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     </li>
   <% end %>
-  
 </ul>
+
 <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>

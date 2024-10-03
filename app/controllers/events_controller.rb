@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
   # Show a single event
   def show
-    @attendance = Attendance.where(event: @event)
+    @attendances = Attendance.where(event: @event)
   end
 
   # Initialize a new event object
@@ -67,7 +67,7 @@ class EventsController < ApplicationController
 
   # Strong parameters to prevent mass assignment issues
   def event_params
-    params.require(:event).permit(:name, :date, :passcode)
+    params.require(:event).permit(:name, :date, :passcode, :start_time, :end_time)
   end
 end
 
