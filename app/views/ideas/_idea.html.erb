@@ -1,11 +1,11 @@
-<div id="<%= dom_id idea %>">
+<div id="<%= dom_id idea %>" class="idea-wrapper">
   <p class="item-title">
     <%= idea.title %>
   </p>
 
-  <p class="idea-desc">
-    <%= idea.description %>
-  </p>
+  <textarea class="idea-desc">
+    <%= h(idea.description.squish) %>
+  </textarea>
 
   <div class="idea-footer">
   <p>
