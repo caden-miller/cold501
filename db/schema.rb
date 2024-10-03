@@ -40,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_03_001431) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "passcode"
+    t.datetime "start_time"
   end
 
   create_table "ideas", force: :cascade do |t|
