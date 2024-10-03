@@ -12,13 +12,24 @@ class UsersController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
+  end
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+      end
     else
-      render :edit, status: :unprocessable_entity
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("user_#{@user.id}", partial: 'form', locals: { user: @user }) }
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -27,8 +38,8 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
-      format.turbo_stream # Responds to Turbo Stream requests
+      format.html { redirect_to users_path, notice: 'User was successfully deleted.' }
+      format.turbo_stream
     end
   end
 

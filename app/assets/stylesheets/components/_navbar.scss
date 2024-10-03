@@ -5,13 +5,6 @@
   position: sticky;
   top: 0;
 
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__logo {
     border-radius: 100%;
     max-width: 75px;
@@ -22,10 +15,19 @@
     }
   }
 
+  &__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-secondary);
+  }
+
   &__navigation {
     width: 100%;
     height: 3rem;
-    background-color: var(--color-secondary);
+    background-color: var(--color-tertiary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,7 +84,7 @@
     }
 
     &:hover {
-      background-color: var(--color-secondary-rotate);
+      background-color: var(--color-tertiary-rotate);
     }
   }
 

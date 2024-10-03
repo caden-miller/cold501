@@ -20,12 +20,12 @@ en:
         committee: "e.g., Marketing"
         points: "e.g., 100"
         dues: "e.g., 50"
-    helpers:
-      submit:
-        user:
-          create: "Create User"
-          update: "Update User"
-          submit: "Save Changes"
-          cancel: "Cancel"
+  helpers:
+    submit:
+      user:
+        create: "Create"
+        update: ""
+        submit: "Save Changes"
+        cancel: "Cancel"
 
 

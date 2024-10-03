@@ -1,17 +1,11 @@
-<main class="container">
-  <%= link_to sanitize("&larr; Back to users"), users_path %>
-  <div class="header">
-    <h1>
-      Edit <%= @user.full_name %>
-    </h1>
-  </div>
 
+<%= link_to sanitize("&larr; Back to users"), users_path %>
+<div class="header">
+  <h1>
+    Edit <%= @user.full_name %>
+  </h1>
+</div>
+<%= turbo_frame_tag dom_id(@user) do %>
   <%= render 'form', user: @user %>
+<% end %>
 
-  <br>
-
-  <div class="user__actions">
-    <%= link_to sanitize("Show"), user_path(@user), class: "btn btn--secondary" %>
-    <%= link_to sanitize("Delete"), user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn--danger" %>
-  </div>
-</main>
