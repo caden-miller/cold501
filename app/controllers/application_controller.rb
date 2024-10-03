@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
       { name: 'Home', path: root_path },
       { name: 'Events', path: events_path },
       { name: 'Photo Gallery', path: photos_path },
-      { name: 'Leaderboard', path: leaderboard_users_path },
+      { name: 'Leaderboard', path: leaderboard_categories_url },
       { name: 'Merchandise', path: merchandises_path },
       { name: 'Idea Board', path: ideas_path },
       { name: 'Member Management', path: users_path },
