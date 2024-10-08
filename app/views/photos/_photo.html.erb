@@ -1,22 +1,15 @@
-<div id="<%= dom_id photo %>">
-  <p>
-    <strong>Link:</strong>
-    <%= photo.link %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= photo.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= photo.description %>
-  </p>
-
-  <p>
-    <strong>Created by:</strong>
-    <%= photo.created_by_id %>
-  </p>
-
-</div>
+<%= turbo_frame_tag "photo_#{photo.id}" do %>
+  <div class="photo__table-row">
+    <div class="photo__table-cell"><%= photo.title %></div>
+    <div class="photo__table-cell"><%= photo.description %></div>
+    <div class="photo__table-cell"><%= image_tag(photo.image_url, class: 'photo__image') if photo.image %></div>
+    <div class="photo__table-cell">
+      <%= link_to edit_photo_path(photo), class: 'photo__table-button edit', data: { turbo_frame: "photo_#{photo.id}" } do %>
+        <%= image_tag 'pencil-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Edit Photo', width: '40', height: '40' %>
+      <% end %>
+      <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+        <%= image_tag 'trash-blank-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Delete Photo', width: '40', height: '40' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

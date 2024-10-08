@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: %i[show edit update destroy]
   before_action :set_user, :set_role, :set_navbar_variables
 
   # Display all events
@@ -18,8 +20,7 @@ class EventsController < ApplicationController
   end
 
   # Edit an existing event
-  def edit
-  end
+  def edit; end
 
   # Create a new event in the database
   def create
@@ -39,8 +40,8 @@ class EventsController < ApplicationController
       render :edit
     end
   end
-  
-  #set up delete
+
+  # set up delete
   def delete
     @event = Event.find(params[:id])
   end
@@ -53,16 +54,17 @@ class EventsController < ApplicationController
   end
 
   def attendance
-    @attendance = @event.attendances 
+    @attendance = @event.attendances
   end
+
   private
 
   # Find event by ID for show, edit, update, and destroy actions
   def set_event
     @event = Event.find_by(id: params[:id])
-    if @event.nil?
-      redirect_to root_path, alert: 'Event not found.'
-    end
+    return unless @event.nil?
+
+    redirect_to root_path, alert: 'Event not found.'
   end
 
   # Strong parameters to prevent mass assignment issues
@@ -70,4 +72,3 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :date, :passcode, :start_time, :end_time)
   end
 end
-

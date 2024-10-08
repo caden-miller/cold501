@@ -1,14 +1,19 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-  before_action :set_user, :set_role, :set_navbar_variables
-  
+  before_action :set_user, :set_role, :set_navbar_variables, :set_links
+
   def authenticate_admin!
-    unless @role == 'admin'
-      redirect_to root_path, alert: 'You are not authorized.'
-    end
+    return if @role == 'admin'
+
+    redirect_to root_path, alert: 'You are not authorized.'
   end
 
   def authenticate_member!
-    redirect_to root_path, alert: 'You are not authorized, tell your higher-ups to make you a member' unless @role == 'admin' || @role == 'member' ||  @role == 'officer'
+    return if @role == 'admin' || @role == 'member' || @role == 'officer'
+
+    redirect_to root_path,
+                alert: 'You are not authorized, tell your higher-ups to make you a member'
   end
 
   private
@@ -18,42 +23,45 @@ class ApplicationController < ActionController::Base
     @user = current_user
     set_role if @user
   end
-  
 
   # set instance variable for role
   def set_role
     @role ||= current_user&.role || 'guest'
+    puts @role
   end
 
   def set_navbar_variables
     @nav_links = [
-      { name: 'Home', path: root_path },
-      { name: 'Events', path: events_path },
-      { name: 'Photo Gallery', path: photos_path },
-      { name: 'Leaderboard', path: leaderboard_users_path },
-      { name: 'Merchandise', path: merchandises_path },
-      { name: 'Idea Board', path: ideas_path },
-      { name: 'Member Management', path: users_path }
+      { name: 'photos', path: photos_path },
+      { name: 'events', path: events_path },
+      { name: 'leaderboard', path: leaderboard_users_path },
+      { name: 'merch', path: merchandises_path },
+      { name: 'ideas', path: ideas_path },
+      { name: 'members', path: users_path },
+      { name: 'links', path: links_path }
     ] || []
 
-    links_to_reject = case @role 
+    links_to_reject = case @role
                       when 'admin'
                         []
                       when 'member'
-                        ['Member Management']
+                        ['members']
                       when 'officer'
-                        ['Member Management']
+                        ['members']
                       else
-                        ['Events', 'Leaderboard', 'Merchandise', 'Idea Board', 'Member Management']
+                        ['events', 'leaderboard', 'merch', 'ideas', 'members']
                       end
 
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
-  
+
     @auth_link = if current_user
-                   { name: 'Logout', path: destroy_user_session_path, method: :delete }
+                   { name: 'Logout', path: destroy_user_session_path, method: :get }
                  else
-                   { name: 'Login', path: new_user_session_path }
+                   { name: 'Login', path: user_google_oauth2_omniauth_authorize_path, method: :post }
                  end
   end
 
+  def set_links
+    @links = Link.all
+  end
 end

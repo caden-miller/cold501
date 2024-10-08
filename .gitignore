@@ -5,8 +5,7 @@
 !/app/assets/builds/.keep
 
 /node_modules
-log/development.log
+/log/development.log
 /config/master.key
-/public/assets
 /public/packs
 /public/uploads

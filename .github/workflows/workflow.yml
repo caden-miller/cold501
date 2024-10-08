@@ -25,6 +25,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
           GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }} 
+          HOST_URL: http://localhost:3000
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
@@ -50,7 +51,7 @@ jobs:
         run: bundler exec brakeman -o brakeman.txt --no-exit-on-warn
         continue-on-error: true
       - name: Run rubocop
-        run: bundler exec rubocop --force-exclusion vendor/*/** --out rubocop.txt
+        run: bundler exec rubocop --out rubocop.txt
       - name: Upload coverage results
         uses: actions/upload-artifact@master
         if: always()

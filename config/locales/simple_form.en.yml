@@ -6,7 +6,7 @@ en:
         role: "User Role"
         committee: "Committee"
         points: "Points"
-        dues: "Membership Dues"
+        dues: "Dues"
     hints:
       user:
         full_name: "Enter the user's full name."
@@ -20,4 +20,12 @@ en:
         committee: "e.g., Marketing"
         points: "e.g., 100"
         dues: "e.g., 50"
+  helpers:
+    submit:
+      user:
+        create: "Create"
+        update: ""
+        submit: "Save Changes"
+        cancel: "Cancel"
+
 
