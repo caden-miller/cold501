@@ -11,9 +11,6 @@
       <%= form.input :full_name %>
     </div>
     <div class="user__table-cell">
-      <%= form.select :role, User::ROLES, {} %>
-    </div>
-    <div class="user__table-cell">
       <%= form.input :committee %>
     </div>
     <div class="user__table-cell">
@@ -21,6 +18,9 @@
     </div>
     <div class="user__table-cell">
       <%= form.input :dues %>
+    </div>
+    <div class="user__table-cell">
+      <%= form.select :role, User::ROLES, {} %>
     </div>
     <div class="user__table-cell">
       <%= button_tag(type: 'submit', class: 'user__table-button confirm') do %>

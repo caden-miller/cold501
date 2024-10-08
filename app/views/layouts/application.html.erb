@@ -21,13 +21,6 @@
     <% if controller_name == 'ideas' %>
       <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
     <% end %>
-
-    <!-- Inline Styles (Consider moving to a CSS file) -->
-    <style>
-      .flash__alert { color: red; }
-      .flash__notice { color: blue; }
-      .flash__success { color: green; }
-    </style>
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   </head>
 
@@ -35,7 +28,9 @@
     <%= render "layouts/navbar" %>
     <% if flash.any? %>
       <% flash.each do |key, value| -%>
-        <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+        <div class="flash__container">
+          <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
+        </div>
       <% end -%>
     <% end %>
     <%= yield %>

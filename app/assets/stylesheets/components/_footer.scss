@@ -19,7 +19,7 @@
     /* Individual container styling */
     &__logo-container,
     &__instagram-container {
-        flex: 0 0 100px; /* Make sure each section can grow and take 100% width on small screens */
+        flex: 0 0 80px; /* Make sure each section can grow and take 100% width on small screens */
     }
 
     &__info-container {
@@ -36,14 +36,16 @@
     }
 
     .footer__link:not(:last-child)::after {
-        content: ""; /* Required to show the pseudo-element */
-        display: inline-block;
-        width: 1px;
-        height: 20px; /* Adjust the height as needed */
-        background-color: var(--color-secondary-rotate); /* Line color */
-        margin-left: 10px; /* Space between the link and the line */
-        margin-right: 10px; /* Space between the line and the next link */
-        vertical-align: middle; /* Align the line with the text */
+        @include media(tabletAndUp) {
+            content: ""; /* Required to show the pseudo-element */
+            display: inline-block;
+            width: 1px;
+            height: 20px; /* Adjust the height as needed */
+            background-color: var(--color-secondary-rotate); /* Line color */
+            margin-left: 10px; /* Space between the link and the line */
+            margin-right: 10px; /* Space between the line and the next link */
+            vertical-align: middle; /* Align the line with the text */
+        }
     }
 
     &__logo-container {
@@ -63,6 +65,7 @@
     &__logo {
         border-radius: 100%;
         max-width: 75px;
+        flex-shrink: 1;
         height: auto;
 
     }

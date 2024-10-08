@@ -131,7 +131,7 @@
     border-bottom-left-radius: var(--border-radius);
   }
 
-  &__link:nth-last-of-type(2) {
+  &__link:last-of-type {
     border-top-right-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
     border-right: 0px solid var(--color-secondary-rotate);
@@ -141,24 +141,22 @@
     background-color: var(--color-tertiary);
     padding: 0.5em 1em;
     border-radius: var(--border-radius);
+    border: 0px solid var(--color-secondary);
     cursor: pointer;
+
+    color: var(--color-text-header);
+    text-decoration: none;
+    font-weight: bold;
+
     transition: background-color 0.5s ease, color 0.5s ease;
     @include media(mobile) {
       display: none;
-    }
-
-    a {
-      color: var(--color-text-header);
-      text-decoration: none;
-      font-weight: bold;
     }
   }
 
   &__profile:hover {
     background-color: var(--color-glint);
-    a {
-      color: var(--color-text-body);
-    }
+    color: var(--color-text-body);
   }
 }
 
