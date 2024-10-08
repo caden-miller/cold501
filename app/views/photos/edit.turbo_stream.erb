@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "photo_#{@photo.id}" do %>
+  <%= render partial: 'form', locals: { photo: @photo } %>
+<% end %>
