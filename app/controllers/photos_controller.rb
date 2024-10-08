@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 class PhotosController < ApplicationController
-  before_action :set_photo, only: %i[show edit update destroy delete]
+  before_action :set_photo, except: %i[index]
   before_action :authenticate_user!
 
   # GET /photos
   def index
-    @photos = Photo.all
+    @photos = Photo.order(:id)
   end
 
   # GET /photos/1

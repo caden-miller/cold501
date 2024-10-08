@@ -1,4 +1,4 @@
-<%= simple_form_for photo, html: { class: "user form", data: { turbo_frame: "photo_#{photo.id}" } } do |form| %>
+<%= simple_form_for photo, html: { class: "photo form", data: { turbo_frame: "photo_#{photo.id}" } } do |form| %>
   <% if photo.errors.any? %>
     <%= form.error_notification %>
   <% end %>
