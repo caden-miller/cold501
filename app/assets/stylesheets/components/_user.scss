@@ -1,56 +1,5 @@
 .user {
 
-    &__avatar {
-        width: 25%;
-        height: auto;
-        border-radius: var(--border-radius);
-    }
-
-    &__info {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: start;
-        padding-bottom: 10%;
-        width: 100%;
-    }
-
-    &__show-row {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-
-    &__stack {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        margin-left: 10%;
-        width: 100%;
-    }
-
-    &__item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin-left: 25%;
-    }
-
-    &__actions {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 5%;
-        width: 100%;
-        height: 100%;
-        color: var(--color-secondary);
-    }
-
-
     &__table {
         display: flex;
         flex-direction: column;
@@ -139,15 +88,37 @@
         border-radius: var(--border-radius);
     }
 
-    &__table-row .user__table-cell:nth-child(1),
-    // &__table-row .user__table-cell:nth-child(3),
+    &__table-row .user__table-cell:nth-child(1) {
+        flex: 0 0 70px;
+    }
+
+    &__table-row .user__table-cell:nth-child(2) {
+        @include media(mobile) {
+            flex: 1 0 100px;
+        }
+    }
+
+    &__table-row .user__table-cell:nth-child(3) {
+        flex: 0 0 75px;
+    }
+
+    &__table-row .user__table-cell:nth-child(4) {
+        flex-grow: 1;
+        @include media(mobile) {
+            flex: 1 0 75px; /* Fixed width */
+        }
+    }
+
+
     &__table-row .user__table-cell:nth-child(5),
     &__table-row .user__table-cell:nth-child(6) {
-        flex: 0 0 70px; /* Fixed width */
+        flex: 0 0 50px;
     }
 
     &__table-row .user__table-cell:last-child {
-        flex: 0 0 120px; /* Fixed width */
+        @include media(mobile) {
+            flex: 0 0 100px; /* Fixed width */
+        }
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -164,6 +135,7 @@
 .edit,
 .confirm {
     background-color: var(--color-secondary);
+    transition: background-color 0.5s ease;
 }
 
 .edit:hover,
@@ -173,12 +145,13 @@
 
 .trash,
 .cancel {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-red);
+    transition: background-color 0.5s ease;
 }
 
 .trash:hover,
 .cancel:hover {
-    background-color: var(--color-glint);
+    background-color: var(--color-red-rotate);
 }
 
 

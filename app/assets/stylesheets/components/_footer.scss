@@ -68,13 +68,13 @@
     }
 
     &__links-container a {
-        color: var(--color-glint);
+        color: var(--color-tertiary);
         text-decoration: none;
         font-size: 14px;
     }
 
     &__link:hover {
-        color: var(--color-primary-bg);
+        color: var(--color-glint);
     }
 
     &__info-container {
@@ -93,11 +93,11 @@
     }
 
     &__git .footer__link {
-        color: var(--color-glint);
+        color: var(--color-tertiary);
     }
 
     &__git .footer__link:hover {
-        color: var(--color-primary-rotate);
+        color: var(--color-glint);
     }
 
 
