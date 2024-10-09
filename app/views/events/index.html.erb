@@ -1,31 +1,33 @@
-<h1>All Events</h1>
+<main class="container"> 
+  <h1>All Events</h1>
 
-<%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary' %>
+  <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary' %>
 
-<div class="calendar">
-  <%= month_calendar events: @events do |date, events| %>
-    <div class="day">
-      <% if events.any? %>
-        <%= link_to date.day, event_path(events.first), class: 'event-date' %>
-      <% else %>
-        <span class="no-event"><%= date.day %></span>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+  <div class="calendar">
+    <%= month_calendar events: @events do |date, events| %>
+      <div class="day">
+        <% if events.any? %>
+          <%= link_to date.day, event_path(events.first), class: 'event-date' %>
+        <% else %>
+          <span class="no-event"><%= date.day %></span>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-<ul>
-  <% @events.each do |event| %>
-    <li>
-      <%= link_to event.name, event_path(event) %>
-      <%= event.start_time.strftime("%B %d, %Y %l:%M %p") %>
-      <% if event.respond_to?(:end_time) && event.end_time.present? %>
-        - <%= event.end_time.strftime("%l:%M %p") %>
-      <% end %>
-      <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-secondary' %> |
-      <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-    </li>
-  <% end %>
-</ul>
+  <ul>
+    <% @events.each do |event| %>
+      <li>
+        <%= link_to event.name, event_path(event) %>
+        <%= event.start_time.strftime("%B %d, %Y %l:%M %p") %>
+        <% if event.respond_to?(:end_time) && event.end_time.present? %>
+          - <%= event.end_time.strftime("%l:%M %p") %>
+        <% end %>
+        <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-secondary' %> |
+        <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
+</main>

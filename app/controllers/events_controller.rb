@@ -69,6 +69,6 @@ class EventsController < ApplicationController
 
   # Strong parameters to prevent mass assignment issues
   def event_params
-    params.require(:event).permit(:name, :date, :passcode, :start_time, :end_time)
+    params.require(:event).permit(:name, :date, :passcode, :start_time, :end_time, :location)
   end
 end

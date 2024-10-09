@@ -17,8 +17,18 @@
   </div>
 
   <div>
-    <%= form.label :date, "Event Date" %><br>
-    <%= form.datetime_select :date %> 
+    <%= form.label :start_time, "Event Start Time" %><br>
+    <%= form.datetime_select :start_time, include_seconds: false %> 
+  </div>
+
+  <div>
+    <%= form.label :end_time, "Event End Time" %><br>
+    <%= form.datetime_select :end_time, include_seconds: false %> 
+  </div>
+
+  <div>
+    <%= form.label :location %><br>
+    <%= form.text_field :location %>
   </div>
 
 
