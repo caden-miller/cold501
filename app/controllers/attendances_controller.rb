@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AttendancesController < ApplicationController
   before_action :set_event
 
@@ -19,4 +21,3 @@ class AttendancesController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 end
-

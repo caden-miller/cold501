@@ -8,7 +8,10 @@
 
     <!-- Application Stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "turbo", type: "module" %>
+    
+
+    <!-- Importmap for JavaScript -->
+    <%= javascript_importmap_tags %>
 
     <!-- Controller-Specific Stylesheets -->
     <% if controller_name == 'merchandises' %>
@@ -19,16 +22,13 @@
       <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
     <% end %>
 
-
-    <!-- Importmap for JavaScript -->
-    <%= javascript_importmap_tags %>
-
     <!-- Inline Styles (Consider moving to a CSS file) -->
     <style>
       .flash__alert { color: red; }
       .flash__notice { color: blue; }
       .flash__success { color: green; }
     </style>
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
   </head>
 
   <body>
@@ -39,5 +39,6 @@
       <% end -%>
     <% end %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>

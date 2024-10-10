@@ -4,6 +4,7 @@
 // Configuration
 @import "config/variables";
 @import "config/reset";
+@import "config/root";
 
 // Components
 @import "components/btn";
@@ -11,6 +12,7 @@
 @import "components/form";
 @import "components/visually_hidden";
 @import "components/navbar";
+@import "components/footer";
 @import "components/home";
 @import "components/user";
 

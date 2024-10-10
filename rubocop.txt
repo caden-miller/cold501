@@ -1,0 +1,172 @@
+Inspecting 102 files
+....CCCCCCCCCCCCCCCCCCCCCCC.C.CCC...CCC..............C.....C........C......CCCCCCCCCCCC......CC.......
+
+Offenses:
+
+app/controllers/annoucements_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class AnnoucementsController.
+class AnnoucementsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationController.
+class ApplicationController < ActionController::Base
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:32:3: C: Metrics/MethodLength: Method has too many lines. [25/10]
+  def set_navbar_variables ...
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/attendances_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class AttendancesController.
+class AttendancesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/events_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class EventsController.
+class EventsController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/home_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class HomeController.
+class HomeController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^
+app/controllers/ideas_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class IdeasController.
+class IdeasController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/links_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class LinksController.
+class LinksController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/merchandises_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class MerchandisesController.
+class MerchandisesController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/photos_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class PhotosController.
+class PhotosController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/omniauth_callbacks_controller.rb:4:3: C: Style/Documentation: Missing top-level documentation comment for class Users::OmniauthCallbacksController.
+  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users/sessions_controller.rb:4:3: C: Style/Documentation: Missing top-level documentation comment for class Users::SessionsController.
+  class SessionsController < Devise::SessionsController
+  ^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class UsersController.
+class UsersController < ApplicationController
+^^^^^^^^^^^^^^^^^^^^^
+app/controllers/users_controller.rb:41:7: C: Naming/AccessorMethodName: Do not prefix reader method names with get_.
+  def get_user
+      ^^^^^^^^
+app/helpers/annoucements_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module AnnoucementsHelper.
+module AnnoucementsHelper
+^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/application_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module ApplicationHelper.
+module ApplicationHelper
+^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/events_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module EventsHelper.
+module EventsHelper
+^^^^^^^^^^^^^^^^^^^
+app/helpers/home_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module HomeHelper.
+module HomeHelper
+^^^^^^^^^^^^^^^^^
+app/helpers/ideas_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module IdeasHelper.
+module IdeasHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/links_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module LinksHelper.
+module LinksHelper
+^^^^^^^^^^^^^^^^^^
+app/helpers/merchandises_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module MerchandisesHelper.
+module MerchandisesHelper
+^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/merches_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module MerchesHelper.
+module MerchesHelper
+^^^^^^^^^^^^^^^^^^^^
+app/helpers/photos_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module PhotosHelper.
+module PhotosHelper
+^^^^^^^^^^^^^^^^^^^
+app/helpers/users/omniauth_callbacks_helper.rb:4:3: C: Style/Documentation: Missing top-level documentation comment for module Users::OmniauthCallbacksHelper.
+  module OmniauthCallbacksHelper
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/helpers/users_helper.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for module UsersHelper.
+module UsersHelper
+^^^^^^^^^^^^^^^^^^
+app/mailers/application_mailer.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationMailer.
+class ApplicationMailer < ActionMailer::Base
+^^^^^^^^^^^^^^^^^^^^^^^
+app/models/application_record.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class ApplicationRecord.
+class ApplicationRecord < ActiveRecord::Base
+^^^^^^^^^^^^^^^^^^^^^^^
+app/models/attendance.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Attendance.
+class Attendance < ApplicationRecord
+^^^^^^^^^^^^^^^^
+app/models/event.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Event.
+class Event < ApplicationRecord
+^^^^^^^^^^^
+app/models/photo.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class Photo.
+class Photo < ApplicationRecord
+^^^^^^^^^^^
+app/models/user.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class User.
+class User < ApplicationRecord
+^^^^^^^^^^
+app/uploaders/image_uploader.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class ImageUploader.
+class ImageUploader < Shrine
+^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for cli_arg_version is too high. [9/7]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/MethodLength: Method has too many lines. [11/10]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/PerceivedComplexity: Perceived complexity for cli_arg_version is too high. [9/8]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:91:3: C: Metrics/MethodLength: Method has too many lines. [12/10]
+  def activate_bundler ...
+  ^^^^^^^^^^^^^^^^^^^^
+bin/bundle:104:121: C: Layout/LineLength: Line is too long. [198/120]
+    warn "Activating bundler (#{bundler_requirement}) failed:\n#{gem_error.message}\n\nTo install the version of bundler this project requires, run `gem install bundler -v '#{bundler_requirement}'`"
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/application.rb:24:3: C: Style/Documentation: Missing top-level documentation comment for class Cold501::Application.
+  class Application < Rails::Application
+  ^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:17:121: C: Layout/LineLength: Line is too long. [154/120]
+  # config.secret_key = '2bef0592042cd9aa7acf4328d5db2e7968bf439ec39baea3d293c3d17af3257fa7b6b4a068303af07991740764c3ed38566704b0e9d26163903d5d328e3a9997'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/devise.rb:135:121: C: Layout/LineLength: Line is too long. [150/120]
+  # config.pepper = '7490891fede7d95889aee31156f619d5c533bf90b94f969a2ba2035be2dff82714b2185269447918e0abbd02c52a359fa0879ff24c19d9a9d742f9de4a44c283'
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:3:1: C: Metrics/BlockLength: Block has too many lines. [30/25]
+Rails.application.routes.draw do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20240910213808_create_merches.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateMerches.
+class CreateMerches < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^
+db/migrate/20240910213910_create_events.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateEvents.
+class CreateEvents < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^
+db/migrate/20240911023215_devise_create_users.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class DeviseCreateUsers.
+class DeviseCreateUsers < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20240911023215_devise_create_users.rb:4:3: C: Metrics/MethodLength: Method has too many lines. [12/10]
+  def change ...
+  ^^^^^^^^^^
+db/migrate/20240911193256_create_photos.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreatePhotos.
+class CreatePhotos < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^
+db/migrate/20240912004859_create_merchandises.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateMerchandises.
+class CreateMerchandises < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20240912213549_create_ideas.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateIdeas.
+class CreateIdeas < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^
+db/migrate/20240913160322_create_annoucements.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateAnnoucements.
+class CreateAnnoucements < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20240918113149_create_attendances.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateAttendances.
+class CreateAttendances < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20240918113704_add_passcode_to_events.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class AddPasscodeToEvents.
+class AddPasscodeToEvents < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20240921034108_create_links.rb:3:1: C: Style/Documentation: Missing top-level documentation comment for class CreateLinks.
+class CreateLinks < ActiveRecord::Migration[7.0]
+^^^^^^^^^^^^^^^^^
+db/schema.rb:15:1: C: Metrics/BlockLength: Block has too many lines. [82/25]
+ActiveRecord::Schema[7.0].define(version: 20_240_921_034_108) do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/feature/home_spec.rb:12:121: C: Layout/LineLength: Line is too long. [121/120]
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'officer', committee: 'Test Committee',
+                                                                                                                        ^
+spec/feature/user_spec.rb:9:1: C: Metrics/BlockLength: Block has too many lines. [36/25]
+RSpec.feature 'Edit User and View User in Index then Delete the User', type: :feature do ...
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+102 files inspected, 55 offenses detected

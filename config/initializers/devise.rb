@@ -15,7 +15,7 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '2bef0592042cd9aa7acf4328d5db2e7968bf439ec39baea3d293c3d17af3257fa7b6b4a068303af07991740764c3ed38566704b0e9d26163903d5d328e3a9997'
-  
+
   config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET'], {
     scope: 'userinfo.email, userinfo.profile',
     prompt: 'select_account',

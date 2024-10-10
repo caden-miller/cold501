@@ -1,1 +1,5 @@
-<% turbo_stream.replace 'user_#{@user.id}', @user %>
+<%= turbo_stream.replace "user_#{@user.id}" do %>
+  <%= turbo_frame_tag "user_#{@user.id}" do %>
+    <%= render partial: 'user', locals: { user: @user } %>
+  <% end %>
+<% end %>

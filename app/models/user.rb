@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   ROLES = %w[admin member officer user].freeze
 
