@@ -1,26 +1,27 @@
-<%= simple_form_for photo, html: { class: "photo form", data: { turbo_frame: "photo_#{photo.id}" } } do |form| %>
-  <% if photo.errors.any? %>
+<%= simple_form_for @photo, html: { class: "photo form", data: { turbo_frame: dom_id(@photo) } } do |form| %>
+  <% if @photo.errors.any? %>
     <%= form.error_notification %>
   <% end %>
 
-  <div class="user__table-row">
-    <div class="user__table-cell">
+  <div class="photo__table-row">
+    <div class="photo__table-cell">
       <%= form.input :title %>
     </div>
-    <div class="user__table-cell">
+    <div class="photo__table-cell">
       <%= form.input :description %>
     </div>
-    <div class="user__table-cell">
+    <div class="photo__table-cell">
       <%= form.file_field :image %>
     </div>
-    <div class="user__table-cell">
-      <%= button_tag(type: 'submit', class: 'user__table-button confirm') do %>
-        <%= image_tag 'check-svgrepo-com.svg', class: 'user__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
+    <div class="photo__table-cell">
+      <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
+        <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
       <% end %>
-      <%= link_to users_path, class: 'user__table-button cancel'  do %>
-        <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'user__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
+      <%= link_to photos_path, class: 'photo__table-button cancel', data: { turbo: "false" } do %>
+        <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
       <% end %>
     </div>
   </div>
 <% end %>
+
 

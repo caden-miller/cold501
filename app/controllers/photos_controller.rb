@@ -16,6 +16,7 @@ class PhotosController < ApplicationController
   def new
     @photo = Photo.new
   end
+  
 
   # GET /photos/1/edit
   def edit 
@@ -27,12 +28,15 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
-    @photo = current_user.photos.build(photo_params)
-
+    @photo = Photo.new(photo_params)
+  
     if @photo.save
-      redirect_to @photo, notice: 'Photo was successfully created.'
+      respond_to do |format|
+        format.html { redirect_to photos_path, notice: "Photo Created" }
+        format.turbo_stream
+      end
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

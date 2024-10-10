@@ -3,9 +3,7 @@
     <h1 class="header">PHOTOS</h1>
   </header>
 
-  <%= turbo_frame_tag "new_photo" do %>
-    <%= link_to "New Photo", new_photo_path, data: { turbo_frame: dom_id(Photo.new) }  %><br><br>
-  <% end %>
+  <%= link_to "New Photo", new_photo_path, data: { turbo_frame: dom_id(Photo.new) } %><br><br>
 
   <div class="photo__table">
     <div class="photo__table-header">
@@ -17,6 +15,7 @@
       </div>
     </div>
     <div class="photo__table-body" id="photos">
+      <%= turbo_frame_tag Photo.new %>
       <% @photos.each do |photo| %>
         <%= render partial: 'photo', locals: { photo: photo } %>
       <% end %>
