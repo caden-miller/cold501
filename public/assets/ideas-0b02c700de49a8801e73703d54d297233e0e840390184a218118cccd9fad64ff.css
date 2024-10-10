@@ -1,0 +1,40 @@
+/* line 2, app/assets/stylesheets/ideas.scss */
+.ideas-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+}
+
+/* line 8, app/assets/stylesheets/ideas.scss */
+form {
+  border: 10px black;
+  text-align: center;
+}
+
+/* line 13, app/assets/stylesheets/ideas.scss */
+.idea-wrapper {
+  background-image: url(/assets/stickynote.jpg);
+  /* Ensure the path is correct */
+  background-size: cover;
+  /* Makes sure the image covers the entire element */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents repeating */
+  padding: 20px;
+  /* Adds space around the content */
+  color: black;
+  /* Ensures text color is readable */
+}
+
+/* line 23, app/assets/stylesheets/ideas.scss */
+.wrapper {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 28, app/assets/stylesheets/ideas.scss */
+.ideas-title {
+  margin-bottom: 10px;
+  font-size: 55px;
+}

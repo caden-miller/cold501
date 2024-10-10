@@ -1,5 +1,1 @@
-<%= turbo_stream.remove @user %>
-
-<%= turbo_stream.update "modal" do %>
-  <%= "" %>
-<% end %>
+<%= turbo_stream.remove "user_#{@user.id}" %>

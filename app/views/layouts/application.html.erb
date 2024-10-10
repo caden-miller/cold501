@@ -8,6 +8,7 @@
 
     <!-- Application Stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "turbo", type: "module" %>
 
     <!-- Controller-Specific Stylesheets -->
     <% if controller_name == 'merchandises' %>
@@ -17,6 +18,7 @@
     <% if controller_name == 'ideas' %>
       <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
     <% end %>
+
 
     <!-- Importmap for JavaScript -->
     <%= javascript_importmap_tags %>

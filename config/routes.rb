@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :ideas
   resources :merchandises
   resources :merch
+  resources :links, except: [:show]
 
 
   resources :events do   # Generates all routes for events (index, show, new, edit, create, update, destroy)
     member do
       get 'delete'
     end
+    resources :attendances, only: [:create]
   end
 
   root to: 'home#index'
@@ -27,7 +29,6 @@ Rails.application.routes.draw do
   resources :users do
     member do
       get :delete
-      get :show
     end
 
     collection do

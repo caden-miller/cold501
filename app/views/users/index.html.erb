@@ -1,32 +1,24 @@
-<h1 class="page-title">Users</h1>
+<main class="container">  
+  <header class="header">
+    <h1 class="header__title">User Management</h1>
+  </header>
 
-<table class="users-table">
-  <thead class="users-table__header">
-    <tr class="users-table__row">
-    <th class="users-table__cell users-table__cell--header">Avatar</th>
-      <th class="users-table__cell users-table__cell--header">Full Name</th>
-      <th class="users-table__cell users-table__cell--header">Role</th>
-      <th class="users-table__cell users-table__cell--header">Committee</th>
-      <th class="users-table__cell users-table__cell--header">Points</th>
-      <th class="users-table__cell users-table__cell--header">Dues</th>
-      <th class="users-table__cell users-table__cell--header">Actions</th>
-    </tr>
-  </thead>
-  <tbody class="users-table__body">
-    <% @users.each do |user| %>
-      <tr class="users-table__row" id="<%= dom_id(user) %>">
-        <td class="users-table__cell" id="avatar"><%= image_tag user.avatar_url if user.avatar_url != "www.test.com" %></td>
-        <td class="users-table__cell"><%= user.full_name %></td>
-        <td class="users-table__cell"><%= user.role %></td>
-        <td class="users-table__cell"><%= user.committee %></td>
-        <td class="users-table__cell"><%= user.points %></td>
-        <td class="users-table__cell"><%= user.dues %></td>
-        <td class="users-table__cell">
-          <%= link_to 'Show', user %>
-          <%= link_to 'Edit', edit_user_path(user) %>
-          <%= link_to 'Delete', user_path(user), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-        </td>
+  <table class="users-table">
+    <thead class="users-table__header">
+      <tr class="users-table__row">
+      <th class="users-table__cell users-table__cell--header">Avatar</th>
+        <th class="users-table__cell users-table__cell--header">Full Name</th>
+        <th class="users-table__cell users-table__cell--header">Role</th>
+        <th class="users-table__cell users-table__cell--header">Committee</th>
+        <th class="users-table__cell users-table__cell--header">Points</th>
+        <th class="users-table__cell users-table__cell--header">Dues</th>
+        <th class="users-table__cell users-table__cell--header">Actions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody class="users-table__body" id="users">
+      <% @users.each do |user| %>
+        <%= render user %>
+      <% end %>
+    </tbody>
+  </table>
+</main>

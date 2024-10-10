@@ -33,5 +33,8 @@ module Cold501
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Make sure assets are precompiled
+    config.assets.initialize_on_precompile = false
   end
 end

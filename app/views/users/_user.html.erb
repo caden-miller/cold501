@@ -1,32 +1,13 @@
-<div id="<%= dom_id user %>">
-    <p>
-        <strong>Avatar:</strong>
-        <%= user.avatar_url %>
-    </p>
-
-    <p>
-        <strong>Full Name:</strong>
-        <%= user.full_name %>
-    </p>
-
-    <p>
-        <strong>Role:</strong>
-        <%= user.role %>
-    </p>
-
-    <p>
-        <strong>Committee:</strong>
-        <%= user.committee %>
-    </p>
-
-    <p>
-        <strong>Points:</strong>
-        <%= user.points %>
-    </p>
-
-    <p>
-        <strong>Dues:</strong>
-        <%= user.dues %>
-    </p>
-    
-</div>
+<tr id='user_<%= user.id %>'>
+  <td><%= image_tag user.avatar_url, class: 'user__image' %></td>
+  <td><%= user.full_name %></td>
+  <td><%= user.role %></td>
+  <td><%= user.committee %></td>
+  <td><%= user.points %></td>
+  <td><%= user.dues %></td>
+  <td>
+    <%= link_to 'Show', user %>
+    <%= link_to 'Edit', edit_user_path(user) %>
+    <%= link_to 'Delete', user_path(user), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+  </td>
+</tr> 

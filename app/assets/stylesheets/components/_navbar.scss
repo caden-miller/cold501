@@ -62,7 +62,10 @@
   }
 
   &__item {
+    display: flex;
     margin: 0 0.5em;
+    align-self: center;
+    text-align: center;
 
     @media (max-width: 768px) {
       margin: 0;
