@@ -10,7 +10,7 @@
   <div class="idea-footer">
   <p>
     <strong>Created by:</strong>
-    <%= idea.user ? idea.user.name : "Unknown" %>
+    <%= idea.user ? idea.user&.name : "Unknown" %>
   </p>
 
   <p>

@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2024_09_21_034108) do
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
+<<<<<<< HEAD
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "passcode"
@@ -47,28 +52,57 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
 
   create_table "ideas", force: :cascade do |t|
     t.string "title"
+=======
+    t.datetime "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "passcode"
+  end
+
+  create_table "ideas", force: :cascade do |t|
+    t.string "title", null: false
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)
     t.string "description"
     t.integer "created_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "leaderboard_categories", force: :cascade do |t|
     t.string "category_name"
     t.integer "min_points"
     t.string "color"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+=======
   create_table "links", force: :cascade do |t|
     t.string "title"
     t.string "link"
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
+  create_table "links", force: :cascade do |t|
+    t.string "title"
+    t.string "link"
+=======
   create_table "merchandises", force: :cascade do |t|
+    t.string "link"
+    t.string "title"
+    t.string "description"
+    t.string "image"
+    t.integer "stock"
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+<<<<<<< HEAD
+  create_table "merchandises", force: :cascade do |t|
+=======
+  create_table "merches", force: :cascade do |t|
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)
     t.string "link"
     t.string "title"
     t.string "description"
@@ -78,7 +112,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)
   create_table "photos", force: :cascade do |t|
     t.text "image_data"
     t.string "title"
@@ -103,7 +140,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+<<<<<<< HEAD
   add_foreign_key "attendances", "events", on_delete: :cascade
   add_foreign_key "attendances", "users"
   add_foreign_key "photos", "users"
 end
+=======
+  add_foreign_key "attendances", "events"
+  add_foreign_key "attendances", "users"
+  add_foreign_key "photos", "users"
+end
+>>>>>>> 2309d77 (Working on Getting user displayed for ideas)

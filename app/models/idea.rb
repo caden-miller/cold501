@@ -2,5 +2,5 @@
 
 class Idea < ApplicationRecord
   validates :title, presence: true
-  belongs_to :user
+  belongs_to :user, foreign_key: 'created_by'
 end
