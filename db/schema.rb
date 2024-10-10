@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
-=======
 ActiveRecord::Schema[7.0].define(version: 2024_09_21_034108) do
->>>>>>> 2309d77 (Working on Getting user displayed for ideas)
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 

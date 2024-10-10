@@ -36738,4 +36738,552 @@ Completed 200 OK in 17ms (Views: 5.6ms | ActiveRecord: 2.9ms | Allocations: 1038
 
 Started POST "/users/auth/google_oauth2" for 192.168.65.1 at 2024-10-10 21:09:02 +0000
 Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+<<<<<<< HEAD
 >>>>>>> 2309d77 (Working on Getting user displayed for ideas)
+=======
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-10-10 21:24:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 204)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 65.1ms | Allocations: 3828)
+  Rendered layout layouts/application.html.erb (Duration: 67.7ms | Allocations: 4994)
+Completed 200 OK in 72ms (Views: 41.5ms | ActiveRecord: 26.9ms | Allocations: 5926)
+
+
+Started GET "/ideas/new" for 192.168.65.1 at 2024-10-10 21:24:17 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by IdeasController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.5ms | Allocations: 836)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 923)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.0ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2802)
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 3504)
+
+
+Started POST "/ideas" for 192.168.65.1 at 2024-10-10 21:24:22 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by IdeasController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "idea"=>{"title"=>"t1", "description"=>"d1"}, "commit"=>"Create Idea"}
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.3ms | Allocations: 1140)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1227)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 171)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.5ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3098)
+Completed 422 Unprocessable Entity in 7ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 4528)
+
+
+Started GET "/ideas" for 192.168.65.1 at 2024-10-10 21:24:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by IdeasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:6
+  Rendered ideas/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 905)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2772)
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 1.1ms | Allocations: 3602)
+
+
+Started GET "/links" for 192.168.65.1 at 2024-10-10 21:24:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by LinksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:13
+  Rendered links/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 586)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 1804)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 2489)
+
+
+Started GET "/links" for 192.168.65.1 at 2024-10-10 21:24:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by LinksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/links/index.html.erb:13
+  Rendered links/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 586)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1804)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 2503)
+
+
+Started GET "/photos" for 192.168.65.1 at 2024-10-10 21:24:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by PhotosController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 682)
+
+
+Started GET "/users/sign_in" for 192.168.65.1 at 2024-10-10 21:24:40 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 248)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 175)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 939)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2199)
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 3210)
+
+
+Started POST "/users/auth/google_oauth2" for 192.168.65.1 at 2024-10-10 21:24:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Started GET "/" for 192.168.65.1 at 2024-10-10 21:25:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 172)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.2ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 1841)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 2522)
+
+
+Started GET "/ideas" for 192.168.65.1 at 2024-10-10 21:25:11 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by IdeasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:6
+  Rendered ideas/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 601)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 2467)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.9ms | Allocations: 3197)
+
+
+Started GET "/ideas/new" for 192.168.65.1 at 2024-10-10 21:25:14 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by IdeasController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.8ms | Allocations: 831)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 918)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.1ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2797)
+Completed 200 OK in 11ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 3481)
+
+
+Started POST "/ideas" for 192.168.65.1 at 2024-10-10 21:25:21 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by IdeasController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "idea"=>{"title"=>"t1", "description"=>"d1"}, "commit"=>"Create Idea"}
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.7ms | Allocations: 1138)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1225)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3096)
+Completed 422 Unprocessable Entity in 13ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 4503)
+
+
+Started GET "/" for 192.168.65.1 at 2024-10-10 21:25:23 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 172)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.1ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 1841)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 2527)
+
+
+Started GET "/" for 192.168.65.1 at 2024-10-10 21:25:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1841)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.3ms | Allocations: 2531)
+
+
+Started GET "/" for 192.168.65.1 at 2024-10-10 21:25:31 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 1841)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.4ms | Allocations: 2545)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:25:53 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.1ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1055)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 196)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3175)
+Completed 200 OK in 16ms (Views: 8.4ms | ActiveRecord: 1.4ms | Allocations: 5037)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-10-10 21:25:55 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 5.8ms | Allocations: 2738)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3042)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 177)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5121)
+Completed 200 OK in 40ms (Views: 11.1ms | ActiveRecord: 21.0ms | Allocations: 9632)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:26:39 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.7ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 606)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 2473)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 1.2ms | Allocations: 3258)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-10-10 21:26:42 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 2.3ms | Allocations: 1506)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1593)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 171)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.0ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3472)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 4181)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-10-10 21:28:26 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 3.0ms | Allocations: 1794)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2118)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 424)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.4ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5476)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.4ms | Allocations: 6866)
+
+
+Started POST "/merchandises" for 192.168.65.1 at 2024-10-10 21:29:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"l1", "title"=>"t1", "description"=>"d1", "stock"=>"1111"}, "commit"=>"Create Merchandise"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mMerchandise Create (10.2ms)[0m  [1m[32mINSERT INTO "merchandises" ("link", "title", "description", "image", "stock", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["link", "l1"], ["title", "t1"], ["description", "d1"], ["image", nil], ["stock", 1111], ["created_at", "2024-10-10 21:29:02.267244"], ["updated_at", "2024-10-10 21:29:02.267244"]]
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/merchandises/1
+Completed 302 Found in 25ms (ActiveRecord: 12.1ms | Allocations: 4304)
+
+
+Started GET "/merchandises/1" for 192.168.65.1 at 2024-10-10 21:29:02 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchandise Load (1.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:64:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 298)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1400)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 177)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3447)
+Completed 200 OK in 17ms (Views: 6.0ms | ActiveRecord: 1.6ms | Allocations: 9045)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:29:05 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.5ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 968)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 2835)
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.8ms | Allocations: 3697)
+
+
+Started GET "/merchandises/1" for 192.168.65.1 at 2024-10-10 21:29:08 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:64:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/show.html.erb within layouts/application
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered merchandises/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 390)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2247)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 1.0ms | Allocations: 3463)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:29:12 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 750)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2615)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 3313)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:30:31 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.1ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 328)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 7552)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 464)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.8ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 13164)
+Completed 200 OK in 40ms (Views: 21.7ms | ActiveRecord: 6.4ms | Allocations: 19437)
+
+
+Started GET "/merchandises/new" for 192.168.65.1 at 2024-10-10 21:30:32 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/new.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 7.1ms | Allocations: 2841)
+  Rendered merchandises/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3148)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 177)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 958)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 5246)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 0.5ms | Allocations: 6153)
+
+
+Started GET "/" for 192.168.65.1 at 2024-10-10 21:30:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 337)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 210)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 970)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 2422)
+Completed 200 OK in 11ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 3814)
+
+
+Started GET "/" for 192.168.65.1 at 2024-10-10 21:30:35 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 83)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 809)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1841)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 2598)
+
+
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:30:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 779)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 171)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 2645)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 0.9ms | Allocations: 3356)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:31:33 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.1ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 328)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 7551)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 464)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.6ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 25.8ms | Allocations: 13163)
+Completed 200 OK in 39ms (Views: 21.5ms | ActiveRecord: 6.4ms | Allocations: 19433)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:34:44 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:6
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.6ms | Allocations: 328)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 7551)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 464)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.9ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 13163)
+Completed 200 OK in 43ms (Views: 23.9ms | ActiveRecord: 7.2ms | Allocations: 19425)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:40:24 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.1ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:7
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 328)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 14.1ms | Allocations: 7559)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 464)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.7ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 13172)
+Completed 200 OK in 38ms (Views: 21.3ms | ActiveRecord: 6.3ms | Allocations: 19427)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/merchandises" for 192.168.65.1 at 2024-10-10 21:41:13 +0000
+Cannot render console from 192.168.65.1! Allowed networks: 172.17.0.0/172.17.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.0ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:7
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 328)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 7558)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 464)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.6ms | Allocations: 1563)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 13170)
+Completed 200 OK in 38ms (Views: 21.6ms | ActiveRecord: 6.2ms | Allocations: 19414)
+
+
+>>>>>>> 3fc140a (Worked on merchandise)
