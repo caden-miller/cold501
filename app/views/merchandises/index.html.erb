@@ -1,14 +1,17 @@
+<div class="wrapper">
 <p style="color: green"><%= notice %></p>
 
-<h1>Merchandise</h1>
+<h1 class="merchtitle">Merchandise</h1>
 
-<div id="merchandises">
+<div id="merchandises" class="merch-list">
   <% @merchandises.each do |merchandise| %>
+    <div class="merch-item"h1>
     <%= render merchandise %>
     <p>
       <%= link_to "Show this merchandise", merchandise %>
     </p>
+    </div>
   <% end %>
 </div>
-
 <%= link_to "New merchandise", new_merchandise_path %>
+</div>

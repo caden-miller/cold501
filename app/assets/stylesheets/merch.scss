@@ -1,0 +1,29 @@
+a {
+    color: black;
+}
+
+.merchtitle{
+    margin-bottom: 10px;
+    font-size: 55px;
+}
+
+.merch-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 20px;
+}
+
+form {
+    border: 10px black;
+    text-align: center;    
+}
+
+.wrapper {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.merch-item{
+    border: black, 1px, solid;
+}
