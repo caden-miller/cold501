@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   has_many :photos
   has_many :attendances, dependent: :destroy
+  has_many :photos
+  has_many :ideas
 
   # ensure devise works with omniauth-google_oauth2
   devise :omniauthable, omniauth_providers: [:google_oauth2]
@@ -16,5 +18,17 @@ class User < ApplicationRecord
   # TODO: change the default role from admin to member
   def self.from_google(email:, full_name:, uid:, avatar_url:)
     create_with(uid:, full_name:, avatar_url:, role: 'admin').find_or_create_by!(email:)
+  end
+
+  def admin?
+    role == 'admin'
+  end
+
+  def officer?
+    role == 'officer'
+  end
+
+  def member?
+    role == 'member'
   end
 end
