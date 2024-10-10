@@ -1,7 +1,14 @@
-<%= simple_form_for @photo, html: { class: "photo form", data: { turbo_frame: dom_id(@photo) } } do |form| %>
+<%= simple_form_for @photo, html: { class: "photo form", data: { turbo: false }, multipart: true } do |form| %>
   <% if @photo.errors.any? %>
-    <%= form.error_notification %>
-  <% end %>
+      <div class="error_messages">
+        <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+        <ul>
+          <% @photo.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
   <div class="photo__table-row">
     <div class="photo__table-cell">
