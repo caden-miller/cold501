@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AttendancesController < ApplicationController
+  belongs_to :event
   before_action :set_event
 
   def create
