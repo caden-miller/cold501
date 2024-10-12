@@ -1,7 +1,7 @@
 <div id="<%= dom_id merchandise %>">
   <p>
     <strong>Link:</strong>
-    <%= merchandise.link %>
+    <%= link_to merchandise.link, merchandise.link, target: '_blank' if merchandise.link.present? %>
   </p>
 
   <p>
@@ -16,7 +16,7 @@
 
   <p>
     <strong>Image:</strong>
-    <%= merchandise.image %>
+     <%= image_tag(merchandise.image) if merchandise.link.present? &&  merchandise.image.present? %>
   </p>
 
   <p>
