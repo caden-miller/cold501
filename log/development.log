@@ -26346,3 +26346,70 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 109ms (Views: 80.8ms | ActiveRecord: 6.2ms | Allocations: 29386)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos" for ::1 at 2024-10-13 18:30:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 126.5ms | Allocations: 148391)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 153.1ms | Allocations: 157105)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 746)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.7ms | Allocations: 4705)
+  Rendered layout layouts/application.html.erb (Duration: 164.8ms | Allocations: 166486)
+Completed 200 OK in 201ms (Views: 162.7ms | ActiveRecord: 10.8ms | Allocations: 185019)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos" for ::1 at 2024-10-13 18:30:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 106.8ms | Allocations: 148388)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 0.9ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 133.4ms | Allocations: 157102)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 746)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.0ms | Allocations: 4705)
+  Rendered layout layouts/application.html.erb (Duration: 144.0ms | Allocations: 166483)
+Completed 200 OK in 171ms (Views: 142.9ms | ActiveRecord: 7.9ms | Allocations: 184995)
+
+
+Started GET "/" for ::1 at 2024-10-13 18:30:46 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 887)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 489)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.5ms | Allocations: 1796)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4125)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 6401)
+
+
