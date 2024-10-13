@@ -1,0 +1,30 @@
+/* Base gallery styles */
+.gallery {
+    display: flex;
+    gap: 16px; /* Adjust gap between columns */
+
+    /* Gallery columns */
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Adjust gap between items */
+    flex: 1; /* Equal width columns */
+  }
+  
+  /* Gallery items */
+  &__item {
+    /* Optional styles for items */
+  }
+  
+  /* Gallery images */
+  &__image {
+    width: 100%;
+    display: block;
+    border-radius: 8px; /* Rounded corners */
+    /* Ensure images maintain aspect ratio */
+    height: auto;
+  }
+  }
+  
+  
+  

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PhotosController < ApplicationController
-  before_action :set_photo, except: %i[index]
+  before_action :set_photo, except: %i[index gallery]
   before_action :authenticate_user!
 
   # GET /photos
@@ -59,6 +59,10 @@ class PhotosController < ApplicationController
       format.html { redirect_to photos_path, notice: 'Photo was successfully deleted.' }
       format.turbo_stream
     end
+  end
+
+  def gallery
+    @photos = Photo.all
   end
 
   private
