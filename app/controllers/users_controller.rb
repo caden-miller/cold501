@@ -27,7 +27,9 @@ class UsersController < ApplicationController
       end
     else
       respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.replace("user_#{@user.id}", partial: 'form', locals: { user: @user }) }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace("user_#{@user.id}", partial: 'form', locals: { user: @user })
+        end
         format.html { render :edit, status: :unprocessable_entity }
       end
     end
@@ -49,9 +51,9 @@ class UsersController < ApplicationController
 
   def reset_points
     # user = User.first  # Or any specific user
-    puts "trying to update"
+    puts 'trying to update'
     User.update_all(points: 0)
-    puts "updated"
+    puts 'updated'
     redirect_to users_path
     # redirect_to users_path
   end

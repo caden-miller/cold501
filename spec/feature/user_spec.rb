@@ -128,7 +128,6 @@ RSpec.feature 'View Users on Leaderboard', type: :feature do
   end
 end
 
-
 RSpec.feature 'Reset User Points', type: :feature do
   let!(:admin) do
     create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', points: 10,
@@ -145,7 +144,7 @@ RSpec.feature 'Reset User Points', type: :feature do
 
     expect(page).to have_content('Test User')
     expect(page).to have_content('10')
-    
+
     accept_confirm do
       click_on 'Reset Member Points'
     end
@@ -153,5 +152,3 @@ RSpec.feature 'Reset User Points', type: :feature do
     expect(page).to have_content('0')
   end
 end
-
-

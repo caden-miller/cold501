@@ -14,14 +14,13 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    puts "Inside New Photo"
+    puts 'Inside New Photo'
     @photo = Photo.new
-    puts "Leaving New Photo"
+    puts 'Leaving New Photo'
   end
-  
 
   # GET /photos/1/edit
-  def edit 
+  def edit
     respond_to do |format|
       format.turbo_stream
       format.html
@@ -30,20 +29,19 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
-    puts "Inside Create Photo"
+    puts 'Inside Create Photo'
     @photo = current_user.photos.build(photo_params)
     # @photo = Photo.new(photo_params)
     # @photo.user = current_user
-  
+
     if @photo.save
-      puts "Photo Created"
+      puts 'Photo Created'
       respond_to do |format|
-        
-        format.html { redirect_to photos_path, notice: "Photo Created" }
+        format.html { redirect_to photos_path, notice: 'Photo Created' }
         format.turbo_stream
       end
     else
-      puts "Photo Not Created"
+      puts 'Photo Not Created'
       render :new, status: :unprocessable_entity
     end
   end
@@ -58,13 +56,13 @@ class PhotosController < ApplicationController
     else
       respond_to do |format|
         format.html { render :gallery, status: :unprocessable_entity }
-        format.turbo_stream {
+        format.turbo_stream do
           render turbo_stream: turbo_stream.replace(
             dom_id(@photo),
             partial: 'photos/form',
             locals: { photo: @photo }
           ), status: :unprocessable_entity
-        }
+        end
       end
     end
   end
