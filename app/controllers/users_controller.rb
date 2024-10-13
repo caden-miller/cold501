@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :get_user, except: %i[index leaderboard]
+  before_action :get_user, except: %i[index leaderboard reset_points]
   before_action :set_role, :set_navbar_variables
   before_action :authenticate_member!, only: [:leaderboard]
   before_action :authenticate_admin!, except: [:leaderboard]
@@ -45,6 +45,15 @@ class UsersController < ApplicationController
 
   def leaderboard
     @users = User.order(:id)
+  end
+
+  def reset_points
+    # user = User.first  # Or any specific user
+    puts "trying to update"
+    User.update_all(points: 0)
+    puts "updated"
+    redirect_to users_path
+    # redirect_to users_path
   end
 
   private

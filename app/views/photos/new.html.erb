@@ -1,9 +1,7 @@
-<h1>New photo</h1>
+<!--new.html.erb-->
+<h1>New Photo</h1>
+<%= link_to "Back to photos", photos_path %>
 
-<%= render "form", photo: @photo %>
-
-<br>
-
-<div>
-  <%= link_to "Back to photos", photos_path %>
-</div>
+<%= turbo_frame_tag @photo do %>
+  <%= render "form", photo: @photo %>
+<% end %>

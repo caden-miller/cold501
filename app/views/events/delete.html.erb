@@ -1,15 +1,17 @@
-<%= link_to("Back to List", events_path, :class => 'back-link') %>
-<div class="events delete">
-  <h2>Delete Event</h2>
+<main class="container">
+  <%= link_to("Back to List", events_path, :class => 'back-link') %>
+  <div class="events delete">
+    <h2>Delete Event</h2>
 
-  <%= form_for(@event, method: 'delete') do |f| %>
-    <% # url: event_path(@event), method: 'post' %>
+    <%= form_for(@event, method: 'delete') do |f| %>
+      <% # url: event_path(@event), method: 'post' %>
 
-    <p>Are you sure you want to permanently delte this event?</p>
-    <p><%= @event.name %>
+      <p>Are you sure you want to permanently delte this event?</p>
+      <p><%= @event.name %>
 
-    <div class="form-buttons">
-        <%= f.submit("Delete Event") %>
-    </div>
-  <% end %>
-</div>
+      <div class="form-buttons">
+          <%= f.submit("Delete Event") %>
+      </div>
+    <% end %>
+  </div>
+</main>

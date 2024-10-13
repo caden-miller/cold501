@@ -55,9 +55,9 @@ class ApplicationController < ActionController::Base
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
 
     @auth_link = if current_user
-                   { name: 'Logout', path: destroy_user_session_path, method: :delete }
+                   { name: 'Logout', path: destroy_user_session_path, method: :get }
                  else
-                   { name: 'Login', path: new_user_session_path }
+                   { name: 'Login', path: user_google_oauth2_omniauth_authorize_path, method: :post }
                  end
   end
 

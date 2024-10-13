@@ -93,3 +93,4 @@ end
 
 gem 'brakeman'
 gem 'rubocop'
+gem 'simple_calendar'
