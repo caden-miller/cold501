@@ -4,7 +4,7 @@
     alt: photo.description || 'No description',
     class: 'gallery__image'
   ) %>
-  <%= simple_form_for @photo, html: { class: "photo form gallery__content", data: { turbo: false }, multipart: true } do |form| %>
+  <%= simple_form_for @photo, html: { class: "photo form gallery__content", multipart: true } do |form| %>
     <% if @photo.errors.any? %>
         <div class="error_messages">
           <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
@@ -29,7 +29,7 @@
         <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
           <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
         <% end %>
-        <%= link_to photos_path, class: 'photo__table-button cancel', data: { turbo: "false" } do %>
+        <%= button_to photos_path, class: 'photo__table-button cancel' do %>
           <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
         <% end %>
       </div>
