@@ -141,19 +141,19 @@
         width: 65%;
         height: 50%;
         padding: var(--space-m);
-        color: var(--color-tertiary);
+        // color: var(--color-tertiary);
         font-family: 'Lato';
         margin-top: var(--space-m);
         margin-bottom: var(--space-m);
-        border-radius: var(--border-radius);
-        background-color: var(--color-secondary-rotate);
+        // border-radius: var(--border-radius);
+        // background-color: var(--color-secondary-rotate);
         border: 2px solid var(--color-secondary);
         box-shadow: var(--shadow-large);
 
         h3 {
             // padding: var(--space-m);
             text-align: left;
-            color: var(--color-glint);
+            color: var(--color-secondary);
             width: 100%;
         }
 
@@ -166,7 +166,7 @@
     &__quote h3 {
         text-align: center;
         font-weight: bold;
-        color: var(--color-tertiary);
+        color: var(--color-secondary);
     }
 
     &__button {

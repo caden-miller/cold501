@@ -327,6 +327,8 @@ GEM
     shrine (3.6.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
+    simple_calendar (3.0.4)
+      rails (>= 6.1)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -410,6 +412,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   shrine
+  simple_calendar
   simple_form (~> 5.1.0)
   simplecov
   sprockets-rails

@@ -105,6 +105,28 @@
         background-color: var(--color-secondary);
         cursor: pointer;
     }
+
+    &__button {
+        background-color: var(--color-secondary);
+        padding: 0.5em 1em;
+        border-radius: var(--border-radius);
+        border: 0px solid var(--color-secondary);
+        cursor: pointer;
+    
+        color: var(--color-tertiary);
+        text-decoration: none;
+        font-weight: bold;
+    
+        transition: background-color 0.5s ease, color 0.5s ease;
+        @include media(mobile) {
+          display: none;
+        }
+      }
+    
+      &__button:hover {
+        background-color: var(--color-secondary-rotate);
+        color: var(--color-glint);
+      }
 }
 
 .edit,
