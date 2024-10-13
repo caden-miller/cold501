@@ -14,7 +14,7 @@
   <% end %>
 
   <% if current_user.role == 'member' %>
-    <%= form_with model: @event, url: event_attendances_path(@event), local: true do |form| %>
+    <%= form_with url: event_attendances_path(@event), local: true do |form| %>
       <div class="form-group">
         <%= form.label :passcode, "Enter Attendance Passcode" %>
         <%= form.text_field :passcode, class: 'form-control' %>
@@ -25,18 +25,16 @@
     <% end %>
   <% end %>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @event.name %>
-  </p>
+  <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %> |
+  <%= link_to 'Delete Event', event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+  <%= link_to 'Back to Events', events_path, class: 'btn btn-secondary' %> |
+  <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
 
   <% if @event.archived? %>
     <%= link_to 'Unarchive Event', unarchive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
   <% else %>
     <%= link_to 'Archive Event', archive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
   <% end %>
-
-  <%= link_to 'Back to Events', events_path, class: 'btn btn-link' %>
 
   <h2>Attendance List</h2>
   <table class="table table-bordered">
@@ -57,9 +55,4 @@
       <% end %>
     </tbody>
   </table>
-
-  <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %> |
-  <%= link_to 'Delete Event', events_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-  <%= link_to 'Back to Events', events_path, class: 'btn btn-secondary' %> |
-  <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
 </main>

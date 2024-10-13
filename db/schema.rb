@@ -39,9 +39,10 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "passcode"
+    t.datetime "date"
+    t.string "location"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.string "location"
     t.boolean "archived", default: false, null: false
   end
 
@@ -49,6 +50,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
     t.string "title"
     t.string "description"
     t.integer "created_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "leaderboard_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.integer "min_points"
+    t.string "color"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
