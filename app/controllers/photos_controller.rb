@@ -57,7 +57,7 @@ class PhotosController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :gallery, status: :unprocessable_entity }
         format.turbo_stream {
           render turbo_stream: turbo_stream.replace(
             dom_id(@photo),

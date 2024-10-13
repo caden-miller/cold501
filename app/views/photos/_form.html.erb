@@ -1,34 +1,38 @@
-<%= simple_form_for @photo, html: { class: "photo form", data: { turbo: false }, multipart: true } do |form| %>
-  <% if @photo.errors.any? %>
-      <div class="error_messages">
-        <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-        <ul>
-          <% @photo.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+<div class="gallery__item">
+  <%= image_tag(
+    photo.image_url.present? ? photo.image_url : 'placeholder.jpg',
+    alt: photo.description || 'No description',
+    class: 'gallery__image'
+  ) %>
+  <%= simple_form_for @photo, html: { class: "photo form gallery__content", data: { turbo: false }, multipart: true } do |form| %>
+    <% if @photo.errors.any? %>
+        <div class="error_messages">
+          <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+          <ul>
+            <% @photo.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="">
+        <%= form.input :title %>
       </div>
-    <% end %>
-
-  <div class="photo__table-row">
-    <div class="photo__table-cell">
-      <%= form.input :title %>
-    </div>
-    <div class="photo__table-cell">
-      <%= form.input :description %>
-    </div>
-    <div class="photo__table-cell">
-      <%= form.file_field :image %>
-    </div>
-    <div class="photo__table-cell">
-      <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
-        <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
-      <% end %>
-      <%= link_to photos_path, class: 'photo__table-button cancel', data: { turbo: "false" } do %>
-        <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
-      <% end %>
-    </div>
-  </div>
-<% end %>
-
+      <div class="">
+        <%= form.input :description %>
+      </div>
+      <div class="">
+        <%= form.file_field :image %>
+      </div>
+      <div class="">
+        <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
+          <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
+        <% end %>
+        <%= link_to photos_path, class: 'photo__table-button cancel', data: { turbo: "false" } do %>
+          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
+        <% end %>
+      </div>
+  <% end %>
+</div>
 

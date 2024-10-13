@@ -22428,3 +22428,2407 @@ Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1701)
 ActiveRecord::RecordNotFound (Couldn't find Photo without an ID):
   
 app/controllers/photos_controller.rb:72:in `set_photo'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos" for ::1 at 2024-10-13 15:10:51 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 125.5ms | Allocations: 148752)
+  Rendered photos/index.html.erb within layouts/application (Duration: 132.6ms | Allocations: 153560)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 743)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 8.5ms | Allocations: 4704)
+  Rendered layout layouts/application.html.erb (Duration: 144.2ms | Allocations: 162849)
+Completed 200 OK in 173ms (Views: 141.8ms | ActiveRecord: 8.3ms | Allocations: 181358)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 15:10:53 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 21.5ms | Allocations: 22743)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 22.3ms | Allocations: 23015)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 23.0ms | Allocations: 23277)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.3ms | Allocations: 25246)
+
+
+Started POST "/photos" for ::1 at 2024-10-13 15:11:16 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"1234", "description"=>"1234", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007e882c979f68 @tempfile=#<Tempfile:/tmp/RackMultipart20241013-138605-72ar2n.png>, @content_type="image/png", @original_filename="cool-photo.png", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"cool-photo.png\"\r\nContent-Type: image/png\r\n">}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Create (2.0ms)[0m  [1m[32mINSERT INTO "photos" ("image_data", "title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["image_data", "{\"id\":\"9683631c97248f1de29e9c7cedc6ef8b.png\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"cool-photo.png\",\"size\":530054,\"mime_type\":\"image/png\"}}"], ["title", "1234"], ["description", "1234"], ["user_id", 19], ["created_at", "2024-10-13 20:11:17.082049"], ["updated_at", "2024-10-13 20:11:17.082049"]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Update (0.7ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"e36e0a3e2bccec74f972a8b04acfbc77.png\",\"storage\":\"store\",\"metadata\":{\"filename\":\"cool-photo.png\",\"size\":530054,\"mime_type\":\"image/png\"}}"], ["updated_at", "2024-10-13 20:11:17.212568"], ["id", 15]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 650ms (ActiveRecord: 7.3ms | Allocations: 16236)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 15:11:17 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1439)
+  Rendered photos/_photo.html.erb (Duration: 2.2ms | Allocations: 1344)
+  Rendered photos/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3632)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 454)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 6710)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 8290)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 15:11:20 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 8.7ms | Allocations: 14550)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 9.0ms | Allocations: 14610)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 9.1ms | Allocations: 14703)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 0.8ms | Allocations: 16111)
+
+
+Started POST "/photos" for ::1 at 2024-10-13 15:11:35 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"14", "description"=>"14", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007e882c246f48 @tempfile=#<Tempfile:/tmp/RackMultipart20241013-138605-lgs9y8.jpg>, @content_type="image/jpeg", @original_filename="background.jpg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"background.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "button"=>""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image_data", "title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["image_data", "{\"id\":\"efa24b8730f7590ef538e959e3f37057.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"background.jpg\",\"size\":1789665,\"mime_type\":\"image/jpeg\"}}"], ["title", "14"], ["description", "14"], ["user_id", 19], ["created_at", "2024-10-13 20:11:36.002434"], ["updated_at", "2024-10-13 20:11:36.002434"]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (3.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Update (1.0ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"44c29596f9c16445f115273450b94a37.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"background.jpg\",\"size\":1789665,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2024-10-13 20:11:36.143769"], ["id", 16]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 717ms (ActiveRecord: 8.5ms | Allocations: 10870)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 15:11:36 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1364)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1344)
+  Rendered photos/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 4930)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 7925)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.9ms | Allocations: 9357)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 15:11:37 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 8.4ms | Allocations: 14427)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 8.6ms | Allocations: 14487)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 8.8ms | Allocations: 14578)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 0.2ms | Allocations: 15963)
+
+
+Started POST "/photos" for ::1 at 2024-10-13 15:11:55 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"15", "description"=>"15"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/new.html.erb within layouts/application
+  Rendered photos/_form.html.erb (Duration: 9.5ms | Allocations: 15068)
+  Rendered photos/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 15128)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1709)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 18112)
+Completed 422 Unprocessable Entity in 18ms (Views: 13.1ms | ActiveRecord: 0.7ms | Allocations: 20390)
+
+
+Started POST "/photos" for ::1 at 2024-10-13 15:12:25 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"15", "description"=>"15", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007e8827f7fb38 @tempfile=#<Tempfile:/tmp/RackMultipart20241013-138605-8ann88.jpg>, @content_type="image/jpeg", @original_filename="logo-gray.jpg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"logo-gray.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "button"=>""}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image_data", "title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["image_data", "{\"id\":\"baea14a4feadd118cc793c08547c612e.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"logo-gray.jpg\",\"size\":288921,\"mime_type\":\"image/jpeg\"}}"], ["title", "15"], ["description", "15"], ["user_id", 19], ["created_at", "2024-10-13 20:12:25.682146"], ["updated_at", "2024-10-13 20:12:25.682146"]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Update (0.6ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"cc30526122017322542355c2983ea667.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"logo-gray.jpg\",\"size\":288921,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2024-10-13 20:12:25.829984"], ["id", 17]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 607ms (ActiveRecord: 5.4ms | Allocations: 10070)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 15:12:25 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1364)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 2.0ms | Allocations: 1344)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 6341)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 9336)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 0.8ms | Allocations: 10774)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 15:12:30 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 9.0ms | Allocations: 14428)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 9.1ms | Allocations: 14488)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 9.2ms | Allocations: 14579)
+Completed 200 OK in 13ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 15964)
+
+
+Started POST "/photos" for ::1 at 2024-10-13 15:12:59 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"16", "description"=>"16", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007e882f16abf8 @tempfile=#<Tempfile:/tmp/RackMultipart20241013-138605-p7zijf.png>, @content_type="image/png", @original_filename="ian.png", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"ian.png\"\r\nContent-Type: image/png\r\n">}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Create (0.7ms)[0m  [1m[32mINSERT INTO "photos" ("image_data", "title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["image_data", "{\"id\":\"bc86335f0c3f1c46ce7246a1200670a7.png\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"ian.png\",\"size\":838133,\"mime_type\":\"image/png\"}}"], ["title", "16"], ["description", "16"], ["user_id", 19], ["created_at", "2024-10-13 20:13:00.107160"], ["updated_at", "2024-10-13 20:13:00.107160"]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Update (0.7ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"4e4385a17113726b80e1717344a7a0fd.png\",\"storage\":\"store\",\"metadata\":{\"filename\":\"ian.png\",\"size\":838133,\"mime_type\":\"image/png\"}}"], ["updated_at", "2024-10-13 20:13:00.246995"], ["id", 18]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 634ms (ActiveRecord: 6.0ms | Allocations: 10334)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 15:13:00 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 1364)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 2.2ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1344)
+  Rendered photos/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 7751)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 10746)
+Completed 200 OK in 17ms (Views: 14.3ms | ActiveRecord: 0.9ms | Allocations: 12200)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 15:13:06 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 6.0ms | Allocations: 5939)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 453)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 8950)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.9ms | Allocations: 10431)
+
+
+Started GET "/" for ::1 at 2024-10-13 15:57:56 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 886)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 747)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.0ms | Allocations: 2201)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 5352)
+Completed 200 OK in 24ms (Views: 7.7ms | ActiveRecord: 5.7ms | Allocations: 11099)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 15:58:07 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 2.5ms | Allocations: 1991)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 0.9ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1344)
+  Rendered photos/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 8886)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 464)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 12039)
+Completed 200 OK in 18ms (Views: 13.5ms | ActiveRecord: 1.3ms | Allocations: 14048)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 15:58:10 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 5.8ms | Allocations: 5890)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 8901)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 1.1ms | Allocations: 10504)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:02:51 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 7.2ms | Allocations: 6327)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 754)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 10813)
+Completed 200 OK in 18ms (Views: 13.7ms | ActiveRecord: 1.1ms | Allocations: 12914)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:03:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 150.7ms | Allocations: 156949)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 808)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 10.8ms | Allocations: 4677)
+  Rendered layout layouts/application.html.erb (Duration: 166.0ms | Allocations: 166431)
+Completed 200 OK in 211ms (Views: 161.7ms | ActiveRecord: 10.2ms | Allocations: 184309)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:03:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 138.0ms | Allocations: 156949)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 808)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 8.4ms | Allocations: 4677)
+  Rendered layout layouts/application.html.erb (Duration: 149.9ms | Allocations: 166431)
+Completed 200 OK in 178ms (Views: 147.1ms | ActiveRecord: 8.9ms | Allocations: 184318)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:04:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 142.6ms | Allocations: 156945)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 808)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.1ms | Allocations: 4677)
+  Rendered layout layouts/application.html.erb (Duration: 154.5ms | Allocations: 166427)
+Completed 200 OK in 181ms (Views: 151.4ms | ActiveRecord: 8.5ms | Allocations: 184298)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:05:24 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 147.4ms | Allocations: 156950)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 808)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.5ms | Allocations: 4677)
+  Rendered layout layouts/application.html.erb (Duration: 159.7ms | Allocations: 166432)
+Completed 200 OK in 189ms (Views: 157.8ms | ActiveRecord: 8.6ms | Allocations: 184312)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:16:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 9.3ms | Allocations: 1634)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 40.3ms | Allocations: 6716)
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 6813)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 6.0ms | Allocations: 24646)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= turbo_frame_tag dom_id(photo) do %>
+    <div class="gallery__item">
+      <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+      <div class="gallery__content">
+        <h1><%= photo.title %></h1>
+        <p><%= photo.description %></p>
+        <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: dom_id(photo) } %>
+        <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+      </div>
+    </div>
+  <% end %>
+  
+):
+1:    <%= turbo_frame_tag dom_id(photo) do %>
+2:        <div class="gallery__item">
+3:          <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+4:          <div class="gallery__content">
+5:            <h1><%= photo.title %></h1>
+6:            <p><%= photo.description %></p>
+7:            <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: dom_id(photo) } %>
+8:            <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+9:          </div>
+10:        </div>
+11:      <% end %>
+12:      
+  
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/gallery.html.erb:13
+app/views/photos/gallery.html.erb:12:in `each'
+app/views/photos/gallery.html.erb:12
+app/views/photos/gallery.html.erb:10:in `each'
+app/views/photos/gallery.html.erb:10
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:17:35 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.6ms | Allocations: 1384)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 3.6ms | Allocations: 2480)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2567)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms | Allocations: 4866)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= turbo_frame_tag dom_id(photo) do %>
+    <div class="gallery__item">
+      <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+      <div class="gallery__content">
+        <h1><%= photo.title %></h1>
+        <p><%= photo.description %></p>
+        <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: dom_id(photo) } %>
+        <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+      </div>
+    </div>
+<% end %>
+  
+):
+1:    <%= turbo_frame_tag dom_id(photo) do %>
+2:        <div class="gallery__item">
+3:          <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+4:          <div class="gallery__content">
+5:            <h1><%= photo.title %></h1>
+6:            <p><%= photo.description %></p>
+7:            <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: dom_id(photo) } %>
+8:            <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+9:          </div>
+10:        </div>
+11:    <% end %>
+12:      
+  
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/_gallery_item.html.erb:14: syntax error, unexpected end-of-input, expecting `end'
+app/views/photos/gallery.html.erb:13
+app/views/photos/gallery.html.erb:12:in `each'
+app/views/photos/gallery.html.erb:12
+app/views/photos/gallery.html.erb:10:in `each'
+app/views/photos/gallery.html.erb:10
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:19:05 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 88.0ms | Allocations: 149543)
+  Rendered photos/_gallery_item.html.erb (Duration: 2.4ms | Allocations: 1242)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.5ms | Allocations: 1242)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 98.5ms | Allocations: 155821)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 747)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.7ms | Allocations: 4623)
+  Rendered layout layouts/application.html.erb (Duration: 110.0ms | Allocations: 165097)
+Completed 200 OK in 119ms (Views: 108.1ms | ActiveRecord: 3.3ms | Allocations: 167398)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:19:09 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 30.2ms | Allocations: 25395)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 31.8ms | Allocations: 25914)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 32.6ms | Allocations: 26174)
+Completed 200 OK in 42ms (Views: 33.5ms | ActiveRecord: 1.0ms | Allocations: 29300)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:19:48 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 13ms (ActiveRecord: 1.2ms | Allocations: 7755)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:19:48 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:19
+  Rendered photos/_photo.html.erb (Duration: 2.7ms | Allocations: 1948)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.8ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1344)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1344)
+  Rendered photos/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 8732)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 454)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 11810)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.9ms | Allocations: 13462)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:19:53 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 2.4ms | Allocations: 1255)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.4ms | Allocations: 1242)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.9ms | Allocations: 1242)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 8.9ms | Allocations: 7124)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 10134)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.9ms | Allocations: 11533)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:21:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 1.5ms | Allocations: 1600)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 155.0ms | Allocations: 159854)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 747)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 8.8ms | Allocations: 4677)
+  Rendered layout layouts/application.html.erb (Duration: 167.8ms | Allocations: 169203)
+Completed 200 OK in 198ms (Views: 164.4ms | ActiveRecord: 9.9ms | Allocations: 187080)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:21:54 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 28.7ms | Allocations: 22786)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 31.2ms | Allocations: 23412)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 31.7ms | Allocations: 23674)
+Completed 200 OK in 42ms (Views: 33.0ms | ActiveRecord: 1.0ms | Allocations: 26928)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:22:19 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.9ms | Allocations: 513)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 3.5ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 21.2ms | Allocations: 8096)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 724)
+  [1m[36mLink Load (3.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 45.6ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 77.9ms | Allocations: 12541)
+Completed 200 OK in 83ms (Views: 75.5ms | ActiveRecord: 4.0ms | Allocations: 14891)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:22:21 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 15.3ms | Allocations: 15162)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 17.6ms | Allocations: 15661)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 18.2ms | Allocations: 15881)
+Completed 200 OK in 26ms (Views: 19.6ms | ActiveRecord: 0.9ms | Allocations: 18274)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:23:01 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.8ms | Allocations: 1272)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 14.1ms | Allocations: 10512)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 466)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.6ms | Allocations: 3196)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 17343)
+Completed 200 OK in 36ms (Views: 19.0ms | ActiveRecord: 6.9ms | Allocations: 25153)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:23:03 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 9.3ms | Allocations: 14815)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 9.8ms | Allocations: 15077)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 9.9ms | Allocations: 15170)
+Completed 200 OK in 15ms (Views: 10.2ms | ActiveRecord: 0.6ms | Allocations: 17839)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:23:05 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test1", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.3ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test1"], ["updated_at", "2024-10-13 21:23:05.904527"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.0ms | Allocations: 13112)
+
+
+  
+NameError (undefined local variable or method `photos_gallery_path' for #<PhotosController:0x000000000213b8>
+
+        format.html { redirect_to photos_gallery_path, notice: 'Photo was successfully updated.' }
+                                  ^^^^^^^^^^^^^^^^^^^
+Did you mean?  photos_path):
+  
+app/controllers/photos_controller.rb:56:in `block (2 levels) in update'
+app/controllers/photos_controller.rb:54:in `update'
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:23:23 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test1", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 22ms (ActiveRecord: 5.3ms | Allocations: 14969)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:23:23 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.8ms | Allocations: 1270)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 9.1ms | Allocations: 8543)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 466)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.6ms | Allocations: 3252)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 15436)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 2.6ms | Allocations: 17268)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:23:26 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 9.9ms | Allocations: 14914)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 10.6ms | Allocations: 15176)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 10.8ms | Allocations: 15269)
+Completed 200 OK in 18ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 17317)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:23:29 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test"], ["updated_at", "2024-10-13 21:23:29.692745"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 10ms (ActiveRecord: 2.2ms | Allocations: 4949)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:23:29 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 7.5ms | Allocations: 7112)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 452)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 10130)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.8ms | Allocations: 11544)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:24:07 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 1.0ms | Allocations: 511)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.5ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 1.1ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 28.1ms | Allocations: 8090)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 724)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.8ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 12533)
+Completed 200 OK in 46ms (Views: 37.9ms | ActiveRecord: 1.2ms | Allocations: 14637)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:24:09 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 10.2ms | Allocations: 15158)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 11.5ms | Allocations: 15657)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 12.3ms | Allocations: 15876)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 0.9ms | Allocations: 18256)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:24:13 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test1", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.3ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test1"], ["updated_at", "2024-10-13 21:24:13.099103"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms | Allocations: 4931)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:24:13 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (2.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 2.7ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 5.1ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 7.9ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 6.7ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 2.9ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 150.1ms | Allocations: 7112)
+  Rendered layouts/_navbar.html.erb (Duration: 12.1ms | Allocations: 452)
+  [1m[36mLink Load (3.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 35.9ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 214.9ms | Allocations: 10130)
+Completed 200 OK in 234ms (Views: 217.4ms | ActiveRecord: 6.2ms | Allocations: 11562)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:25:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 2.1ms | Allocations: 1572)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 148.4ms | Allocations: 159896)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 747)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.6ms | Allocations: 4677)
+  Rendered layout layouts/application.html.erb (Duration: 160.1ms | Allocations: 169245)
+Completed 200 OK in 190ms (Views: 157.7ms | ActiveRecord: 8.7ms | Allocations: 187135)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:25:45 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 21.7ms | Allocations: 22782)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 23.1ms | Allocations: 23408)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 23.6ms | Allocations: 23670)
+Completed 200 OK in 32ms (Views: 24.5ms | ActiveRecord: 0.9ms | Allocations: 26924)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:25:47 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test2", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.3ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test2"], ["updated_at", "2024-10-13 21:25:47.864895"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 15ms (ActiveRecord: 2.4ms | Allocations: 9140)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:25:47 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 271)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 9.7ms | Allocations: 7438)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 455)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 10554)
+Completed 200 OK in 16ms (Views: 13.0ms | ActiveRecord: 0.8ms | Allocations: 12102)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:27:02 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.9ms | Allocations: 505)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 11.2ms | Allocations: 8135)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 724)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.1ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 12579)
+Completed 200 OK in 26ms (Views: 18.7ms | ActiveRecord: 1.5ms | Allocations: 14717)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:27:04 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 11.8ms | Allocations: 15160)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 13.2ms | Allocations: 15659)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 13.7ms | Allocations: 15878)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 1.1ms | Allocations: 18246)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:27:07 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test1", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test1"], ["updated_at", "2024-10-13 21:27:07.435490"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 11ms (ActiveRecord: 2.5ms | Allocations: 4938)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:27:07 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.5ms | Allocations: 241)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 10.4ms | Allocations: 7145)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 10163)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.7ms | Allocations: 11595)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:27:37 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 1.0ms | Allocations: 1253)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.5ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 14.3ms | Allocations: 10541)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 466)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.5ms | Allocations: 3195)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 17373)
+Completed 200 OK in 37ms (Views: 19.1ms | ActiveRecord: 6.7ms | Allocations: 25203)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:27:39 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 10.4ms | Allocations: 14828)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 11.1ms | Allocations: 15090)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 11.3ms | Allocations: 15184)
+Completed 200 OK in 18ms (Views: 11.8ms | ActiveRecord: 0.9ms | Allocations: 17875)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:27:42 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test12", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test12"], ["updated_at", "2024-10-13 21:27:42.264173"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 12ms (ActiveRecord: 2.4ms | Allocations: 6616)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:27:42 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.5ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 11.6ms | Allocations: 7143)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 10162)
+Completed 200 OK in 17ms (Views: 14.7ms | ActiveRecord: 0.7ms | Allocations: 11589)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:27:50 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.9ms | Allocations: 1259)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 12.9ms | Allocations: 10545)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 466)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.9ms | Allocations: 3195)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 17377)
+Completed 200 OK in 36ms (Views: 18.6ms | ActiveRecord: 7.9ms | Allocations: 25177)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:27:52 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 11.9ms | Allocations: 14819)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 12.6ms | Allocations: 15081)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 12.8ms | Allocations: 15174)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.4ms | Allocations: 17842)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:27:55 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test11", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.5ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test11"], ["updated_at", "2024-10-13 21:27:55.199074"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Completed 406 Not Acceptable in 11ms (ActiveRecord: 2.3ms | Allocations: 6829)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/photos_controller.rb:54:in `update'
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:28:03 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test11", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 22ms (ActiveRecord: 5.5ms | Allocations: 14919)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:28:03 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.8ms | Allocations: 1265)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 8.6ms | Allocations: 8582)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 466)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.3ms | Allocations: 3252)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 15473)
+Completed 200 OK in 21ms (Views: 15.7ms | ActiveRecord: 3.0ms | Allocations: 17320)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:28:06 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 11.1ms | Allocations: 14915)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 11.7ms | Allocations: 15177)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 11.8ms | Allocations: 15270)
+Completed 200 OK in 16ms (Views: 12.2ms | ActiveRecord: 0.5ms | Allocations: 17333)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:28:08 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test1", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test1"], ["updated_at", "2024-10-13 21:28:08.272942"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos/gallery
+Completed 302 Found in 13ms (ActiveRecord: 2.5ms | Allocations: 4946)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:28:08 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.6ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 8.6ms | Allocations: 7142)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 10160)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 0.9ms | Allocations: 11580)
+
+
+Started GET "/photos/gallery" for ::1 at 2024-10-13 16:30:31 -0500
+Processing by PhotosController#gallery as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/gallery.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos"[0m
+  ↳ app/views/photos/gallery.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 1460)
+  Rendered photos/_photo.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_photo.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_photo.html.erb (Duration: 0.5ms | Allocations: 238)
+  Rendered photos/_photo.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/gallery.html.erb within layouts/application (Duration: 15.5ms | Allocations: 11120)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 724)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 7.0ms | Allocations: 3600)
+  Rendered layout layouts/application.html.erb (Duration: 27.1ms | Allocations: 19179)
+Completed 200 OK in 42ms (Views: 23.0ms | ActiveRecord: 8.7ms | Allocations: 27457)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:30:33 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.9ms | Allocations: 435)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.7ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.6ms | Allocations: 238)
+  Rendered photos/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 8066)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 11077)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 1.0ms | Allocations: 12744)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 16:30:37 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 10.6ms | Allocations: 15233)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 11.5ms | Allocations: 15462)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 12.0ms | Allocations: 15681)
+Completed 200 OK in 17ms (Views: 12.7ms | ActiveRecord: 0.4ms | Allocations: 17344)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:30:47 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/index.html.erb within layouts/application (Duration: 9.7ms | Allocations: 7463)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 10473)
+Completed 200 OK in 18ms (Views: 12.9ms | ActiveRecord: 1.4ms | Allocations: 11897)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:30:50 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 9.6ms | Allocations: 14494)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 10.7ms | Allocations: 14936)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 10.9ms | Allocations: 15027)
+Completed 200 OK in 17ms (Views: 11.3ms | ActiveRecord: 0.7ms | Allocations: 17629)
+
+
+Started PATCH "/photos/3" for ::1 at 2024-10-13 16:30:53 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test12", "description"=>"test2\r\n"}, "button"=>"", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.3ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test12"], ["updated_at", "2024-10-13 21:30:53.355790"], ["id", 3]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms | Allocations: 6627)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:30:53 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 238)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 238)
+  Rendered photos/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 7463)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 10481)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.7ms | Allocations: 11931)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:32:21 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.8ms | Allocations: 476)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 239)
+  Rendered photos/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 3214)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 731)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 7668)
+Completed 200 OK in 18ms (Views: 12.6ms | ActiveRecord: 1.1ms | Allocations: 9793)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:32:23 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 0.8ms | Allocations: 240)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.5ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.4ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.3ms | Allocations: 239)
+  Rendered photos/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2449)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 452)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5459)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 1.0ms | Allocations: 7002)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos" for ::1 at 2024-10-13 16:33:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_gallery_item.html.erb (Duration: 11.9ms | Allocations: 1529)
+  Rendered photos/_gallery_item.html.erb (Duration: 2.6ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 239)
+  Rendered photos/_gallery_item.html.erb (Duration: 0.2ms | Allocations: 239)
+  Rendered photos/index.html.erb within layouts/application (Duration: 44.2ms | Allocations: 7874)
+  Rendered layouts/_navbar.html.erb (Duration: 11.9ms | Allocations: 759)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 27.8ms | Allocations: 4651)
+  Rendered layout layouts/application.html.erb (Duration: 110.4ms | Allocations: 17231)
+Completed 200 OK in 143ms (Views: 108.2ms | ActiveRecord: 9.0ms | Allocations: 35727)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:33:35 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 42.0ms | Allocations: 148388)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 49.3ms | Allocations: 155168)
+  Rendered layouts/_navbar.html.erb (Duration: 2.5ms | Allocations: 724)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 159614)
+Completed 200 OK in 62ms (Views: 57.9ms | ActiveRecord: 1.1ms | Allocations: 162018)
+
+
+Started GET "/photos/16/edit" for ::1 at 2024-10-13 16:33:38 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 23.5ms | Allocations: 23796)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 24.5ms | Allocations: 24315)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 24.9ms | Allocations: 24576)
+Completed 200 OK in 31ms (Views: 25.6ms | ActiveRecord: 0.6ms | Allocations: 27681)
+
+
+Started PATCH "/photos/16" for ::1 at 2024-10-13 16:33:41 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"15", "description"=>"14"}, "button"=>"", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.6ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "15"], ["updated_at", "2024-10-13 21:33:41.480218"], ["id", 16]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 15ms (ActiveRecord: 2.3ms | Allocations: 9138)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:33:41 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1505)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 7766)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 455)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 10881)
+Completed 200 OK in 16ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 12447)
+
+
+Started GET "/photos/16/edit" for ::1 at 2024-10-13 16:33:47 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 13.0ms | Allocations: 15690)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 13.9ms | Allocations: 15947)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 14.2ms | Allocations: 16039)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.9ms | Allocations: 17970)
+
+
+Started PATCH "/photos/16" for ::1 at 2024-10-13 16:33:50 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"14", "description"=>"14"}, "button"=>"", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.2ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "14"], ["updated_at", "2024-10-13 21:33:50.614441"], ["id", 16]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms | Allocations: 4859)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:33:50 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 7463)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 12.7ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 10480)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 0.7ms | Allocations: 11929)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:34:36 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 20.9ms | Allocations: 1752)
+  Rendered photos/_photo.html.erb (Duration: 5.5ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 2.1ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 42.3ms | Allocations: 8486)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 724)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.0ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 12929)
+Completed 200 OK in 53ms (Views: 47.9ms | ActiveRecord: 1.3ms | Allocations: 15093)
+
+
+Started GET "/photos/16/edit" for ::1 at 2024-10-13 16:34:38 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 12.7ms | Allocations: 16190)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 14.1ms | Allocations: 16689)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 14.9ms | Allocations: 16909)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.6ms | Allocations: 19281)
+
+
+Started PATCH "/photos/16" for ::1 at 2024-10-13 16:34:40 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"15", "description"=>"14"}, "button"=>"", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "15"], ["updated_at", "2024-10-13 21:34:40.810938"], ["id", 16]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 10ms (ActiveRecord: 2.4ms | Allocations: 4918)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:34:40 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 7433)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.3ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 10451)
+Completed 200 OK in 16ms (Views: 12.4ms | ActiveRecord: 0.9ms | Allocations: 11880)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:51:52 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 2.7ms | Allocations: 1753)
+  Rendered photos/_photo.html.erb (Duration: 1.8ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.9ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 8500)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 724)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 12943)
+Completed 200 OK in 41ms (Views: 19.9ms | ActiveRecord: 7.7ms | Allocations: 18302)
+
+
+Started GET "/photos/3/edit" for ::1 at 2024-10-13 16:51:55 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 14.5ms | Allocations: 16178)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 16.3ms | Allocations: 16677)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 17.0ms | Allocations: 16897)
+Completed 200 OK in 25ms (Views: 18.2ms | ActiveRecord: 1.0ms | Allocations: 19263)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:51:58 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 0.9ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 7433)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 10443)
+Completed 200 OK in 15ms (Views: 11.3ms | ActiveRecord: 1.1ms | Allocations: 11856)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:52:27 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 2.1ms | Allocations: 1754)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 8477)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 724)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.4ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 12922)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 1.2ms | Allocations: 15058)
+
+
+Started GET "/photos/16/edit" for ::1 at 2024-10-13 16:52:30 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 12.9ms | Allocations: 16200)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 14.2ms | Allocations: 16699)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 14.6ms | Allocations: 16919)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 19291)
+
+
+Started PATCH "/photos/16" for ::1 at 2024-10-13 16:52:33 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"16", "description"=>"14"}, "button"=>"", "id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.3ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "16"], ["updated_at", "2024-10-13 21:52:33.349992"], ["id", 16]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms | Allocations: 4933)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:52:33 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1242)
+  Rendered photos/_photo.html.erb (Duration: 1.8ms | Allocations: 1242)
+  Rendered photos/index.html.erb within layouts/application (Duration: 9.5ms | Allocations: 7433)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 10451)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.7ms | Allocations: 11892)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:54:54 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (4.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 17.9ms | Allocations: 1667)
+  Rendered photos/_photo.html.erb (Duration: 21.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 2.7ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 3.6ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 2.6ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 77.6ms | Allocations: 8130)
+  Rendered layouts/_navbar.html.erb (Duration: 1.9ms | Allocations: 724)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.3ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 86.8ms | Allocations: 12573)
+Completed 200 OK in 107ms (Views: 84.2ms | ActiveRecord: 5.1ms | Allocations: 14687)
+
+
+Started DELETE "/photos/16" for ::1 at 2024-10-13 16:55:01 -0500
+Processing by PhotosController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:75:in `destroy'
+  [1m[36mPhoto Destroy (0.4ms)[0m  [1m[31mDELETE FROM "photos" WHERE "photos"."id" = $1[0m  [["id", 16]]
+  ↳ app/controllers/photos_controller.rb:75:in `destroy'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:75:in `destroy'
+  Rendering photos/destroy.turbo_stream.erb
+  Rendered photos/destroy.turbo_stream.erb (Duration: 1.2ms | Allocations: 371)
+Completed 200 OK in 255ms (Views: 16.3ms | ActiveRecord: 4.7ms | Allocations: 9788)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:55:04 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 2.3ms | Allocations: 1432)
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 7.3ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 6090)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 455)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 9200)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.9ms | Allocations: 10843)
+
+
+Started GET "/photos/17/edit" for ::1 at 2024-10-13 16:55:09 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 12.3ms | Allocations: 16210)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 14.2ms | Allocations: 16744)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 14.7ms | Allocations: 16964)
+Completed 200 OK in 22ms (Views: 15.1ms | ActiveRecord: 1.0ms | Allocations: 18994)
+
+
+Started PATCH "/photos/17" for ::1 at 2024-10-13 16:55:12 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"16", "description"=>"15"}, "button"=>"", "id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "16"], ["updated_at", "2024-10-13 21:55:12.549063"], ["id", 17]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms | Allocations: 4939)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:55:12 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.8ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 5813)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 8831)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.9ms | Allocations: 10271)
+
+
+Started GET "/photos/18/edit" for ::1 at 2024-10-13 16:55:59 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 11.5ms | Allocations: 15571)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 12.3ms | Allocations: 15828)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 12.5ms | Allocations: 15919)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.9ms | Allocations: 17835)
+
+
+Started PATCH "/photos/18" for ::1 at 2024-10-13 16:56:01 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"17", "description"=>"16"}, "button"=>"", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.2ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "17"], ["updated_at", "2024-10-13 21:56:01.132517"], ["id", 18]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms | Allocations: 4807)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:56:01 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 0.9ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 5813)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.3ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 8830)
+Completed 200 OK in 13ms (Views: 10.2ms | ActiveRecord: 1.0ms | Allocations: 10289)
+
+
+Started GET "/photos/18/edit" for ::1 at 2024-10-13 16:56:06 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 10.2ms | Allocations: 15569)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 10.7ms | Allocations: 15826)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 10.9ms | Allocations: 15917)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 17827)
+
+
+Started PATCH "/photos/18" for ::1 at 2024-10-13 16:56:14 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"17", "description"=>"16", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007062203d51b0 @tempfile=#<Tempfile:/tmp/RackMultipart20241013-163027-55imuv.jpg>, @content_type="image/jpeg", @original_filename="heat-photo-1.jpg", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"heat-photo-1.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "button"=>"", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.6ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"e3c9b0fcba6a38c6e4219bf83ce229fd.jpg\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"heat-photo-1.jpg\",\"size\":5939618,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2024-10-13 21:56:16.519783"], ["id", 18]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.6ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"e76b743b46f7d9ea0a626b396aadb3a4.jpg\",\"storage\":\"store\",\"metadata\":{\"filename\":\"heat-photo-1.jpg\",\"size\":5939618,\"mime_type\":\"image/jpeg\"}}"], ["updated_at", "2024-10-13 21:56:16.770155"], ["id", 18]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 2735ms (ActiveRecord: 6.3ms | Allocations: 15752)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:56:16 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 5813)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 8830)
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 1.1ms | Allocations: 10277)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:57:03 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 2.1ms | Allocations: 1667)
+  Rendered photos/_photo.html.erb (Duration: 15.0ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 13.6ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 37.3ms | Allocations: 6782)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 724)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.4ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 42.9ms | Allocations: 11225)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.7ms | Allocations: 13357)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 16:57:04 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 1.1ms | Allocations: 1652)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 1.6ms | Allocations: 1888)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1.8ms | Allocations: 1967)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 3784)
+
+
+  
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    1: <div class="gallery__item">
+    2:   <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+    3:   <%= simple_form_for @photo, html: { class: "photo form gallery__content", data: { turbo: false }, multipart: true } do |form| %>
+    4:     <% if @photo.errors.any? %>
+    5:         <div class="error_messages">
+  
+app/views/photos/_form.html.erb:2
+app/views/photos/new.html.erb:2
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/photos" for ::1 at 2024-10-13 16:59:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 141.3ms | Allocations: 148388)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 154.0ms | Allocations: 157102)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 746)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 8.2ms | Allocations: 4705)
+  Rendered layout layouts/application.html.erb (Duration: 167.2ms | Allocations: 166483)
+Completed 200 OK in 201ms (Views: 164.9ms | ActiveRecord: 10.1ms | Allocations: 185000)
+
+
+Started GET "/photos/17/edit" for ::1 at 2024-10-13 16:59:44 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 24.9ms | Allocations: 25025)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 26.5ms | Allocations: 25651)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 26.9ms | Allocations: 25913)
+Completed 200 OK in 36ms (Views: 27.9ms | ActiveRecord: 0.9ms | Allocations: 29138)
+
+
+Started PATCH "/photos/17" for ::1 at 2024-10-13 16:59:47 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"17", "description"=>"15"}, "button"=>"", "id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.4ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "17"], ["updated_at", "2024-10-13 21:59:47.770085"], ["id", 17]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 13ms (ActiveRecord: 2.3ms | Allocations: 9137)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 16:59:47 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 11.2ms | Allocations: 1430)
+  Rendered photos/_photo.html.erb (Duration: 6.7ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 2.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 6051)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 455)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 9167)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.8ms | Allocations: 10727)
+
+
+Started GET "/photos/new" for ::1 at 2024-10-13 16:59:49 -0500
+Processing by PhotosController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/new.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 10.1ms | Allocations: 14683)
+  Rendered photos/new.html.erb within layouts/turbo_rails/frame (Duration: 10.8ms | Allocations: 14890)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 11.0ms | Allocations: 14983)
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.5ms | Allocations: 16470)
+
+
+Started POST "/photos" for ::1 at 2024-10-13 17:00:04 -0500
+Processing by PhotosController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test123", "description"=>"test345", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007dbd0c9fb450 @tempfile=#<Tempfile:/tmp/RackMultipart20241013-175835-wix4f0.png>, @content_type="image/png", @original_filename="ian.png", @headers="Content-Disposition: form-data; name=\"photo[image]\"; filename=\"ian.png\"\r\nContent-Type: image/png\r\n">}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Create (0.9ms)[0m  [1m[32mINSERT INTO "photos" ("image_data", "title", "description", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["image_data", "{\"id\":\"c6d8d543c02682c5032f2ae5990375f3.png\",\"storage\":\"cache\",\"metadata\":{\"filename\":\"ian.png\",\"size\":838133,\"mime_type\":\"image/png\"}}"], ["title", "test123"], ["description", "test345"], ["user_id", 19], ["created_at", "2024-10-13 22:00:05.640083"], ["updated_at", "2024-10-13 22:00:05.640083"]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mPhoto Update (0.7ms)[0m  [1m[33mUPDATE "photos" SET "image_data" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["image_data", "{\"id\":\"13a9f6a81fd79c356a40112e756f19e0.png\",\"storage\":\"store\",\"metadata\":{\"filename\":\"ian.png\",\"size\":838133,\"mime_type\":\"image/png\"}}"], ["updated_at", "2024-10-13 22:00:05.798224"], ["id", 19]]
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:38:in `create'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 932ms (ActiveRecord: 7.2ms | Allocations: 13150)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 17:00:05 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1235)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 0.9ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 7096)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 455)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1762)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 10206)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.8ms | Allocations: 11792)
+
+
+Started GET "/photos/19/edit" for ::1 at 2024-10-13 17:00:32 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 12.3ms | Allocations: 16611)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 13.3ms | Allocations: 16868)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 13.5ms | Allocations: 16960)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 1.0ms | Allocations: 18880)
+
+
+Started PATCH "/photos/19" for ::1 at 2024-10-13 17:00:35 -0500
+Processing by PhotosController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"test1234", "description"=>"test345"}, "button"=>"", "id"=>"19"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mPhoto Update (0.2ms)[0m  [1m[33mUPDATE "photos" SET "title" = $1, "updated_at" = $2 WHERE "photos"."id" = $3[0m  [["title", "test1234"], ["updated_at", "2024-10-13 22:00:35.422901"], ["id", 19]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+Redirected to http://localhost:3000/photos
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms | Allocations: 4810)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 17:00:35 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 1.2ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 8.8ms | Allocations: 7008)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 452)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.0ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 10025)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.8ms | Allocations: 11468)
+
+
+Started GET "/" for ::1 at 2024-10-13 17:17:18 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 887)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 489)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 1796)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4123)
+Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 3.9ms | Allocations: 9608)
+
+
+Started GET "/photos" for ::1 at 2024-10-13 17:17:19 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 2.4ms | Allocations: 1426)
+  Rendered photos/_photo.html.erb (Duration: 2.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 2.1ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 2.0ms | Allocations: 1177)
+  Rendered photos/_photo.html.erb (Duration: 3.8ms | Allocations: 1177)
+  Rendered photos/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 7287)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 452)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 10297)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 1.7ms | Allocations: 11859)
+
+
