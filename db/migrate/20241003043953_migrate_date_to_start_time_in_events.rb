@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class MigrateDateToStartTimeInEvents < ActiveRecord::Migration[7.0]
   def up
     Event.reset_column_information

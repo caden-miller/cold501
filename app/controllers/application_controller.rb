@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   # set instance variable for role
   def set_role
-    @set_role ||= current_user&.role || 'guest'
+    @role ||= current_user&.role || 'guest'
   end
 
   def set_navbar_variables
@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
                       when 'officer'
                         ['members']
                       else
-                        %w[events leaderboard merch ideas members]
+                        ['events', 'leaderboard', 'merch', 'ideas', 'members']
                       end
 
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }
