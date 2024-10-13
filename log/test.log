@@ -13065,3 +13065,726 @@ Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.8ms | Allocations: 3246)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testemail@test.com"], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (30.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test_app_test"[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "annoucements" CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "annoucements" ("id" bigserial primary key, "title" character varying, "description" text, "created_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendances" CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" bigserial primary key, "event_id" bigint NOT NULL, "user_id" bigint NOT NULL, "present" boolean, "passcode" character varying, "checked_in_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_event_id" ON "attendances" ("event_id")[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "passcode" character varying, "start_time" timestamp(6), "end_time" timestamp(6), "location" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "links" CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "links" ("id" bigserial primary key, "title" character varying, "link" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "merchandises" CASCADE[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "merchandises" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "merches" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "merches" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos" CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "image_data" text, "title" character varying, "description" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_photos_on_user_id" ON "photos" ("user_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "attendances" ADD CONSTRAINT "fk_rails_777eb7170a"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "attendances" ADD CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_c79d76afc0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241010204542)[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240910213808),
+(20240910213910),
+(20240911023215),
+(20240911193256),
+(20240912004859),
+(20240912213549),
+(20240913160322),
+(20240918113149),
+(20240918113704),
+(20240921034108),
+(20240927161218),
+(20241003043953),
+(20241003044047),
+(20241003133002),
+(20241009000331);
+
+[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2024-10-13 23:53:45.443223"], ["updated_at", "2024-10-13 23:53:45.443223"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "abb270a1a3eb5d4bd433a73275f565c9a012ce1a"], ["created_at", "2024-10-13 23:53:45.451693"], ["updated_at", "2024-10-13 23:53:45.451693"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "member"], ["created_at", "2024-10-13 23:53:45.531153"], ["updated_at", "2024-10-13 23:53:45.531153"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "officer"], ["created_at", "2024-10-13 23:53:45.534687"], ["updated_at", "2024-10-13 23:53:45.534687"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:45 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1305)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 646)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.9ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 6607)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.4ms | Allocations: 12269)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "member"], ["created_at", "2024-10-13 23:53:45.592155"], ["updated_at", "2024-10-13 23:53:45.592155"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "officer"], ["created_at", "2024-10-13 23:53:45.594969"], ["updated_at", "2024-10-13 23:53:45.594969"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:45 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 451)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 319)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1806)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 2203)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "member"], ["created_at", "2024-10-13 23:53:45.608208"], ["updated_at", "2024-10-13 23:53:45.608208"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:45 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 451)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 328)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1816)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms | Allocations: 2341)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:45 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 375)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 310)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1686)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 2021)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:45.631258"], ["updated_at", "2024-10-13 23:53:45.631258"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:53:46 -0500
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:43605/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 503)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:46 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 459)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 319)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 1811)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 3011)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:53:46 -0500
+[dotenv] Restored snapshot of [32mENV[0m
+[dotenv] Unset [31mRACK_ENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:48.608355"], ["updated_at", "2024-10-13 23:53:48.608355"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:53:48 -0500
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:43605/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 272)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:48 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 459)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 319)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1808)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 2673)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:53:48 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:50.705883"], ["updated_at", "2024-10-13 23:53:50.705883"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:53:50.708119"], ["updated_at", "2024-10-13 23:53:50.708119"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 252)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 319)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1795)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 2631)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:50.725791"], ["updated_at", "2024-10-13 23:53:50.725791"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:53:50.728179"], ["updated_at", "2024-10-13 23:53:50.728179"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 252)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 319)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1795)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.5ms | Allocations: 2625)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:50.747294"], ["updated_at", "2024-10-13 23:53:50.747294"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:53:50.750903"], ["updated_at", "2024-10-13 23:53:50.750903"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/leaderboard" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by UsersController#leaderboard as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_member! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 253)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 319)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1796)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 2644)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:50.770339"], ["updated_at", "2024-10-13 23:53:50.770339"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:53:50.773202"], ["updated_at", "2024-10-13 23:53:50.773202"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/leaderboard" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by UsersController#leaderboard as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_member! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 252)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 319)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1796)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 2623)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", 10], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:53:50.804123"], ["updated_at", "2024-10-13 23:53:50.804123"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by UsersController#index as HTML
+Redirected to http://127.0.0.1:43605/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 268)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 459)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 319)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 4.1ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 1807)
+Completed 200 OK in 19ms (Views: 10.9ms | ActiveRecord: 0.7ms | Allocations: 2629)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:53:50 -0500
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testemail@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testemail@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (24.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test_app_test"[0m
+  [1m[35m (51.8ms)[0m  [1m[35mCREATE DATABASE "test_app_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "annoucements" CASCADE[0m
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "annoucements" ("id" bigserial primary key, "title" character varying, "description" text, "created_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "attendances" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "attendances" ("id" bigserial primary key, "event_id" bigint NOT NULL, "user_id" bigint NOT NULL, "present" boolean, "passcode" character varying, "checked_in_at" timestamp(6), "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_event_id" ON "attendances" ("event_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE INDEX "index_attendances_on_user_id" ON "attendances" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "events" CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "passcode" character varying, "start_time" timestamp(6), "end_time" timestamp(6), "location" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "ideas" CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "ideas" ("id" bigserial primary key, "title" character varying, "description" character varying, "created_by" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "links" CASCADE[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "links" ("id" bigserial primary key, "title" character varying, "link" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "merchandises" CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "merchandises" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "merches" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "merches" ("id" bigserial primary key, "link" character varying, "title" character varying, "description" character varying, "image" character varying, "stock" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "photos" CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "photos" ("id" bigserial primary key, "image_data" text, "title" character varying, "description" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE INDEX "index_photos_on_user_id" ON "photos" ("user_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "full_name" character varying, "uid" character varying, "avatar_url" character varying, "committee" character varying, "points" integer, "dues" integer, "role" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "attendances" ADD CONSTRAINT "fk_rails_777eb7170a"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+ ON DELETE CASCADE[0m
+  [1m[35m (2.6ms)[0m  [1m[35mALTER TABLE "attendances" ADD CONSTRAINT "fk_rails_77ad02f5c5"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "photos" ADD CONSTRAINT "fk_rails_c79d76afc0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20241010204542)[0m
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20240910213808),
+(20240910213910),
+(20240911023215),
+(20240911193256),
+(20240912004859),
+(20240912213549),
+(20240913160322),
+(20240918113149),
+(20240918113704),
+(20240921034108),
+(20240927161218),
+(20241003043953),
+(20241003044047),
+(20241003133002),
+(20241009000331);
+
+[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2024-10-13 23:55:51.850546"], ["updated_at", "2024-10-13 23:55:51.850546"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "21d663a0de56c2e7b2cbcb3394a43d069646b3a3"], ["created_at", "2024-10-13 23:55:51.859292"], ["updated_at", "2024-10-13 23:55:51.859292"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Saved a snapshot of [32mENV[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "member"], ["created_at", "2024-10-13 23:55:51.939581"], ["updated_at", "2024-10-13 23:55:51.939581"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "officer"], ["created_at", "2024-10-13 23:55:51.942508"], ["updated_at", "2024-10-13 23:55:51.942508"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:55:51 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1305)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 758)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.8ms | Allocations: 948)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 6719)
+Completed 200 OK in 16ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 12381)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "member"], ["created_at", "2024-10-13 23:55:52.003235"], ["updated_at", "2024-10-13 23:55:52.003235"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "officer"], ["created_at", "2024-10-13 23:55:52.005701"], ["updated_at", "2024-10-13 23:55:52.005701"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:55:52 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 451)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 431)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1918)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 2315)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "member"], ["created_at", "2024-10-13 23:55:52.019348"], ["updated_at", "2024-10-13 23:55:52.019348"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:55:52 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 451)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 328)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 343)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1816)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2341)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:55:52 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 375)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1798)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 2133)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:52.041653"], ["updated_at", "2024-10-13 23:55:52.041653"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:52 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 848)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1627)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 457)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 404)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3233)
+Completed 200 OK in 7ms (Views: 5.1ms | ActiveRecord: 0.7ms | Allocations: 4390)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:55:52 -0500
+Started GET "/users/6/edit" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering users/edit.html.erb within layouts/turbo_rails/frame
+  Rendered users/_form.html.erb (Duration: 36.8ms | Allocations: 28832)
+  Rendered users/edit.html.erb within layouts/turbo_rails/frame (Duration: 38.1ms | Allocations: 29342)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 38.7ms | Allocations: 29676)
+Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 0.6ms | Allocations: 31713)
+Started PATCH "/users/6" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"user"=>{"full_name"=>"New Name", "committee"=>"Test Committee", "points"=>"", "dues"=>"", "role"=>"admin"}, "button"=>"", "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "testuser@example.com"], ["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["full_name", "New Name"], ["updated_at", "2024-10-13 23:55:53.220684"], ["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering users/update.turbo_stream.erb
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 429)
+  Rendered users/update.turbo_stream.erb (Duration: 2.1ms | Allocations: 1316)
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 1.8ms | Allocations: 5017)
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 377)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 646)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 449)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 391)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2172)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.7ms | Allocations: 3131)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Started DELETE "/users/6" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Processing by UsersController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mAttendance Load (0.4ms)[0m  [1m[34mSELECT "attendances".* FROM "attendances" WHERE "attendances"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mUser Destroy (0.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering users/destroy.turbo_stream.erb
+  Rendered users/destroy.turbo_stream.erb (Duration: 0.5ms | Allocations: 217)
+Completed 200 OK in 18ms (Views: 0.9ms | ActiveRecord: 3.1ms | Allocations: 6988)
+[dotenv] Restored snapshot of [32mENV[0m
+[dotenv] Unset [31mRACK_ENV[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:53.754197"], ["updated_at", "2024-10-13 23:55:53.754197"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 399)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 706)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 449)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.0ms | Allocations: 391)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2232)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 2670)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Started GET "/users/7/edit" for 127.0.0.1 at 2024-10-13 18:55:53 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering users/edit.html.erb within layouts/turbo_rails/frame
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 2159)
+  Rendered users/edit.html.erb within layouts/turbo_rails/frame (Duration: 3.9ms | Allocations: 2742)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.1ms | Allocations: 2874)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 3787)
+Started PATCH "/users/7" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"user"=>{"full_name"=>"", "committee"=>"Test Committee", "points"=>"", "dues"=>"", "role"=>"admin"}, "button"=>"", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "testuser@example.com"], ["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  Rendered users/_form.html.erb (Duration: 4.8ms | Allocations: 3481)
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 5811)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:54.143289"], ["updated_at", "2024-10-13 23:55:54.143289"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:55:54.145787"], ["updated_at", "2024-10-13 23:55:54.145787"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 399)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 373)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1127)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 449)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 381)
+  Rendered layout layouts/application.html.erb (Duration: 27.7ms | Allocations: 2643)
+Completed 200 OK in 29ms (Views: 27.4ms | ActiveRecord: 0.6ms | Allocations: 3076)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:54.186829"], ["updated_at", "2024-10-13 23:55:54.186829"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:55:54.189482"], ["updated_at", "2024-10-13 23:55:54.189482"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#index as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 319)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1797)
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.6ms | Allocations: 2626)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:54.209046"], ["updated_at", "2024-10-13 23:55:54.209046"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:55:54.212658"], ["updated_at", "2024-10-13 23:55:54.212658"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/leaderboard" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#leaderboard as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/leaderboard.html.erb within layouts/application
+  Rendered users/leaderboard.html.erb within layouts/application (Duration: 0.3ms | Allocations: 128)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 463)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 388)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1701)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.3ms | Allocations: 2210)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:54.225848"], ["updated_at", "2024-10-13 23:55:54.225848"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser2@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser2@example.com"], ["full_name", "Test User 2"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", nil], ["dues", nil], ["role", "user"], ["created_at", "2024-10-13 23:55:54.229778"], ["updated_at", "2024-10-13 23:55:54.229778"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/leaderboard" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#leaderboard as HTML
+Redirected to http://www.example.com/
+Filter chain halted as :authenticate_member! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 253)
+Started GET "/" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 319)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1796)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.5ms | Allocations: 2617)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testuser@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "testuser@example.com"], ["full_name", "Test User"], ["uid", nil], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Test Committee"], ["points", 10], ["dues", nil], ["role", "admin"], ["created_at", "2024-10-13 23:55:54.249717"], ["updated_at", "2024-10-13 23:55:54.249717"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 403)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 719)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 449)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 391)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2245)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.9ms | Allocations: 2695)
+Started GET "/assets/controllers/navbar_controller" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Started POST "/reset_points" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#reset_points as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  [1m[36mUser Update All (0.2ms)[0m  [1m[33mUPDATE "users" SET "points" = $1[0m  [["points", 0]]
+Redirected to http://127.0.0.1:38557/users
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms | Allocations: 807)
+Started GET "/users" for 127.0.0.1 at 2024-10-13 18:55:54 -0500
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 382)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 696)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 449)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 336)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2146)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 1.3ms | Allocations: 3232)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testemail@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testemail@test.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
