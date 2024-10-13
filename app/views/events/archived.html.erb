@@ -1,11 +1,13 @@
-<h1>Archived Events</h1>
-<ul>
-  <% @archived_events.each do |event| %>
-    <li>
-      <%= event.name %> - <%= event.date %>
-      <%= link_to 'Unarchive', unarchive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-info' %>
-    </li>
-  <% end %>
-</ul>
+<main class="container">
+  <h1>Archived Events</h1>
+  <ul>
+    <% @archived_events.each do |event| %>
+      <li>
+        <%= event.name %> - <%= event.start_time %>
+        <%= link_to 'Unarchive', unarchive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-info' %>
+      </li>
+    <% end %>
+  </ul>
 
-<%= link_to 'Back to All Events', events_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Back to All Events', events_path, class: 'btn btn-secondary' %>
+</main>

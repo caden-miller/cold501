@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :events do # Generates all routes for events (index, show, new, edit, create, update, destroy)
     member do
-      get 'delete'
+      # get :delete
       get 'archive'
       get 'unarchive'
     end
