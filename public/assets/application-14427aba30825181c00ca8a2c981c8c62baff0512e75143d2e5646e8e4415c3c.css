@@ -27,10 +27,10 @@
   --color-primary:          hsl(222, 15%, 87%);
   --color-primary-rotate:   hsl(70, 3%, 86%);
   --color-primary-bg:       hsla(0, 0%, 100%, 0.9);
-  --color-secondary:        hsl(143, 33%, 23%);
-  --color-secondary-rotate: hsl(143, 33%, 33%);
-  --color-tertiary:         hsl(36, 62%, 69%);
-  --color-glint:            hsl(36, 62%, 59%);
+  --color-secondary:        hsl(160, 43%, 11%);
+  --color-secondary-rotate: hsl(105, 19%, 33%);
+  --color-tertiary:         hsl(39, 30%, 70%);
+  --color-glint:            hsl(39, 30%, 80%);
   --color-red:              hsl(356, 87%, 56%);
   --color-red-rotate:       hsl(356, 87%, 66%);
   --color-white:      hsl(0, 0%, 100%);
@@ -169,21 +169,18 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: inherit;
-  /* Inherit the body background image */
+  background-color: var(--color-secondary-rotate);
   background-size: inherit;
   background-position: inherit;
   background-attachment: fixed;
   /* Still keep it fixed */
-  filter: blur(5px);
-  /* Apply blur here */
   z-index: -1;
   /* Keep this behind the content */
   pointer-events: none;
   /* Ensures that the pseudo-element does not interfere with clicks */
 }
 
-/* line 32, app/assets/stylesheets/config/_root.scss */
+/* line 33, app/assets/stylesheets/config/_root.scss */
 img {
   opacity: 1;
 }
@@ -846,12 +843,9 @@ img {
   width: 65%;
   height: 50%;
   padding: var(--space-m);
-  color: var(--color-tertiary);
   font-family: 'Lato';
   margin-top: var(--space-m);
   margin-bottom: var(--space-m);
-  border-radius: var(--border-radius);
-  background-color: var(--color-secondary-rotate);
   border: 2px solid var(--color-secondary);
   box-shadow: var(--shadow-large);
 }
@@ -859,7 +853,7 @@ img {
 /* line 153, app/assets/stylesheets/components/_home.scss */
 .home__section h3 {
   text-align: left;
-  color: var(--color-glint);
+  color: var(--color-secondary);
   width: 100%;
 }
 
@@ -874,7 +868,7 @@ img {
 .home__quote h3 {
   text-align: center;
   font-weight: bold;
-  color: var(--color-tertiary);
+  color: var(--color-secondary);
 }
 
 /* line 172, app/assets/stylesheets/components/_home.scss */
@@ -909,10 +903,9 @@ img {
   background-color: var(--color-primary);
   color: var(--color-secondary);
   border-radius: var(--border-radius);
-  opacity: 1 !important;
 }
 
-/* line 17, app/assets/stylesheets/components/_user.scss */
+/* line 16, app/assets/stylesheets/components/_user.scss */
 .user__table-row {
   display: flex;
   flex-direction: row;
@@ -925,13 +918,13 @@ img {
 }
 
 @media (max-width: 70rem) {
-  /* line 17, app/assets/stylesheets/components/_user.scss */
+  /* line 16, app/assets/stylesheets/components/_user.scss */
   .user__table-row {
     overflow: scroll;
   }
 }
 
-/* line 35, app/assets/stylesheets/components/_user.scss */
+/* line 34, app/assets/stylesheets/components/_user.scss */
 .user__table-header {
   display: flex;
   flex-direction: row;
@@ -945,7 +938,7 @@ img {
   border-bottom-right-radius: 0px;
 }
 
-/* line 48, app/assets/stylesheets/components/_user.scss */
+/* line 47, app/assets/stylesheets/components/_user.scss */
 .user__table-body {
   display: flex;
   flex-direction: column;
@@ -957,55 +950,55 @@ img {
   color: var(--color-secondary);
 }
 
-/* line 59, app/assets/stylesheets/components/_user.scss */
+/* line 58, app/assets/stylesheets/components/_user.scss */
 .user__table-cell {
   flex: 1;
   padding: 10px;
 }
 
-/* line 64, app/assets/stylesheets/components/_user.scss */
+/* line 63, app/assets/stylesheets/components/_user.scss */
 .user__image {
   width: 50px;
   height: 50px;
   border-radius: var(--border-radius);
 }
 
-/* line 70, app/assets/stylesheets/components/_user.scss */
+/* line 69, app/assets/stylesheets/components/_user.scss */
 .user__table-row .user__table-cell:nth-child(1) {
   flex: 0 0 70px;
 }
 
 @media (max-width: 70rem) {
-  /* line 74, app/assets/stylesheets/components/_user.scss */
+  /* line 73, app/assets/stylesheets/components/_user.scss */
   .user__table-row .user__table-cell:nth-child(2) {
     flex: 1 0 100px;
   }
 }
 
-/* line 80, app/assets/stylesheets/components/_user.scss */
+/* line 79, app/assets/stylesheets/components/_user.scss */
 .user__table-row .user__table-cell:nth-child(3) {
   flex-grow: 1;
 }
 
 @media (max-width: 70rem) {
-  /* line 80, app/assets/stylesheets/components/_user.scss */
+  /* line 79, app/assets/stylesheets/components/_user.scss */
   .user__table-row .user__table-cell:nth-child(3) {
     flex: 1 0 75px;
     /* Fixed width */
   }
 }
 
-/* line 87, app/assets/stylesheets/components/_user.scss */
+/* line 86, app/assets/stylesheets/components/_user.scss */
 .user__table-row .user__table-cell:nth-child(4), .user__table-row .user__table-cell:nth-child(5) {
   flex: 0 0 65px;
 }
 
-/* line 92, app/assets/stylesheets/components/_user.scss */
+/* line 91, app/assets/stylesheets/components/_user.scss */
 .user__table-row .user__table-cell:nth-child(6) {
   flex: 0 0 80px;
 }
 
-/* line 96, app/assets/stylesheets/components/_user.scss */
+/* line 95, app/assets/stylesheets/components/_user.scss */
 .user__table-row .user__table-cell:last-child {
   flex: 0 0 120px;
   display: flex;
@@ -1013,7 +1006,7 @@ img {
   justify-content: space-between;
 }
 
-/* line 103, app/assets/stylesheets/components/_user.scss */
+/* line 102, app/assets/stylesheets/components/_user.scss */
 .user__table-button {
   border: 0px;
   border-radius: var(--border-radius);
@@ -1021,94 +1014,91 @@ img {
   cursor: pointer;
 }
 
-/* line 111, app/assets/stylesheets/components/_user.scss */
+/* line 109, app/assets/stylesheets/components/_user.scss */
+.user__button {
+  background-color: var(--color-secondary);
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  border: 0px solid var(--color-secondary);
+  cursor: pointer;
+  color: var(--color-tertiary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* line 123, app/assets/stylesheets/components/_user.scss */
+.user__button:hover {
+  background-color: var(--color-secondary-rotate);
+  color: var(--color-glint);
+}
+
+/* line 129, app/assets/stylesheets/components/_user.scss */
 .edit,
 .confirm {
   background-color: var(--color-secondary);
   transition: background-color 0.5s ease;
 }
 
-/* line 117, app/assets/stylesheets/components/_user.scss */
+/* line 135, app/assets/stylesheets/components/_user.scss */
 .edit:hover,
 .confirm:hover {
   background-color: var(--color-secondary-rotate);
 }
 
-/* line 122, app/assets/stylesheets/components/_user.scss */
+/* line 140, app/assets/stylesheets/components/_user.scss */
 .trash,
 .cancel {
   background-color: var(--color-red);
   transition: background-color 0.5s ease;
 }
 
-/* line 128, app/assets/stylesheets/components/_user.scss */
+/* line 146, app/assets/stylesheets/components/_user.scss */
 .trash:hover,
 .cancel:hover {
   background-color: var(--color-red-rotate);
 }
 
-/* line 135, app/assets/stylesheets/components/_user.scss */
+/* line 153, app/assets/stylesheets/components/_user.scss */
 [id^="user_"] {
   width: 100%;
 }
 
-/* line 3, app/assets/stylesheets/components/_photo.scss */
-.photo__avatar {
-  width: 25%;
-  height: auto;
-  border-radius: var(--border-radius);
+/* line 1, app/assets/stylesheets/components/_event.scss */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
 }
 
-/* line 9, app/assets/stylesheets/components/_photo.scss */
-.photo__info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  padding-bottom: 10%;
-  width: 100%;
+/* line 7, app/assets/stylesheets/components/_event.scss */
+.day {
+  padding: 10px;
+  background-color: #f8f9fa;
+  text-align: center;
+  border-radius: 5px;
 }
 
-/* line 18, app/assets/stylesheets/components/_photo.scss */
-.photo__show-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+/* line 14, app/assets/stylesheets/components/_event.scss */
+.event-date {
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
 }
 
-/* line 25, app/assets/stylesheets/components/_photo.scss */
-.photo__stack {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  margin-left: 10%;
-  width: 100%;
+/* line 24, app/assets/stylesheets/components/_event.scss */
+.no-event {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
 }
 
-/* line 34, app/assets/stylesheets/components/_photo.scss */
-.photo__item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin-left: 25%;
-}
-
-/* line 42, app/assets/stylesheets/components/_photo.scss */
-.photo__actions {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 5%;
-  width: 100%;
-  height: 100%;
-  color: var(--color-secondary);
-}
-
-/* line 54, app/assets/stylesheets/components/_photo.scss */
+/* line 2, app/assets/stylesheets/components/_photo.scss */
 .photo__table {
   display: flex;
   flex-direction: column;
@@ -1122,57 +1112,26 @@ img {
   border-radius: var(--border-radius);
 }
 
-/* line 67, app/assets/stylesheets/components/_photo.scss */
+/* line 15, app/assets/stylesheets/components/_photo.scss */
 .photo__table-row {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   border-bottom: 1px solid var(--color-secondary);
+  border-radius: 0px;
 }
 
 @media (max-width: 70rem) {
-  /* line 67, app/assets/stylesheets/components/_photo.scss */
+  /* line 15, app/assets/stylesheets/components/_photo.scss */
   .photo__table-row {
     overflow: scroll;
   }
 }
 
-/* line 81, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row:first-of-type {
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-}
-
-/* line 86, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row:last-of-type {
-  border-bottom-left-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
-}
-
-/* line 91, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row:first-of-type > :first-child {
-  border-top-left-radius: var(--border-radius);
-}
-
-/* line 95, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row:first-of-type > :last-child {
-  border-top-right-radius: var(--border-radius);
-}
-
-/* line 99, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row:last-of-type > :first-child {
-  border-bottom-left-radius: var(--border-radius);
-}
-
-/* line 103, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row:last-of-type > :last-child {
-  border-bottom-right-radius: var(--border-radius);
-}
-
-/* line 109, app/assets/stylesheets/components/_photo.scss */
+/* line 29, app/assets/stylesheets/components/_photo.scss */
 .photo__table-header {
   display: flex;
   flex-direction: row;
@@ -1182,9 +1141,11 @@ img {
   height: 100%;
   background-color: var(--color-tertiary);
   color: var(--color-primary-bg);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
-/* line 120, app/assets/stylesheets/components/_photo.scss */
+/* line 42, app/assets/stylesheets/components/_photo.scss */
 .photo__table-body {
   display: flex;
   flex-direction: column;
@@ -1196,35 +1157,51 @@ img {
   color: var(--color-secondary);
 }
 
-/* line 131, app/assets/stylesheets/components/_photo.scss */
+/* line 53, app/assets/stylesheets/components/_photo.scss */
 .photo__table-cell {
   flex: 1;
   padding: 10px;
 }
 
-/* line 136, app/assets/stylesheets/components/_photo.scss */
-.photo__image {
-  width: 50px;
-  height: 50px;
-  border-radius: var(--border-radius);
+/* line 58, app/assets/stylesheets/components/_photo.scss */
+.photo__table-row .photo__table-cell:nth-child(1) {
+  flex: 0 0 100px;
 }
 
-/* line 142, app/assets/stylesheets/components/_photo.scss */
-.photo__table-row .photo__table-cell:nth-child(1), .photo__table-row .photo__table-cell:nth-child(5), .photo__table-row .photo__table-cell:nth-child(6) {
-  flex: 0 0 70px;
-  /* Fixed width */
+/* line 62, app/assets/stylesheets/components/_photo.scss */
+.photo__table-row .photo__table-cell:nth-child(2) {
+  flex: 0 0 100px;
 }
 
-/* line 149, app/assets/stylesheets/components/_photo.scss */
+/* line 67, app/assets/stylesheets/components/_photo.scss */
+.photo__table-row .photo__table-cell:nth-child(3) {
+  flex-grow: 1;
+}
+
+@media (max-width: 70rem) {
+  /* line 67, app/assets/stylesheets/components/_photo.scss */
+  .photo__table-row .photo__table-cell:nth-child(3) {
+    flex: 1 0 100px;
+    /* Fixed width */
+  }
+}
+
+/* line 74, app/assets/stylesheets/components/_photo.scss */
 .photo__table-row .photo__table-cell:last-child {
   flex: 0 0 120px;
-  /* Fixed width */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* line 156, app/assets/stylesheets/components/_photo.scss */
+/* line 81, app/assets/stylesheets/components/_photo.scss */
+.photo__image {
+  max-width: 500px;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* line 87, app/assets/stylesheets/components/_photo.scss */
 .photo__table-button {
   border: 0px;
   border-radius: var(--border-radius);
@@ -1232,33 +1209,461 @@ img {
   cursor: pointer;
 }
 
-/* line 164, app/assets/stylesheets/components/_photo.scss */
+/* line 95, app/assets/stylesheets/components/_photo.scss */
 .edit,
 .confirm {
   background-color: var(--color-secondary);
+  transition: background-color 0.5s ease;
+  z-index: 1;
 }
 
-/* line 169, app/assets/stylesheets/components/_photo.scss */
+/* line 102, app/assets/stylesheets/components/_photo.scss */
 .edit:hover,
 .confirm:hover {
   background-color: var(--color-secondary-rotate);
 }
 
-/* line 174, app/assets/stylesheets/components/_photo.scss */
+/* line 107, app/assets/stylesheets/components/_photo.scss */
 .trash,
 .cancel {
   background-color: var(--color-red);
+  transition: background-color 0.5s ease;
+  z-index: 1;
 }
 
-/* line 179, app/assets/stylesheets/components/_photo.scss */
+/* line 114, app/assets/stylesheets/components/_photo.scss */
 .trash:hover,
 .cancel:hover {
   background-color: var(--color-red-rotate);
 }
 
-/* line 186, app/assets/stylesheets/components/_photo.scss */
+/* line 119, app/assets/stylesheets/components/_photo.scss */
 [id^="photo_"] {
   width: 100%;
+}
+
+/* Base gallery styles */
+/* line 2, app/assets/stylesheets/components/_gallery.scss */
+.gallery {
+  display: flex;
+  gap: 16px;
+  /* Adjust gap between columns */
+  /* Gallery columns */
+  /* Gallery items */
+  /* Gallery images */
+}
+
+/* line 7, app/assets/stylesheets/components/_gallery.scss */
+.gallery__column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Adjust gap between items */
+  flex: 1;
+  /* Equal width columns */
+}
+
+/* line 15, app/assets/stylesheets/components/_gallery.scss */
+.gallery__item {
+  /* Optional styles for items */
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+/* line 24, app/assets/stylesheets/components/_gallery.scss */
+.gallery__image {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  /* Rounded corners */
+  /* Ensure images maintain aspect ratio */
+  height: auto;
+}
+
+/* line 32, app/assets/stylesheets/components/_gallery.scss */
+.gallery__content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+/* line 47, app/assets/stylesheets/components/_gallery.scss */
+.gallery__content:hover {
+  opacity: 1;
+}
+
+/* line 51, app/assets/stylesheets/components/_gallery.scss */
+.gallery__content h1 {
+  color: var(--color-tertiary);
+  font-size: var(--font-size-xxxxl);
+  font-family: 'Lato';
+  margin-bottom: 10px;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* line 61, app/assets/stylesheets/components/_gallery.scss */
+.gallery__content p {
+  color: var(--color-primary-rotate);
+  font-size: var(--font-size-xl);
+  font-family: 'Lato';
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+/* line 69, app/assets/stylesheets/components/_gallery.scss */
+.gallery__content > * {
+  transform: translateY(25px);
+  transition: transform 0.6s;
+}
+
+/* line 74, app/assets/stylesheets/components/_gallery.scss */
+.gallery__content:hover > * {
+  transform: translateY(0px);
+}
+
+/* line 2, app/assets/stylesheets/components/_link.scss */
+.link__table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary);
+  /* Base background color */
+  color: var(--color-primary-bg);
+  /* Text color */
+  border-radius: var(--border-radius);
+}
+
+/* line 15, app/assets/stylesheets/components/_link.scss */
+.link__new-button {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-bg);
+  padding: 0.5em 1em;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+  display: inline-block;
+}
+
+/* line 24, app/assets/stylesheets/components/_link.scss */
+.link__new-button:hover {
+  background-color: var(--color-secondary-rotate);
+}
+
+/* line 29, app/assets/stylesheets/components/_link.scss */
+.link__table-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-tertiary);
+  /* Header background color */
+  color: var(--color-primary-bg);
+  /* Header text color */
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* line 42, app/assets/stylesheets/components/_link.scss */
+.link__table-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Changed to flex-start for better alignment */
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-primary-rotate);
+  /* Body background color */
+  color: var(--color-primary-bg);
+  /* Body text color */
+}
+
+/* line 53, app/assets/stylesheets/components/_link.scss */
+.link__table-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid var(--color-secondary);
+  /* Row separator color */
+}
+
+@media (max-width: 70rem) {
+  /* line 53, app/assets/stylesheets/components/_link.scss */
+  .link__table-row {
+    overflow: scroll;
+    /* Responsive design for mobile */
+  }
+}
+
+/* line 66, app/assets/stylesheets/components/_link.scss */
+.link__table-row:last-of-type {
+  border-bottom: none;
+  /* Remove border for last row */
+}
+
+/* line 70, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell {
+  flex: 1;
+  padding: 10px;
+  color: black;
+}
+
+/* line 75, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell .link__text {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* line 80, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell .link__text:hover {
+  color: var(--color-secondary);
+}
+
+/* line 85, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell:nth-child(1) {
+  flex: 0 0 70px;
+  /* Fixed width for first cell */
+}
+
+@media (max-width: 70rem) {
+  /* line 89, app/assets/stylesheets/components/_link.scss */
+  .link__table-row .link__table-cell:nth-child(2) {
+    flex: 1 0 100px;
+    /* Responsive width */
+  }
+}
+
+/* line 95, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell:nth-child(3) {
+  flex-grow: 1;
+  /* Flexible width for third cell */
+}
+
+@media (max-width: 70rem) {
+  /* line 95, app/assets/stylesheets/components/_link.scss */
+  .link__table-row .link__table-cell:nth-child(3) {
+    flex: 1 0 75px;
+    /* Fixed width */
+  }
+}
+
+/* line 102, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell:nth-child(4), .link__table-row .link__table-cell:nth-child(5) {
+  flex: 0 0 65px;
+  /* Fixed width for fourth and fifth cells */
+}
+
+/* line 107, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell:nth-child(6) {
+  flex: 0 0 80px;
+  /* Fixed width for sixth cell */
+}
+
+/* line 111, app/assets/stylesheets/components/_link.scss */
+.link__table-row .link__table-cell:last-child {
+  flex: 0 0 120px;
+  /* Fixed width for last cell */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Align content */
+}
+
+/* line 120, app/assets/stylesheets/components/_link.scss */
+.link__table-button {
+  border: 0;
+  border-radius: var(--border-radius);
+  background-color: var(--color-secondary);
+  /* Default button color */
+  color: var(--color-primary-bg);
+  /* Button text color */
+  cursor: pointer;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  /* Smooth transitions */
+}
+
+/* line 128, app/assets/stylesheets/components/_link.scss */
+.link__table-button:hover {
+  background-color: var(--color-secondary-rotate);
+  /* Button hover color */
+}
+
+/* line 133, app/assets/stylesheets/components/_link.scss */
+.link .edit,
+.link .confirm {
+  background-color: var(--color-secondary);
+}
+
+/* line 138, app/assets/stylesheets/components/_link.scss */
+.link .edit:hover,
+.link .confirm:hover {
+  background-color: var(--color-secondary-rotate);
+}
+
+/* line 143, app/assets/stylesheets/components/_link.scss */
+.link .trash,
+.link .cancel {
+  background-color: var(--color-red);
+  /* Default delete/cancel color */
+  color: var(--color-primary-bg);
+  /* Text color */
+}
+
+/* line 149, app/assets/stylesheets/components/_link.scss */
+.link .trash:hover,
+.link .cancel:hover {
+  background-color: var(--color-red-rotate);
+  /* Hover color for delete/cancel */
+}
+
+/* line 154, app/assets/stylesheets/components/_link.scss */
+.link__image {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--border-radius);
+}
+
+/* line 161, app/assets/stylesheets/components/_link.scss */
+[id^="link_"] {
+  width: 100%;
+}
+
+/* line 2, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout {
+  display: flex;
+  padding: 20px;
+}
+
+/* line 7, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard {
+  width: 70%;
+  margin-right: 20px;
+}
+
+/* line 11, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* line 18, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table th, .page-layout__leaderboard table td {
+  padding: 10px;
+  text-align: left;
+  width: 50%;
+}
+
+/* line 24, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table th:nth-child(2),
+.page-layout__leaderboard table td:nth-child(2) {
+  text-align: center;
+}
+
+/* line 29, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table thead tr th:first-child {
+  border-top-left-radius: 10px;
+}
+
+/* line 33, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table thead tr th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* line 37, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table tbody tr:first-child td:first-child {
+  border-top-left-radius: 10px;
+}
+
+/* line 41, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table tbody tr:first-child td:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* line 45, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+/* line 49, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 10px;
+}
+
+/* line 53, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__leaderboard table .page-layout__leaderboard--highlighted {
+  background-color: #f0f0f0;
+}
+
+/* line 60, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories {
+  width: 30%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* line 65, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* line 70, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories table th, .page-layout__categories table td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* line 75, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories table th {
+  width: 33.3%;
+}
+
+/* line 79, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories table td.color-example {
+  position: relative;
+  color: transparent;
+}
+
+/* line 83, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories table td.color-example::before {
+  content: '';
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  background-color: inherit;
+  border-radius: 10px;
+}
+
+/* line 94, app/assets/stylesheets/components/_leaderboard.scss */
+.page-layout__categories h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
 }
 
 /* line 1, app/assets/stylesheets/layouts/_container.scss */

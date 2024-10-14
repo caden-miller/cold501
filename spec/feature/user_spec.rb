@@ -105,24 +105,27 @@ end
 
 RSpec.feature 'View Users on Leaderboard', type: :feature do
   let!(:admin) do
-    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', points: 999,
                   avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
   let!(:user) do
-    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee',
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee', points: 888,
                   avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
 
   scenario 'succeeds' do
     login_as(admin, scope: :user)
-    visit leaderboard_users_path
+    visit leaderboard_categories_path
 
-    expect(page).to have_content('Hello! I am currently not built-out yet :(')
+    expect(page).to have_content('Test User')
+    expect(page).to have_content('999')
+    expect(page).to have_content('Test User 2')
+    expect(page).to have_content('888')
   end
 
   scenario 'fails' do
     login_as(user, scope: :user)
-    visit leaderboard_users_path
+    visit leaderboard_categories_path
 
     expect(page).to have_content('You are not authorized, tell your higher-ups to make you a member')
   end

@@ -28237,3 +28237,692 @@ Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 640
 
 [dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for ::1 at 2024-10-13 21:43:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20241003001431_create_leaderboard_categories.rb
+
+
+):
+  
+activerecord (7.0.8.4) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8.4) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8.4) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2024-10-13 21:43:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20241003001431_create_leaderboard_categories.rb
+
+
+):
+  
+activerecord (7.0.8.4) lib/active_record/migration.rb:662:in `check_pending!'
+activerecord (7.0.8.4) lib/active_record/migration.rb:627:in `block (2 levels) in call'
+activesupport (7.0.8.4) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.8.4) lib/active_record/migration.rb:632:in `block in call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `synchronize'
+activerecord (7.0.8.4) lib/active_record/migration.rb:624:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLeaderboardCategories (20241003001431)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "leaderboard_categories" ("id" bigserial primary key, "category_name" character varying, "min_points" integer, "color" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20241003001431"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for ::1 at 2024-10-13 21:43:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Redirected to http://www.localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms | Allocations: 3013)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:43:46 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1294)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 1027)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 58.3ms | Allocations: 6241)
+  Rendered layout layouts/application.html.erb (Duration: 67.5ms | Allocations: 12487)
+Completed 200 OK in 78ms (Views: 65.6ms | ActiveRecord: 4.9ms | Allocations: 16323)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 21:43:51 -0500
+Processing by LeaderboardCategoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/index.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:12
+  [1m[36mLeaderboardCategory Load (0.7ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mLeaderboardCategory Load (0.4ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:35
+  Rendered leaderboard_categories/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 11761)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 715)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.6ms | Allocations: 1778)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 15276)
+Completed 200 OK in 57ms (Views: 41.7ms | ActiveRecord: 8.7ms | Allocations: 17450)
+
+
+Started GET "/users/leaderboard" for ::1 at 2024-10-13 21:45:47 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"leaderboard"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+Completed 404 Not Found in 17ms (ActiveRecord: 0.6ms | Allocations: 6233)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=leaderboard):
+  
+app/controllers/users_controller.rb:62:in `get_user'
+Started GET "/users/leaderboard" for ::1 at 2024-10-13 21:46:37 -0500
+Processing by UsersController#leaderboard as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/leaderboard.html.erb within layouts/application
+  Rendered users/leaderboard.html.erb within layouts/application (Duration: 0.7ms | Allocations: 123)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 534)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 12.2ms | Allocations: 3335)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 7210)
+Completed 200 OK in 48ms (Views: 17.9ms | ActiveRecord: 11.5ms | Allocations: 13336)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 21:46:51 -0500
+Processing by LeaderboardCategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:12
+  [1m[36mLeaderboardCategory Load (0.4ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mLeaderboardCategory Load (0.5ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:35
+  Rendered leaderboard_categories/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 4963)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 513)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 9.0ms | Allocations: 3236)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 11913)
+Completed 200 OK in 58ms (Views: 34.3ms | ActiveRecord: 10.6ms | Allocations: 18222)
+
+
+Started GET "/users/sign_out" for ::1 at 2024-10-13 21:51:01 -0500
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 30ms (ActiveRecord: 8.8ms | Allocations: 6216)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:51:02 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 552)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 720)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 9.7ms | Allocations: 3276)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 7693)
+Completed 200 OK in 18ms (Views: 13.3ms | ActiveRecord: 3.1ms | Allocations: 8913)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 21:51:06 -0500
+Processing by LeaderboardCategoriesController#index as HTML
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_member! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 854)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:51:06 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 489)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 682)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.8ms | Allocations: 1781)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3819)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 4570)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:55:11 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 396)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 671)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.2ms | Allocations: 1722)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3620)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 4306)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:55:12 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 396)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 671)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.3ms | Allocations: 1711)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3608)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 4317)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:55:13 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 396)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 671)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.1ms | Allocations: 1711)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 3608)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.3ms | Allocations: 4290)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-10-13 21:55:13 -0500
+Started GET "/users/auth/google_oauth2/callback?state=ef35a9ae7a4529dfbffb3e193fcf01e7b5e56e493c80f8bf&code=4%2F0AVG7fiTIR9YkrFU6Gv6wTbjpKgyTeUP4P7dCT_cczeCAg64-hvisZcOyBKnVGvNnAyjNTA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-10-13 21:56:30 -0500
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"ef35a9ae7a4529dfbffb3e193fcf01e7b5e56e493c80f8bf", "code"=>"4/0AVG7fiTIR9YkrFU6Gv6wTbjpKgyTeUP4P7dCT_cczeCAg64-hvisZcOyBKnVGvNnAyjNTA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 4.5ms | Allocations: 5314)
+
+
+Started GET "/" for ::1 at 2024-10-13 21:56:31 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 552)
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 490)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 8.8ms | Allocations: 3270)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 7456)
+Completed 200 OK in 20ms (Views: 12.0ms | ActiveRecord: 3.5ms | Allocations: 9616)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 21:56:35 -0500
+Processing by LeaderboardCategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:12
+  [1m[36mLeaderboardCategory Load (0.3ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mLeaderboardCategory Load (0.3ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:35
+  Rendered leaderboard_categories/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4964)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 485)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1778)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 8251)
+Completed 200 OK in 20ms (Views: 12.0ms | ActiveRecord: 2.8ms | Allocations: 10843)
+
+
+Started GET "/leaderboard_categories/new" for ::1 at 2024-10-13 21:56:38 -0500
+Processing by LeaderboardCategoriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/new.html.erb within layouts/application
+  Rendered leaderboard_categories/_form.html.erb (Duration: 3.7ms | Allocations: 2842)
+  Rendered leaderboard_categories/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 3173)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 461)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1846)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 6388)
+Completed 200 OK in 17ms (Views: 7.6ms | ActiveRecord: 2.2ms | Allocations: 10692)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 21:58:03 -0500
+Processing by LeaderboardCategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:12
+  [1m[36mLeaderboardCategory Load (0.5ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.2ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mLeaderboardCategory Load (0.3ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:35
+  Rendered leaderboard_categories/index.html.erb within layouts/application (Duration: 24.3ms | Allocations: 4295)
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 454)
+  [1m[36mLink Load (3.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 29.8ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 70.9ms | Allocations: 7308)
+Completed 200 OK in 76ms (Views: 66.4ms | ActiveRecord: 5.3ms | Allocations: 8884)
+
+
+Started GET "/leaderboard_categories/new" for ::1 at 2024-10-13 21:58:14 -0500
+Processing by LeaderboardCategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/new.html.erb within layouts/application
+  Rendered leaderboard_categories/_form.html.erb (Duration: 2.8ms | Allocations: 1053)
+  Rendered leaderboard_categories/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1140)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 453)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 15.1ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 4151)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 0.8ms | Allocations: 5577)
+
+
+Started POST "/leaderboard_categories" for ::1 at 2024-10-13 21:58:48 -0500
+Processing by LeaderboardCategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leaderboard_category"=>{"category_name"=>"Test category", "min_points"=>"3", "color"=>"#000000"}, "commit"=>"Create Leaderboard category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:29:in `block in create'
+  [1m[36mLeaderboardCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "leaderboard_categories" ("category_name", "min_points", "color", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_name", "Test category"], ["min_points", 3], ["color", "#000000"], ["created_at", "2024-10-14 02:58:48.327185"], ["updated_at", "2024-10-14 02:58:48.327185"]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/leaderboard_categories/1
+Completed 302 Found in 12ms (ActiveRecord: 2.2ms | Allocations: 4486)
+
+
+Started GET "/leaderboard_categories/1" for ::1 at 2024-10-13 21:58:48 -0500
+Processing by LeaderboardCategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mLeaderboardCategory Load (0.1ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:65:in `set_leaderboard_category'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/show.html.erb within layouts/application
+  Rendered leaderboard_categories/_leaderboard_category.html.erb (Duration: 0.4ms | Allocations: 248)
+  Rendered leaderboard_categories/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3834)
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 461)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.2ms | Allocations: 1844)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7015)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.7ms | Allocations: 9671)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 21:58:51 -0500
+Processing by LeaderboardCategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:12
+  [1m[36mLeaderboardCategory Load (0.5ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mLeaderboardCategory Load (0.3ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:35
+  Rendered leaderboard_categories/index.html.erb within layouts/application (Duration: 9.0ms | Allocations: 4395)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 454)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 7414)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 2.1ms | Allocations: 8982)
+
+
+Started GET "/leaderboard_categories/new" for ::1 at 2024-10-13 21:59:07 -0500
+Processing by LeaderboardCategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/new.html.erb within layouts/application
+  Rendered leaderboard_categories/_form.html.erb (Duration: 2.5ms | Allocations: 1088)
+  Rendered leaderboard_categories/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1175)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 453)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.4ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 4186)
+Completed 200 OK in 16ms (Views: 10.5ms | ActiveRecord: 1.1ms | Allocations: 5591)
+
+
+Started POST "/leaderboard_categories" for ::1 at 2024-10-13 21:59:13 -0500
+Processing by LeaderboardCategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leaderboard_category"=>{"category_name"=>"Test category", "min_points"=>"3", "color"=>"#503434"}, "commit"=>"Create Leaderboard category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:29:in `block in create'
+  [1m[36mLeaderboardCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "leaderboard_categories" ("category_name", "min_points", "color", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_name", "Test category"], ["min_points", 3], ["color", "#503434"], ["created_at", "2024-10-14 02:59:13.442989"], ["updated_at", "2024-10-14 02:59:13.442989"]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:29:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:29:in `block in create'
+Redirected to http://localhost:3000/leaderboard_categories/2
+Completed 302 Found in 10ms (ActiveRecord: 2.0ms | Allocations: 3345)
+
+
+Started GET "/leaderboard_categories/2" for ::1 at 2024-10-13 21:59:13 -0500
+Processing by LeaderboardCategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mLeaderboardCategory Load (0.4ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:65:in `set_leaderboard_category'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/show.html.erb within layouts/application
+  Rendered leaderboard_categories/_leaderboard_category.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered leaderboard_categories/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 395)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3394)
+Completed 200 OK in 10ms (Views: 5.0ms | ActiveRecord: 1.1ms | Allocations: 5336)
+
+
+Started GET "/leaderboard_categories/2/edit" for ::1 at 2024-10-13 21:59:45 -0500
+Processing by LeaderboardCategoriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mLeaderboardCategory Load (0.5ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:65:in `set_leaderboard_category'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/edit.html.erb within layouts/application
+  Rendered leaderboard_categories/_form.html.erb (Duration: 2.0ms | Allocations: 1131)
+  Rendered leaderboard_categories/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1407)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4410)
+Completed 200 OK in 14ms (Views: 7.3ms | ActiveRecord: 1.3ms | Allocations: 6363)
+
+
+Started PATCH "/leaderboard_categories/2" for ::1 at 2024-10-13 22:00:01 -0500
+Processing by LeaderboardCategoriesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "leaderboard_category"=>{"category_name"=>"Test category 2", "min_points"=>"4", "color"=>"#503434"}, "commit"=>"Update Leaderboard category", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mLeaderboardCategory Load (0.3ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:65:in `set_leaderboard_category'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:42:in `block in update'
+  [1m[36mLeaderboardCategory Update (0.3ms)[0m  [1m[33mUPDATE "leaderboard_categories" SET "category_name" = $1, "min_points" = $2, "updated_at" = $3 WHERE "leaderboard_categories"."id" = $4[0m  [["category_name", "Test category 2"], ["min_points", 4], ["updated_at", "2024-10-14 03:00:01.477477"], ["id", 2]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:42:in `block in update'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:42:in `block in update'
+Redirected to http://localhost:3000/leaderboard_categories/2
+Completed 302 Found in 10ms (ActiveRecord: 2.1ms | Allocations: 3914)
+
+
+Started GET "/leaderboard_categories/2" for ::1 at 2024-10-13 22:00:01 -0500
+Processing by LeaderboardCategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mLeaderboardCategory Load (0.2ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:65:in `set_leaderboard_category'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/show.html.erb within layouts/application
+  Rendered leaderboard_categories/_leaderboard_category.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered leaderboard_categories/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 394)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3393)
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.5ms | Allocations: 5304)
+
+
+Started DELETE "/leaderboard_categories/2" for ::1 at 2024-10-13 22:00:23 -0500
+Processing by LeaderboardCategoriesController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mLeaderboardCategory Load (0.5ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:65:in `set_leaderboard_category'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:54:in `destroy'
+  [1m[36mLeaderboardCategory Destroy (0.4ms)[0m  [1m[31mDELETE FROM "leaderboard_categories" WHERE "leaderboard_categories"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/leaderboard_categories_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/leaderboard_categories_controller.rb:54:in `destroy'
+Redirected to http://localhost:3000/leaderboard_categories
+Completed 302 Found in 11ms (ActiveRecord: 2.7ms | Allocations: 3411)
+
+
+Started GET "/leaderboard_categories" for ::1 at 2024-10-13 22:00:23 -0500
+Processing by LeaderboardCategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering leaderboard_categories/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:12
+  [1m[36mLeaderboardCategory Load (0.2ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mCACHE LeaderboardCategory Load (0.0ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories" WHERE (min_points <= 12) ORDER BY "leaderboard_categories"."min_points" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/leaderboard_category.rb:3:in `category_for_user'
+  [1m[36mLeaderboardCategory Load (0.3ms)[0m  [1m[34mSELECT "leaderboard_categories".* FROM "leaderboard_categories"[0m
+  ↳ app/views/leaderboard_categories/index.html.erb:35
+  Rendered leaderboard_categories/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4373)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 454)
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 1707)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 7395)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 1.2ms | Allocations: 8841)
+
+
+Started GET "/users" for ::1 at 2024-10-13 22:05:15 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/_user.html.erb (Duration: 4.7ms | Allocations: 868)
+  Rendered users/_user.html.erb (Duration: 4.0ms | Allocations: 383)
+  Rendered users/_user.html.erb (Duration: 6.3ms | Allocations: 383)
+  Rendered users/_user.html.erb (Duration: 3.2ms | Allocations: 383)
+  Rendered users/_user.html.erb (Duration: 7.3ms | Allocations: 383)
+  Rendered users/index.html.erb within layouts/application (Duration: 69.4ms | Allocations: 3989)
+  Rendered layouts/_navbar.html.erb (Duration: 7.5ms | Allocations: 719)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 47.9ms | Allocations: 2182)
+  Rendered layout layouts/application.html.erb (Duration: 145.7ms | Allocations: 8369)
+Completed 200 OK in 194ms (Views: 156.7ms | ActiveRecord: 7.7ms | Allocations: 11014)
+
+
+Started GET "/" for ::1 at 2024-10-13 22:05:17 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 6.7ms | Allocations: 882)
+  Rendered layouts/_navbar.html.erb (Duration: 4.4ms | Allocations: 488)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.2ms | Allocations: 1796)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 4092)
+Completed 200 OK in 42ms (Views: 36.7ms | ActiveRecord: 1.0ms | Allocations: 6027)
+
+

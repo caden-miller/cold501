@@ -17,14 +17,17 @@ RSpec.feature 'View Nav', type: :feature do
     login_as(member, scope: :user)
     visit root_path
 
-    expect(page).to_not have_content('Member Management')
+    expect(page).to have_content('members')
   end
 
   scenario 'as Officer' do
     login_as(officer, scope: :user)
     visit root_path
 
-    expect(page).to_not have_content('Member Management')
+    # expect navbar to not have members
+    within('header') do
+      expect(page).to_not have_content('members')
+    end
   end
 end
 
