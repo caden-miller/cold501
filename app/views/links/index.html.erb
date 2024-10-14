@@ -1,23 +1,22 @@
-<h1>Links</h1>
+<main class="container">
+  <header class="header">
+    <h1 class="header">Links</h1>
+  </header>
 
-<%= link_to 'New Link', new_link_path %>
+  <%= link_to "New Link", new_link_path, class: 'link__new-button', data: { turbo_frame: dom_id(Link.new) } %><br><br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @links.each do |link| %>
-      <tr>
-        <td><%= link_to link.title, link.link, target: '_blank' %></td>
-        <td>
-          <%= link_to 'Edit', edit_link_path(link) %> |
-          <%= link_to 'Delete', link_path(link), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="link__table">
+    <div class="link__table-header">
+      <div class="link__table-row">
+        <div class="link__table-cell">Link</div>
+        <div class="link__table-cell">Actions</div>
+      </div>
+    </div>
+    <div class="link__table-body" id="links">
+      <%= turbo_frame_tag Link.new %>
+      <% @links.each do |link| %>
+        <%= render partial: 'link', locals: { link: link } %>
+      <% end %>
+    </div>
+  </div>
+</main>
