@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "photo_#{photo.id}" do %>
+<%= turbo_frame_tag dom_id(photo) do %>
   <div class="photo__table-row">
     <div class="photo__table-cell"><%= photo.title %></div>
     <div class="photo__table-cell"><%= photo.description %></div>

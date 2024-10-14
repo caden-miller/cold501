@@ -19,11 +19,12 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: inherit; /* Inherit the body background image */
+    // background-image: inherit; /* Inherit the body background image */
+    background-color: #4C6444;
     background-size: inherit;
     background-position: inherit;
     background-attachment: fixed; /* Still keep it fixed */
-    filter: blur(5px); /* Apply blur here */
+    // filter: blur(5px); /* Apply blur here */
     z-index: -1; /* Keep this behind the content */
     pointer-events: none; /* Ensures that the pseudo-element does not interfere with clicks */
 }
