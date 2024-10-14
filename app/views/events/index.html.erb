@@ -1,4 +1,4 @@
-<main class="container"> 
+<main class="container">
   <h1>All Events</h1>
 
   <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary' %>
@@ -24,10 +24,12 @@
           - <%= event.end_time.strftime("%l:%M %p") %>
         <% end %>
         <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-secondary' %> |
-        <%= link_to 'Delete', event_path(event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <%= link_to 'Delete', event_path(event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %> |
+        <%= link_to 'Archive', archive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
       </li>
     <% end %>
   </ul>
-
+  
+  <%= link_to 'View Archived Events', archived_events_path, class: 'btn btn-info' %>
   <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
 </main>
