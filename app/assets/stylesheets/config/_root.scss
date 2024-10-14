@@ -33,3 +33,9 @@ body::before {
 img {
     opacity: 1;
 }
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}

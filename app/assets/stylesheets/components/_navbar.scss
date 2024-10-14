@@ -44,11 +44,11 @@
 
   &__logo {
     border-radius: 100%;
-    max-width: 75px;
+    max-width: 85px;
     height: auto;
 
     @include media(mobile) {
-      max-width: 75px;
+      max-width: 85px;
       position: absolute;
       top: .5em;
       left: 50%;

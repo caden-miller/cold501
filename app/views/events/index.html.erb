@@ -1,7 +1,7 @@
-<main class="container">
-  <h1>All Events</h1>
+<main class="container event">
+  <h1 class="header">All Events</h1>
 
-  <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary' %>
+  <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary event__new' %>
 
   <div class="calendar">
     <%= month_calendar events: @events do |date, events| %>
