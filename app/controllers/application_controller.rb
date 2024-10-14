@@ -32,13 +32,14 @@ class ApplicationController < ActionController::Base
 
   def set_navbar_variables
     @nav_links = [
-      { name: 'photos', path: photos_path },
-      { name: 'events', path: events_path },
-      { name: 'leaderboard', path: leaderboard_users_path },
-      { name: 'merch', path: merchandises_path },
-      { name: 'ideas', path: ideas_path },
-      { name: 'members', path: users_path },
-      { name: 'links', path: links_path }
+      { name: 'Home', path: root_path },
+      { name: 'Events', path: events_path },
+      { name: 'Photo Gallery', path: photos_path },
+      { name: 'Leaderboard', path: leaderboard_categories_url },
+      { name: 'Merchandise', path: merchandises_path },
+      { name: 'Idea Board', path: ideas_path },
+      { name: 'Member Management', path: users_path },
+      { name: 'Links', path: links_path }
     ] || []
 
     links_to_reject = case @role
