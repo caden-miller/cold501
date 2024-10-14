@@ -5,10 +5,17 @@ Rails.application.routes.draw do
   resources :merchandises
   resources :merch
   resources :links, except: [:show]
+  resources :leaderboard_categories
+
 
   resources :events do # Generates all routes for events (index, show, new, edit, create, update, destroy)
     member do
-      get 'delete'
+      # get :delete
+      get 'archive'
+      get 'unarchive'
+    end
+    collection do
+      get 'archived'  
     end
     resources :attendances, only: [:create]
   end
@@ -37,8 +44,8 @@ Rails.application.routes.draw do
       get :delete
     end
 
-    collection do
-      get 'leaderboard'
-    end
+    # collection do
+    #   get 'leaderboard'
+    # end
   end
 end

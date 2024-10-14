@@ -1,17 +1,21 @@
-# frozen_string_literal: true
-
+# app/controllers/attendances_controller.rb
 class AttendancesController < ApplicationController
   before_action :set_event
 
   def create
-    @attendance = Attendance.find_or_initialize_by(event: @event, user: current_user)
-
-    if @event.passcode == params[:passcode] && @event.date.today?
-      @attendance.update(present: true, checked_in_at: Time.current)
-      redirect_to event_path(@event), notice: 'Successfully checked in.'
+    passcode_entered = params[:passcode]  # Adjusted to fetch passcode correctly
+  
+    if passcode_entered == @event.passcode
+      @attendance = Attendance.new(user: current_user, event: @event, present: true, checked_in_at: Time.current)
+      
+      if @attendance.save
+        current_user.update(points: current_user.points + 1)  # Update user points
+        redirect_to @event, notice: 'Successfully checked in.'
+      else
+        redirect_to @event, alert: @attendance.errors.full_messages.to_sentence
+      end
     else
-      @attendance.update(present: false)
-      redirect_to event_path(@event), alert: 'Invalid passcode or date.'
+      redirect_to @event, alert: 'Invalid passcode.'
     end
   end
 

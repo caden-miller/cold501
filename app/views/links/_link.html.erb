@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(link) do %>
+  <div class="link__table-row">
+    <div class="link__table-cell">
+      <%= link_to link.title, link.link, target: '_blank', rel: 'noopener noreferrer', class: 'link__text' %>
+    </div>
+    <div class="link__table-cell">
+      <%= link_to edit_link_path(link), class: 'link__table-button edit', data: { turbo_frame: dom_id(link) } do %>
+        <%= image_tag 'pencil-svgrepo-com.svg', class: 'link__table-svg', alt: 'Edit link', width: '40', height: '40' %>
+      <% end %>
+      <%= link_to link_path(link), class: 'link__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+        <%= image_tag 'trash-blank-svgrepo-com.svg', class: 'link__table-svg', alt: 'Delete link', width: '40', height: '40' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+

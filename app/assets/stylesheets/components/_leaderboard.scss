@@ -1,0 +1,99 @@
+// Parent container for both tables
+.page-layout {
+  display: flex;
+  padding: 20px;
+
+  // Leaderboard table (70% of the page, left side)
+  &__leaderboard {
+    width: 70%;
+    margin-right: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed; // Ensures consistent column widths
+      border-radius: 10px; // Rounds all corners of the table
+      overflow: hidden; // Ensures that border-radius is respected by child elements
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+        width: 50%; // Ensures each column takes up 50%
+      }
+
+      th:nth-child(2),
+      td:nth-child(2) {
+        text-align: center; // Center-aligns the 'Points' data
+      }
+
+      thead tr th:first-child {
+        border-top-left-radius: 10px; // Rounded top left corner
+      }
+
+      thead tr th:last-child {
+        border-top-right-radius: 10px; // Rounded top right corner
+      }
+
+      tbody tr:first-child td:first-child {
+        border-top-left-radius: 10px; // Apply rounding to the first cell of the first row in tbody
+      }
+
+      tbody tr:first-child td:last-child {
+        border-top-right-radius: 10px; // Apply rounding to the last cell of the first row in tbody
+      }
+
+      tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 10px; // Rounded bottom left corner
+      }
+
+      tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 10px; // Rounded bottom right corner
+      }
+
+      .page-layout__leaderboard--highlighted {
+        background-color: #f0f0f0; // Example background color, replace with dynamic color as needed
+      }
+    }
+  }
+
+  // Categories table (30% of the page, right side)
+  &__categories {
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        width: 33.3%; // Adjusts the width based on content
+      }
+
+      td.color-example {
+        position: relative;
+        color: transparent;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 50px;
+          height: 20px;
+          background-color: inherit;
+          border-radius: 10px; // Rounded corners for color display blocks
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+  }
+}
