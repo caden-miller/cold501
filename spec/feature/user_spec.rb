@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 # spec/feature/user_spec.rb
 require 'rails_helper'
 
 require 'capybara/rspec'
 require 'selenium/webdriver'
 
-
-RSpec.feature "Edit User and View User in Index then Delete the User", type: :feature do
-  let!(:user) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-
+RSpec.feature 'Edit User and View User in Index then Delete the User', type: :feature do
+  let!(:user) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
 
   before do
     Capybara.current_driver = :selenium_chrome_headless
   end
 
-
-  scenario "succeeds", js: true do
+  scenario 'succeeds', js: true do
     # Simulate user login (assuming you are using Devise)
     login_as(user, scope: :user)
 
@@ -42,17 +44,16 @@ RSpec.feature "Edit User and View User in Index then Delete the User", type: :fe
     visit users_path
 
     expect(page).to have_content('New Name')
-    
+
     accept_confirm 'Are you sure?' do
       click_link 'Delete', href: user_path(user)
     end
-  
 
     # Confirm that the user is deleted and no longer visible on the page
     expect(page).not_to have_content(user.full_name)
   end
 
-  scenario "fails" do
+  scenario 'fails' do
     login_as(user, scope: :user)
     visit edit_user_path(user)
 
@@ -61,18 +62,22 @@ RSpec.feature "Edit User and View User in Index then Delete the User", type: :fe
     click_button 'Update User'
 
     # Ensure the form re-renders with error messages
-    expect(page).to have_content("Please review the problems below:")
+    expect(page).to have_content('Please review the problems below:')
     expect(page).to have_selector('form')
   end
-
 end
 
-RSpec.feature "View users on index", type: :feature do
-  let!(:admin) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-  let!(:user) { create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
+RSpec.feature 'View users on index', type: :feature do
+  let!(:admin) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
+  let!(:user) do
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
 
-
-  scenario "succeeds" do
+  scenario 'succeeds' do
     login_as(admin, scope: :user)
     visit users_path
 
@@ -80,7 +85,7 @@ RSpec.feature "View users on index", type: :feature do
     expect(page).to have_content('Test User 2')
   end
 
-  scenario "fails" do
+  scenario 'fails' do
     login_as(user, scope: :user)
     visit users_path
 
@@ -88,20 +93,24 @@ RSpec.feature "View users on index", type: :feature do
   end
 end
 
+RSpec.feature 'View Users on Leaderboard', type: :feature do
+  let!(:admin) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
+  let!(:user) do
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
 
-RSpec.feature "View Users on Leaderboard", type: :feature do
-  let!(:admin) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-  let!(:user) { create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-
-
-  scenario "succeeds" do
+  scenario 'succeeds' do
     login_as(admin, scope: :user)
     visit leaderboard_users_path
 
     expect(page).to have_content('Hello! I am currently not built-out yet :(')
   end
 
-  scenario "fails" do
+  scenario 'fails' do
     login_as(user, scope: :user)
     visit leaderboard_users_path
 

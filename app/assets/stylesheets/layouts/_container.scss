@@ -1,13 +1,18 @@
 .container {
   width: 100%;
+  height: 100%;
   padding-right: var(--space-xs);
   padding-left: var(--space-xs);
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--color-primary-bg);
+  padding-bottom: var(--space-m);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 
   @include media(tabletAndUp) {
     padding-right: var(--space-m);
     padding-left: var(--space-m);
-    max-width: 60rem;
+    max-width: 70rem;
   }
 }

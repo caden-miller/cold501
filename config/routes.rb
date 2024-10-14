@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   resources :ideas
   resources :merchandises
   resources :merch
@@ -7,8 +8,7 @@ Rails.application.routes.draw do
   resources :leaderboard_categories
 
 
-
-  resources :events do   # Generates all routes for events (index, show, new, edit, create, update, destroy)
+  resources :events do # Generates all routes for events (index, show, new, edit, create, update, destroy)
     member do
       get 'delete'
     end
@@ -22,7 +22,10 @@ Rails.application.routes.draw do
     get 'users/sign_in', to: 'users/sessions#new', as: :new_user_session
     get 'users/sign_out', to: 'users/sessions#destroy', as: :destroy_user_session
   end
-  resources :photos do 
+
+  post 'reset_points', to: 'users#reset_points', as: :reset_points
+
+  resources :photos do
     member do
       get :delete
     end

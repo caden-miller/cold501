@@ -1,9 +1,3 @@
-<h1>New photo</h1>
-
-<%= render "form", photo: @photo %>
-
-<br>
-
-<div>
-  <%= link_to "Back to photos", photos_path %>
-</div>
+<turbo-frame id="new_photo">
+  <%= render 'form', photo: @photo %>
+</turbo-frame>

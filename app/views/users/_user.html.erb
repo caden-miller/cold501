@@ -1,13 +1,19 @@
-<tr id='user_<%= user.id %>'>
-  <td><%= image_tag user.avatar_url, class: 'user__image' %></td>
-  <td><%= user.full_name %></td>
-  <td><%= user.role %></td>
-  <td><%= user.committee %></td>
-  <td><%= user.points %></td>
-  <td><%= user.dues %></td>
-  <td>
-    <%= link_to 'Show', user %>
-    <%= link_to 'Edit', edit_user_path(user) %>
-    <%= link_to 'Delete', user_path(user), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-  </td>
-</tr> 
+<!-- app/views/users/_user.html.erb -->
+<%= turbo_frame_tag "user_#{user.id}" do %>
+  <div class="user__table-row">
+    <div class="user__table-cell"><%= image_tag user.avatar_url, class: 'user__image' %></div>
+    <div class="user__table-cell"><%= user.full_name %></div>
+    <div class="user__table-cell"><%= user.committee %></div>
+    <div class="user__table-cell"><%= user.points %></div>
+    <div class="user__table-cell"><%= user.dues %></div>
+    <div class="user__table-cell"><%= user.role %></div>
+    <div class="user__table-cell">
+      <%= link_to edit_user_path(user), class: 'user__table-button edit', data: { turbo_frame: "user_#{user.id}" } do %>
+        <%= image_tag 'pencil-svgrepo-com.svg', class: 'user__table-svg', alt: 'Edit User', width: '40', height: '40' %>
+      <% end %>
+      <%= link_to user_path(user), class: 'user__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+        <%= image_tag 'trash-blank-svgrepo-com.svg', class: 'user__table-svg', alt: 'Delete User', width: '40', height: '40' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
