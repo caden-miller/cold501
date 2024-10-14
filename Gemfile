@@ -94,3 +94,5 @@ end
 gem 'brakeman'
 gem 'rubocop'
 gem 'simple_calendar'
+
+gem 'rails-controller-testing'

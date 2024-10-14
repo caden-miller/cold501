@@ -25340,3 +25340,1367 @@ Processing by EventsController#show as TURBO_STREAM
 Completed 200 OK in 24ms (Views: 14.1ms | ActiveRecord: 3.2ms | Allocations: 8161)
 
 
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for 172.17.0.1 at 2024-10-13 23:15:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 35.7ms | Allocations: 1318)
+  Rendered layouts/_navbar.html.erb (Duration: 27.9ms | Allocations: 803)
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 27.9ms | Allocations: 1389)
+  Rendered layout layouts/application.html.erb (Duration: 253.3ms | Allocations: 6964)
+Completed 200 OK in 857ms (Views: 335.7ms | ActiveRecord: 19.3ms | Allocations: 22276)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:15:56 +0000
+  
+SyntaxError (/directory/cold501/app/controllers/links_controller.rb:79: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/links_controller.rb:79: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/links_controller.rb:79: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:20:26 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:15
+  Rendered links/index.html.erb within layouts/application (Duration: 48.6ms | Allocations: 885)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 505)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 98.7ms | Allocations: 4415)
+Completed 200 OK in 259ms (Views: 106.5ms | ActiveRecord: 7.5ms | Allocations: 10885)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:28:08 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:15
+  Rendered links/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 883)
+  Rendered layouts/_navbar.html.erb (Duration: 24.9ms | Allocations: 775)
+  Rendered layouts/_footer.html.erb (Duration: 32.5ms | Allocations: 733)
+  Rendered layout layouts/application.html.erb (Duration: 176.9ms | Allocations: 5686)
+Completed 200 OK in 486ms (Views: 226.5ms | ActiveRecord: 14.9ms | Allocations: 14764)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:29:36 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/index.html.erb within layouts/application (Duration: 76.8ms | Allocations: 3332)
+  Rendered layouts/_navbar.html.erb (Duration: 14.8ms | Allocations: 752)
+  Rendered layouts/_footer.html.erb (Duration: 15.0ms | Allocations: 733)
+  Rendered layout layouts/application.html.erb (Duration: 152.5ms | Allocations: 6412)
+Completed 200 OK in 283ms (Views: 166.4ms | ActiveRecord: 4.9ms | Allocations: 8655)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-13 23:29:39 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering links/new.html.erb within layouts/turbo_rails/frame
+  Rendered links/_form.html.erb (Duration: 1632.1ms | Allocations: 18423)
+  Rendered links/new.html.erb within layouts/turbo_rails/frame (Duration: 1681.9ms | Allocations: 18672)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1685.3ms | Allocations: 18932)
+Completed 200 OK in 1804ms (Views: 1691.8ms | ActiveRecord: 0.5ms | Allocations: 20762)
+
+
+Started POST "/links" for 172.17.0.1 at 2024-10-13 23:30:03 +0000
+Processing by LinksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"google", "link"=>"google.com"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.4ms | Allocations: 7078)
+
+
+  
+NoMethodError (undefined method `links' for #<User id: 1, email: "erikachtermann@tamu.edu", full_name: "Erik Achtermann", uid: "102370463413157811164", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJ56OzJMc...", committee: "", points: 3, dues: 200, role: "admin", created_at: "2024-10-13 17:09:31.941574000 +0000", updated_at: "2024-10-13 17:10:38.857147000 +0000">):
+  
+app/controllers/links_controller.rb:20:in `create'
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:30:06 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 683)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 461)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 2277)
+Completed 200 OK in 107ms (Views: 13.0ms | ActiveRecord: 0.9ms | Allocations: 3735)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:30:14 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 664)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 453)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 248)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2216)
+Completed 200 OK in 188ms (Views: 12.7ms | ActiveRecord: 1.6ms | Allocations: 3633)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:32:29 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 1044)
+  Rendered layouts/_navbar.html.erb (Duration: 14.4ms | Allocations: 752)
+  Rendered layouts/_footer.html.erb (Duration: 25.2ms | Allocations: 733)
+  Rendered layout layouts/application.html.erb (Duration: 156.1ms | Allocations: 4109)
+Completed 200 OK in 346ms (Views: 176.3ms | ActiveRecord: 1.3ms | Allocations: 6206)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-13 23:32:32 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/new.html.erb within layouts/application
+  Rendered links/_form.html.erb (Duration: 124.2ms | Allocations: 8512)
+  Rendered links/new.html.erb within layouts/application (Duration: 144.6ms | Allocations: 8744)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 452)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.4ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 158.6ms | Allocations: 10831)
+Completed 200 OK in 285ms (Views: 160.4ms | ActiveRecord: 1.0ms | Allocations: 12421)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-13 23:32:39 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering links/new.html.erb within layouts/turbo_rails/frame
+  Rendered links/_form.html.erb (Duration: 8.0ms | Allocations: 7973)
+  Rendered links/new.html.erb within layouts/turbo_rails/frame (Duration: 9.2ms | Allocations: 8033)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 15.6ms | Allocations: 8253)
+Completed 200 OK in 121ms (Views: 22.5ms | ActiveRecord: 0.5ms | Allocations: 9872)
+
+
+Started POST "/links" for 172.17.0.1 at 2024-10-13 23:32:49 +0000
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"test link", "link"=>"google.com"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 0.4ms | Allocations: 6788)
+
+
+  
+NoMethodError (undefined method `links' for #<User id: 1, email: "erikachtermann@tamu.edu", full_name: "Erik Achtermann", uid: "102370463413157811164", avatar_url: "https://lh3.googleusercontent.com/a/ACg8ocJ56OzJMc...", committee: "", points: 3, dues: 200, role: "admin", created_at: "2024-10-13 17:09:31.941574000 +0000", updated_at: "2024-10-13 17:10:38.857147000 +0000">):
+  
+app/controllers/links_controller.rb:20:in `create'
+Started POST "/links" for 172.17.0.1 at 2024-10-13 23:33:38 +0000
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"test link", "link"=>"google.com"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 7.1ms | Allocations: 9407)
+
+
+  
+NameError (undefined local variable or method `links' for #<LinksController:0x0000000002ae68>
+
+      @link = links.build(link_params)
+              ^^^^^
+Did you mean?  @links):
+  
+app/controllers/links_controller.rb:20:in `create'
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:34:06 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1968)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 482)
+  Rendered layouts/_footer.html.erb (Duration: 0.9ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 72.0ms | Allocations: 5449)
+Completed 200 OK in 233ms (Views: 71.7ms | ActiveRecord: 11.0ms | Allocations: 11690)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-13 23:34:16 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering links/new.html.erb within layouts/turbo_rails/frame
+  Rendered links/_form.html.erb (Duration: 47.0ms | Allocations: 8476)
+  Rendered links/new.html.erb within layouts/turbo_rails/frame (Duration: 49.5ms | Allocations: 8538)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 50.8ms | Allocations: 8631)
+Completed 200 OK in 171ms (Views: 52.8ms | ActiveRecord: 0.5ms | Allocations: 10162)
+
+
+Started POST "/links" for 172.17.0.1 at 2024-10-13 23:34:25 +0000
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"test link", "link"=>"https://www.google.com/"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+[31mUnpermitted parameters: :title, :link. Context: { controller: LinksController, action: create, request: #<ActionDispatch::Request:0x00007fe882749290>, params: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"test link", "link"=>"https://www.google.com/"}, "button"=>"", "controller"=>"links", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mLink Create (32.7ms)[0m  [1m[32mINSERT INTO "links" ("title", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", nil], ["link", nil], ["created_at", "2024-10-13 23:34:26.034263"], ["updated_at", "2024-10-13 23:34:26.034263"]]
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 156ms (ActiveRecord: 35.3ms | Allocations: 4889)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:34:26 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 81.1ms | Allocations: 1783)
+  Rendered links/index.html.erb within layouts/application (Duration: 96.7ms | Allocations: 2606)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 452)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 105.9ms | Allocations: 4235)
+Completed 200 OK in 212ms (Views: 108.0ms | ActiveRecord: 0.9ms | Allocations: 5670)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:34:32 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 438)
+  Rendered links/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1173)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 452)
+  Rendered layouts/_footer.html.erb (Duration: 1.1ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 2787)
+Completed 200 OK in 135ms (Views: 20.4ms | ActiveRecord: 1.0ms | Allocations: 4195)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:34:58 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 1.0ms | Allocations: 438)
+  Rendered links/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1173)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 452)
+  Rendered layouts/_footer.html.erb (Duration: 1.7ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 2787)
+Completed 200 OK in 136ms (Views: 20.7ms | ActiveRecord: 1.3ms | Allocations: 4198)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:37:47 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 14.2ms | Allocations: 1914)
+  Rendered links/index.html.erb within layouts/application (Duration: 63.5ms | Allocations: 5756)
+  Rendered layouts/_navbar.html.erb (Duration: 16.8ms | Allocations: 755)
+  Rendered layouts/_footer.html.erb (Duration: 28.2ms | Allocations: 957)
+  Rendered layout layouts/application.html.erb (Duration: 204.8ms | Allocations: 10847)
+Completed 200 OK in 553ms (Views: 241.7ms | ActiveRecord: 9.7ms | Allocations: 26719)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:37:54 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 10.0ms | Allocations: 466)
+  Rendered links/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 1243)
+  Rendered layouts/_navbar.html.erb (Duration: 4.2ms | Allocations: 454)
+  Rendered layouts/_footer.html.erb (Duration: 6.8ms | Allocations: 387)
+  Rendered layout layouts/application.html.erb (Duration: 45.2ms | Allocations: 2943)
+Completed 200 OK in 215ms (Views: 54.0ms | ActiveRecord: 1.2ms | Allocations: 4652)
+
+
+Started GET "/links/1/edit" for 172.17.0.1 at 2024-10-13 23:40:44 +0000
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 150ms (ActiveRecord: 0.9ms | Allocations: 8104)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x00000000012c28>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/links/1/edit" for 172.17.0.1 at 2024-10-13 23:40:45 +0000
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.7ms | Allocations: 8296)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x00000000012fc0>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/links/1/edit" for 172.17.0.1 at 2024-10-13 23:40:46 +0000
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 185ms (ActiveRecord: 0.5ms | Allocations: 7601)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x00000000013308>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/links/1/edit" for 172.17.0.1 at 2024-10-13 23:40:51 +0000
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 115ms (ActiveRecord: 0.5ms | Allocations: 7602)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x00000000013678>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/links/1" for 172.17.0.1 at 2024-10-13 23:40:59 +0000
+Processing by LinksController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.4ms | Allocations: 7930)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x00000000013998>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:41:02 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 470)
+  Rendered links/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1224)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 454)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 2860)
+Completed 200 OK in 116ms (Views: 18.8ms | ActiveRecord: 1.1ms | Allocations: 4318)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:47:32 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 96.0ms | Allocations: 849)
+  Rendered links/index.html.erb within layouts/application (Duration: 120.5ms | Allocations: 2028)
+  Rendered layouts/_navbar.html.erb (Duration: 17.4ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 12.3ms | Allocations: 818)
+  Rendered layout layouts/application.html.erb (Duration: 187.6ms | Allocations: 5091)
+Completed 200 OK in 390ms (Views: 203.1ms | ActiveRecord: 9.8ms | Allocations: 10289)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-13 23:47:36 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering links/new.html.erb within layouts/turbo_rails/frame
+  Rendered links/_form.html.erb (Duration: 665.3ms | Allocations: 18361)
+  Rendered links/new.html.erb within layouts/turbo_rails/frame (Duration: 683.8ms | Allocations: 18610)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 687.1ms | Allocations: 18870)
+Completed 200 OK in 796ms (Views: 693.2ms | ActiveRecord: 0.4ms | Allocations: 20705)
+
+
+Started POST "/links" for 172.17.0.1 at 2024-10-13 23:47:46 +0000
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"please", "link"=>"https://www.yahoo.com/"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+[31mUnpermitted parameters: :title, :link. Context: { controller: LinksController, action: create, request: #<ActionDispatch::Request:0x00007f99fabdd3c8>, params: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"please", "link"=>"https://www.yahoo.com/"}, "button"=>"", "controller"=>"links", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mLink Create (1.4ms)[0m  [1m[32mINSERT INTO "links" ("title", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", nil], ["link", nil], ["created_at", "2024-10-13 23:47:46.475775"], ["updated_at", "2024-10-13 23:47:46.475775"]]
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (26.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 153ms (ActiveRecord: 28.3ms | Allocations: 5195)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:47:46 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 1.0ms | Allocations: 483)
+  Rendered links/_link.html.erb (Duration: 1.9ms | Allocations: 424)
+  Rendered links/index.html.erb within layouts/application (Duration: 11.5ms | Allocations: 1739)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 454)
+  Rendered layouts/_footer.html.erb (Duration: 1.3ms | Allocations: 471)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 3518)
+Completed 200 OK in 123ms (Views: 25.2ms | ActiveRecord: 1.8ms | Allocations: 4976)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:47:50 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 2.4ms | Allocations: 446)
+  Rendered links/_link.html.erb (Duration: 2.0ms | Allocations: 424)
+  Rendered links/index.html.erb within layouts/application (Duration: 12.4ms | Allocations: 1668)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 452)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 416)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 3366)
+Completed 200 OK in 206ms (Views: 22.8ms | ActiveRecord: 2.6ms | Allocations: 4768)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:56:29 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 13.1ms | Allocations: 836)
+  Rendered links/_link.html.erb (Duration: 1.2ms | Allocations: 414)
+  Rendered links/index.html.erb within layouts/application (Duration: 40.9ms | Allocations: 2492)
+  Rendered layouts/_navbar.html.erb (Duration: 16.1ms | Allocations: 734)
+  Rendered layouts/_footer.html.erb (Duration: 10.4ms | Allocations: 902)
+  Rendered layout layouts/application.html.erb (Duration: 106.8ms | Allocations: 5638)
+Completed 200 OK in 267ms (Views: 123.0ms | ActiveRecord: 11.2ms | Allocations: 10821)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/links" for 172.17.0.1 at 2024-10-13 23:58:02 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 8.5ms | Allocations: 1914)
+  Rendered links/_link.html.erb (Duration: 0.5ms | Allocations: 414)
+  Rendered links/index.html.erb within layouts/application (Duration: 37.8ms | Allocations: 6234)
+  Rendered layouts/_navbar.html.erb (Duration: 4.9ms | Allocations: 755)
+  Rendered layouts/_footer.html.erb (Duration: 6.1ms | Allocations: 1041)
+  Rendered layout layouts/application.html.erb (Duration: 87.5ms | Allocations: 11403)
+Completed 200 OK in 300ms (Views: 106.0ms | ActiveRecord: 9.6ms | Allocations: 27258)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:03:04 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 6.3ms | Allocations: 1914)
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 414)
+  Rendered links/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 6233)
+  Rendered layouts/_navbar.html.erb (Duration: 5.9ms | Allocations: 755)
+  Rendered layouts/_footer.html.erb (Duration: 10.3ms | Allocations: 1041)
+  Rendered layout layouts/application.html.erb (Duration: 86.8ms | Allocations: 11402)
+Completed 200 OK in 300ms (Views: 104.3ms | ActiveRecord: 8.5ms | Allocations: 27270)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:08:19 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 1.2ms | Allocations: 1469)
+  Rendered links/_link.html.erb (Duration: 0.4ms | Allocations: 414)
+  Rendered links/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4006)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 464)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 487)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 7571)
+Completed 200 OK in 109ms (Views: 34.9ms | ActiveRecord: 6.2ms | Allocations: 13829)
+
+
+Started DELETE "/links/1" for 172.17.0.1 at 2024-10-14 00:08:25 +0000
+Processing by LinksController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.4ms | Allocations: 8039)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x0000000001a7e8>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started DELETE "/links/2" for 172.17.0.1 at 2024-10-14 00:08:28 +0000
+Processing by LinksController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.4ms | Allocations: 7911)
+
+
+  
+NoMethodError (undefined method `set_link' for #<LinksController:0x0000000001ab30>
+
+              target.send(@method_name, &block)
+                    ^^^^^
+Did you mean?  set_links
+               get_link):
+  
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.2) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.2) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.9) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.9) lib/rack/etag.rb:27:in `call'
+rack (2.2.9) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.9) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.9) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.9) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8.4) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.5.2) lib/sprockets/rails/quiet_assets.rb:17:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.9) lib/rack/method_override.rb:24:in `call'
+rack (2.2.9) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.9) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8.4) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.8) lib/puma/configuration.rb:252:in `call'
+puma (5.6.8) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.8) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.8) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.8) lib/puma/server.rb:443:in `process_client'
+puma (5.6.8) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:08:30 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 0.9ms | Allocations: 472)
+  Rendered links/_link.html.erb (Duration: 0.5ms | Allocations: 414)
+  Rendered links/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1703)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 454)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 416)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3423)
+Completed 200 OK in 59ms (Views: 9.6ms | ActiveRecord: 0.9ms | Allocations: 4906)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-14 00:08:33 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering links/new.html.erb within layouts/turbo_rails/frame
+  Rendered links/_form.html.erb (Duration: 172.7ms | Allocations: 15787)
+  Rendered links/new.html.erb within layouts/turbo_rails/frame (Duration: 182.8ms | Allocations: 16037)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 184.8ms | Allocations: 16297)
+Completed 200 OK in 248ms (Views: 188.1ms | ActiveRecord: 0.4ms | Allocations: 17991)
+
+
+Started POST "/links" for 172.17.0.1 at 2024-10-14 00:08:39 +0000
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"test link", "link"=>"google.com"}, "button"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mLink Create (4.9ms)[0m  [1m[32mINSERT INTO "links" ("title", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "test link"], ["link", "google.com"], ["created_at", "2024-10-14 00:08:39.974649"], ["updated_at", "2024-10-14 00:08:39.974649"]]
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 68ms (ActiveRecord: 9.2ms | Allocations: 4761)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:08:40 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 475)
+  Rendered links/_link.html.erb (Duration: 0.4ms | Allocations: 414)
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 365)
+  Rendered links/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2151)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 454)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 624)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4084)
+Completed 200 OK in 63ms (Views: 11.5ms | ActiveRecord: 0.8ms | Allocations: 5564)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:08:42 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 436)
+  Rendered links/_link.html.erb (Duration: 0.5ms | Allocations: 414)
+  Rendered links/_link.html.erb (Duration: 0.3ms | Allocations: 365)
+  Rendered links/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2078)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 452)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 569)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3929)
+Completed 200 OK in 71ms (Views: 10.4ms | ActiveRecord: 0.9ms | Allocations: 5352)
+
+
+Started GET "/google.com" for 172.17.0.1 at 2024-10-14 00:08:50 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/google.com"):
+  
+Started GET "/google.com" for 172.17.0.1 at 2024-10-14 00:12:05 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/google.com"):
+  
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:15:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 44.7ms | Allocations: 1927)
+  Rendered links/_link.html.erb (Duration: 5.7ms | Allocations: 424)
+  Rendered links/_link.html.erb (Duration: 4.6ms | Allocations: 377)
+  Rendered links/index.html.erb within layouts/application (Duration: 79.8ms | Allocations: 6698)
+  Rendered layouts/_navbar.html.erb (Duration: 20.8ms | Allocations: 755)
+  Rendered layouts/_footer.html.erb (Duration: 25.6ms | Allocations: 1194)
+  Rendered layout layouts/application.html.erb (Duration: 229.5ms | Allocations: 12020)
+Completed 200 OK in 454ms (Views: 252.5ms | ActiveRecord: 8.8ms | Allocations: 27873)
+
+
+Started GET "/links/new" for 172.17.0.1 at 2024-10-14 00:15:50 +0000
+Processing by LinksController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering links/new.html.erb within layouts/turbo_rails/frame
+  Rendered links/_form.html.erb (Duration: 218.1ms | Allocations: 15837)
+  Rendered links/new.html.erb within layouts/turbo_rails/frame (Duration: 232.3ms | Allocations: 16114)
+  Rendered layout /usr/local/bundle/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 234.4ms | Allocations: 16380)
+Completed 200 OK in 332ms (Views: 239.2ms | ActiveRecord: 0.6ms | Allocations: 18351)
+
+
+Started POST "/links" for 172.17.0.1 at 2024-10-14 00:15:56 +0000
+Processing by LinksController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "link"=>{"title"=>"test link", "link"=>"https://www.google.com/"}, "button"=>""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mLink Create (0.6ms)[0m  [1m[32mINSERT INTO "links" ("title", "link", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "test link"], ["link", "https://www.google.com/"], ["created_at", "2024-10-14 00:15:56.506525"], ["updated_at", "2024-10-14 00:15:56.506525"]]
+  ↳ app/controllers/links_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/links_controller.rb:24:in `create'
+Redirected to http://localhost:3000/links
+Completed 302 Found in 67ms (ActiveRecord: 8.1ms | Allocations: 4797)
+
+
+Started GET "/links" for 172.17.0.1 at 2024-10-14 00:15:56 +0000
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:18
+  Rendered links/_link.html.erb (Duration: 0.5ms | Allocations: 485)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 424)
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 375)
+  Rendered links/_link.html.erb (Duration: 0.4ms | Allocations: 375)
+  Rendered links/index.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2622)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 454)
+  Rendered layouts/_footer.html.erb (Duration: 1.6ms | Allocations: 777)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4708)
+Completed 200 OK in 55ms (Views: 11.5ms | ActiveRecord: 0.8ms | Allocations: 6185)
+
+
+[dotenv] Set [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, [36mAWS_BUCKET[0m, [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, and [36mHOST_URL[0m
+[dotenv] Loaded [33m.env[0m

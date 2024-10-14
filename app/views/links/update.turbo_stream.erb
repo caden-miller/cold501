@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "link_#{@link.id}" do %>
+  <%= turbo_frame_tag "link_#{@link.id}" do %>
+    <%= render partial: 'link', locals: { link: @link } %>
+  <% end %>
+<% end %>
