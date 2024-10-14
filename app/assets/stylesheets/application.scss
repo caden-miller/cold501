@@ -4,6 +4,7 @@
 // Configuration
 @import "config/variables";
 @import "config/reset";
+@import "config/root";
 
 // Components
 @import "components/btn";
@@ -11,11 +12,20 @@
 @import "components/form";
 @import "components/visually_hidden";
 @import "components/navbar";
+@import "components/footer";
 @import "components/home";
 @import "components/user";
+@import "components/event";
+@import "components/photo";
+@import "components/gallery";
+@import "components/link";
+@import "components/leaderboard";
+
 
 // Layouts
 @import "layouts/container";
 @import "layouts/header";
 @import "layouts/stack";
+@import "layouts/flash";
+
 

@@ -1,0 +1,20 @@
+<main class="container">
+  <header class="header">
+    <h1 class="header">PHOTO GALLERY</h1>
+  </header>
+
+  <div class="gallery" id="photos">
+    <% columns = 3 %>
+    <% photos_in_columns = @photos.in_groups(columns, false) %>
+
+    <% photos_in_columns.each do |column_photos| %>
+        <div class="gallery__column">
+        <% column_photos.each do |photo| %>
+            <div class="gallery__item">
+                <%= render partial: 'photo', locals: { photo: photo } %>
+            </div>
+        <% end %>
+        </div>
+    <% end %>
+  </div>
+</main>

@@ -1,0 +1,9 @@
+<%= turbo_frame_tag dom_id(photo) do %>
+    <div class="gallery__content">
+        <h1><%= photo.title %></h1>
+        <p><%= photo.description %></p>
+        <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: dom_id(photo) } %>
+        <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </div>
+<% end %>
+  

@@ -51,7 +51,7 @@ jobs:
         run: bundler exec brakeman -o brakeman.txt --no-exit-on-warn
         continue-on-error: true
       - name: Run rubocop
-        run: bundler exec rubocop --force-exclusion vendor/*/** --out rubocop.txt
+        run: bundler exec rubocop --out rubocop.txt --fail-level error
       - name: Upload coverage results
         uses: actions/upload-artifact@master
         if: always()

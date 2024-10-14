@@ -6,43 +6,45 @@
     </h1>
   </div>
   <div class="user__info">
-    <img src="<%= @user.avatar_url %>" alt="User Avatar" class="avatar" />
-    <div class="user__stack">
-      <div class="user__item">
-        <h2>
-          Role:
-        </h2>
-        <a>
-          <%= @user.role %>
-        </a>
+    <img src="<%= @user.avatar_url %>" alt="User Avatar" class="user__avatar" />
+    
+      <div class="user__stack">
+        <div class="user__item">
+          <h2>
+            Role:
+          </h2>
+          <a>
+            <%= @user.role %>
+          </a>
+        </div>
+        <div class="user__item">
+          <h2>
+            Committee:
+          </h2>
+          <a>
+            <%= @user.committee %>
+          </a>
+        </div>
       </div>
-      <div class="user__item">
-        <h2>
-          Committee:
-        </h2>
-        <a>
-          <%= @user.committee %>
-        </a>
+      <div class="user__stack">
+        <div class="user__item">
+          <h2>
+            Points:
+          </h2>
+          <a>
+            <%= @user.points %>
+          </a>
+        </div>
+        <div class="user__item">
+          <h2>
+            Dues:
+          </h2>
+          <a>
+            <%= @user.dues %>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="user__stack">
-      <div class="user__item">
-        <h2>
-          Points:
-        </h2>
-        <a>
-          <%= @user.points %>
-        </a>
-      </div>
-      <div class="user__item">
-        <h2>
-          Dues:
-        </h2>
-        <a>
-          <%= @user.dues %>
-        </a>
-      </div>
-    </div>
+    
   </div>
   <div class="user__actions">
     <%= link_to sanitize("Edit"), edit_user_path(@user), class: "btn btn--secondary" %>
