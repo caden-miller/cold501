@@ -1,78 +1,93 @@
+# frozen_string_literal: true
+
 # spec/feature/user_spec.rb
 require 'rails_helper'
 
 require 'capybara/rspec'
 require 'selenium/webdriver'
 
-
-RSpec.feature "Edit User and View User in Index then Delete the User", type: :feature do
-  let!(:user) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-
+RSpec.feature 'Edit User and View User in Index then Delete the User', type: :feature do
+  let!(:user) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
 
   before do
     Capybara.current_driver = :selenium_chrome_headless
   end
 
-
-  scenario "succeeds", js: true do
+  scenario 'User edits and deletes their profile', js: true do
     # Simulate user login (assuming you are using Devise)
     login_as(user, scope: :user)
 
-    # Visit the edit page
-    visit edit_user_path(user)
-
-    # Ensure the form contains the current user's data
-    expect(page).to have_field('Full name', with: 'Test User')
-    expect(page).to have_field('Committee', with: 'Test Committee')
-
-    # Fill in new details and submit the form
-    fill_in 'Full name', with: 'New Name'
-    fill_in 'Committee', with: 'New Committee'
-    select 'admin', from: 'Role'
-    click_button 'Update User'
-
-    # Ensure the page redirects and shows a success message
-    expect(page).to have_content('User was successfully updated.')
-
-    # Ensure the user's details were updated correctly
-    user.reload
-    expect(user.full_name).to eq('New Name')
-    expect(user.committee).to eq('New Committee')
-    expect(user.role).to eq('admin')
+    # Visit the users index page
     visit users_path
 
-    expect(page).to have_content('New Name')
-    
-    accept_confirm 'Are you sure?' do
-      click_link 'Delete', href: user_path(user)
-    end
-  
+    # Ensure the page contains the current user's data
+    expect(page).to have_content('Test User')
+    expect(page).to have_content('Test Committee')
 
-    # Confirm that the user is deleted and no longer visible on the page
-    expect(page).not_to have_content(user.full_name)
+    # Click the edit button within the user's turbo frame
+    within "#user_#{user.id}" do
+      find('.edit').click
+    end
+
+    # Fill in the 'Full name' field with 'New Name'
+    within "#user_#{user.id}" do
+      fill_in 'user_full_name', with: 'New Name'
+      # Click the confirm button to submit the form
+      find('.confirm').click
+    end
+
+    # Wait for the page to update and check for new name
+    expect(page).to have_content('New Name')
+
+    visit users_path
+
+    # Delete the user
+    within "#user_#{user.id}" do
+      # Handle the confirmation dialog
+      accept_confirm do
+        find('a.trash').click
+      end
+    end
+
+    # Verify the user is deleted and no longer visible on the page
+    expect(page).not_to have_content('New Name')
   end
 
-  scenario "fails" do
+  scenario 'User edit fails due to validation errors', js: true do
     login_as(user, scope: :user)
-    visit edit_user_path(user)
+    visit users_path
+
+    # Click the edit button within the user's turbo frame
+    within "#user_#{user.id}" do
+      find('.edit').click
+    end
 
     # Fill in invalid data
-    fill_in 'Full name', with: ''
-    click_button 'Update User'
+    within "#user_#{user.id}" do
+      fill_in 'user_full_name', with: ''
+      find('.confirm').click
+    end
 
     # Ensure the form re-renders with error messages
-    expect(page).to have_content("Full name can't be blank")
-    expect(page).to have_selector('form')
+    expect(page).to have_content('Please review the problems below:')
+    expect(page).to have_selector('form.user.form')
   end
-
 end
 
-RSpec.feature "View users on index", type: :feature do
-  let!(:admin) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-  let!(:user) { create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
+RSpec.feature 'View users on index', type: :feature do
+  let!(:admin) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
+  let!(:user) do
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
 
-
-  scenario "succeeds" do
+  scenario 'succeeds' do
     login_as(admin, scope: :user)
     visit users_path
 
@@ -80,7 +95,7 @@ RSpec.feature "View users on index", type: :feature do
     expect(page).to have_content('Test User 2')
   end
 
-  scenario "fails" do
+  scenario 'fails' do
     login_as(user, scope: :user)
     visit users_path
 
@@ -88,23 +103,58 @@ RSpec.feature "View users on index", type: :feature do
   end
 end
 
-
-RSpec.feature "View Users on Leaderboard", type: :feature do
-  let!(:admin) { create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-  let!(:user) { create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee', avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png') }
-
-
-  scenario "succeeds" do
-    login_as(admin, scope: :user)
-    visit leaderboard_users_path
-
-    expect(page).to have_content('Hello! I am currently not built-out yet :(')
+RSpec.feature 'View Users on Leaderboard', type: :feature do
+  let!(:admin) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', points: 999,
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
+  let!(:user) do
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user', committee: 'Test Committee', points: 888,
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
 
-  scenario "fails" do
+  scenario 'succeeds' do
+    login_as(admin, scope: :user)
+    visit leaderboard_categories_path
+
+    expect(page).to have_content('Test User')
+    expect(page).to have_content('999')
+    expect(page).to have_content('Test User 2')
+    expect(page).to have_content('888')
+  end
+
+  scenario 'fails' do
     login_as(user, scope: :user)
-    visit leaderboard_users_path
+    visit leaderboard_categories_path
 
     expect(page).to have_content('You are not authorized, tell your higher-ups to make you a member')
   end
 end
+
+
+RSpec.feature 'Reset User Points', type: :feature do
+  let!(:admin) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee', points: 10,
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
+
+  before do
+    Capybara.current_driver = :selenium_chrome_headless
+  end
+
+  scenario 'succeeds' do
+    login_as(admin, scope: :user)
+    visit users_path
+
+    expect(page).to have_content('Test User')
+    expect(page).to have_content('10')
+    
+    accept_confirm do
+      click_on 'Reset Member Points'
+    end
+
+    expect(page).to have_content('0')
+  end
+end
+
+

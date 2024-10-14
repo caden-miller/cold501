@@ -1,14 +1,24 @@
-<%= form_with(model: @link, local: true) do |form| %>
-    <div>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-    </div>
-    <div>
-      <%= form.label :link %>
-      <%= form.text_field :link %>
-    </div>
-    <div>
-      <%= form.submit %>
+<%= turbo_frame_tag dom_id(link) do %>
+  <%= simple_form_for link, html: { class: "link form", data: { turbo: false }, multipart: true } do |form| %>
+    <% if link.errors.any? %>
+      <%= form.error_notification %>
+    <% end %>
+
+    <div class="link__table-row">
+      <div class="link__table-cell">
+        <%= form.input :title %>
+      </div>
+      <div class="link__table-cell">
+        <%= form.input :link %>
+      </div>
+      <div class="link__table-cell">
+        <%= button_tag(type: 'submit', class: 'link__table-button confirm') do %>
+          <%= image_tag 'check-svgrepo-com.svg', class: 'link__table-svg', alt: 'Save link', width: '40', height: '40' %>
+        <% end %>
+        <%= link_to links_path, class: 'link__table-button cancel' do %>
+          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'link__table-svg', alt: 'Back to links', width: '40', height: '40' %>
+        <% end %>
+      </div>
     </div>
   <% end %>
-  
+<% end %>

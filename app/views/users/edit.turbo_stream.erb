@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "user_#{@user.id}" do %>
+  <%= render partial: 'form', locals: { user: @user } %>
+<% end %>

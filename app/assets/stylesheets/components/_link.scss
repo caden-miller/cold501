@@ -1,0 +1,163 @@
+.link {
+    &__table {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-primary); /* Base background color */
+        color: var(--color-primary-bg); /* Text color */
+        border-radius: var(--border-radius);
+    }
+
+    &__new-button {
+        background-color: var(--color-secondary); // Button background color
+        color: var(--color-primary-bg); // Button text color
+        padding: 0.5em 1em; // Button padding
+        border-radius: var(--border-radius); // Button border radius
+        text-decoration: none; // Remove underline from link
+        transition: background-color 0.5s ease; // Smooth transition on hover
+        display: inline-block; // Makes it look more like a button
+
+        &:hover {
+            background-color: var(--color-secondary-rotate); // Hover color for the button
+        }
+    }
+
+    &__table-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-tertiary); /* Header background color */
+        color: var(--color-primary-bg); /* Header text color */
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__table-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Changed to flex-start for better alignment */
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-primary-rotate); /* Body background color */
+        color: var(--color-primary-bg); /* Body text color */
+    }
+
+    &__table-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid var(--color-secondary); /* Row separator color */
+        
+        @include media(mobile) {
+            overflow: scroll; /* Responsive design for mobile */
+        }
+
+        &:last-of-type {
+            border-bottom: none; /* Remove border for last row */
+        }
+
+        & .link__table-cell {
+            flex: 1;
+            padding: 10px;
+            color: black;
+
+            & .link__text {
+                color: black; // Change link text color to black
+                text-decoration: none; // Remove underline from link
+                transition: color 0.3s ease; // Smooth transition for color change
+
+                &:hover {
+                    color: var(--color-secondary); // Change color on hover if needed
+                }
+            }
+
+            &:nth-child(1) {
+                flex: 0 0 70px; /* Fixed width for first cell */
+            }
+
+            &:nth-child(2) {
+                @include media(mobile) {
+                    flex: 1 0 100px; /* Responsive width */
+                }
+            }
+
+            &:nth-child(3) {
+                flex-grow: 1; /* Flexible width for third cell */
+                @include media(mobile) {
+                    flex: 1 0 75px; /* Fixed width */
+                }
+            }
+
+            &:nth-child(4),
+            &:nth-child(5) {
+                flex: 0 0 65px; /* Fixed width for fourth and fifth cells */
+            }
+
+            &:nth-child(6) {
+                flex: 0 0 80px; /* Fixed width for sixth cell */
+            }
+
+            &:last-child {
+                flex: 0 0 120px; /* Fixed width for last cell */
+                display: flex;
+                align-items: center;
+                justify-content: space-between; /* Align content */
+            }
+        }
+    }
+
+    &__table-button {
+        border: 0;
+        border-radius: var(--border-radius);
+        background-color: var(--color-secondary); /* Default button color */
+        color: var(--color-primary-bg); /* Button text color */
+        cursor: pointer;
+        transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transitions */
+        
+        &:hover {
+            background-color: var(--color-secondary-rotate); /* Button hover color */
+        }
+    }
+
+    .edit,
+    .confirm {
+        background-color: var(--color-secondary);
+    }
+
+    .edit:hover,
+    .confirm:hover {
+        background-color: var(--color-secondary-rotate);
+    }
+
+    .trash,
+    .cancel {
+        background-color: var(--color-red); /* Default delete/cancel color */
+        color: var(--color-primary-bg); /* Text color */
+    }
+
+    .trash:hover,
+    .cancel:hover {
+        background-color: var(--color-red-rotate); /* Hover color for delete/cancel */
+    }
+
+    &__image {
+        width: 50px;
+        height: 50px;
+        border-radius: var(--border-radius);
+    }
+}
+
+[id^="link_"] {
+    width: 100%;
+}

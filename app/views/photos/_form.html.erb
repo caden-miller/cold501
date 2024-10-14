@@ -1,32 +1,38 @@
-<%= form_with(model: @photo, local: true) do |form| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-      <ul>
-        <% @photo.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="gallery__item">
+  <%= image_tag(
+    photo.image_url.present? ? photo.image_url : 'placeholder.jpg',
+    alt: photo.description || 'No description',
+    class: 'gallery__image'
+  ) %>
+  <%= simple_form_for @photo, html: { class: "photo form gallery__content", multipart: true } do |form| %>
+    <% if @photo.errors.any? %>
+        <div class="error_messages">
+          <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
+          <ul>
+            <% @photo.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="">
+        <%= form.input :title %>
+      </div>
+      <div class="">
+        <%= form.input :description %>
+      </div>
+      <div class="">
+        <%= form.file_field :image %>
+      </div>
+      <div class="">
+        <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
+          <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
         <% end %>
-      </ul>
-    </div>
+        <%= button_to photos_path, class: 'photo__table-button cancel' do %>
+          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
+        <% end %>
+      </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
 

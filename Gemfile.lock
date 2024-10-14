@@ -252,6 +252,10 @@ GEM
       activesupport (= 7.0.8.4)
       bundler (>= 1.15.0)
       railties (= 7.0.8.4)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -270,6 +274,7 @@ GEM
     rake (13.2.1)
     rdoc (6.7.0)
       psych (>= 4.0.0)
+    redis (4.8.1)
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
@@ -326,6 +331,8 @@ GEM
     shrine (3.6.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
+    simple_calendar (3.0.4)
+      rails (>= 6.1)
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -402,12 +409,15 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.3)
+  rails-controller-testing
+  redis (~> 4.0)
   rexml
   rspec-rails
   rubocop
   sassc-rails
   selenium-webdriver
   shrine
+  simple_calendar
   simple_form (~> 5.1.0)
   simplecov
   sprockets-rails

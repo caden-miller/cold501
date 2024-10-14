@@ -1,5 +1,10 @@
-<h1>Edit Link</h1>
 
-<%= render 'form', link: @link %>
-
-<%= link_to 'Back', links_path %>
+<%= link_to sanitize("&larr; Back to links"), links_path %>
+<div class="header">
+  <h1>
+    Edit <%= @link.title %>
+  </h1>
+</div>
+<%= turbo_frame_tag dom_id(@link) do %>
+  <%= render 'form', link: @link %>
+<% end %>

@@ -1,34 +1,88 @@
 <main class="container">
-  <section id="about-organization" style="background-color: #f7f7f7; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); max-width: 800px; margin: 20px auto;">
-    <h2 style="text-align: center; color: #333;">Texas A&M HEAT</h2>
-    
-    <div style="background-color: #ffffff; padding: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
-    <%= image_tag "heat.png", alt: "HEAT team photo", class: "home__hero" %>
-    
-      <br>
-        <p><strong>Abbreviation(s):</strong> H.E.A.T.</p>
-        <br>
-        <p><strong>Purpose:</strong> H.E.A.T. is a student service organization dedicated to improving humanitarian, environmental, and animal welfare issues through positive activism. The Human Environmental Animal Team is committed to making a difference in all areas of service.</p>
-        <br>
-        <p>Texas A&M H.E.A.T. chapter was founded in the spring of 2013 by Jacob Alpuerto. Since then, our chapter has grown to include a variety of students, each with a very unique background and a passion for making the world better.</p>
-        <br>
-        <p>Even as our chapter continues to grow, there remains a place for everyone in H.E.A.T. At Texas A&M University, H.E.A.T. is a hardworking group that wants to better the world and affect positive change through volunteering and educating our peers. This organization allows us to take part in projects we care about, meet new people, and to be a part of something important. As a member of H.E.A.T., you get to make friendships that grow to feel like family, connections throughout the Aggie community, and change in the lives of those that we work with and for. It's not only rewarding but really fun!</p>
-      
-      <p>Some of our favorite projects include building ramps for people in need, working at food banks, cleaning up litter both locally and on beaches, and volunteering with a variety of animal rescues and sanctuaries that work with wolfdogs, tigers, reptiles and amphibians, and companion animals.</p>
-      <br>
-      <p>Our goals for the upcoming year include increasing membership numbers and participation, improving our relationships with each other through more socials, and expanding our outreach to establish new projects with new organizations. If you would like us to help you with a project near the Bryan/College Station area, please reach out to one of our executives or contact us at <a href="mailto:heattamu@gmail.com">heattamu@gmail.com</a>.</p>
-      <br>
-      <p><strong>Year Founded:</strong> 2013</p>
-      <p><strong>Membership Dues:</strong> $20/semester for new members; $15/semester for returning members</p>
-      <p><strong>Admits Members:</strong> First Quarter of Each Semester</p>
-      <p><strong>Meeting Locations:</strong> TBA</p>
-
-      <br>
-      <h3>Group Contact Information</h3>
-      <p><strong>Website:</strong> <a href="http://heatestablishment.tamu.edu">heatestablishment.tamu.edu</a>, <a href="https://www.instagram.com/heattamu/?hl=en">Instagram</a></p>
-      <p><strong>Email:</strong> <a href="mailto:heattamu@gmail.com">heattamu@gmail.com</a></p>
+  <div class="home">
+    <h2 class="home__header">H.E.A.T.</h2>
+    <h3 class="home__subheader">Human Environmental Animal Team</h3>
+    <div class="home__image-wrapper">
+      <div class="home__image-container">
+        <%= image_tag "cool-photo.png", alt: "H.E.A.T. team photo", class: "home__image" %>
+        <div class="home__image-content">
+          <h1>H.E.A.T. at Big Event</h1>
+          <p>H.E.A.T. participated in the Big Event 2024 at Lick Creek Park to help the local BCS community!</p>
+        </div>
+      </div>
     </div>
-  </section>
+    <p>
+      Howdy! H.E.A.T. is a non-profit 501(c)(3) student service organization dedicated to improving
+      humanitarian, environmental, and animal welfare issues through <em>positive activism</em>.
+    </p>
+    <br>
+    <div class="home__section home__quote">
+      <h3>
+        "H.E.A.T. never demonizes, H.E.A.T. always rises."
+      </h3>
+    </div>
+    <div class="home__image-wrapper">
+      <div class="home__image-container">
+        <%= image_tag "heat-photo-1.jpg", alt: "H.E.A.T. team photo", class: "home__image" %>
+        <div class="home__image-content">
+          <h1>Photo Gallery of different events</h1>
+          <p>Description</p>
+        </div>
+      </div>
+    </div>
+    <p>
+      Even as our chapter continues to grow, there remains a place for everyone in H.E.A.T. at Texas
+      A&M University! H.E.A.T. is a dedicated group focused on creating positive change through
+      volunteering and peer education. Members engage in meaningful projects, build strong
+      friendships, connect with the Aggie community, and make a real difference in others' lives—all
+      while having fun! Some of our favorite projects include building ramps for those in need, working
+      at food banks, cleaning up local and beach litter, and volunteering with various animal rescues
+      and sanctuaries.
+    </p>
+    <div class="home__image-wrapper">
+      <div class="home__image-container">
+        <%= image_tag "heat.png", alt: "H.E.A.T. team photo", class: "home__image" %>
+        <div class="home__image-content">
+          <h1>Social H.E.A.T. photo</h1>
+          <p>Description</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="home__section-header">Bottom-up organization</h3>
+    <p>
+      At H.E.A.T., we want to volunteer at places that matter to YOU! We encourage initiative and are
+      here to support your passions. Whether you've always dreamed of cleaning a local stream or
+      helping out at a donkey sanctuary 45 minutes away—let's make it happen!
+    </p>
+    <div class="home__image-wrapper">
+      <div class="home__image-container">
+        <%= image_tag "ian.png", alt: "H.E.A.T. team photo", class: "home__image" %>
+        <div class="home__image-content">
+          <h1>H.E.A.T. Founder giving TED Talk</h1>
+          <p>Our founder Ian Smith, gave a TED Talk about <em>Positive Activism</em> at Texas State University's campus.</p>
+        </div>
+      </div>
+    </div>
+    <h3 class="home__section-header">Our Roots</h3>
+    <p>
+      The Human Environmental Animal Team (H.E.A.T.) was first established in the early 2000s at
+      Texas State University by Ian Smith (a really cool guy!). In the spring of 2013, Jacob Alpuerto
+      founded the Texas A&M chapter. Since then, H.E.A.T. chapters have sprung up in high schools
+      and universities across Texas.
+    </p>
+    <div class="home__section">
+      <h3>
+        Join us!
+      </h3>
+      <p>
+        <strong>Membership Dues:</strong> $20/semester for new members, $15/semester for returning members.
+        <br>
+        We accept members the first quarter of each semester.
+        Meeting locations will always be announced on our Instagram and GroupMe.
+      </p>
+      <%= link_to sanitize("Contact Us"), 'mailto:heattamu@gmail.com', class: "home__button" %>
+    </div>
+  </div>
 </main>
 
 

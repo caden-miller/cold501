@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
-  before_action :get_user, except: [:index, :leaderboard]
+  before_action :get_user, except: %i[index leaderboard reset_points]
   before_action :set_role, :set_navbar_variables
   before_action :authenticate_member!, only: [:leaderboard]
   before_action :authenticate_admin!, except: [:leaderboard]
@@ -8,30 +10,36 @@ class UsersController < ApplicationController
     @users = User.order(:id)
   end
 
-  def show    
-  end
+  def show; end
 
   def edit
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
   end
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to users_path, notice: 'User was successfully updated.' }
+      end
     else
-      render :edit, status: :unprocessable_entity
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("user_#{@user.id}", partial: 'form', locals: { user: @user }) }
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
 
-
-  def delete
-  end
-
+  def delete; end
 
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully deleted.' }
-      format.turbo_stream # Responds to Turbo Stream requests
+      format.html { redirect_to users_path, notice: 'User was successfully deleted.' }
+      format.turbo_stream
     end
   end
 
@@ -39,9 +47,18 @@ class UsersController < ApplicationController
     @users = User.order(:id)
   end
 
+  def reset_points
+    # user = User.first  # Or any specific user
+    puts "trying to update"
+    User.update_all(points: 0)
+    puts "updated"
+    redirect_to users_path
+    # redirect_to users_path
+  end
+
   private
 
-  def get_user 
+  def get_user
     @user = User.find(params[:id])
   end
 

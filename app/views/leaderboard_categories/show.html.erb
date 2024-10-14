@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @leaderboard_category %>
+
+<div>
+  <%= link_to "Edit this leaderboard category", edit_leaderboard_category_path(@leaderboard_category) %> |
+  <%= link_to "Back to leaderboard categories", leaderboard_categories_path %>
+
+  <%= button_to "Destroy this leaderboard category", @leaderboard_category, method: :delete %>
+</div>

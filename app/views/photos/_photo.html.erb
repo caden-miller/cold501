@@ -1,22 +1,11 @@
-<div id="<%= dom_id photo %>">
-  <p>
-    <strong>Link:</strong>
-    <%= photo.link %>
-  </p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= photo.title %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= photo.description %>
-  </p>
-
-  <p>
-    <strong>Created by:</strong>
-    <%= photo.created_by_id %>
-  </p>
-
-</div>
+<%= turbo_frame_tag dom_id(photo) do %>
+  <div class="gallery__item">
+    <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+    <div class="gallery__content">
+        <h1><%= photo.title %></h1>
+        <p><%= photo.description %></p>
+        <%= link_to 'Edit', edit_photo_path(photo), data: { turbo_frame: dom_id(photo) } %>
+        <%= link_to 'Delete', photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "links", partial: 'link', locals: { link: @link } %>
+<%= turbo_stream.update dom_id(@link), "" %>
