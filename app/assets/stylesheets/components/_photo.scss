@@ -96,6 +96,7 @@
 .confirm {
     background-color: var(--color-secondary);
     transition: background-color 0.5s ease;
+    z-index: 1;
 }
 
 .edit:hover,
@@ -107,6 +108,7 @@
 .cancel {
     background-color: var(--color-red);
     transition: background-color 0.5s ease;
+    z-index: 1;
 }
 
 .trash:hover,

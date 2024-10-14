@@ -20,7 +20,7 @@ body::before {
     width: 100%;
     height: 100%;
     // background-image: inherit; /* Inherit the body background image */
-    background-color: #4C6444;
+    background-color: var(--color-secondary-rotate);
     background-size: inherit;
     background-position: inherit;
     background-attachment: fixed; /* Still keep it fixed */

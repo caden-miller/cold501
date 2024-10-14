@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PhotosController < ApplicationController
-  before_action :set_photo, except: %i[index new create]
+  before_action :set_photo, except: %i[index new create gallery]
   before_action :authenticate_user!
 
   # GET /photos
@@ -57,7 +57,7 @@ class PhotosController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :gallery, status: :unprocessable_entity }
         format.turbo_stream {
           render turbo_stream: turbo_stream.replace(
             dom_id(@photo),
@@ -77,6 +77,10 @@ class PhotosController < ApplicationController
       format.html { redirect_to photos_path, notice: 'Photo was successfully deleted.' }
       format.turbo_stream
     end
+  end
+
+  def gallery
+    @photos = Photo.all
   end
 
   private
