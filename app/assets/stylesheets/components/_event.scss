@@ -27,3 +27,22 @@
   height: 30px;
   line-height: 30px;
 }
+
+.event,
+.calendar,
+.simple-calendar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.event {
+
+  &__new {
+    align-self: flex-start;
+
+  }
+}
+

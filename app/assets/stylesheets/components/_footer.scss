@@ -58,13 +58,24 @@
         display: flex;
         align-items: center;
         justify-content: end;
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--color-glint);
+        }
     }
 
     
 
     &__logo {
         border-radius: 100%;
-        max-width: 75px;
+        max-width: 100px;
         flex-shrink: 1;
         height: auto;
 
