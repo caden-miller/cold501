@@ -1471,71 +1471,31 @@ a {
   flex: 1;
   padding: 10px;
   color: black;
+  width: 100%;
 }
 
-/* line 75, app/assets/stylesheets/components/_link.scss */
+/* line 76, app/assets/stylesheets/components/_link.scss */
 .link__table-row .link__table-cell .link__text {
   color: black;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-/* line 80, app/assets/stylesheets/components/_link.scss */
+/* line 81, app/assets/stylesheets/components/_link.scss */
 .link__table-row .link__table-cell .link__text:hover {
   color: var(--color-secondary);
 }
 
-/* line 85, app/assets/stylesheets/components/_link.scss */
-.link__table-row .link__table-cell:nth-child(1) {
-  flex: 0 0 70px;
-  /* Fixed width for first cell */
-}
-
-@media (max-width: 70rem) {
-  /* line 89, app/assets/stylesheets/components/_link.scss */
-  .link__table-row .link__table-cell:nth-child(2) {
-    flex: 1 0 100px;
-    /* Responsive width */
-  }
-}
-
-/* line 95, app/assets/stylesheets/components/_link.scss */
-.link__table-row .link__table-cell:nth-child(3) {
-  flex-grow: 1;
-  /* Flexible width for third cell */
-}
-
-@media (max-width: 70rem) {
-  /* line 95, app/assets/stylesheets/components/_link.scss */
-  .link__table-row .link__table-cell:nth-child(3) {
-    flex: 1 0 75px;
-    /* Fixed width */
-  }
-}
-
-/* line 102, app/assets/stylesheets/components/_link.scss */
-.link__table-row .link__table-cell:nth-child(4), .link__table-row .link__table-cell:nth-child(5) {
-  flex: 0 0 65px;
-  /* Fixed width for fourth and fifth cells */
-}
-
-/* line 107, app/assets/stylesheets/components/_link.scss */
-.link__table-row .link__table-cell:nth-child(6) {
-  flex: 0 0 80px;
-  /* Fixed width for sixth cell */
-}
-
-/* line 111, app/assets/stylesheets/components/_link.scss */
+/* line 90, app/assets/stylesheets/components/_link.scss */
 .link__table-row .link__table-cell:last-child {
-  flex: 0 0 120px;
-  /* Fixed width for last cell */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   /* Align content */
+  gap: 20px;
 }
 
-/* line 120, app/assets/stylesheets/components/_link.scss */
+/* line 100, app/assets/stylesheets/components/_link.scss */
 .link__table-button {
   border: 0;
   border-radius: var(--border-radius);
@@ -1548,48 +1508,48 @@ a {
   /* Smooth transitions */
 }
 
-/* line 128, app/assets/stylesheets/components/_link.scss */
+/* line 108, app/assets/stylesheets/components/_link.scss */
 .link__table-button:hover {
   background-color: var(--color-secondary-rotate);
   /* Button hover color */
 }
 
-/* line 133, app/assets/stylesheets/components/_link.scss */
-.link .edit,
-.link .confirm {
-  background-color: var(--color-secondary);
-}
-
-/* line 138, app/assets/stylesheets/components/_link.scss */
-.link .edit:hover,
-.link .confirm:hover {
-  background-color: var(--color-secondary-rotate);
-}
-
-/* line 143, app/assets/stylesheets/components/_link.scss */
-.link .trash,
-.link .cancel {
-  background-color: var(--color-red);
-  /* Default delete/cancel color */
-  color: var(--color-primary-bg);
-  /* Text color */
-}
-
-/* line 149, app/assets/stylesheets/components/_link.scss */
-.link .trash:hover,
-.link .cancel:hover {
-  background-color: var(--color-red-rotate);
-  /* Hover color for delete/cancel */
-}
-
-/* line 154, app/assets/stylesheets/components/_link.scss */
+/* line 113, app/assets/stylesheets/components/_link.scss */
 .link__image {
   width: 50px;
   height: 50px;
   border-radius: var(--border-radius);
 }
 
-/* line 161, app/assets/stylesheets/components/_link.scss */
+/* line 120, app/assets/stylesheets/components/_link.scss */
+.edit,
+.confirm {
+  background-color: var(--color-secondary);
+}
+
+/* line 125, app/assets/stylesheets/components/_link.scss */
+.edit:hover,
+.confirm:hover {
+  background-color: var(--color-secondary-rotate);
+}
+
+/* line 130, app/assets/stylesheets/components/_link.scss */
+.trash,
+.cancel {
+  background-color: var(--color-red);
+  /* Default delete/cancel color */
+  color: var(--color-primary-bg);
+  /* Text color */
+}
+
+/* line 136, app/assets/stylesheets/components/_link.scss */
+.trash:hover,
+.cancel:hover {
+  background-color: var(--color-red-rotate);
+  /* Hover color for delete/cancel */
+}
+
+/* line 141, app/assets/stylesheets/components/_link.scss */
 [id^="link_"] {
   width: 100%;
 }

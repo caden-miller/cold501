@@ -38,9 +38,8 @@ class PhotosController < ApplicationController
     if @photo.save
       puts "Photo Created"
       respond_to do |format|
-        
-        format.html { redirect_to photos_path, notice: "Photo Created" }
         format.turbo_stream
+        format.html { redirect_to photos_path, notice: "Photo Created" }
       end
     else
       puts "Photo Not Created"
