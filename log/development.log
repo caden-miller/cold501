@@ -30529,3 +30529,103 @@ Processing by PhotosController#update as TURBO_STREAM
 Completed 200 OK in 33ms (Views: 8.2ms | ActiveRecord: 2.6ms | Allocations: 10808)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-14 19:07:26 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1300)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 859)
+  [1m[36mLink Load (1.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 16.4ms | Allocations: 6234)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 12371)
+Completed 200 OK in 35ms (Views: 18.4ms | ActiveRecord: 7.2ms | Allocations: 18085)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-10-14 19:07:36 -0500
+Started GET "/users/auth/google_oauth2/callback?state=18a34a4d597bc5334ba8c3f79aac28e5b6dbc82e63969e49&code=4%2F0AVG7fiRjdeL1gCbTmer5Gxhc1MGQnbsZTGOD645J_ro3NDZx9nhg2XfLJApfH_khl4IYNg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-10-14 19:07:42 -0500
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"18a34a4d597bc5334ba8c3f79aac28e5b6dbc82e63969e49", "code"=>"4/0AVG7fiRjdeL1gCbTmer5Gxhc1MGQnbsZTGOD645J_ro3NDZx9nhg2XfLJApfH_khl4IYNg", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:18:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 4.6ms | Allocations: 9079)
+
+
+Started GET "/" for ::1 at 2024-10-14 19:07:42 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 487)
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 463)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.6ms | Allocations: 1709)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3535)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.6ms | Allocations: 5227)
+
+
+Started GET "/photos" for ::1 at 2024-10-14 19:07:43 -0500
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (1.0ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" ASC[0m
+  ↳ app/views/photos/index.html.erb:8
+  Rendered photos/_photo.html.erb (Duration: 56.1ms | Allocations: 148634)
+  Rendered photos/_photo.html.erb (Duration: 1.3ms | Allocations: 1330)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1330)
+  Rendered photos/_photo.html.erb (Duration: 1.0ms | Allocations: 1330)
+  Rendered photos/index.html.erb within layouts/application (Duration: 68.4ms | Allocations: 157247)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 465)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.1ms | Allocations: 1778)
+  Rendered layout layouts/application.html.erb (Duration: 71.8ms | Allocations: 160430)
+Completed 200 OK in 82ms (Views: 70.5ms | ActiveRecord: 4.2ms | Allocations: 164943)
+
+
+Started GET "/photos/15/edit" for ::1 at 2024-10-14 19:07:45 -0500
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 27.1ms | Allocations: 24812)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 28.4ms | Allocations: 25337)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 29.3ms | Allocations: 25598)
+Completed 200 OK in 37ms (Views: 30.1ms | ActiveRecord: 0.8ms | Allocations: 28712)
+
+
+Started PATCH "/photos/15" for ::1 at 2024-10-14 19:07:46 -0500
+Processing by PhotosController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "photo"=>{"title"=>"1234", "description"=>"1234"}, "button"=>"", "id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:90:in `set_photo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/photos_controller.rb:53:in `update'
+  Rendering photos/update.turbo_stream.erb
+  Rendered photos/_photo.html.erb (Duration: 1.4ms | Allocations: 1620)
+  Rendered photos/update.turbo_stream.erb (Duration: 2.5ms | Allocations: 2248)
+Completed 200 OK in 18ms (Views: 3.8ms | ActiveRecord: 1.3ms | Allocations: 11111)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
