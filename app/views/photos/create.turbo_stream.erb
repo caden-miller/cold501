@@ -1,2 +1,2 @@
-<%= turbo_stream.prepend "photos", partial: 'photo', locals: { photo: @photo } %>
+<%= turbo_stream.append "photos", partial: 'photo', locals: { photo: @photo } %>
 <%= turbo_stream.update dom_id(@photo), "" %>
