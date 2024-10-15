@@ -71,6 +71,7 @@
             flex: 1;
             padding: 10px;
             color: black;
+            width: 100%;
 
             & .link__text {
                 color: black; // Change link text color to black
@@ -82,37 +83,16 @@
                 }
             }
 
-            &:nth-child(1) {
-                flex: 0 0 70px; /* Fixed width for first cell */
-            }
-
-            &:nth-child(2) {
-                @include media(mobile) {
-                    flex: 1 0 100px; /* Responsive width */
-                }
-            }
-
-            &:nth-child(3) {
-                flex-grow: 1; /* Flexible width for third cell */
-                @include media(mobile) {
-                    flex: 1 0 75px; /* Fixed width */
-                }
-            }
-
-            &:nth-child(4),
-            &:nth-child(5) {
-                flex: 0 0 65px; /* Fixed width for fourth and fifth cells */
-            }
-
-            &:nth-child(6) {
-                flex: 0 0 80px; /* Fixed width for sixth cell */
-            }
+            // &:first-child {
+            //     flex: 0 0 70px; /* Fixed width for first cell */
+            // }
 
             &:last-child {
-                flex: 0 0 120px; /* Fixed width for last cell */
+                // flex: 0 0 120px; /* Fixed width for last cell */
                 display: flex;
                 align-items: center;
-                justify-content: space-between; /* Align content */
+                justify-content: center; /* Align content */
+                gap: 20px;
             }
         }
     }
@@ -130,32 +110,32 @@
         }
     }
 
-    .edit,
-    .confirm {
-        background-color: var(--color-secondary);
-    }
-
-    .edit:hover,
-    .confirm:hover {
-        background-color: var(--color-secondary-rotate);
-    }
-
-    .trash,
-    .cancel {
-        background-color: var(--color-red); /* Default delete/cancel color */
-        color: var(--color-primary-bg); /* Text color */
-    }
-
-    .trash:hover,
-    .cancel:hover {
-        background-color: var(--color-red-rotate); /* Hover color for delete/cancel */
-    }
-
     &__image {
         width: 50px;
         height: 50px;
         border-radius: var(--border-radius);
     }
+}
+
+.edit,
+.confirm {
+    background-color: var(--color-secondary);
+}
+
+.edit:hover,
+.confirm:hover {
+    background-color: var(--color-secondary-rotate);
+}
+
+.trash,
+.cancel {
+    background-color: var(--color-red); /* Default delete/cancel color */
+    color: var(--color-primary-bg); /* Text color */
+}
+
+.trash:hover,
+.cancel:hover {
+    background-color: var(--color-red-rotate); /* Hover color for delete/cancel */
 }
 
 [id^="link_"] {

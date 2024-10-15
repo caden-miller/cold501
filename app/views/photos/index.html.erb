@@ -7,12 +7,12 @@
     <% columns = 3 %>
     <% photos_in_columns = @photos.in_groups(columns, false) %>
 
-    <% photos_in_columns.each do |column_photos| %>
-        <div class="gallery__column">
-        <%= turbo_frame_tag Photo.new %>
-        <% column_photos.each do |photo| %>
-            <%= render partial: 'photo', locals: { photo: photo } %>
-        <% end %>
+    <% photos_in_columns.each_with_index do |column_photos, index| %>
+        <div class="gallery__column" id="column-<%= index %>">
+          <%= turbo_frame_tag Photo.new %>
+          <% column_photos.each do |photo| %>
+              <%= render partial: 'photo', locals: { photo: photo } %>
+          <% end %>
         </div>
     <% end %>
   </div>
