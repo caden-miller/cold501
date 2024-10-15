@@ -96,3 +96,9 @@ gem 'rubocop'
 gem 'simple_calendar'
 
 gem 'rails-controller-testing'
+
+gem 'httparty'
+gem 'nokogiri'
+
+
+

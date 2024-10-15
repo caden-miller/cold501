@@ -1,27 +1,26 @@
 <div id="<%= dom_id merchandise %>">
-  <p>
-    <strong>Link:</strong>
-    <%= merchandise.link %>
-  </p>
+  
 
-  <p>
-    <strong>Title:</strong>
+  <h1>
     <%= merchandise.title %>
+  </h1>
+  
+  <p>
+     <%= image_tag(merchandise.image) if merchandise.link.present? &&  merchandise.image.present? %>
   </p>
 
   <p>
-    <strong>Description:</strong>
     <%= merchandise.description %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= merchandise.image %>
   </p>
 
   <p>
     <strong>Stock:</strong>
     <%= merchandise.stock %>
+  </p>
+  
+  <p>
+    <strong>Link:</strong>
+    <%= link_to merchandise.link, merchandise.link, target: '_blank' if merchandise.link.present? %>
   </p>
 
 </div>

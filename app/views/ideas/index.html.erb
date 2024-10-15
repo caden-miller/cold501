@@ -1,14 +1,16 @@
+<div class="wrapper">
 <p style="color: green"><%= notice %></p>
-<%= controller_name %>
-<h1>Ideas</h1>
+<h1 class="ideas-title">Ideas</h1>
 
-<div id="ideas" classname="ideas-board">
+<div id="ideas" class="ideas-board">
   <% @ideas.each do |idea| %>
+    <div class="idea-item">
     <%= render idea %>
-    <p>
+    <p class="show-button">
       <%= link_to "Show this idea", idea %>
     </p>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New idea", new_idea_path %>
+  <%= link_to "New idea", new_idea_path %>
+</div>

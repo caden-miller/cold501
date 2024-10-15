@@ -1,0 +1,64 @@
+
+.ideas-board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 20px;
+}
+
+form {
+    border: 10px black;
+    text-align: center;
+}
+
+.idea-item {
+    background-image: url('/assets/stickynote.png');
+    background-size: cover;  /* Ensures the image covers the entire grid item */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    width: 375px; /* Set width of grid item */
+    height: 375px; /* Set height of grid item */
+    padding: 20px; /* Adds some internal space around the content */
+    color: black;
+}
+
+
+.wrapper {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.ideas-title{
+    margin-bottom: 10px;
+    font-size: 55px;
+}
+
+.item-title{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.idea-footer{
+    margin-top: auto;
+}
+
+.idea-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.show-button {
+    padding-bottom: 10px;
+}
+
+.idea-desc{
+    background-color: transparent;
+    border: none;
+}
+
+a {
+    color: black;
+}

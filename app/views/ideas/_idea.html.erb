@@ -1,22 +1,36 @@
-<div id="<%= dom_id idea %>">
-  <p>
-    <strong>Title:</strong>
+<div id="<%= dom_id idea %>" class="idea-wrapper">
+  <p class="item-title">
     <%= idea.title %>
   </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= idea.description %>
-  </p>
+  <textarea class="idea-desc">
+    <%= h(idea.description.squish) %>
+  </textarea>
 
+  <div class="idea-footer">
   <p>
     <strong>Created by:</strong>
-    <%= idea.created_by %>
+    <%= idea.user ? idea.user&.name : "Unknown" %>
   </p>
 
   <p>
     <strong>Created at:</strong>
-    <%= idea.created_at %>
+    <span class="utc-time" data-utc-time="<%= idea.created_at.iso8601 %>">
+      <%= idea.created_at.strftime('%Y-%m-%d %H %M %S %Z') %>
+    </span>
+    
   </p>
+  </div>
 
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.utc-time');
+    elements.forEach(function(element) {
+      const utcTime = element.getAttribute('data-utc-time');
+      const localTime = new Date(utcTime).toLocaleString(); // Converts to the user's local time zone
+      element.textContent = localTime; // Replace the content with local time
+    });
+  });
+</script>
