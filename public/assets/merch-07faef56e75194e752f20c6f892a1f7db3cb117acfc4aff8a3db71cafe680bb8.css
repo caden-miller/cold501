@@ -28,3 +28,8 @@ form {
   margin-left: 20px;
   margin-top: 10px;
 }
+
+/* line 27, app/assets/stylesheets/merch.scss */
+.merch-item {
+  border: black, 1px, solid;
+}

@@ -21,15 +21,7 @@
         "H.E.A.T. never demonizes, H.E.A.T. always rises."
       </h3>
     </div>
-    <div class="home__image-wrapper">
-      <div class="home__image-container">
-        <%= image_tag "heat-photo-1.jpg", alt: "H.E.A.T. team photo", class: "home__image" %>
-        <div class="home__image-content">
-          <h1>Photo Gallery of different events</h1>
-          <p>Description</p>
-        </div>
-      </div>
-    </div>
+    <%= render partial: 'shared/carousel', locals: { images: ['cool-photo.png', 'heat.png', 'ian.png'], title: "Social Photos", description: "HEAT at various social events" } %>
     <p>
       Even as our chapter continues to grow, there remains a place for everyone in H.E.A.T. at Texas
       A&M University! H.E.A.T. is a dedicated group focused on creating positive change through
