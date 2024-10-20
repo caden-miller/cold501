@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/caden/School/code/cs431/cold501/spec/feature/home_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/feature/home_spec.rb": {
         "lines": [
           null,
           null,
@@ -56,7 +56,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/rails_helper.rb": {
+      "/home/caden/School/cs431/cold501/spec/rails_helper.rb": {
         "lines": [
           null,
           null,
@@ -132,7 +132,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/environment.rb": {
+      "/home/caden/School/cs431/cold501/config/environment.rb": {
         "lines": [
           null,
           null,
@@ -143,7 +143,7 @@
           1
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/application.rb": {
+      "/home/caden/School/cs431/cold501/config/application.rb": {
         "lines": [
           null,
           null,
@@ -189,7 +189,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/boot.rb": {
+      "/home/caden/School/cs431/cold501/config/boot.rb": {
         "lines": [
           null,
           null,
@@ -199,7 +199,7 @@
           1
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/environments/test.rb": {
+      "/home/caden/School/cs431/cold501/config/environments/test.rb": {
         "lines": [
           null,
           null,
@@ -265,7 +265,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/initializers/assets.rb": {
+      "/home/caden/School/cs431/cold501/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -285,7 +285,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/initializers/content_security_policy.rb": {
+      "/home/caden/School/cs431/cold501/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -296,365 +296,6 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/caden/School/code/cs431/cold501/config/initializers/devise.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/caden/School/code/cs431/cold501/config/initializers/filter_parameter_logging.rb": {
-        "lines": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/caden/School/code/cs431/cold501/config/initializers/inflections.rb": {
-        "lines": [
           null,
           null,
           null,
@@ -675,7 +316,366 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/initializers/permissions_policy.rb": {
+      "/home/caden/School/cs431/cold501/config/initializers/devise.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/caden/School/cs431/cold501/config/initializers/filter_parameter_logging.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/caden/School/cs431/cold501/config/initializers/inflections.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/caden/School/cs431/cold501/config/initializers/permissions_policy.rb": {
         "lines": [
           null,
           null,
@@ -692,7 +692,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/initializers/shrine.rb": {
+      "/home/caden/School/cs431/cold501/config/initializers/shrine.rb": {
         "lines": [
           null,
           null,
@@ -718,7 +718,7 @@
           1
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/initializers/simple_form.rb": {
+      "/home/caden/School/cs431/cold501/config/initializers/simple_form.rb": {
         "lines": [
           null,
           null,
@@ -743,7 +743,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/factories/attendances.rb": {
+      "/home/caden/School/cs431/cold501/spec/factories/attendances.rb": {
         "lines": [
           null,
           null,
@@ -758,7 +758,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/factories/leaderboard_categories.rb": {
+      "/home/caden/School/cs431/cold501/spec/factories/leaderboard_categories.rb": {
         "lines": [
           1,
           1,
@@ -769,7 +769,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/factories/links.rb": {
+      "/home/caden/School/cs431/cold501/spec/factories/links.rb": {
         "lines": [
           null,
           null,
@@ -781,23 +781,8 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/factories/photos.rb": {
+      "/home/caden/School/cs431/cold501/spec/factories/photos.rb": {
         "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/home/caden/School/code/cs431/cold501/spec/factories/users.rb": {
-        "lines": [
-          null,
           null,
           null,
           1,
@@ -810,7 +795,22 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/config/routes.rb": {
+      "/home/caden/School/cs431/cold501/spec/factories/users.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/caden/School/cs431/cold501/config/routes.rb": {
         "lines": [
           null,
           null,
@@ -865,13 +865,15 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/models/user.rb": {
+      "/home/caden/School/cs431/cold501/app/models/user.rb": {
         "lines": [
           null,
           null,
           1,
           1,
           null,
+          1,
+          1,
           1,
           1,
           1,
@@ -886,10 +888,22 @@
           1,
           0,
           null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/models/application_record.rb": {
+      "/home/caden/School/cs431/cold501/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -898,7 +912,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/annoucements_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/annoucements_helper.rb": {
         "lines": [
           null,
           null,
@@ -906,7 +920,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/application_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -914,7 +928,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/events_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/events_helper.rb": {
         "lines": [
           null,
           null,
@@ -922,7 +936,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/home_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/home_helper.rb": {
         "lines": [
           null,
           null,
@@ -930,7 +944,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/ideas_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/ideas_helper.rb": {
         "lines": [
           null,
           null,
@@ -938,21 +952,13 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/leaderboard_categories_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/leaderboard_categories_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/links_helper.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/caden/School/code/cs431/cold501/app/helpers/merchandises_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/links_helper.rb": {
         "lines": [
           null,
           null,
@@ -960,7 +966,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/merches_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/merchandises_helper.rb": {
         "lines": [
           null,
           null,
@@ -968,7 +974,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/photos_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/merches_helper.rb": {
         "lines": [
           null,
           null,
@@ -976,7 +982,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/users_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/photos_helper.rb": {
         "lines": [
           null,
           null,
@@ -984,7 +990,15 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/helpers/users/omniauth_callbacks_helper.rb": {
+      "/home/caden/School/cs431/cold501/app/helpers/users_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/caden/School/cs431/cold501/app/helpers/users/omniauth_callbacks_helper.rb": {
         "lines": [
           null,
           null,
@@ -994,7 +1008,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/feature/leaderboard_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/feature/leaderboard_spec.rb": {
         "lines": [
           1,
           null,
@@ -1033,7 +1047,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/feature/user_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/feature/user_spec.rb": {
         "lines": [
           null,
           null,
@@ -1069,10 +1083,8 @@
           1,
           null,
           null,
-          null,
           1,
           1,
-          null,
           1,
           null,
           null,
@@ -1197,7 +1209,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/helpers/leaderboard_categories_helper_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/helpers/leaderboard_categories_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1217,7 +1229,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/helpers/links_helper_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/helpers/links_helper_spec.rb": {
         "lines": [
           null,
           null,
@@ -1238,7 +1250,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/models/attendance_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/models/attendance_spec.rb": {
         "lines": [
           null,
           null,
@@ -1249,7 +1261,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/models/attendance.rb": {
+      "/home/caden/School/cs431/cold501/app/models/attendance.rb": {
         "lines": [
           null,
           null,
@@ -1261,7 +1273,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/models/leaderboard_category_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/models/leaderboard_category_spec.rb": {
         "lines": [
           1,
           null,
@@ -1270,7 +1282,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/models/leaderboard_category.rb": {
+      "/home/caden/School/cs431/cold501/app/models/leaderboard_category.rb": {
         "lines": [
           1,
           1,
@@ -1279,7 +1291,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/models/link_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/models/link_spec.rb": {
         "lines": [
           null,
           null,
@@ -1290,7 +1302,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/models/link.rb": {
+      "/home/caden/School/cs431/cold501/app/models/link.rb": {
         "lines": [
           null,
           null,
@@ -1298,7 +1310,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/requests/links_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/requests/links_spec.rb": {
         "lines": [
           null,
           null,
@@ -1311,7 +1323,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/routing/leaderboard_categories_routing_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/routing/leaderboard_categories_routing_spec.rb": {
         "lines": [
           1,
           null,
@@ -1353,7 +1365,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/controllers/leaderboard_categories_controller.rb": {
+      "/home/caden/School/cs431/cold501/app/controllers/leaderboard_categories_controller.rb": {
         "lines": [
           1,
           1,
@@ -1429,7 +1441,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/controllers/application_controller.rb": {
+      "/home/caden/School/cs431/cold501/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -1499,7 +1511,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/spec/unit/users/unit_spec.rb": {
+      "/home/caden/School/cs431/cold501/spec/unit/users/unit_spec.rb": {
         "lines": [
           null,
           null,
@@ -1526,7 +1538,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/controllers/home_controller.rb": {
+      "/home/caden/School/cs431/cold501/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -1537,7 +1549,7 @@
           null
         ]
       },
-      "/home/caden/School/code/cs431/cold501/app/controllers/users_controller.rb": {
+      "/home/caden/School/cs431/cold501/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -1616,6 +1628,6 @@
         ]
       }
     },
-    "timestamp": 1728875104
+    "timestamp": 1729465974
   }
 }

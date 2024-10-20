@@ -32,10 +32,8 @@ RSpec.feature 'Edit User and View User in Index then Delete the User', type: :fe
       find('.edit').click
     end
 
-    # Fill in the 'Full name' field with 'New Name'
     within "#user_#{user.id}" do
       fill_in 'user_full_name', with: 'New Name'
-      # Click the confirm button to submit the form
       find('.confirm').click
     end
 

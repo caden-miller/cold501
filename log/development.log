@@ -40293,3 +40293,208 @@ ActionController::RoutingError (No route matches [GET] "/images/background.jpg")
   
 [dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7992348028875656775)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 18:01:16 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.7ms | Allocations: 740)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2561)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 847)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 10.1ms | Allocations: 6292)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 13953)
+Completed 200 OK in 28ms (Views: 16.5ms | ActiveRecord: 3.0ms | Allocations: 19670)
+
+
+Started GET "/images/background.jpg" for ::1 at 2024-10-20 18:01:17 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/background.jpg"):
+  
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-10-20 18:01:18 -0500
+Started GET "/users/auth/google_oauth2/callback?state=f76f72b5955baabde05768028764e801b7824374f6b8295c&code=4%2F0AVG7fiTtAaHWqfGUoRZzi3Hnw_CZaoaVgh1LI16u8FjdRZ2Ymtbc94rOUSR1X6ESFwck1w&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&prompt=consent" for ::1 at 2024-10-20 18:01:21 -0500
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"f76f72b5955baabde05768028764e801b7824374f6b8295c", "code"=>"4/0AVG7fiTtAaHWqfGUoRZzi3Hnw_CZaoaVgh1LI16u8FjdRZ2Ymtbc94rOUSR1X6ESFwck1w", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "prompt"=>"consent"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller40@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms (ActiveRecord: 4.8ms | Allocations: 9100)
+
+
+Started GET "/" for ::1 at 2024-10-20 18:01:22 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 320)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1263)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 461)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.0ms | Allocations: 1848)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4477)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.7ms | Allocations: 6141)
+
+
+Started GET "/images/background.jpg" for ::1 at 2024-10-20 18:01:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/background.jpg"):
+  
+Started GET "/users" for ::1 at 2024-10-20 18:01:23 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC[0m
+  ↳ app/views/users/index.html.erb:21
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 879)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 383)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 383)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 383)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 383)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4015)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 461)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.6ms | Allocations: 1916)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 7343)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 9742)
+
+
+Started GET "/users/17/edit" for ::1 at 2024-10-20 18:01:49 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering users/edit.html.erb within layouts/turbo_rails/frame
+  Rendered users/_form.html.erb (Duration: 30.3ms | Allocations: 25784)
+  Rendered users/edit.html.erb within layouts/turbo_rails/frame (Duration: 31.6ms | Allocations: 26320)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 32.1ms | Allocations: 26579)
+Completed 200 OK in 40ms (Views: 33.0ms | ActiveRecord: 0.8ms | Allocations: 29664)
+
+
+Started PATCH "/users/17" for ::1 at 2024-10-20 18:01:52 -0500
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"James Guandolof", "committee"=>"Development", "points"=>"12", "dues"=>"0", "role"=>"admin"}, "button"=>"", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "jimmy57guandolo@tamu.edu"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["full_name", "James Guandolof"], ["updated_at", "2024-10-20 23:01:52.223683"], ["id", 17]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  Rendering users/update.turbo_stream.erb
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 468)
+  Rendered users/update.turbo_stream.erb (Duration: 5.6ms | Allocations: 1054)
+Completed 200 OK in 16ms (Views: 6.3ms | ActiveRecord: 2.1ms | Allocations: 8427)
+
+
+Started GET "/users/17/edit" for ::1 at 2024-10-20 18:01:52 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering users/edit.html.erb within layouts/turbo_rails/frame
+  Rendered users/_form.html.erb (Duration: 10.7ms | Allocations: 15320)
+  Rendered users/edit.html.erb within layouts/turbo_rails/frame (Duration: 11.5ms | Allocations: 15634)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 11.8ms | Allocations: 15728)
+Completed 200 OK in 19ms (Views: 12.3ms | ActiveRecord: 1.1ms | Allocations: 17870)
+
+
+Started PATCH "/users/17" for ::1 at 2024-10-20 18:01:54 -0500
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"James Guandolo", "committee"=>"Development", "points"=>"12", "dues"=>"0", "role"=>"admin"}, "button"=>"", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "jimmy57guandolo@tamu.edu"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "full_name" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["full_name", "James Guandolo"], ["updated_at", "2024-10-20 23:01:54.651787"], ["id", 17]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  Rendering users/update.turbo_stream.erb
+  Rendered users/_user.html.erb (Duration: 0.8ms | Allocations: 404)
+  Rendered users/update.turbo_stream.erb (Duration: 1.2ms | Allocations: 598)
+Completed 200 OK in 18ms (Views: 2.1ms | ActiveRecord: 3.5ms | Allocations: 6133)
+
+
+Started GET "/users/17/edit" for ::1 at 2024-10-20 18:03:28 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering users/edit.html.erb within layouts/turbo_rails/frame
+  Rendered users/_form.html.erb (Duration: 11.7ms | Allocations: 15185)
+  Rendered users/edit.html.erb within layouts/turbo_rails/frame (Duration: 12.6ms | Allocations: 15442)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 12.8ms | Allocations: 15533)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 0.7ms | Allocations: 17448)
+
+
+Started PATCH "/users/17" for ::1 at 2024-10-20 18:04:13 -0500
+Processing by UsersController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"full_name"=>"James Guandolo", "committee"=>"Development", "points"=>"12", "dues"=>"0", "role"=>"admin"}, "button"=>"", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "jimmy57guandolo@tamu.edu"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  Rendering users/update.turbo_stream.erb
+  Rendered users/_user.html.erb (Duration: 0.7ms | Allocations: 404)
+  Rendered users/update.turbo_stream.erb (Duration: 1.1ms | Allocations: 597)
+Completed 200 OK in 12ms (Views: 1.8ms | ActiveRecord: 1.5ms | Allocations: 5294)
+
+
+Started GET "/users/17/edit" for ::1 at 2024-10-20 18:04:22 -0500
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:62:in `get_user'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering users/edit.html.erb within layouts/turbo_rails/frame
+  Rendered users/_form.html.erb (Duration: 16.5ms | Allocations: 15185)
+  Rendered users/edit.html.erb within layouts/turbo_rails/frame (Duration: 17.3ms | Allocations: 15442)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 17.5ms | Allocations: 15533)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 0.7ms | Allocations: 17457)
+
+
