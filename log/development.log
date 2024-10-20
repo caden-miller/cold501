@@ -39483,3 +39483,813 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 27ms (Views: 14.9ms | ActiveRecord: 3.1ms | Allocations: 19217)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 17:36:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 12.0ms | Allocations: 6127)
+  Rendered home/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 7123)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 7219)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms | Allocations: 13550)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `description' for #<ActionView::Base:0x00000000013268>
+
+    <p>'.freeze;@output_buffer.append=( description );@output_buffer.safe_append='</p>
+                                        ^^^^^^^^^^^
+Did you mean?  descriptions):
+    10: 
+    11:   <div class="carousel-content">
+    12:     <h1><%= title %></h1>
+    13:     <p><%= description %></p>
+    14:   </div>
+    15: 
+    16:   <!-- Previous Button -->
+  
+app/views/shared/_carousel.html.erb:13
+app/views/home/index.html.erb:24
+Started GET "/" for ::1 at 2024-10-20 17:36:09 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 11.1ms | Allocations: 5482)
+  Rendered home/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 5666)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 5746)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 6401)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `description' for #<ActionView::Base:0x00000000013588>
+
+    <p>'.freeze;@output_buffer.append=( description );@output_buffer.safe_append='</p>
+                                        ^^^^^^^^^^^
+Did you mean?  descriptions):
+    10: 
+    11:   <div class="carousel-content">
+    12:     <h1><%= title %></h1>
+    13:     <p><%= description %></p>
+    14:   </div>
+    15: 
+    16:   <!-- Previous Button -->
+  
+app/views/shared/_carousel.html.erb:13
+app/views/home/index.html.erb:24
+Started GET "/" for ::1 at 2024-10-20 17:38:08 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 1.3ms | Allocations: 464)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1562)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 848)
+  [1m[36mLink Load (1.1ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 21.0ms | Allocations: 9120)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 15763)
+Completed 200 OK in 35ms (Views: 27.6ms | ActiveRecord: 5.2ms | Allocations: 17087)
+
+
+Started GET "/" for ::1 at 2024-10-20 17:38:37 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 232)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 667)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 513)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.7ms | Allocations: 1781)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3858)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms | Allocations: 4671)
+
+
+Started GET "/" for ::1 at 2024-10-20 17:39:11 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.9ms | Allocations: 538)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1505)
+  Rendered layouts/_navbar.html.erb (Duration: 7.2ms | Allocations: 802)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 21.3ms | Allocations: 2218)
+  Rendered layout layouts/application.html.erb (Duration: 46.9ms | Allocations: 6045)
+Completed 200 OK in 52ms (Views: 49.8ms | ActiveRecord: 0.3ms | Allocations: 7425)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 17:39:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.9ms | Allocations: 582)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2043)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 847)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 12.4ms | Allocations: 6233)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 13340)
+Completed 200 OK in 33ms (Views: 18.6ms | ActiveRecord: 4.1ms | Allocations: 19196)
+
+
+Started GET "/" for ::1 at 2024-10-20 17:47:40 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 492.6ms | Allocations: 122561)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 10.4ms | Allocations: 5281)
+  Rendered home/index.html.erb within layouts/application (Duration: 505.1ms | Allocations: 128778)
+  Rendered layout layouts/application.html.erb (Duration: 505.3ms | Allocations: 128864)
+Completed 500 Internal Server Error in 511ms (ActiveRecord: 0.0ms | Allocations: 130352)
+
+
+  
+ActionView::Template::Error (The asset "carousel3slide1.jpg" is not present in the asset pipeline.
+):
+    3:   <div class="carousel-slides">
+    4:     <% images.each_with_index do |image, index| %>
+    5:       <div data-carousel-target="slide" class="<%= 'hidden' unless index == 0 %> carousel-slide">
+    6:         <%= image_tag image, alt: "Image #{index + 1}", class: 'carousel-image' %>
+    7:       </div>
+    8:     <% end %>
+    9:   </div>
+  
+app/views/shared/_carousel.html.erb:6
+app/views/shared/_carousel.html.erb:4:in `each'
+app/views/shared/_carousel.html.erb:4:in `each_with_index'
+app/views/shared/_carousel.html.erb:4
+app/views/home/index.html.erb:34
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 17:47:52 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.9ms | Allocations: 740)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 2.5ms | Allocations: 2859)
+  Rendered home/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 4827)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 4923)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms | Allocations: 10720)
+
+
+  
+ActionView::Template::Error (The asset "carousel3slide1.jpg" is not present in the asset pipeline.
+):
+    3:   <div class="carousel-slides">
+    4:     <% images.each_with_index do |image, index| %>
+    5:       <div data-carousel-target="slide" class="<%= 'hidden' unless index == 0 %> carousel-slide">
+    6:         <%= image_tag image, alt: "Image #{index + 1}", class: 'carousel-image' %>
+    7:       </div>
+    8:     <% end %>
+    9:   </div>
+  
+app/views/shared/_carousel.html.erb:6
+app/views/shared/_carousel.html.erb:4:in `each'
+app/views/shared/_carousel.html.erb:4:in `each_with_index'
+app/views/shared/_carousel.html.erb:4
+app/views/home/index.html.erb:34
+Started GET "/" for ::1 at 2024-10-20 17:47:53 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 335)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 1.5ms | Allocations: 2484)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 3293)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3373)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 4137)
+
+
+  
+ActionView::Template::Error (The asset "carousel3slide1.jpg" is not present in the asset pipeline.
+):
+    3:   <div class="carousel-slides">
+    4:     <% images.each_with_index do |image, index| %>
+    5:       <div data-carousel-target="slide" class="<%= 'hidden' unless index == 0 %> carousel-slide">
+    6:         <%= image_tag image, alt: "Image #{index + 1}", class: 'carousel-image' %>
+    7:       </div>
+    8:     <% end %>
+    9:   </div>
+  
+app/views/shared/_carousel.html.erb:6
+app/views/shared/_carousel.html.erb:4:in `each'
+app/views/shared/_carousel.html.erb:4:in `each_with_index'
+app/views/shared/_carousel.html.erb:4
+app/views/home/index.html.erb:34
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 17:48:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 1.1ms | Allocations: 740)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2561)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 847)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 11.3ms | Allocations: 6233)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 13858)
+Completed 200 OK in 32ms (Views: 18.8ms | ActiveRecord: 3.5ms | Allocations: 19714)
+
+
+Started GET "/images/background.jpg" for ::1 at 2024-10-20 17:48:09 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/background.jpg"):
+  
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 17:49:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 1.2ms | Allocations: 740)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2561)
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 847)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 14.2ms | Allocations: 6233)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 13858)
+Completed 200 OK in 38ms (Views: 22.6ms | ActiveRecord: 4.3ms | Allocations: 19712)
+
+
+Started GET "/images/background.jpg" for ::1 at 2024-10-20 17:49:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/background.jpg"):
+  
+Started GET "/" for ::1 at 2024-10-20 17:49:41 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.5ms | Allocations: 335)
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1272)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 517)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.8ms | Allocations: 1796)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4482)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.3ms | Allocations: 5280)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-10-20 17:51:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.8ms | Allocations: 740)
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2561)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 10571)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 16407)
+
+
+  
+ActionView::Template::Error (Missing partial layouts/_navbar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/caden/School/cs431/cold501/app/views"
+  * "/home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/simple_calendar-3.0.4/app/views"
+  * "/home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/devise-4.9.4/app/views"
+  * "/home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views"
+  * "/home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.8.4/app/views"
+  * "/home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.8.4/app/views"
+
+Did you mean?  shared/navbar
+               layouts/action_text/contents/content
+               leaderboard_categories/leaderboard_category
+               annoucements/annoucement
+               annoucements/form
+               ideas/idea):
+    30:   </head>
+    31: 
+    32:   <body>
+    33:     <%= render "layouts/navbar" %>
+    34:     <% if flash.any? %>
+    35:       <% flash.each do |key, value| -%>
+    36:         <div class="flash__container">
+  
+app/views/layouts/application.html.erb:33
+Started GET "/" for ::1 at 2024-10-20 17:51:48 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 1.1ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2005)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 847)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 1408)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 5808)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 7269)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <footer class='footer'>
+  <!-- Render Non-Instagram Links -->
+  
+    
+  <div class="footer__logo-container">
+    <%= link_to root_path do %>
+      <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+    <% end %>
+  </div>
+  
+  <!-- GitHub Link Section -->
+
+  <div class='footer__info-container'>
+    <div class="footer__links-container">
+      <% @links.each do |link| %>
+        <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+      <% end %>
+    </div>
+    <div class="footer__git">
+      <p class='footer__text'>Open Source on: </p>
+      <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+    </div>
+  </div>
+
+  <!-- Render Instagram Link if Exists -->
+  <div class="footer__instagram-container">
+    <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    <% end %>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class='footer__copyright'>
+    &copy; 2024 H.E.A.T. All rights reserved.
+  </div>
+</footer>
+):
+1:    <footer class='footer'>
+2:      <!-- Render Non-Instagram Links -->
+3:      
+4:        
+5:      <div class="footer__logo-container">
+6:        <%= link_to root_path do %>
+7:          <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+8:        <% end %>
+9:      </div>
+10:      
+11:      <!-- GitHub Link Section -->
+12:    
+13:      <div class='footer__info-container'>
+14:        <div class="footer__links-container">
+15:          <% @links.each do |link| %>
+16:            <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+17:          <% end %>
+18:        </div>
+19:        <div class="footer__git">
+20:          <p class='footer__text'>Open Source on: </p>
+21:          <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+22:        </div>
+23:      </div>
+24:    
+25:      <!-- Render Instagram Link if Exists -->
+26:      <div class="footer__instagram-container">
+27:        <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+28:          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+29:            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+30:            <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+31:            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+32:          </svg>
+33:        <% end %>
+34:      </div>
+35:    
+36:      <!-- Copyright Section -->
+37:      <div class='footer__copyright'>
+38:        &copy; 2024 H.E.A.T. All rights reserved.
+39:      </div>
+40:    </footer>
+  
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:42
+Started GET "/" for ::1 at 2024-10-20 17:51:50 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.6ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 501)
+  Rendered shared/_footer.html.erb (Duration: 0.7ms | Allocations: 1380)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3913)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 4685)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <footer class='footer'>
+  <!-- Render Non-Instagram Links -->
+  
+    
+  <div class="footer__logo-container">
+    <%= link_to root_path do %>
+      <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+    <% end %>
+  </div>
+  
+  <!-- GitHub Link Section -->
+
+  <div class='footer__info-container'>
+    <div class="footer__links-container">
+      <% @links.each do |link| %>
+        <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+      <% end %>
+    </div>
+    <div class="footer__git">
+      <p class='footer__text'>Open Source on: </p>
+      <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+    </div>
+  </div>
+
+  <!-- Render Instagram Link if Exists -->
+  <div class="footer__instagram-container">
+    <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    <% end %>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class='footer__copyright'>
+    &copy; 2024 H.E.A.T. All rights reserved.
+  </div>
+</footer>
+):
+1:    <footer class='footer'>
+2:      <!-- Render Non-Instagram Links -->
+3:      
+4:        
+5:      <div class="footer__logo-container">
+6:        <%= link_to root_path do %>
+7:          <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+8:        <% end %>
+9:      </div>
+10:      
+11:      <!-- GitHub Link Section -->
+12:    
+13:      <div class='footer__info-container'>
+14:        <div class="footer__links-container">
+15:          <% @links.each do |link| %>
+16:            <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+17:          <% end %>
+18:        </div>
+19:        <div class="footer__git">
+20:          <p class='footer__text'>Open Source on: </p>
+21:          <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+22:        </div>
+23:      </div>
+24:    
+25:      <!-- Render Instagram Link if Exists -->
+26:      <div class="footer__instagram-container">
+27:        <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+28:          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+29:            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+30:            <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+31:            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+32:          </svg>
+33:        <% end %>
+34:      </div>
+35:    
+36:      <!-- Copyright Section -->
+37:      <div class='footer__copyright'>
+38:        &copy; 2024 H.E.A.T. All rights reserved.
+39:      </div>
+40:    </footer>
+  
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:42
+Started GET "/" for ::1 at 2024-10-20 17:52:14 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.8ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2006)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 802)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 1393)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 5724)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 7096)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <footer class='footer'>
+  <!-- Render Non-Instagram Links -->
+  
+    
+  <div class="footer__logo-container">
+    <%= link_to root_path do %>
+      <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+    <% end %>
+  </div>
+  
+  <!-- GitHub Link Section -->
+
+  <div class='footer__info-container'>
+    <div class="footer__links-container">
+      <% @links.each do |link| %>
+        <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+      <% end %>
+    </div>
+    <div class="footer__git">
+      <p class='footer__text'>Open Source on: </p>
+      <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+    </div>
+  </div>
+
+  <!-- Render Instagram Link if Exists -->
+  <div class="footer__instagram-container">
+    <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    <% end %>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class='footer__copyright'>
+    &copy; 2024 H.E.A.T. All rights reserved.
+  </div>
+</footer>
+):
+1:    <footer class='footer'>
+2:      <!-- Render Non-Instagram Links -->
+3:      
+4:        
+5:      <div class="footer__logo-container">
+6:        <%= link_to root_path do %>
+7:          <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+8:        <% end %>
+9:      </div>
+10:      
+11:      <!-- GitHub Link Section -->
+12:    
+13:      <div class='footer__info-container'>
+14:        <div class="footer__links-container">
+15:          <% @links.each do |link| %>
+16:            <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+17:          <% end %>
+18:        </div>
+19:        <div class="footer__git">
+20:          <p class='footer__text'>Open Source on: </p>
+21:          <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+22:        </div>
+23:      </div>
+24:    
+25:      <!-- Render Instagram Link if Exists -->
+26:      <div class="footer__instagram-container">
+27:        <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+28:          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+29:            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+30:            <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+31:            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+32:          </svg>
+33:        <% end %>
+34:      </div>
+35:    
+36:      <!-- Copyright Section -->
+37:      <div class='footer__copyright'>
+38:        &copy; 2024 H.E.A.T. All rights reserved.
+39:      </div>
+40:    </footer>
+  
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:42
+Started GET "/" for ::1 at 2024-10-20 17:52:17 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 501)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 1379)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3911)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 4675)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <footer class='footer'>
+  <!-- Render Non-Instagram Links -->
+  
+    
+  <div class="footer__logo-container">
+    <%= link_to root_path do %>
+      <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+    <% end %>
+  </div>
+  
+  <!-- GitHub Link Section -->
+
+  <div class='footer__info-container'>
+    <div class="footer__links-container">
+      <% @links.each do |link| %>
+        <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+      <% end %>
+    </div>
+    <div class="footer__git">
+      <p class='footer__text'>Open Source on: </p>
+      <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+    </div>
+  </div>
+
+  <!-- Render Instagram Link if Exists -->
+  <div class="footer__instagram-container">
+    <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+      <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    <% end %>
+  </div>
+
+  <!-- Copyright Section -->
+  <div class='footer__copyright'>
+    &copy; 2024 H.E.A.T. All rights reserved.
+  </div>
+</footer>
+):
+1:    <footer class='footer'>
+2:      <!-- Render Non-Instagram Links -->
+3:      
+4:        
+5:      <div class="footer__logo-container">
+6:        <%= link_to root_path do %>
+7:          <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
+8:        <% end %>
+9:      </div>
+10:      
+11:      <!-- GitHub Link Section -->
+12:    
+13:      <div class='footer__info-container'>
+14:        <div class="footer__links-container">
+15:          <% @links.each do |link| %>
+16:            <%= link_to sanitize(link[:title]), link[:link], class: 'footer__link' %>
+17:          <% end %>
+18:        </div>
+19:        <div class="footer__git">
+20:          <p class='footer__text'>Open Source on: </p>
+21:          <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+22:        </div>
+23:      </div>
+24:    
+25:      <!-- Render Instagram Link if Exists -->
+26:      <div class="footer__instagram-container">
+27:        <%= link_to https://www.instagram.com/heattamu/?hl=en, target: '_blank' do %>
+28:          <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
+29:            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+30:            <path d="M16 11.37a4 4 0 1 1-7.94 1.94 4 4 0 0 1 7.94-1.94z"></path>
+31:            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+32:          </svg>
+33:        <% end %>
+34:      </div>
+35:    
+36:      <!-- Copyright Section -->
+37:      <div class='footer__copyright'>
+38:        &copy; 2024 H.E.A.T. All rights reserved.
+39:      </div>
+40:    </footer>
+  
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/shared/_footer.html.erb:27: unknown regexp options - www
+app/views/shared/_footer.html.erb:27: syntax error, unexpected '?'
+app/views/shared/_footer.html.erb:27: syntax error, unexpected label
+app/views/shared/_footer.html.erb:27: syntax error, unexpected `do' for block, expecting `end'
+app/views/shared/_footer.html.erb:42: syntax error, unexpected `end', expecting end-of-input
+app/views/layouts/application.html.erb:42
+Started GET "/" for ::1 at 2024-10-20 17:53:39 -0500
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.9ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2005)
+  Rendered shared/_navbar.html.erb (Duration: 1.5ms | Allocations: 802)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 20.5ms | Allocations: 9178)
+  Rendered layout layouts/application.html.erb (Duration: 27.8ms | Allocations: 13517)
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 4.8ms | Allocations: 14957)
+
+
+Started GET "/images/background.jpg" for ::1 at 2024-10-20 17:53:39 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/background.jpg"):
+  
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m

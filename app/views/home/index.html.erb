@@ -2,15 +2,11 @@
   <div class="home">
     <h2 class="home__header">H.E.A.T.</h2>
     <h3 class="home__subheader">Human Environmental Animal Team</h3>
-    <div class="home__image-wrapper">
-      <div class="home__image-container">
-        <%= image_tag "cool-photo.png", alt: "H.E.A.T. team photo", class: "home__image" %>
-        <div class="home__image-content">
-          <h1>H.E.A.T. at Big Event</h1>
-          <p>H.E.A.T. participated in the Big Event 2024 at Lick Creek Park to help the local BCS community!</p>
-        </div>
-      </div>
-    </div>
+    <%= render partial: 'shared/carousel', locals: { 
+      images: ['carousel1slide1.jpg', 'carousel1slide2.jpg', 'carousel1slide3.jpg', 'placeholder.jpg'], 
+      title: "Recent H.E.A.T. Activities", 
+      descriptions: ["H.E.A.T. at Texas Wolfdog Project & Shelter", "H.E.A.T. members receiving a grant from Aggie Green Fund and kicking off The Period Project", "Unbound Now presenting human trafficking bystander training to H.E.A.T. members", "Period Project presenting their work at SGA Open Forum"] } 
+    %>
     <p>
       Howdy! H.E.A.T. is a non-profit 501(c)(3) student service organization dedicated to improving
       humanitarian, environmental, and animal welfare issues through <em>positive activism</em>.
@@ -21,7 +17,11 @@
         "H.E.A.T. never demonizes, H.E.A.T. always rises."
       </h3>
     </div>
-    <%= render partial: 'shared/carousel', locals: { images: ['cool-photo.png', 'heat.png', 'ian.png'], title: "Social Photos", description: "HEAT at various social events" } %>
+    <%= render partial: 'shared/carousel', locals: { 
+      images: ['carousel2slide1.jpg', 'carousel2slide2.jpg', 'carousel2slide3.jpg', 'carousel2slide4.jpg'], 
+      title: "H.E.A.T. in Action", 
+      descriptions: ["H.E.A.T. members helping to build medical facilities for underserved communities with TAMU BUILD", "H.E.A.T. chapters from TAMU and TXST collaborating on cleaning a local stream in San Marcos, TX", "H.E.A.T. members collaborating with Texas Ramp Project to build a ramp for a local family needing wheelchair accessibility to their home", "H.E.A.T. members helping TMR Rescue staff with fixing and cleaning equine enclosures"] } 
+    %>
     <p>
       Even as our chapter continues to grow, there remains a place for everyone in H.E.A.T. at Texas
       A&M University! H.E.A.T. is a dedicated group focused on creating positive change through
@@ -31,15 +31,11 @@
       at food banks, cleaning up local and beach litter, and volunteering with various animal rescues
       and sanctuaries.
     </p>
-    <div class="home__image-wrapper">
-      <div class="home__image-container">
-        <%= image_tag "heat.png", alt: "H.E.A.T. team photo", class: "home__image" %>
-        <div class="home__image-content">
-          <h1>Social H.E.A.T. photo</h1>
-          <p>Description</p>
-        </div>
-      </div>
-    </div>
+    <%= render partial: 'shared/carousel', locals: { 
+      images: ['carousel3slide1.jpg', 'carousel3slide2.jpg', 'carousel3slide3.jpg'], 
+      title: "H.E.A.T. at Social Events", 
+      descriptions: ["Painting social at Aggie Park to meet prospective members!", "H.E.A.T. members participating in our quarterly street cleanups at our adopted street", "H.E.A.T. members watching the total solar eclipse together"] } 
+    %>
     <h3 class="home__section-header">Bottom-up organization</h3>
     <p>
       At H.E.A.T., we want to volunteer at places that matter to YOU! We encourage initiative and are
@@ -48,7 +44,7 @@
     </p>
     <div class="home__image-wrapper">
       <div class="home__image-container">
-        <%= image_tag "ian.png", alt: "H.E.A.T. team photo", class: "home__image" %>
+        <%= image_tag "IanSmithTEDTalk.jpg", alt: "H.E.A.T. team photo", class: "home__image" %>
         <div class="home__image-content">
           <h1>H.E.A.T. Founder giving TED Talk</h1>
           <p>Our founder Ian Smith, gave a TED Talk about <em>Positive Activism</em> at Texas State University's campus.</p>

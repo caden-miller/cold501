@@ -1,4 +1,4 @@
-<div data-controller="carousel" class="carousel-container">
+<div data-controller="carousel" data-carousel-descriptions-value='<%= descriptions.to_json %>' class="carousel-container">
   <!-- Slides -->
   <div class="carousel-slides">
     <% images.each_with_index do |image, index| %>
@@ -10,7 +10,7 @@
 
   <div class="carousel-content">
     <h1><%= title %></h1>
-    <p><%= description %></p>
+    <p data-carousel-target="description"><%= descriptions.first %></p>
   </div>
 
   <!-- Previous Button -->
