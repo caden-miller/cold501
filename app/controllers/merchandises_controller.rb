@@ -61,7 +61,7 @@ class MerchandisesController < ApplicationController
           format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
           format.json { render :show, status: :created, location: @merchandise }
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @merchandise.errors, status: :unprocessable_entity }
         end
       else
