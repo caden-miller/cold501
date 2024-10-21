@@ -46,7 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_10_13_175954) do
   end
 
   create_table "ideas", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.string "description"
     t.integer "created_by"
     t.datetime "created_at", null: false
