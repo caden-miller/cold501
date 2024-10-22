@@ -22,7 +22,11 @@ class IdeasController < ApplicationController
   # POST /ideas or /ideas.json
   def create
     @idea = Idea.new(idea_params)
-    @idea.user = current_user if current_user
+    if current_user
+      @idea.user = current_user
+    else
+      @idea.created_by = "Unknown"
+    end
 
     respond_to do |format|
       if @idea.save

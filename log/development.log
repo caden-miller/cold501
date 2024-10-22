@@ -40511,3 +40511,151 @@ Updating Merchandise link: https://tamu.estore.flywire.com/products/alternate-me
 Completed 422 Unprocessable Entity in 14ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 6152)
 
 
+Started GET "/iddeas" for 172.17.0.1 at 2024-10-22 00:16:15 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/iddeas"):
+  
+Started GET "/i/deas" for 172.17.0.1 at 2024-10-22 00:16:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/i/deas"):
+  
+Started GET "/deas" for 172.17.0.1 at 2024-10-22 00:16:25 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/deas"):
+  
+Started GET "/ideas" for 172.17.0.1 at 2024-10-22 00:16:30 +0000
+Processing by IdeasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.9ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:6
+  Rendered ideas/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1183)
+  Rendered layouts/_navbar.html.erb (Duration: 2.4ms | Allocations: 839)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.9ms | Allocations: 1357)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 6768)
+Completed 200 OK in 32ms (Views: 16.2ms | ActiveRecord: 1.4ms | Allocations: 11606)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-10-22 00:16:31 +0000
+Processing by IdeasController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 5.0ms | Allocations: 1994)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2324)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 509)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.3ms | Allocations: 944)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 4793)
+Completed 200 OK in 30ms (Views: 12.9ms | ActiveRecord: 5.5ms | Allocations: 10004)
+
+
+Started POST "/ideas" for 172.17.0.1 at 2024-10-22 00:16:37 +0000
+Processing by IdeasController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "idea"=>{"title"=>"t1", "description"=>"d1"}, "commit"=>"Create Idea"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:32:in `block in create'
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:32:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/ideas_controller.rb:32:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.7ms | Allocations: 1352)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1447)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 506)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.5ms | Allocations: 864)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3807)
+Completed 422 Unprocessable Entity in 30ms (Views: 7.2ms | ActiveRecord: 6.0ms | Allocations: 13043)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-10-22 00:18:13 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 39.1ms | Allocations: 2304)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 51.2ms | Allocations: 2920)
+  Rendered layouts/_navbar.html.erb (Duration: 2.8ms | Allocations: 810)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.8ms | Allocations: 1622)
+  Rendered layout layouts/application.html.erb (Duration: 85.9ms | Allocations: 8800)
+Completed 200 OK in 198ms (Views: 103.3ms | ActiveRecord: 5.8ms | Allocations: 20170)
+
+
+Started POST "/ideas" for 172.17.0.1 at 2024-10-22 00:18:19 +0000
+Processing by IdeasController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "idea"=>{"title"=>"t", "description"=>"d"}, "commit"=>"Create Idea"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ideas_controller.rb:32:in `block in create'
+  [1m[36mIdea Create (2.4ms)[0m  [1m[32mINSERT INTO "ideas" ("title", "description", "created_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "t"], ["description", "d"], ["created_by", 0], ["created_at", "2024-10-22 00:18:19.637383"], ["updated_at", "2024-10-22 00:18:19.637383"]]
+  ↳ app/controllers/ideas_controller.rb:32:in `block in create'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ideas_controller.rb:32:in `block in create'
+Redirected to http://localhost:3000/ideas/1
+Completed 302 Found in 17ms (ActiveRecord: 7.4ms | Allocations: 4259)
+
+
+Started GET "/ideas/1" for 172.17.0.1 at 2024-10-22 00:18:19 +0000
+Processing by IdeasController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mIdea Load (0.3ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:69:in `set_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:13
+  Rendered ideas/_idea.html.erb (Duration: 18.4ms | Allocations: 4545)
+  Rendered ideas/show.html.erb within layouts/application (Duration: 21.6ms | Allocations: 5582)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 509)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 861)
+  Rendered layout layouts/application.html.erb (Duration: 27.3ms | Allocations: 7943)
+Completed 200 OK in 37ms (Views: 24.3ms | ActiveRecord: 4.3ms | Allocations: 11393)
+
+
+Started GET "/ideas/1" for 172.17.0.1 at 2024-10-22 00:18:54 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas" WHERE "ideas"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ideas_controller.rb:69:in `set_idea'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:13
+  Rendered ideas/_idea.html.erb (Duration: 15.5ms | Allocations: 4662)
+  Rendered ideas/show.html.erb within layouts/application (Duration: 22.3ms | Allocations: 6014)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 821)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.5ms | Allocations: 1486)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 11721)
+Completed 200 OK in 152ms (Views: 31.0ms | ActiveRecord: 10.9ms | Allocations: 25750)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-10-22 00:19:05 +0000
+Processing by IdeasController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:6
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:13
+  Rendered ideas/_idea.html.erb (Duration: 2.9ms | Allocations: 834)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1940)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 519)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.2ms | Allocations: 860)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 4302)
+Completed 200 OK in 15ms (Views: 12.0ms | ActiveRecord: 1.4ms | Allocations: 5246)
+
+
