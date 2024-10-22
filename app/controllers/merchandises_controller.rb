@@ -19,7 +19,9 @@ class MerchandisesController < ApplicationController
   end
 
   # GET /merchandises/1/edit
-  def edit; end
+  def edit
+    @merchandise = Merchandise.find(params[:id])
+  end
 
   # POST /merchandises or /merchandises.json
   def create
@@ -49,10 +51,11 @@ class MerchandisesController < ApplicationController
 
   # PATCH/PUT /merchandises/1 or /merchandises/1.json
   def update
-    @merchandise.assign_attributes(merchandise_params) 
+    @merchandise = Merchandise.find(params[:id])
     Rails.logger.debug("Updating Merchandise link: #{@merchandise.link}")
 
     respond_to do |format|
+      @merchandise.assign_attributes(merchandise_params) 
       if @merchandise.link.present? && valid_flywire_link(@merchandise.link)
         image_url = get_image(@merchandise.link)
         @merchandise.image = image_url if image_url
@@ -61,12 +64,12 @@ class MerchandisesController < ApplicationController
           format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
           format.json { render :show, status: :created, location: @merchandise }
         else
-          format.html { render :edit, status: :unprocessable_entity }
+          format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @merchandise.errors, status: :unprocessable_entity }
         end
       else
         flash.now[:alert] = 'Please enter a valid Flywire link.'
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: { error: 'Invalid Flywire link' }, status: :unprocessable_entity }
       end
     end

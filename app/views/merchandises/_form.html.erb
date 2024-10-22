@@ -1,4 +1,4 @@
-<%= form_with(model: merchandise) do |form| %>
+<%= form_with(model: merchandise, local: true) do |form| %>
   <% if merchandise.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(merchandise.errors.count, "error") %> prohibited this merchandise from being saved:</h2>
