@@ -116,6 +116,11 @@ Here is a list of all the gems being used in the current project along with thei
 - shrine: 3.6.0
 - rails-html-sanitizer: 1.6.0
 - rubocop: 1.66.1
+- rubocop-capybara: 2.21.0
+- rubocop-factory_bot: 2.26.1
+- rubocop-rails: 2.26.2
+- rubocop-rspec: 3.1.0
+- rubocop-rspec_rails: 2.30.0
 - debug: 1.9.2
 - activemodel: 7.0.8.4
 - aws-sdk-kms: 1.91.0
