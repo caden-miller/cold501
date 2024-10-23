@@ -64,7 +64,7 @@
 		touch .env
 	  ```
 2. Modify the .env file to include the following credentials
-	- ```console
+	- ```bash
 		# Google OAuth credentials and redirect URL
 		GOOGLE_OAUTH_CLIENT_ID=<INSERT HERE>
 		GOOGLE_OAUTH_CLIENT_SECRET=<INSERT HERE>
