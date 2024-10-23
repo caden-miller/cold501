@@ -9,36 +9,37 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    puts "Inside New link"
+    puts 'Inside New link'
     @link = Link.new
-    puts "Leaving New link"
+    puts 'Leaving New link'
   end
 
-    # POST /links
-    def create
-      puts "Inside Create link"
-      @link = Link.new(link_params)
-      # @link = link.new(link_params)
-      # @link.user = current_user
-    
-      if @link.save
-        puts "link Created"
-        respond_to do |format|
-          
-          format.html { redirect_to links_path, notice: "link Created" }
-          format.turbo_stream
-        end
-      else
-        puts "link Not Created"
-        render :new, status: :unprocessable_entity
+  # POST /links
+  def create
+    puts 'Inside Create link'
+    @link = Link.new(link_params)
+    # @link = link.new(link_params)
+    # @link.user = current_user
+
+    if @link.save
+      puts 'link Created'
+      respond_to do |format|
+        format.html { redirect_to links_path, notice: 'link Created' }
+        format.turbo_stream
       end
+    else
+      puts 'link Not Created'
+      render :new, status: :unprocessable_entity
     end
+  end
 
   def show; end
 
   def edit
     respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@link), partial: 'links/form', locals: { link: @link }) }
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(dom_id(@link), partial: 'links/form', locals: { link: @link })
+      end
       format.html
     end
   end
@@ -52,13 +53,13 @@ class LinksController < ApplicationController
     else
       respond_to do |format|
         format.html { render :new, status: :unprocessable_entity }
-        format.turbo_stream {
+        format.turbo_stream do
           render turbo_stream: turbo_stream.replace(
             dom_id(@link),
             partial: 'links/form',
             locals: { link: @link }
           ), status: :unprocessable_entity
-        }
+        end
       end
     end
   end
@@ -79,9 +80,9 @@ class LinksController < ApplicationController
 
   def reset_points
     # link = link.first  # Or any specific link
-    puts "trying to update"
+    puts 'trying to update'
     Link.update_all(points: 0)
-    puts "updated"
+    puts 'updated'
     redirect_to links_path
     # redirect_to links_path
   end
@@ -95,7 +96,7 @@ class LinksController < ApplicationController
   def link_params
     params.require(:link).permit(
       :title,
-      :link,
+      :link
     )
   end
 end

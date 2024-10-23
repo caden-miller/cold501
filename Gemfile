@@ -31,7 +31,7 @@ gem 'stimulus-rails', '~> 1.3.4'
 gem 'jbuilder', '~> 2.12.0'
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.8.1"
+gem 'redis', '~> 4.8.1'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -104,6 +104,3 @@ gem 'rails-controller-testing', '~> 1.0.5'
 
 gem 'httparty', '~> 0.22.0'
 gem 'nokogiri', '~> 1.16.7'
-
-
-

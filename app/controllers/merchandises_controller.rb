@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'httparty'
 require 'nokogiri'
 
@@ -25,12 +26,12 @@ class MerchandisesController < ApplicationController
   def create
     @merchandise = Merchandise.new(merchandise_params)
     Rails.logger.debug("Merchandise link: #{@merchandise.link}")
-  
+
     respond_to do |format|
       if @merchandise.link.present? && valid_flywire_link(@merchandise.link)
         image_url = get_image(@merchandise.link)
         @merchandise.image = image_url if image_url
-  
+
         if @merchandise.save
           format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
           format.json { render :show, status: :created, location: @merchandise }
@@ -45,7 +46,6 @@ class MerchandisesController < ApplicationController
       end
     end
   end
-  
 
   # PATCH/PUT /merchandises/1 or /merchandises/1.json
   def update
@@ -83,21 +83,19 @@ class MerchandisesController < ApplicationController
   end
 
   def valid_flywire_link(link)
-      link =~ /\Ahttps?:\/\/(www\.)?tamu\.estore\.flywire\.com\//i
+    link =~ %r{\Ahttps?://(www\.)?tamu\.estore\.flywire\.com/}i
   end
 
   def get_image(link)
     response = HTTParty.get(link)
     parsed_page = Nokogiri::HTML(response.body)
 
-     # Use the specific class name to target the product image
+    # Use the specific class name to target the product image
     image_tag = parsed_page.css('img.js-main-product-img').first
 
     image_tag ||= parsed_page.css('img').first
     image_url = image_tag['src'] if image_tag
 
     URI.join(link, image_url).to_s if image_url
-
   end
-
 end

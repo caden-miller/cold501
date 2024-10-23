@@ -1,51 +1,59 @@
 # frozen_string_literal: true
 
-# spec/feature/user_spec.rb
+# spec/feature/home_spec.rb
 require 'rails_helper'
 
-RSpec.feature 'View Nav', type: :feature do
-  let!(:member) do
-    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'member', committee: 'Test Committee',
-                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
-  end
-  let!(:officer) do
-    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'officer', committee: 'Test Committee',
+RSpec.feature 'Home Page Features', type: :feature do
+  let!(:admin) do
+    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin',
+                  committee: 'Test Committee',
                   avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
 
-  scenario 'as Member' do
-    login_as(member, scope: :user)
-    visit root_path
-
-    expect(page).to have_content('members')
+  let!(:user) do
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user',
+                  committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
 
-  scenario 'as Officer' do
-    login_as(officer, scope: :user)
-    visit root_path
+  context 'when viewing the navigation as different roles' do
+    scenario 'as Admin' do
+      login_as(admin, scope: :user)
+      visit root_path
 
-    # expect navbar to not have members
-    within('header') do
-      expect(page).to_not have_content('members')
+      expect(page).to have_content('members')
+    end
+
+    scenario 'as User' do
+      login_as(user, scope: :user)
+      visit root_path
+
+      # Expect navbar to not have 'members'
+      within('header') do
+        expect(page).not_to have_content('members')
+      end
     end
   end
-end
 
-RSpec.feature 'Login vs Logout', type: :feature do
-  let!(:member) do
-    create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'member', committee: 'Test Committee',
-                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  context 'when logging in and out' do
+    scenario 'from non-user to admin' do
+      visit root_path
+
+      # Separate expectations
+      expect_login_content_before(admin)
+      expect_logout_content_after
+    end
   end
 
-  scenario 'from non-user to member' do
-    visit root_path
-
+  # Helper methods
+  def expect_login_content_before(user)
     expect(page).to have_content('Login')
 
-    login_as(member, scope: :user)
-
+    login_as(user, scope: :user)
     visit root_path
+  end
 
+  def expect_logout_content_after
     expect(page).to have_content('Logout')
   end
 end

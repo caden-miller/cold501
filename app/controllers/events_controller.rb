@@ -2,11 +2,11 @@
 
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy archive unarchive]
-  before_action :set_user, :set_role, :set_navbar_variables
+  before_action :set_user, :role, :set_navbar_variables
 
   # Display all events
   def index
-    @events = Event.where(archived: false)  # Fetches only non-archived events
+    @events = Event.where(archived: false) # Fetches only non-archived events
   end
 
   # Show a single event
@@ -62,8 +62,8 @@ class EventsController < ApplicationController
   end
 
   def archived
-    @archived_events = Event.where(archived: true)  # Fetches only archived events
-    render :archived  # You may need to create this view
+    @archived_events = Event.where(archived: true) # Fetches only archived events
+    render :archived # You may need to create this view
   end
 
   def archive

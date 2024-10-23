@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :links, except: [:show]
   resources :leaderboard_categories
 
-
   resources :events do # Generates all routes for events (index, show, new, edit, create, update, destroy)
     member do
       # get :delete
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
       get 'unarchive'
     end
     collection do
-      get 'archived'  
+      get 'archived'
     end
     resources :attendances, only: [:create]
   end

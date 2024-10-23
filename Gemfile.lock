@@ -435,11 +435,11 @@ DEPENDENCIES
   rexml (~> 3.3.7)
   rspec-rails (~> 7.0.1)
   rubocop (~> 1.66.1)
-  rubocop-capybara
-  rubocop-factory_bot
-  rubocop-rails
-  rubocop-rspec
-  rubocop-rspec_rails
+  rubocop-capybara (~> 2.21.0)
+  rubocop-factory_bot (~> 2.26.1)
+  rubocop-rails (~> 2.26.2)
+  rubocop-rspec (~> 3.1.0)
+  rubocop-rspec_rails (~> 2.30.0)
   sassc-rails (~> 2.1.2)
   selenium-webdriver (~> 4.10.0)
   shrine (~> 3.6.0)
