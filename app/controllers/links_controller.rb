@@ -9,26 +9,26 @@ class LinksController < ApplicationController
 
   # GET /links/new
   def new
-    puts 'Inside New link'
+    Rails.logger.debug 'Inside New link'
     @link = Link.new
-    puts 'Leaving New link'
+    Rails.logger.debug 'Leaving New link'
   end
 
   # POST /links
   def create
-    puts 'Inside Create link'
+    Rails.logger.debug 'Inside Create link'
     @link = Link.new(link_params)
     # @link = link.new(link_params)
     # @link.user = current_user
 
     if @link.save
-      puts 'link Created'
+      Rails.logger.debug 'link Created'
       respond_to do |format|
         format.html { redirect_to links_path, notice: 'link Created' }
         format.turbo_stream
       end
     else
-      puts 'link Not Created'
+      Rails.logger.debug 'link Not Created'
       render :new, status: :unprocessable_entity
     end
   end
@@ -80,9 +80,9 @@ class LinksController < ApplicationController
 
   def reset_points
     # link = link.first  # Or any specific link
-    puts 'trying to update'
+    Rails.logger.debug 'trying to update'
     Link.update_all(points: 0)
-    puts 'updated'
+    Rails.logger.debug 'updated'
     redirect_to links_path
     # redirect_to links_path
   end

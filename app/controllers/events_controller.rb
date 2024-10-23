@@ -24,7 +24,7 @@ class EventsController < ApplicationController
 
   # Create a new event in the database
   def create
-    puts params[:event]
+    Rails.logger.debug params[:event]
     @event = Event.new(event_params)
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'

@@ -14,9 +14,9 @@ class PhotosController < ApplicationController
 
   # GET /photos/new
   def new
-    puts 'Inside New Photo'
+    Rails.logger.debug 'Inside New Photo'
     @photo = Photo.new
-    puts 'Leaving New Photo'
+    Rails.logger.debug 'Leaving New Photo'
   end
 
   # GET /photos/1/edit
@@ -29,19 +29,19 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
-    puts 'Inside Create Photo'
+    Rails.logger.debug 'Inside Create Photo'
     @photo = current_user.photos.build(photo_params)
     # @photo = Photo.new(photo_params)
     # @photo.user = current_user
 
     if @photo.save
-      puts 'Photo Created'
+      Rails.logger.debug 'Photo Created'
       respond_to do |format|
         format.html { redirect_to photos_path, notice: 'Photo Created' }
         format.turbo_stream
       end
     else
-      puts 'Photo Not Created'
+      Rails.logger.debug 'Photo Not Created'
       render :new, status: :unprocessable_entity
     end
   end

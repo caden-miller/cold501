@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # app/controllers/attendances_controller.rb
 class AttendancesController < ApplicationController
   before_action :set_event

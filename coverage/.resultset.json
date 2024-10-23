@@ -1176,6 +1176,8 @@
       },
       "/home/caden/School/cs431/cold501/app/models/leaderboard_category.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -1321,6 +1323,8 @@
       },
       "/home/caden/School/cs431/cold501/app/controllers/leaderboard_categories_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -1518,6 +1522,6 @@
         ]
       }
     },
-    "timestamp": 1729726626
+    "timestamp": 1729726669
   }
 }
