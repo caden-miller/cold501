@@ -2,10 +2,9 @@
 
 # UsersController handles CRUD operations for users, including leaderboard management and point resets.
 class UsersController < ApplicationController
-  before_action :find_user, except: %i[index leaderboard reset_points]
+  before_action :find_user, except: %i[index reset_points]
   before_action :role, :set_navbar_variables
-  before_action :authenticate_member!, only: [:leaderboard]
-  before_action :authenticate_admin!, except: [:leaderboard]
+  before_action :authenticate_admin!
 
   def index
     @users = User.order(:id)
@@ -36,10 +35,6 @@ class UsersController < ApplicationController
       format.html { redirect_to users_path, notice: 'User was successfully deleted.' }
       format.turbo_stream
     end
-  end
-
-  def leaderboard
-    @users = User.order(:id)
   end
 
   def reset_points
