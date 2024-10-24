@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# EventsController
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy archive unarchive]
   before_action :set_user, :role, :set_navbar_variables

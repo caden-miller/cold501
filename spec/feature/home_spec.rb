@@ -10,8 +10,14 @@ RSpec.feature 'Home Page Features', type: :feature do
                   avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
 
+  let!(:member) do
+    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'member',
+                  committee: 'Test Committee',
+                  avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
+  end
+
   let!(:user) do
-    create(:user, email: 'testuser2@example.com', full_name: 'Test User 2', role: 'user',
+    create(:user, email: 'testuser3@example.com', full_name: 'Test User 3', role: 'user',
                   committee: 'Test Committee',
                   avatar_url: 'https://developers.google.com/static/workspace/chat/images/chat-product-icon.png')
   end
@@ -24,13 +30,23 @@ RSpec.feature 'Home Page Features', type: :feature do
       expect(page).to have_content('members')
     end
 
+    scenario 'as Member' do
+      login_as(member, scope: :user)
+      visit root_path
+
+      # Expect navbar to not have 'members'
+      within('header') do
+        expect(page).not_to have_content('members')
+      end
+    end
+
     scenario 'as User' do
       login_as(user, scope: :user)
       visit root_path
 
       # Expect navbar to not have 'members'
       within('header') do
-        expect(page).not_to have_content('members')
+        expect(page).not_to have_content('ideas')
       end
     end
   end

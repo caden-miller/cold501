@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Event
 class Event < ApplicationRecord
   has_many :attendances, dependent: :destroy
   validates :name, presence: true

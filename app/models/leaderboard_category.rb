@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# LeaderboardCategory
 class LeaderboardCategory < ApplicationRecord
   validates :category_name, presence: true
   validates :min_points, presence: true

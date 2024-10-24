@@ -20,13 +20,4 @@ class User < ApplicationRecord
   def self.from_google(email:, full_name:, uid:, avatar_url:)
     create_with(uid:, full_name:, avatar_url:, role: 'admin').find_or_create_by!(email:)
   end
-
-  # Role-based methods
-  def admin?
-    role == 'admin'
-  end
-
-  def member?
-    role == 'member'
-  end
 end

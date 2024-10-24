@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# LeaderboardCategoriesController manages the creation, viewing, updating, and deletion of leaderboard categories.
 class LeaderboardCategoriesController < ApplicationController
   before_action :authenticate_member!
   before_action :set_leaderboard_category, only: %i[show edit update destroy]
@@ -25,33 +26,19 @@ class LeaderboardCategoriesController < ApplicationController
   def create
     @leaderboard_category = LeaderboardCategory.new(leaderboard_category_params)
 
-    respond_to do |format|
-      if @leaderboard_category.save
-        format.html do
-          redirect_to leaderboard_category_url(@leaderboard_category),
-                      notice: 'Leaderboard category was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @leaderboard_category }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @leaderboard_category.errors, status: :unprocessable_entity }
-      end
+    if @leaderboard_category.save
+      handle_create_success
+    else
+      handle_create_failure
     end
   end
 
   # PATCH/PUT /leaderboard_categories/1 or /leaderboard_categories/1.json
   def update
-    respond_to do |format|
-      if @leaderboard_category.update(leaderboard_category_params)
-        format.html do
-          redirect_to leaderboard_category_url(@leaderboard_category),
-                      notice: 'Leaderboard category was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @leaderboard_category }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @leaderboard_category.errors, status: :unprocessable_entity }
-      end
+    if @leaderboard_category.update(leaderboard_category_params)
+      handle_update_success
+    else
+      handle_update_failure
     end
   end
 
@@ -67,13 +54,45 @@ class LeaderboardCategoriesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_leaderboard_category
     @leaderboard_category = LeaderboardCategory.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def leaderboard_category_params
     params.require(:leaderboard_category).permit(:category_name, :min_points, :color)
+  end
+
+  def handle_create_success
+    respond_to do |format|
+      format.html do
+        redirect_to leaderboard_category_url(@leaderboard_category),
+                    notice: 'Leaderboard category was successfully created.'
+      end
+      format.json { render :show, status: :created, location: @leaderboard_category }
+    end
+  end
+
+  def handle_create_failure
+    respond_to do |format|
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @leaderboard_category.errors, status: :unprocessable_entity }
+    end
+  end
+
+  def handle_update_success
+    respond_to do |format|
+      format.html do
+        redirect_to leaderboard_category_url(@leaderboard_category),
+                    notice: 'Leaderboard category was successfully updated.'
+      end
+      format.json { render :show, status: :ok, location: @leaderboard_category }
+    end
+  end
+
+  def handle_update_failure
+    respond_to do |format|
+      format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @leaderboard_category.errors, status: :unprocessable_entity }
+    end
   end
 end
