@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @users = User.order(:id)
+    @users = User.order(:role, :full_name)
   end
 
   def show; end

@@ -7,7 +7,7 @@ class LeaderboardCategoriesController < ApplicationController
 
   # GET /leaderboard_categories or /leaderboard_categories.json
   def index
-    @users = User.all
+    @users = User.order(points: :desc, full_name: :asc)
     @leaderboard_categories = LeaderboardCategory.all
   end
 

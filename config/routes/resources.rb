@@ -4,10 +4,10 @@
 Rails.application.routes.draw do
   # Resource routes
   resources :ideas
-  resources :merchandises
+  resources :merchandises, path: 'merch'
   resources :merch
   resources :links, except: [:show]
-  resources :leaderboard_categories
+  resources :leaderboard_categories, path: 'leaderboard'
   resources :photos do
     member do
       get :delete

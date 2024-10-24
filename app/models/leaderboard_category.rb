@@ -9,4 +9,14 @@ class LeaderboardCategory < ApplicationRecord
   def self.category_for_user(points)
     where('min_points <= ?', points).order(min_points: :desc).first
   end
+
+  def color_is_dark?
+    r, g, b = color.scan(/../).map { |hex| hex.to_i(16) }
+    brightness = (r * 299 + g * 587 + b * 114) / 1000
+    puts "brightness: #{brightness}"
+    puts "brightness < 200: #{brightness < 200}"
+    puts "color: #{color}"
+    brightness < 128
+    
+  end
 end
