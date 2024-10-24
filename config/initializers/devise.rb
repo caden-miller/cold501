@@ -14,7 +14,8 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '2bef0592042cd9aa7acf4328d5db2e7968bf439ec39baea3d293c3d17af3257fa7b6b4a068303af07991740764c3ed38566704b0e9d26163903d5d328e3a9997'
+  # config.secret_key = '2bef0592042cd9aa7acf4328d5db2e7968bf439ec39baea3d293c3d17af3257fa7b6b4a068303af07991740764c3' \
+  # 'ed38566704b0e9d26163903d5d328e3a9997'
 
   config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET'], {
     scope: 'userinfo.email, userinfo.profile',
@@ -132,7 +133,8 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '7490891fede7d95889aee31156f619d5c533bf90b94f969a2ba2035be2dff82714b2185269447918e0abbd02c52a359fa0879ff24c19d9a9d742f9de4a44c283'
+  # config.pepper = '7490891fede7d95889aee31156f619d5c533bf90b94f969a2ba2035be2dff82714b2185269447918e0abbd02c52a359f' \
+  # 'a0879ff24c19d9a9d742f9de4a44c283'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false

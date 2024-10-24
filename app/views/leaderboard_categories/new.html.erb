@@ -1,9 +1,13 @@
-<h1>New leaderboard category</h1>
+<main class="container">
+  <header class="header">
+    <h1>New Leaderboard Category</h1>
+  </header>
 
-<%= render "form", leaderboard_category: @leaderboard_category %>
+  <%= render "form", leaderboard_category: @leaderboard_category %>
 
-<br>
+  <br>
 
-<div>
-  <%= link_to "Back to leaderboard categories", leaderboard_categories_path %>
-</div>
+  <div>
+    <%= link_to "Back to leaderboard categories", leaderboard_categories_path %>
+  </div>
+</main>
