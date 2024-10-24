@@ -53,6 +53,10 @@
       .page-layout__leaderboard--highlighted {
         background-color: #f0f0f0; // Example background color, replace with dynamic color as needed
       }
+
+      tbody tr {
+        border-bottom: var(--color-secondary) 1px solid; 
+      }
     }
   }
 
@@ -70,6 +74,10 @@
       th, td {
         padding: 10px;
         text-align: left;
+      }
+
+      tbody tr td:first-child {
+        text-decoration: underline;
       }
 
       th {
@@ -96,4 +104,13 @@
       font-size: 24px;
     }
   }
+}
+
+
+.dark-text {
+  color: var(--color-secondary);
+}
+
+.light-text {
+  color: var(--color-primary);
 }

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module Users
+  # The Users::OmniauthCallbacksController class is responsible for handling Google OAuth2 callbacks.
   class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     def google_oauth2
       user = User.from_google(**from_google_params)

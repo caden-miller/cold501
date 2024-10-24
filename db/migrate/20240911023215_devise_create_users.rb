@@ -1,21 +1,38 @@
 # frozen_string_literal: true
 
+# DeviseCreateUsers
 class DeviseCreateUsers < ActiveRecord::Migration[7.0]
   def change
-    create_table :users do |t|
-      ## Database authenticatable
-      t.string :email, null: false
-      t.string :full_name
-      t.string :uid
-      t.string :avatar_url
-      t.string :committee
-      t.integer :points
-      t.integer :dues
-      t.string :role
+    create_users_table
+    add_users_indexes
+  end
 
-      t.timestamps null: false
+  private
+
+  def create_users_table
+    create_table :users do |table|
+      add_user_profile_columns(table)
+      add_user_role_and_points_columns(table)
+
+      table.timestamps null: false
     end
+  end
 
+  def add_user_profile_columns(table)
+    table.string :email, null: false
+    table.string :full_name
+    table.string :uid
+    table.string :avatar_url
+    table.string :committee
+  end
+
+  def add_user_role_and_points_columns(table)
+    table.integer :points
+    table.integer :dues
+    table.string :role
+  end
+
+  def add_users_indexes
     add_index :users, :email, unique: true
   end
 end
