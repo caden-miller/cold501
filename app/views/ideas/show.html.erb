@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<main class="container">
+  <header class="header">
+    <h1>SHOWING IDEA</h1>
+  </header>
+  <p style="color: green"><%= notice %></p>
 
-<%= render @idea %>
+  <%= render @idea %>
 
-<div>
-  <%= link_to "Edit this idea", edit_idea_path(@idea) %> |
-  <%= link_to "Back to ideas", ideas_path %>
+  <div>
+    <%= link_to "Edit this idea", edit_idea_path(@idea) %> |
+    <%= link_to "Back to ideas", ideas_path %>
 
-  <%= button_to "Destroy this idea", @idea, method: :delete %>
-</div>
+    <%= button_to "Destroy this idea", @idea, method: :delete %>
+  </div>
+</main>

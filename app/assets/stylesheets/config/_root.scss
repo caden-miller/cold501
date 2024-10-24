@@ -5,7 +5,6 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-image: image-url('background.jpg'); /* Use the Rails asset helper */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* This keeps the background fixed */

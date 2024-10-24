@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<main class="container">
+  <p style="color: green"><%= notice %></p>
+  <header class="header">
+    <h1 class="header">SHOWING MERCHANDISE</h1>
+  </header>
 
-<%= render @merchandise %>
+  <%= render @merchandise %>
 
-<div>
-  <%= link_to "Edit this merchandise", edit_merchandise_path(@merchandise) %> |
-  <%= link_to "Back to merchandises", merchandises_path %>
+  <div>
+    <%= link_to "Edit this merchandise", edit_merchandise_path(@merchandise) %> |
+    <%= link_to "Back to merchandises", merchandises_path %>
 
-  <%= button_to "Destroy this merchandise", @merchandise, method: :delete %>
-</div>
+    <%= button_to "Destroy this merchandise", @merchandise, method: :delete %>
+  </div>
+</main>

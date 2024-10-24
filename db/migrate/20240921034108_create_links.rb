@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# CreateLinks
 class CreateLinks < ActiveRecord::Migration[7.0]
   def change
     create_table :links do |t|

@@ -5,6 +5,11 @@
 
 - Rails Version
 	- 3.1.2
+- Gems versions and version changes listed in following files
+	- ```console
+		gem_versions.md
+		gem_version_changes.md
+	  ```
 
 ### Setup
 
@@ -53,6 +58,29 @@
 7. Navigate to the rails server in your browser
 	- https://127.0.0.1/
 
+### How to Setup Environment Variables
+1. Create a .env file in the cold501/ directory
+	- ```console
+		touch .env
+	  ```
+2. Modify the .env file to include the following credentials
+	- ```bash
+		# Google OAuth credentials and redirect URL
+		GOOGLE_OAUTH_CLIENT_ID=<INSERT HERE>
+		GOOGLE_OAUTH_CLIENT_SECRET=<INSERT HERE>
+		HOST_URL=<http://localhost:3000 or siteURL if hosting elsewhere>
+
+		# PostgreSQL Database credentials
+		DATABASE_PASSWORD=<INSERT HERE>
+		DATABASE_USER=<INSERT HERE>
+		
+		# AWS Photo Hosting credentials
+		AWS_ACCESS_KEY_ID=<INSERT HERE>
+		AWS_SECRET_ACCESS_KEY=<INSERT HERE>
+		AWS_REGION=<INSERT HERE>
+		AWS_BUCKET=<INSERT HERE>
+	  ```
+
 ### How to Contribute
 
 1. Open another Ubuntu terminal at csce431/cold501/ (outside of docker instance)
@@ -93,29 +121,3 @@
 		- ensure all tests pass
 	- create a pull request from test to main
 		- ensure the tests pass and the test branch is working locally
-
-### How to Create a New Model
-
-1. Scaffold the model
-	- ```console 
-		rails generate scaffold User name:string image:string email:string password:string role:string committee:string points:integer uid:string token:text provider:string
-	  ```
-	- this will generate a user model and some views for user as well as update the routes so that the views are shown.
-
-2. Update the database
-	- ```console
-		rails db:migrate
-	  ```
-
-### How to Enable Google OAuth
-1. Create a .env file in the cold501/ directory
-	- ```console
-		touch .env
-	  ```
-2. Enter Google OAuth Screen Credentials (Client ID and Secret)
-	- ```console
-		echo "GOOGLE_OAUTH_CLIENT_ID=<insert your client id here>" >> .env
-	  ```
-	- ```console
-		echo "GOOGLE_OAUTH_CLIENT_SECRET=<insert your client secret here" >> .env
-	  ```
