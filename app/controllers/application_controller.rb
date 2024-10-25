@@ -62,7 +62,7 @@ class ApplicationController < ActionController::Base
                       when 'member'
                         ['members']
                       else
-                        %w[events leaderboard merch ideas members]
+                        %w[events leaderboard merch ideas members links]
                       end
 
     @nav_links.reject! { |link| links_to_reject.include?(link[:name]) }

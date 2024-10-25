@@ -4,15 +4,16 @@
     <div class="gallery__content">
         <h1><%= photo.title %></h1>
         <p><%= photo.description %></p>
-        <div class="gallery__content-links">
-          <%= link_to edit_photo_path(photo), class: 'photo__table-button edit', data: { turbo_frame: dom_id(photo) } do %>
-            <%= image_tag 'pencil-svgrepo-com.svg', alt: 'Edit Photo', width: '40', height: '40' %>
-          <% end %>
-          <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
-            <%= image_tag 'trash-blank-svgrepo-com.svg', alt: 'Delete Photo', width: '40', height: '40' %>
-          <% end %>
-            
-        </div>
+        <% if @role == 'admin' %>
+          <div class="gallery__content-links">
+            <%= link_to edit_photo_path(photo), class: 'photo__table-button edit', data: { turbo_frame: dom_id(photo) } do %>
+              <%= image_tag 'pencil-svgrepo-com.svg', alt: 'Edit Photo', width: '40', height: '40' %>
+            <% end %>
+            <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+              <%= image_tag 'trash-blank-svgrepo-com.svg', alt: 'Delete Photo', width: '40', height: '40' %>
+            <% end %>
+          </div>
+        <% end %>
     </div>
   </div>
 <% end %>

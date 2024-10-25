@@ -2,8 +2,11 @@
 
 # EventsController
 class EventsController < ApplicationController
+  helper EventsHelper
+
   before_action :set_event, only: %i[show edit update destroy archive unarchive]
   before_action :set_user, :role, :set_navbar_variables
+  before_action :authenticate_admin!, only: %i[new create edit update delete archive unarchive]
 
   # Display all events
   def index
@@ -95,4 +98,5 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :passcode, :start_time, :end_time, :location)
   end
+  
 end
