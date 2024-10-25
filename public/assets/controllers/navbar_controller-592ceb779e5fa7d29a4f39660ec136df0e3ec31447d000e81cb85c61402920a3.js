@@ -9,4 +9,4 @@ export default class extends Controller {
     this.listTarget.classList.toggle("is-active")
   }
 }
-
+;
