@@ -22,10 +22,14 @@
       <div class="">
         <%= form.input :description %>
       </div>
-      <div class="">
-        <%= form.file_field :image %>
+      <div class="gallery__item-file_field">
+        <%= form.label :image, class: 'gallery__item-file_label' do %>
+          <%= image_tag 'upload-icon.svg', alt: 'Upload Photo', class: 'upload-icon' %>
+          <span>Select Photo</span>
+          <%= form.file_field :image, class: 'file-input' %>
+        <% end %>
       </div>
-      <div class="">
+      <div class="gallery__content-links">
         <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
           <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
         <% end %>
