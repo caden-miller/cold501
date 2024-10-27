@@ -1,19 +1,52 @@
-<main class="container">
+<main class="container-full" data-controller="fullscreen">
   <header class="header">
     <h1 class="header">PHOTO GALLERY</h1>
   </header>
-  <%= link_to "New Photo", new_photo_path, data: { turbo_frame: dom_id(Photo.new) } %><br><br>
-  <div class="gallery" id="photos">
-    <% columns = 3 %>
-    <% photos_in_columns = @photos.in_groups(columns, false) %>
 
-    <% photos_in_columns.each_with_index do |column_photos, index| %>
-        <div class="gallery__column" id="column-<%= index %>">
-          <%= turbo_frame_tag Photo.new %>
-          <% column_photos.each do |photo| %>
-              <%= render partial: 'photo', locals: { photo: photo } %>
-          <% end %>
-        </div>
+  <%= link_to "New Photo", new_photo_path, data: { turbo_frame: dom_id(Photo.new) }, class: 'btn btn-primary' %><br><br>
+
+  <%= turbo_frame_tag Photo.new %>
+
+  <div id="fullscreen-modal" data-fullscreen-target="modal">
+    <div class="fullscreen-modal-content">
+      <img src="" alt="Full Screen Photo" class="fullscreen-image" data-fullscreen-target="image">
+      <button class="close-button" data-action="click->fullscreen#close">&times;</button>
+    </div>
+  </div>
+
+
+
+  <div class="gallery" id="photos">
+    <% @photos.each do |photo| %>
+      <div class="photo-item">
+        <%= turbo_frame_tag dom_id(photo) do %>
+          <div class="gallery__item">
+            <%= image_tag photo.image_url, alt: photo.description, class: "gallery__image" %>
+            
+            <div class="gallery__content">
+              <!-- Full-Screen Button -->
+              <button type="button" class="fullscreen-button" data-action="click->fullscreen#open" data-photo-url="<%= photo.image_url %>">
+                <%= image_tag 'fullscreen-icon.svg', alt: 'View Full Screen', width: '24', height: '24' %>
+              </button>
+              
+              <h1><%= photo.title %></h1>
+              <p><%= photo.description %></p>
+              
+              <% if @role == 'admin' %>
+                <div class="gallery__content-links">
+                  <!-- Existing Edit and Delete Buttons -->
+                  <%= link_to edit_photo_path(photo), class: 'photo__table-button edit', data: { turbo_frame: dom_id(photo) } do %>
+                    <%= image_tag 'pencil-svgrepo-com.svg', alt: 'Edit Photo', width: '32', height: '32' %>
+                  <% end %>
+                  <%= link_to photo_path(photo), class: 'photo__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+                    <%= image_tag 'trash-blank-svgrepo-com.svg', alt: 'Delete Photo', width: '32', height: '32' %>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </main>

@@ -3,6 +3,7 @@
 # Event
 class Event < ApplicationRecord
   has_many :attendances, dependent: :destroy
+  has_many :users, through: :attendances
   validates :name, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true

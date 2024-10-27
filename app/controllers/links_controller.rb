@@ -3,6 +3,7 @@
 # LinksController manages the creation, viewing, editing, and deletion of links, as well as resetting points.
 class LinksController < ApplicationController
   before_action :set_link, only: %i[show edit update destroy delete]
+  before_action :authenticate_admin!, only: %i[new create edit update delete]
 
   def index
     @links = Link.order(:id)
