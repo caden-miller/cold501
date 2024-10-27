@@ -11,7 +11,11 @@ class EventsController < ApplicationController
 
   # Display all events
   def index
-    @events = Event.where(archived: false) # Fetches only non-archived events
+    start_date = params[:start_date] ? Date.parse(params[:start_date]).beginning_of_month : Date.today.beginning_of_month
+  end_date = start_date.end_of_month
+
+  # Assuming you have an Event model with start_time attribute
+  @events = Event.where(archived: false, start_time: start_date..end_date)
   end
 
   # Show a single event
