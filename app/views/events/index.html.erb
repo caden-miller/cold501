@@ -1,7 +1,9 @@
 <main class="container event">
   <h1 class="header">All Events</h1>
-
-  <%= link_to 'Create New Event', new_event_path, class: 'btn btn-primary event__new' %>
+  <% create_link = create_link_for(@role) %>
+  <% if create_link.present? %>
+    <%= link_to create_link[:name], create_link[:path], class: create_link[:class] %>
+  <% end %>
 
   <div class="calendar">
     <%= month_calendar events: @events do |date, events| %>
@@ -23,13 +25,14 @@
         <% if event.respond_to?(:end_time) && event.end_time.present? %>
           - <%= event.end_time.strftime("%l:%M %p") %>
         <% end %>
-        <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-secondary' %> |
-        <%= link_to 'Delete', event_path(event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %> |
-        <%= link_to 'Archive', archive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <% action_links = action_links_for(event, @role) %>
+        <% action_links.each do |link| %>
+          <%= link_to link[:name], link[:path], link.except(:name, :path) %>
+        <% end %>
       </li>
     <% end %>
   </ul>
-  
+
   <%= link_to 'View Archived Events', archived_events_path, class: 'btn btn-info' %>
   <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
 </main>
