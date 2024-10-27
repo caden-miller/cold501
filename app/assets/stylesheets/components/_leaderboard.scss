@@ -15,7 +15,8 @@
       border-radius: 10px; // Rounds all corners of the table
       overflow: hidden; // Ensures that border-radius is respected by child elements
 
-      th, td {
+      th,
+      td {
         padding: 10px;
         text-align: left;
         width: 50%; // Ensures each column takes up 50%
@@ -55,7 +56,7 @@
       }
 
       tbody tr {
-        border-bottom: var(--color-secondary) 1px solid; 
+        border-bottom: var(--color-secondary) 1px solid;
       }
     }
   }
@@ -65,29 +66,46 @@
     width: 30%;
     padding: 20px;
     text-align: center;
-
-    table {
+  
+    .categories-table {
+      display: flex;
+      flex-direction: column;
       width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-
-      th, td {
-        padding: 10px;
+      border-collapse: collapse; // Collapse borders for consistent look
+  
+      &__header,
+      &__row {
+        display: flex;
+        width: 100%;
+        padding: 10px 0;
+        font-weight: bold;
+        border-bottom: 1px solid var(--color-secondary); // Add row separator
+      }
+  
+      &__header {
+        background-color: var(--color-tertiary); // Matches header row styling
+        color: var(--color-primary-bg);
+      }
+  
+      &__row {
+        background-color: var(--color-primary-rotate); // Matches body row styling
         text-align: left;
       }
-
-      tbody tr td:first-child {
-        text-decoration: underline;
+  
+      &__cell {
+        flex: 1;
+        padding: 10px;
+        text-align: left;
+  
+        &:first-child {
+          text-decoration: underline; // Matches table style
+        }
       }
-
-      th {
-        width: 33.3%; // Adjusts the width based on content
-      }
-
-      td.color-example {
+  
+      .color-example {
         position: relative;
         color: transparent;
-
+  
         &::before {
           content: '';
           display: inline-block;
@@ -98,14 +116,13 @@
         }
       }
     }
-
+  
     h1 {
       margin-bottom: 20px;
       font-size: 24px;
     }
-  }
+  }  
 }
-
 
 .dark-text {
   color: var(--color-secondary);
