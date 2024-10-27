@@ -119,12 +119,12 @@
 
 .edit,
 .confirm {
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-rotate);
 }
 
 .edit:hover,
 .confirm:hover {
-    background-color: var(--color-secondary-rotate);
+    background-color: var(--color-secondary);
 }
 
 .trash,

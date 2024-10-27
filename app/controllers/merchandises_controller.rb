@@ -5,6 +5,7 @@
 # It also validates merchandise links from Flywire and retrieves product images automatically.
 class MerchandisesController < ApplicationController
   before_action :set_merchandise, only: %i[show edit update destroy]
+  before_action :authenticate_admin!, only: %i[new create edit update destroy]
 
   # GET /merchandises or /merchandises.json
   def index
