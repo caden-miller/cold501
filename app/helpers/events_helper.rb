@@ -1,6 +1,6 @@
 module EventsHelper
     def create_link_for(role)
-        links = { name: 'Create New Event', path: new_event_path, class: 'btn btn-primary event__new' }
+        links = { name: 'Create New Event', path: new_event_path, class: 'btn btn--primary event__new' }
         return links if role == 'admin'
     end
 
@@ -11,9 +11,9 @@ module EventsHelper
   
     def default_action_links(event)
       [
-        { name: 'edit', path: edit_event_path(event), class: 'btn btn-secondary' },
-        { name: 'delete', path: event_path(event), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' },
-        { name: 'archive', path: archive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' }
+        { name: 'edit', path: edit_event_path(event), class: 'btn btn--primary' },
+        { name: 'delete', path: event_path(event), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn--secondary' },
+        { name: 'archive', path: archive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' }
       ]
     end
   
