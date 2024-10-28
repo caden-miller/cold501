@@ -9,6 +9,7 @@ body {
     background-position: center;
     background-attachment: fixed; /* This keeps the background fixed */
     z-index: 0;
+    overflow: auto;
 }
   
 body::before {
@@ -37,4 +38,22 @@ a {
     color: var(--color-secondary);
     text-decoration: none;
     transition: color 0.3s;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--color-secondary-rotate);
+    border: 1px solid var(--color-secondary-rotate);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary-rotate);
+}
+
+main {
+    padding-top: 6rem;
 }
