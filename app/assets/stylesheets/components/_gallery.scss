@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem; /* Adjust spacing between items as needed */
 
-  @media (max-width: 768px) {
+  @include media(mobile) {
     grid-template-columns: repeat(1, 1fr);
   }
 

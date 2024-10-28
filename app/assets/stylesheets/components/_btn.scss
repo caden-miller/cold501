@@ -22,6 +22,7 @@
     color: var(--color-secondary);
     // background-image: linear-gradient(to right, var(--color-primary), var(--color-primary-rotate));
     background-color: var(--color-primary);
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover,
     &:focus,
@@ -34,20 +35,23 @@
 
   &--secondary {
     color: var(--color-tertiary);
-    background-image: linear-gradient(to right, var(--color-secondary), var(--color-secondary));
+    background-color: var(--color-secondary);
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover,
     &:focus,
     &:focus-within,
     &:active {
+      background-color: var(--color-secondary-rotate);
       color: var(--color-glint);
-      filter: saturate(1.2) brightness(110%);
+      // filter: saturate(1.1) brightness(110%);
     }
   }
 
   &--light {
     color: var(--color-dark);
     background-color: var(--color-light);
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover,
     &:focus,
@@ -62,6 +66,7 @@
     color: var(--color-white);
     border-color: var(--color-dark);
     background-color: var(--color-dark);
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover,
     &:focus,
@@ -74,12 +79,27 @@
   &--tertiary {
     color: var(--color-secondary);
     background-color: var(--color-tertiary);
+    transition: color 0.3s ease, background-color 0.3s ease;
 
     &:hover,
     &:focus,
     &:focus-within,
     &:active {
       color: var(--color-secondary-rotate);
+      filter: saturate(1.1) brightness(105%);
+    }
+  }
+
+  &--danger {
+    color: var(--color-white);
+    background-color: var(--color-red);
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      color: var(--color-primary-bg);
       filter: saturate(1.1) brightness(105%);
     }
   }
