@@ -4,6 +4,7 @@
   <p><strong>Event Name:</strong> <%= @event.name %></p>
   <p><strong>Event Start Date:</strong> <%= @event.start_time.strftime("%B %d, %Y") %></p>
   <p><strong>Start Time:</strong> <%= @event.start_time.strftime("%l:%M %p") %></p>
+  <p><strong>Description:</strong> <%= @event.description %></p>
 
   <% if @event.end_time.present? %>
     <p><strong>End Time:</strong> <%= @event.end_time.strftime("%l:%M %p") %></p>
