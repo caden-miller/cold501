@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "leaderboard_categories", partial: 'leaderboard_category', locals: { leaderboard_category: @leaderboard_category } %>
+<%= turbo_stream.update dom_id(@leaderboard_category), "" %>
