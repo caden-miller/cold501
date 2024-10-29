@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "leaderboard_category_#{@leaderboard_category.id}" do %>
+  <%= turbo_frame_tag "Leaderboard_category_#{@leaderboard_category.id}" do %>
+    <%= render partial: 'leaderboard_category', locals: { link: @leaderboard_category } %>
+  <% end %>
+<% end %>
