@@ -1,33 +1,34 @@
-<%= form_with(model: @leaderboard_category, local: true) do |form| %>
-  <% if @leaderboard_category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@leaderboard_category.errors.count, "error") %> prohibited this category from being saved:</h2>
+<%= turbo_frame_tag dom_id(leaderboard_category) do %>
+  <%= simple_form_for leaderboard_category, html: { class: "link form", data: { turbo: false }, multipart: true } do |form| %>
+    <% if leaderboard_category.errors.any? %>
+      <div class="error_explanation">
+        <h2><%= pluralize(leaderboard_category.errors.count, "error") %> prohibited this leaderboard category from being saved:</h2>
+        <ul>
+          <% leaderboard_category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-      <ul>
-        <% @leaderboard_category.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+    <div class="leaderboard_category__table-row">
+      <div class="leaderboard_category__table-cell">
+        <%= form.input :category_name %>
+      </div>
+      <div class="leaderboard_category__table-cell">
+        <%= form.input :min_points %>
+      </div>
+      <div class="leaderboard_category__table-cell">
+        <%= form.color_field :color %>
+      </div>
+      <div class="leaderboard_category__table-cell">
+        <%= button_tag(type: 'submit', class: 'leaderboard_category__table-button confirm') do %>
+          <%= image_tag 'check-svgrepo-com.svg', class: 'leaderboard_category__table-svg', alt: 'Save link', width: '40', height: '40' %>
         <% end %>
-      </ul>
+        <%= link_to leaderboard_categories_path, class: 'leaderboard_category__table-button cancel' do %>
+          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'leaderboard_category__table-svg', alt: 'Back to links', width: '40', height: '40' %>
+        <% end %>
+      </div>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :category_name %>
-    <%= form.text_field :category_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :min_points %>
-    <%= form.number_field :min_points %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.color_field :color %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
-
