@@ -1,0 +1,131 @@
+/* showEvent.scss */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .event-details {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .event-header h1 {
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .event-info {
+    display: grid;
+    grid-template-columns: 1fr; // Single column layout for smaller screens
+    gap: 20px; // Space between each bubble
+  
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 1fr; // Two-column layout for larger screens
+    }
+  
+    .event-bubble {
+      background-color: #ffffff; // White background for contrast
+      border: 2px solid #a0c4a0; // Light green border
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease-in-out;
+      
+      &:hover {
+        transform: translateY(-5px); // Slight lift effect on hover
+      }
+  
+      h3 {
+        font-size: 1.1em;
+        color: #333;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+  
+      p {
+        font-size: 1em;
+        color: #555;
+        margin: 0;
+      }
+    }
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .attendance-list {
+    margin-top: 30px;
+  
+    h2 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+  
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+  
+      th {
+        background-color: #e8f4e8;
+        color: #333;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  /* Button styling - maintain color scheme */
+  .btn--primary {
+    background-color: #4e892f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .btn--secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .btn--tertiary {
+    background-color: #2a5215;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .btn--danger {
+    background-color: #2a5215;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
