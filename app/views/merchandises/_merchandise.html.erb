@@ -19,8 +19,8 @@
   </p>
   
   <p>
-    <strong>Link:</strong>
-    <%= link_to merchandise.link, merchandise.link, target: '_blank' if merchandise.link.present? %>
+    <%= link_to 'Purchase', merchandise.link, target: '_blank', role: 'button' if merchandise.link.present? %>
   </p>
+
 
 </div>

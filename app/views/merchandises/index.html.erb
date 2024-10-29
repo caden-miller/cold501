@@ -1,7 +1,10 @@
 <div class="wrapper">
 <p style="color: green"><%= notice %></p>
 
-<h1 class="merchtitle">Merchandise</h1>
+<div style="display: flex; align-items: center; justify-content: space-between;">
+  <h1 class="merchtitle" style="margin-right: 1em;">Merchandise</h1>
+  <%= link_to "New merchandise", new_merchandise_path, class: "button-link" %>
+</div>
 
 <div id="merchandises" class="merch-list">
   <% @merchandises.each do |merchandise| %>
@@ -13,5 +16,4 @@
     </div>
   <% end %>
 </div>
-<%= link_to "New merchandise", new_merchandise_path %>
 </div>
