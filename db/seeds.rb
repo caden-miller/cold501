@@ -11,7 +11,7 @@ users_data = [
     role: 'member',
     created_at: '2024-09-16 18:55:30',
     updated_at: '2024-09-16 18:55:30' },
-  { email: 'erikachtermann@tamu',
+  { email: 'erikachtermann@tamu.edu',
     full_name: 'Erik Achtermann',
     uid: '2',
     avatar_url: 'https://lh3.googleusercontent.com/a/ACg8ocJ56OzJMcpYDm3gLwARkJ2P8iBLIXH61GdZgzi_nVLBOJXf8A=s96-c',
