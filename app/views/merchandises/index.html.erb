@@ -8,12 +8,10 @@
 
 <div id="merchandises" class="merch-list">
   <% @merchandises.each do |merchandise| %>
-    <div class="merch-item"h1>
-    <%= render merchandise %>
-    <p>
-      <%= link_to "Show this merchandise", merchandise %>
-    </p>
+    <div class="merch-item" onclick="window.location='<%= merchandise_path(merchandise) %>'">
+      <%= render merchandise %>
     </div>
   <% end %>
 </div>
+
 </div>
