@@ -1,15 +1,15 @@
 <%= turbo_frame_tag dom_id(leaderboard_category) do %>
-  <div class="leaderboard_category__table-row">
-    <div class="leaderboard_category__table-cell__name"><%= leaderboard_category.category_name %></div>
-    <div class="leaderboard_category__table-cell"><%= leaderboard_category.min_points %></div>
-    <div class="leaderboard_category__table-cell color-example" style="background-color: <%= leaderboard_category.color %>"></div>
+  <div class="categories-table__row">
+    <div class="categories-table__cell"><%= leaderboard_category.category_name %></div>
+    <div class="categories-table__cell"><%= leaderboard_category.min_points %></div>
+    <div class="categories-table__cell"><div class="color-example" style="background-color: <%= leaderboard_category.color %>;"></div></div>
     <% if @role == "admin" %>
-      <div class="leaderboard_category__table-cell">
-        <%= link_to edit_leaderboard_category_path(leaderboard_category), class: 'leaderboard_category__table-button edit', data: { turbo_frame: dom_id(leaderboard_category) } do %>
-          <%= image_tag 'pencil-svgrepo-com.svg', class: 'leaderboard_category__table-svg', alt: 'Edit category', width: '20', height: '40' %>
+      <div class="categories-table__cell-links">
+        <%= link_to edit_leaderboard_category_path(leaderboard_category), class: 'categories-table__button edit', data: { turbo_frame: dom_id(leaderboard_category) } do %>
+          <%= image_tag 'pencil-svgrepo-com.svg', class: 'categories-table__button-svg', alt: 'Edit category', width: '20', height: '40' %>
         <% end %>
-        <%= link_to leaderboard_category_path(leaderboard_category), class: 'leaderboard_category__table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
-          <%= image_tag 'trash-blank-svgrepo-com.svg', class: 'leaderboard_category__table-svg', alt: 'Delete category', width: '20', height: '40' %>
+        <%= link_to leaderboard_category_path(leaderboard_category), class: 'categories-table__button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+          <%= image_tag 'trash-blank-svgrepo-com.svg', class: 'categories-table__button-svg', alt: 'Delete category', width: '20', height: '40' %>
         <% end %>
       </div>
     <% end %>

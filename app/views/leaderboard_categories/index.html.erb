@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leaderboard</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-</head>
-<body>
+
   <main class="container-full" data-controller="fullscreen">
     <header class="header">
       <h1 class="header">LEADERBOARD</h1>
@@ -37,7 +29,7 @@
       <!-- Categories section using Turbo Stream-compatible div layout -->
       <div class="page-layout__categories">
         <h1>Categories</h1>
-        <div class="categories-table">
+        <div class="categories">
           <div class="categories-table__header">
             <div class="categories-table__cell">Category</div>
             <div class="categories-table__cell">Minimum</div>
@@ -46,7 +38,7 @@
           </div>
 
           <div id="categories">
-          <div class="leaderboard_category__table-body" id="leaderboard_categories">
+          <div class="categories-table__body" id="leaderboard_categories">
           <%= turbo_frame_tag LeaderboardCategory.new %>
           <% @leaderboard_categories.each do |leaderboard_category| %>
             <%= render partial: 'leaderboard_category', locals: { leaderboard_category: leaderboard_category } %>
@@ -61,7 +53,3 @@
       </div>
     </div>
   </main>
-
-  <%= javascript_include_tag 'application' %>
-</body>
-</html>
