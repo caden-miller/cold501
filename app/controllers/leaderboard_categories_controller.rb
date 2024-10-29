@@ -54,7 +54,7 @@ class LeaderboardCategoriesController < ApplicationController
   def destroy
     @leaderboard_category.destroy
     respond_to do |format|
-      format.html { redirect_to leaderboard_categories_path, notice: 'Category was successfully deleted.' }
+      format.html { redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully destroyed.' }
       format.turbo_stream
     end
   end
@@ -72,33 +72,36 @@ class LeaderboardCategoriesController < ApplicationController
   def handle_create_success
     Rails.logger.debug 'Category Created'
     respond_to do |format|
-      format.html { redirect_to leaderboard_categories_path, notice: 'Category was successfully dreated.' }
+      format.html { redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully created.' }
       format.turbo_stream
     end
   end
 
-  def handle_create_failure
-    Rails.logger.debug 'Category Not Created'
-    render :new, status: :unprocessable_entity
-  end
 
   def handle_update_success
     respond_to do |format|
       format.turbo_stream
-      format.html { redirect_to leaderboard_categories_path, notice: 'Category was successfully updated.' }
+      format.html { redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully updated.' }
     end
   end
 
-  def handle_update_failure
+  def handle_create_failure
+    Rails.logger.debug 'Leaderboard Category Not Created'
     respond_to do |format|
-      format.html { render :new, status: :unprocessable_entity }
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace(
-          dom_id(@leaderboard_category),
-          partial: 'leaderboard_categories/form',
-          locals: { leaderboard_category: @leaderboard_category }
-        ), status: :unprocessable_entity
+        render turbo_stream: turbo_stream.replace("leaderboard_category_form_#{@leaderboard_category.id}", partial: 'leaderboard_categories/form', locals: { leaderboard_category: @leaderboard_category })
       end
+      format.html { render :new, status: :unprocessable_entity }
     end
   end
+  
+  def handle_update_failure
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("leaderboard_category_form_#{@leaderboard_category.id}", partial: 'leaderboard_categories/form', locals: { leaderboard_category: @leaderboard_category })
+      end
+      format.html { render :edit, status: :unprocessable_entity }
+    end
+  end
+  
 end

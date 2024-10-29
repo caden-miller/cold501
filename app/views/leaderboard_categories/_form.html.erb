@@ -1,7 +1,14 @@
 <%= turbo_frame_tag dom_id(leaderboard_category) do %>
   <%= simple_form_for leaderboard_category, html: { class: "link form", data: { turbo: false }, multipart: true } do |form| %>
     <% if leaderboard_category.errors.any? %>
-      <%= form.error_notification %>
+      <div class="error_explanation">
+        <h2><%= pluralize(leaderboard_category.errors.count, "error") %> prohibited this leaderboard category from being saved:</h2>
+        <ul>
+          <% leaderboard_category.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
 
     <div class="leaderboard_category__table-row">
