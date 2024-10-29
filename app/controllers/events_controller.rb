@@ -14,8 +14,10 @@ class EventsController < ApplicationController
     start_date = params[:start_date] ? Date.parse(params[:start_date]).beginning_of_month : Date.today.beginning_of_month
   end_date = start_date.end_of_month
 
-  # Assuming you have an Event model with start_time attribute
-  @events = Event.where(archived: false, start_time: start_date..end_date)
+    sort_column = params[:sort] || "start_time" # Replace with your default column
+    sort_direction = params[:direction] || "asc"
+
+    @events = Event.where(archived: false, start_time: start_date..end_date).order("#{sort_column} #{sort_direction}")
   end
 
   # Show a single event

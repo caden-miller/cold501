@@ -9,8 +9,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000;
   opacity: 1;
+
+  &-sub {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+  }
 
   &__navigation {
     width: 70rem;
