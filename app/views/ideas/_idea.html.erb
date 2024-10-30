@@ -16,21 +16,11 @@
   <p>
     <strong>Created at:</strong>
     <span class="utc-time" data-utc-time="<%= idea.created_at.iso8601 %>">
-      <%= idea.created_at.strftime('%Y-%m-%d %H %M %S %Z') %>
+      <%= idea.created_at.strftime('%m/%d/%Y') %>
     </span>
-    
   </p>
+
   </div>
 
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.utc-time');
-    elements.forEach(function(element) {
-      const utcTime = element.getAttribute('data-utc-time');
-      const localTime = new Date(utcTime).toLocaleString(); // Converts to the user's local time zone
-      element.textContent = localTime; // Replace the content with local time
-    });
-  });
-</script>

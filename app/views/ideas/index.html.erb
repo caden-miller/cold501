@@ -4,11 +4,8 @@
 
 <div id="ideas" class="ideas-board">
   <% @ideas.each do |idea| %>
-    <div class="idea-item">
-    <%= render idea %>
-    <p class="show-button">
-      <%= link_to "Show this idea", idea %>
-    </p>
+    <div class="idea-item" onclick="window.location='<%= idea_path(idea) %>'">
+      <%= render idea %>
     </div>
   <% end %>
 </div>
