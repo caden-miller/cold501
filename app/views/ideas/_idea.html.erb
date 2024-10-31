@@ -1,20 +1,15 @@
 <div id="<%= dom_id idea %>" class="idea-wrapper">
-  <p class="item-title">
-    <%= idea.title %>
-  </p>
+  <textarea class="item-title"><%=h(idea.title)%></textarea>
 
-  <textarea class="idea-desc">
-    <%= h(idea.description.squish) %>
-  </textarea>
+  <textarea class="idea-desc"><%= h(idea.description.squish) %></textarea>
 
   <div class="idea-footer">
   <p>
-    <strong>Created by:</strong>
+    <strong class="idea-user">&mdash;</strong>
     <%= idea.user ? idea.user&.full_name : "Unknown" %>
   </p>
 
   <p>
-    <strong>Created at:</strong>
     <span class="utc-time" data-utc-time="<%= idea.created_at.iso8601 %>">
       <%= idea.created_at.strftime('%m/%d/%Y') %>
     </span>
