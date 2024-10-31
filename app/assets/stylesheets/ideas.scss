@@ -76,6 +76,29 @@ textarea::-webkit-resizer {
     display: none; 
   }
 
-textarea{
-    // outline: none;
-}
+  .title-and-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  
+  .item-title {
+    flex: 1; /* Allows the textarea or title to expand and take up space */
+  }
+  
+  .delete-button {
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: -30px;
+    margin-right: -10px;
+  }
+  
+  .delete-button:hover {
+    color: red;
+  }
+  
