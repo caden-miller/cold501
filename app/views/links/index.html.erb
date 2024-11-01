@@ -1,9 +1,9 @@
 <main class="container">
   <header class="header">
-    <h1 class="header">Links</h1>
+    <h1>LINKS</h1>
   </header>
   <% if @role == "admin" %>
-    <%= link_to "New Link", new_link_path, class: 'link__new-button', data: { turbo_frame: dom_id(Link.new) } %><br><br>
+    <%= link_to "New Link", new_link_path, class: 'btn btn--primary', data: { turbo_frame: dom_id(Link.new) } %><br><br>
   <% end %>
 
   <div class="link__table">

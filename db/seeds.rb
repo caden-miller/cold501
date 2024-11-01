@@ -50,10 +50,6 @@ users_data.each do |user_data|
 end
 
 links_data = [
-  { title: 'Instagram',
-    link: 'https://www.instagram.com/heattamu/?hl=en',
-    created_at: '2024-09-26 21:19:30',
-    updated_at: '2024-09-26 21:19:30' },
   { title: 'BUILD X HEAT',
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSdUIiAj3qct9Dcfuu769syNJca_N5rSwbhFgOKJq7Z37YX0nQ/viewform',
     created_at: '2024-09-26 21:19:30',

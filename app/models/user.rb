@@ -19,6 +19,6 @@ class User < ApplicationRecord
 
   # Create or find a user from Google OAuth data
   def self.from_google(email:, full_name:, uid:, avatar_url:)
-    create_with(uid:, full_name:, avatar_url:, role: 'admin').find_or_create_by!(email:)
+    create_with(uid:, full_name:, avatar_url:, role: 'admin', points: 0).find_or_create_by!(email:)
   end
 end

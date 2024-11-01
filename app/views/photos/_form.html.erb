@@ -4,17 +4,7 @@
     alt: photo.description || 'No description',
     class: 'gallery__image'
   ) %>
-  <%= simple_form_for @photo, html: { class: "photo form gallery__content", multipart: true } do |form| %>
-    <% if @photo.errors.any? %>
-        <div class="error_messages">
-          <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this photo from being saved:</h2>
-          <ul>
-            <% @photo.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
+  <%= simple_form_for @photo, html: { class: "photo form gallery__content", multipart: true, data: { turbo: true, controller: 'photo' } } do |form| %>
 
       <div class="">
         <%= form.input :title %>
@@ -31,10 +21,10 @@
       </div>
       <div class="gallery__content-links">
         <%= button_tag(type: 'submit', class: 'photo__table-button confirm') do %>
-          <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '40', height: '40' %>
+          <%= image_tag 'check-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Save Photo', width: '32', height: '32' %>
         <% end %>
-        <%= button_to photos_path, class: 'photo__table-button cancel' do %>
-          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '40', height: '40' %>
+        <%= button_to photos_path, class: 'photo__table-button cancel', data: { action: 'click->photo#closeForm' } do %>
+          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'photo__table-svg', alt: 'Back to photos', width: '32', height: '32' %>
         <% end %>
       </div>
   <% end %>
