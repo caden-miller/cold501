@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "leaderboard_category_#{@leaderboard_category.id}" do %>
+  <%= render partial: 'form', locals: { leaderboard_category: @leaderboard_categroy } %>
+<% end %>

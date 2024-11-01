@@ -12,8 +12,8 @@ module EventsHelper
     def default_action_links(event)
       [
         { name: 'edit', path: edit_event_path(event), class: 'btn btn--primary' },
-        { name: 'delete', path: event_path(event), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn--secondary' },
-        { name: 'archive', path: archive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' }
+        { name: 'delete', path: event_path(event), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn--danger' },
+        { name: 'archive', path: archive_event_path(event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--secondary' }
       ]
     end
   
