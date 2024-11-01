@@ -64,6 +64,28 @@ RSpec.feature 'Leaderboard Management', type: :feature do
       destroy_category
       expect_category_deletion_success
     end
+
+    describe '#color_is_dark?' do
+    it 'returns true for a dark color' do
+      category = LeaderboardCategory.new(color: '000000') # Black
+      expect(category.color_is_dark?).to be true
+    end
+
+    it 'returns false for a light color' do
+      category = LeaderboardCategory.new(color: 'FFFFFF') # White
+      expect(category.color_is_dark?).to be false
+    end
+
+    it 'returns true for a moderately dark color' do
+      category = LeaderboardCategory.new(color: '333333') # Dark gray
+      expect(category.color_is_dark?).to be true
+    end
+
+    it 'returns false for a moderately light color' do
+      category = LeaderboardCategory.new(color: 'AAAAAA') # Light gray
+      expect(category.color_is_dark?).to be false
+    end
+  end
   end
 
   # Helper methods

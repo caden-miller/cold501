@@ -20,3 +20,5 @@ Shrine.plugin :cached_attachment_data # for retaining the cached file across for
 Shrine.plugin :restore_cached_data    # for re-extracting metadata when attaching a cached file
 Shrine.plugin :validation_helpers
 Shrine.plugin :validation
+Shrine.plugin :determine_mime_type
+
