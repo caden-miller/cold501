@@ -1,6 +1,8 @@
 # frozen_string_literal: true
+include ActionView::RecordIdentifier
 
 class IdeasController < ApplicationController
+  include ActionView::RecordIdentifier
   before_action :set_idea, only: %i[show edit update destroy]
 
   # GET /ideas or /ideas.json
@@ -49,14 +51,18 @@ class IdeasController < ApplicationController
   end
 
   # DELETE /ideas/1 or /ideas/1.json
-  def destroy
-    @idea.destroy
+# ideas_controller.rb
+def destroy
+  @idea = Idea.find(params[:id])
+  @idea.destroy
 
-    respond_to do |format|
-      format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  respond_to do |format|
+    format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@idea)) }
+    format.html { redirect_to ideas_path, notice: "Idea was successfully deleted." }
   end
+end
+
+
 
   private
 

@@ -1,14 +1,58 @@
-<div class="wrapper">
-<p style="color: green"><%= notice %></p>
-<h1 class="ideas-title">Ideas</h1>
+<div class="wrapper" id="main-content">
+  <p style="color: green"><%= notice %></p>
+  <h1 class="ideas-title">Ideas</h1>
 
-<div id="ideas" class="ideas-board">
-  <% @ideas.each do |idea| %>
-    <div class="idea-item" >
-      <%= render idea %>
-    </div>
-  <% end %>
-</div>
+  <div id="ideas" class="ideas-board">
+    <% @ideas.each do |idea| %>
+      <div class="idea-item">
+        <%= render "idea", idea: idea %>
+      </div>
+    <% end %>
+  </div>
+
   <%= link_to "New idea", new_idea_path %>
 </div>
+
+<!-- Overlay for dimming the background when the modal is open -->
+<div id="overlay" class="overlay hidden"></div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("overlay");
+
+  // Open modal when delete button is clicked
+  document.querySelectorAll(".delete-button").forEach(button => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const modalId = button.getAttribute("data-modal-id");
+      const modal = document.getElementById(modalId);
+
+      if (modal) {
+        modal.classList.remove("hidden");   // Show the modal
+        overlay.classList.remove("hidden"); // Show the overlay
+      } else {
+        console.error(`Modal with ID ${modalId} not found`);
+      }
+    });
+  });
+
+  // Close all modals when overlay is clicked
+  overlay.addEventListener("click", () => {
+    document.querySelectorAll(".modal").forEach(modal => modal.classList.add("hidden"));
+    overlay.classList.add("hidden");
+  });
+});
+
+// Function to close the modal and hide the overlay
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  const overlay = document.getElementById("overlay");
+
+  if (modal) modal.classList.add("hidden");
+  if (overlay) overlay.classList.add("hidden");
+}
+
+</script>
 
