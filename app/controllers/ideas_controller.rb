@@ -57,10 +57,11 @@ def destroy
   @idea.destroy
 
   respond_to do |format|
-    format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@idea)) }
+    format.turbo_stream { render turbo_stream: turbo_stream.remove(@idea) }
     format.html { redirect_to ideas_path, notice: "Idea was successfully deleted." }
   end
 end
+
 
 
 

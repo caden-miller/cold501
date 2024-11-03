@@ -109,37 +109,38 @@ textarea::-webkit-resizer {
     pointer-events: none;       /* Prevents interaction with background content */
   }
   
-  /* Modal styling */
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1001;  /* Set higher than .dim-background */
-  }
-  
-  .modal-content {
-    z-index: 1002; /* Ensure modal content is on top of any background */
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
+/* CSS for modal overlay and positioning */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Dims the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
-    z-index: 999; /* Below the modal */
-    display: none; /* Initially hidden */
-  }
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+  z-index: 1001;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+  
+  
   
   
   
