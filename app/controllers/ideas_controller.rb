@@ -25,17 +25,16 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     @idea.user = current_user if current_user
-
-    respond_to do |format|
-      if @idea.save
-        format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully created.' }
-        format.json { render :show, status: :created, location: @idea }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
-      end
+  
+    if @idea.save
+      redirect_to ideas_path, notice: 'Idea was successfully created.' # Redirect directly to index on success
+    else
+      render :new, status: :unprocessable_entity
     end
   end
+  
+  
+  
 
   # PATCH/PUT /ideas/1 or /ideas/1.json
   def update
