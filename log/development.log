@@ -54482,3 +54482,561 @@ Processing by IdeasController#index as HTML
 Completed 200 OK in 33ms (Views: 26.7ms | ActiveRecord: 2.0ms | Allocations: 11100)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:38:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 7.6ms | Allocations: 2474)
+  Rendered ideas/_idea.html.erb (Duration: 1.0ms | Allocations: 432)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 9.2ms | Allocations: 2780)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 3.7ms | Allocations: 1082)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 40.7ms | Allocations: 11761)
+  Rendered layouts/_navbar.html.erb (Duration: 2.3ms | Allocations: 745)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.5ms | Allocations: 1483)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 17376)
+Completed 200 OK in 216ms (Views: 52.8ms | ActiveRecord: 12.7ms | Allocations: 33899)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:38:52 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 3.8ms | Allocations: 1301)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1650)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 466)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 4071)
+Completed 200 OK in 16ms (Views: 11.0ms | ActiveRecord: 1.1ms | Allocations: 5827)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:39:35 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 6.2ms | Allocations: 913)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1276)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 732)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.7ms | Allocations: 1358)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 5007)
+Completed 200 OK in 28ms (Views: 22.0ms | ActiveRecord: 0.9ms | Allocations: 7268)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:41:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 4.4ms | Allocations: 1425)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2105)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 764)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.2ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 7871)
+Completed 200 OK in 102ms (Views: 25.3ms | ActiveRecord: 10.9ms | Allocations: 27459)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:42:07 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 2.5ms | Allocations: 913)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1280)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 732)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.8ms | Allocations: 1358)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5011)
+Completed 200 OK in 20ms (Views: 13.6ms | ActiveRecord: 1.0ms | Allocations: 7370)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:42:38 +0000
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 16.7ms | Allocations: 5109)
+  Rendered ideas/_idea.html.erb (Duration: 1.0ms | Allocations: 432)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 8.4ms | Allocations: 2778)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 2.7ms | Allocations: 1081)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 34.7ms | Allocations: 10918)
+  Rendered layouts/_navbar.html.erb (Duration: 1.6ms | Allocations: 728)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.4ms | Allocations: 1279)
+  Rendered layout layouts/application.html.erb (Duration: 44.1ms | Allocations: 14605)
+Completed 200 OK in 51ms (Views: 44.4ms | ActiveRecord: 2.1ms | Allocations: 16942)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:44:15 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.5ms | Allocations: 913)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1276)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 732)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.7ms | Allocations: 1358)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 5007)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 1.0ms | Allocations: 7214)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:44:17 +0000
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 2.6ms | Allocations: 961)
+  Rendered ideas/_idea.html.erb (Duration: 1.6ms | Allocations: 425)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 3.9ms | Allocations: 1163)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 3.2ms | Allocations: 1063)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 4841)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 453)
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.0ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 7042)
+Completed 200 OK in 30ms (Views: 21.2ms | ActiveRecord: 2.4ms | Allocations: 8672)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:44:20 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 0.7ms | Allocations: 491)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 580)
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2790)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.9ms | Allocations: 4202)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:45:02 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 2.0ms | Allocations: 912)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1273)
+  Rendered layouts/_navbar.html.erb (Duration: 1.7ms | Allocations: 732)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.4ms | Allocations: 1358)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5003)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.9ms | Allocations: 7087)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:45:35 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 3.9ms | Allocations: 1424)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2104)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 764)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.6ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 7870)
+Completed 200 OK in 172ms (Views: 25.8ms | ActiveRecord: 8.2ms | Allocations: 27484)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:45:37 +0000
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (1.1ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 12.7ms | Allocations: 2434)
+  Rendered ideas/_idea.html.erb (Duration: 7.8ms | Allocations: 432)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 8.2ms | Allocations: 2779)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 2.8ms | Allocations: 1081)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 45.3ms | Allocations: 8129)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 456)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.3ms | Allocations: 861)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 10430)
+Completed 200 OK in 62ms (Views: 53.0ms | ActiveRecord: 2.7ms | Allocations: 12253)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:45:38 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.1ms | Allocations: 543)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 633)
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 453)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.0ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2850)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 1.1ms | Allocations: 4371)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:46:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 5.2ms | Allocations: 1424)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2103)
+  Rendered layouts/_navbar.html.erb (Duration: 4.6ms | Allocations: 764)
+  [1m[36mLink Load (1.1ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 6.4ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 7869)
+Completed 200 OK in 205ms (Views: 43.5ms | ActiveRecord: 10.5ms | Allocations: 27457)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:46:52 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.8ms | Allocations: 913)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1278)
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 732)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.2ms | Allocations: 1359)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 5015)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 0.9ms | Allocations: 7377)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:47:49 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 3.5ms | Allocations: 1424)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2106)
+  Rendered layouts/_navbar.html.erb (Duration: 11.2ms | Allocations: 764)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 16.8ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 7872)
+Completed 200 OK in 121ms (Views: 56.9ms | ActiveRecord: 10.8ms | Allocations: 27479)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:47:56 +0000
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.5ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 10.1ms | Allocations: 2434)
+  Rendered ideas/_idea.html.erb (Duration: 1.5ms | Allocations: 432)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 7.9ms | Allocations: 2778)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 3.9ms | Allocations: 1081)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 8128)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 456)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.2ms | Allocations: 861)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 10429)
+Completed 200 OK in 53ms (Views: 37.0ms | ActiveRecord: 1.7ms | Allocations: 12264)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:48:45 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.7ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 6.5ms | Allocations: 2474)
+  Rendered ideas/_idea.html.erb (Duration: 0.7ms | Allocations: 432)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 7.0ms | Allocations: 2781)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 3.2ms | Allocations: 1082)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 36.3ms | Allocations: 11762)
+  Rendered layouts/_navbar.html.erb (Duration: 1.3ms | Allocations: 745)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 5.0ms | Allocations: 1483)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 17377)
+Completed 200 OK in 194ms (Views: 46.0ms | ActiveRecord: 11.7ms | Allocations: 33891)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:48:46 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 2.8ms | Allocations: 1301)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1654)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 466)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.8ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4075)
+Completed 200 OK in 17ms (Views: 11.6ms | ActiveRecord: 0.9ms | Allocations: 5828)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:48:49 +0000
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.8ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 1.3ms | Allocations: 458)
+  Rendered ideas/_idea.html.erb (Duration: 1.2ms | Allocations: 425)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 5.4ms | Allocations: 1163)
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 5.2ms | Allocations: 1063)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 19.0ms | Allocations: 4008)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 453)
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.4ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 6210)
+Completed 200 OK in 34ms (Views: 25.3ms | ActiveRecord: 3.1ms | Allocations: 7778)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:49:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (0.6ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 24.3ms | Allocations: 2474)
+  Rendered ideas/_idea.html.erb (Duration: 6.0ms | Allocations: 432)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 32.5ms | Allocations: 2780)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 15.3ms | Allocations: 1082)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 97.2ms | Allocations: 11742)
+  Rendered layouts/_navbar.html.erb (Duration: 11.1ms | Allocations: 745)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 21.7ms | Allocations: 1483)
+  Rendered layout layouts/application.html.erb (Duration: 157.1ms | Allocations: 17357)
+Completed 200 OK in 207ms (Views: 155.5ms | ActiveRecord: 11.0ms | Allocations: 33884)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:49:51 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 3.3ms | Allocations: 1301)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1657)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 466)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4078)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.9ms | Allocations: 5822)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:50:17 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 2.5ms | Allocations: 1425)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2107)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 764)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.6ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 7873)
+Completed 200 OK in 84ms (Views: 18.3ms | ActiveRecord: 10.4ms | Allocations: 27489)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:50:18 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 1.3ms | Allocations: 565)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 679)
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 458)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 3.8ms | Allocations: 862)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2982)
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 1.2ms | Allocations: 4638)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:50:50 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 3.7ms | Allocations: 1424)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2106)
+  Rendered layouts/_navbar.html.erb (Duration: 4.3ms | Allocations: 764)
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 18.3ms | Allocations: 1564)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 7872)
+Completed 200 OK in 100ms (Views: 46.5ms | ActiveRecord: 9.4ms | Allocations: 27457)
+
+
+Started GET "/ideas" for 172.17.0.1 at 2024-11-03 22:51:03 +0000
+Processing by IdeasController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/index.html.erb within layouts/application
+  [1m[36mIdea Load (3.4ms)[0m  [1m[34mSELECT "ideas".* FROM "ideas"[0m
+  ↳ app/views/ideas/index.html.erb:14
+  Rendered ideas/_idea.html.erb (Duration: 13.2ms | Allocations: 2433)
+  Rendered ideas/_idea.html.erb (Duration: 1.7ms | Allocations: 432)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 16.7ms | Allocations: 2779)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/ideas/_idea.html.erb:4
+  Rendered ideas/_idea.html.erb (Duration: 3.9ms | Allocations: 1081)
+  Rendered ideas/index.html.erb within layouts/application (Duration: 59.6ms | Allocations: 8128)
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 456)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.1ms | Allocations: 861)
+  Rendered layout layouts/application.html.erb (Duration: 67.2ms | Allocations: 10429)
+Completed 200 OK in 109ms (Views: 75.6ms | ActiveRecord: 6.6ms | Allocations: 12252)
+
+
+Started GET "/ideas/new" for 172.17.0.1 at 2024-11-03 22:51:05 +0000
+Processing by IdeasController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:23:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering ideas/new.html.erb within layouts/application
+  Rendered ideas/_form.html.erb (Duration: 2.2ms | Allocations: 543)
+  Rendered ideas/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 633)
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 453)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/layouts/_footer.html.erb:16
+  Rendered layouts/_footer.html.erb (Duration: 4.0ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2850)
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 1.0ms | Allocations: 4365)
+
+
