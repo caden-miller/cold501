@@ -215,10 +215,14 @@ textarea::-webkit-resizer {
   }
 }
 
-textarea:focus {
-  outline: none;           /* Removes the default outline */
-  border: none;            /* Ensures no visible border on focus */
-  box-shadow: none;        /* Removes any shadow effect */
+// textarea:focus {
+//   outline: none;           /* Removes the default outline */
+//   border: none;            /* Ensures no visible border on focus */
+//   box-shadow: none;        /* Removes any shadow effect */
+// }
+
+textarea{
+  width: 100% !important;
 }
 
 
@@ -231,4 +235,14 @@ textarea:focus {
   max-width: 1200px;
   margin: auto;
   margin-top: 0px !important;
+}
+
+/* Hide save button initially */
+.save-button {
+  display: none;
+}
+
+/* Show save button when the form or any of its children (like textarea) is focused */
+form:focus-within .save-button {
+  display: inline-block;
 }

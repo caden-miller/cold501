@@ -1,13 +1,16 @@
 <%= turbo_frame_tag dom_id(idea) do %>
   <div class="idea-wrapper">
     <div class="title-and-delete">
-      <% if idea.user == current_user %> <!-- Only the creator can edit the title -->
-        <textarea class="item-title"><%= h(idea.title) %></textarea>
+      <% if idea.user == current_user %>
+        <%= form_with(model: idea, url: idea_path(idea), method: :patch) do |form| %>
+          <%= form.text_area :title, class: 'item-title', placeholder: 'Write your title here', onfocus: "showSaveButton(this)", onblur: "hideSaveButton(this)" %>
+          <%= form.submit "Save", class: "save-button" %>
+        <% end %>
       <% else %>
         <p class="item-title"><%= h(idea.title) %></p>
       <% end %>
 
-      <% if idea.user == current_user || current_user.admin? || current_user.officer? %> <!-- Admin and officer can delete -->
+      <% if idea.user == current_user || current_user.admin? || current_user.officer? %>
         <%= link_to "×", "#", 
             class: "delete-button", 
             data: { modal_id: "delete-confirmation-modal-#{idea.id}", turbo: false }, 
@@ -15,8 +18,11 @@
       <% end %>
     </div>
 
-    <% if idea.user == current_user || current_user.admin? || current_user.officer? %>
-      <textarea class="idea-desc"><%= h(idea.description.squish) %></textarea>
+    <% if idea.user == current_user %>
+      <%= form_with(model: idea, url: idea_path(idea), method: :patch) do |form| %>
+        <%= form.text_area :description, class: 'idea-desc', placeholder: 'Write description here', onfocus: "showSaveButton(this)", onblur: "hideSaveButton(this)" %>
+        <%= form.submit "Save", class: "save-button" %>
+      <% end %>
     <% else %>
       <p class="idea-desc"><%= h(idea.description.squish) %></p>
     <% end %>
@@ -38,6 +44,29 @@
     </div>
   <% end %>
 <% end %>
+
+
+ <%
+=begin%>
+ <script>
+function showSaveButton(textarea) {
+  const saveButton = textarea.closest('form').querySelector('.save-button');
+  if (saveButton) {
+    saveButton.classList.remove('hidden');
+  }
+}
+
+function hideSaveButton(textarea) {
+  const saveButton = textarea.closest('form').querySelector('.save-button');
+  if (saveButton) {
+    saveButton.classList.add('hidden');
+  }
+}
+
+</script>  
+<%
+=end%>
+
 
 
 

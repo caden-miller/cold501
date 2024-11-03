@@ -42,12 +42,17 @@ class IdeasController < ApplicationController
       if @idea.update(idea_params)
         format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully updated.' }
         format.json { render :show, status: :ok, location: @idea }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: "ideas/idea", locals: { idea: @idea }) }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @idea.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: "ideas/idea", locals: { idea: @idea }), status: :unprocessable_entity }
       end
     end
   end
+  
+  
+  
 
   # DELETE /ideas/1 or /ideas/1.json
 # ideas_controller.rb
