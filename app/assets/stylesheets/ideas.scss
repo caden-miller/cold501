@@ -246,3 +246,10 @@ textarea{
 form:focus-within .save-button {
   display: inline-block;
 }
+
+
+.edited-label {
+  font-style: italic;
+  color: gray; /* Adjust color as desired */
+  margin-left: 5px;
+}

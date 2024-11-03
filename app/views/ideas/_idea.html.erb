@@ -28,7 +28,12 @@
     <% end %>
 
     <div class="idea-footer">
-      <p><strong class="idea-user">&mdash;</strong> <%= idea.user ? idea.user&.full_name : "Unknown" %></p>
+      <p>
+        <strong class="idea-user">&mdash;</strong> <%= idea.user ? idea.user&.full_name : "Unknown" %>
+        <% if idea.updated_at != idea.created_at %>
+          <span class="edited-label">(edited)</span>
+        <% end %>
+      </p>
       <p><span class="utc-time" data-utc-time="<%= idea.created_at.iso8601 %>"><%= idea.created_at.strftime('%m/%d/%Y') %></span></p>
     </div>
   </div>
@@ -45,27 +50,6 @@
   <% end %>
 <% end %>
 
-
- <%
-=begin%>
- <script>
-function showSaveButton(textarea) {
-  const saveButton = textarea.closest('form').querySelector('.save-button');
-  if (saveButton) {
-    saveButton.classList.remove('hidden');
-  }
-}
-
-function hideSaveButton(textarea) {
-  const saveButton = textarea.closest('form').querySelector('.save-button');
-  if (saveButton) {
-    saveButton.classList.add('hidden');
-  }
-}
-
-</script>  
-<%
-=end%>
 
 
 
