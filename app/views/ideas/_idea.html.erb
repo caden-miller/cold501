@@ -1,18 +1,21 @@
 <%= turbo_frame_tag dom_id(idea) do %>
   <div class="idea-wrapper">
     <div class="title-and-delete">
-      <% if idea.user == current_user %>
+      <% if idea.user == current_user %> <!-- Only the creator can edit the title -->
         <textarea class="item-title"><%= h(idea.title) %></textarea>
-        <%= link_to "×", "#", 
-            class: "delete-button", 
-            data: { modal_id: "delete-confirmation-modal-#{idea.id}", turbo: false }, 
-            onclick: "showModal('delete-confirmation-modal-#{idea.id}')"%>
       <% else %>
         <p class="item-title"><%= h(idea.title) %></p>
       <% end %>
+
+      <% if idea.user == current_user || current_user.admin? || current_user.officer? %> <!-- Admin and officer can delete -->
+        <%= link_to "×", "#", 
+            class: "delete-button", 
+            data: { modal_id: "delete-confirmation-modal-#{idea.id}", turbo: false }, 
+            onclick: "showModal('delete-confirmation-modal-#{idea.id}')" %>
+      <% end %>
     </div>
 
-    <% if idea.user == current_user %>
+    <% if idea.user == current_user || current_user.admin? || current_user.officer? %>
       <textarea class="idea-desc"><%= h(idea.description.squish) %></textarea>
     <% else %>
       <p class="idea-desc"><%= h(idea.description.squish) %></p>
@@ -25,14 +28,17 @@
   </div>
 
   <!-- Delete Confirmation Modal -->
-  <div id="delete-confirmation-modal-<%= idea.id %>" class="modal-overlay hidden">
-    <div class="modal-content">
-      <p>Are you sure you want to delete this idea?</p>
-      <%= button_to "Delete", idea_path(idea), method: :delete, data: { turbo: false }, class: "confirm-delete-button" %>
-      <button class="cancel-button" onclick="closeModal('delete-confirmation-modal-<%= idea.id %>')">Cancel</button>
+  <% if idea.user == current_user || current_user.admin? || current_user.officer? %>
+    <div id="delete-confirmation-modal-<%= idea.id %>" class="modal-overlay hidden">
+      <div class="modal-content">
+        <p>Are you sure you want to delete this idea?</p>
+        <%= button_to "Delete", idea_path(idea), method: :delete, data: { turbo: false }, class: "confirm-delete-button" %>
+        <button class="cancel-button" onclick="closeModal('delete-confirmation-modal-<%= idea.id %>')">Cancel</button>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
+
 
 
 
