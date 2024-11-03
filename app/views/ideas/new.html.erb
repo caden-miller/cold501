@@ -1,9 +1,10 @@
-<h1>New idea</h1>
-
+<div class="back">
+  <%= link_to "← Back to ideas", ideas_path %>
+</div>
+<div class="idea-item center">
 <%= render "form", idea: @idea %>
-
+</div>
 <br>
 
-<div>
-  <%= link_to "Back to ideas", ideas_path %>
-</div>
+
+

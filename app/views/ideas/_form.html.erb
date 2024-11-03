@@ -12,22 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+    <%= form.text_area :title, class: 'item-title new-title', placeholder: 'Write your title here' %>
+  </div> 
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description, id: 'description-field' %>
+    <%= form.text_area :description, id: 'description-field', class: 'idea-desc new-desc', placeholder: "Write description here" %>
   </div>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    var descriptionField = document.getElementById('description-field');
-    
-    console.log('Description field value:', descriptionField.value);
-    });
-  </script>
 
   <div>
     <%= form.submit %>

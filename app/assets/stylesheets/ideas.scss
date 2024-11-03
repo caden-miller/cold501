@@ -40,10 +40,10 @@ form {
     margin-bottom: 10px;
     background-color: transparent;
     border: none;
-    height: 120px !important;
+    height: 100px !important;
     overflow-y: hidden;
     width: 75%;
-
+    color: black;
 }
 
 .idea-footer{
@@ -66,6 +66,7 @@ form {
     border: none;
     overflow-y: hidden;
     height: 100%;
+    color: black;
 }
 
 a {
@@ -137,8 +138,43 @@ textarea::-webkit-resizer {
   display: none;
 }
 
+.new-idea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+.center {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
+.back{
+  font-size: 30px;
+}
+
+.new-title{
+  margin-top: 40px;
+  width: 100%;
+  height: 100px;
+}
+
+.new-desc{
+  width: 100%;
+  height: 150px;
+}
+
+.new-title::placeholder{
+  color: black;
+}
+
+.new-desc::placeholder{
+  color: black;
+}
   
   
   
