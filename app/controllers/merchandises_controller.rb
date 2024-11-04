@@ -34,10 +34,10 @@ class MerchandisesController < ApplicationController
         @merchandise.image = image_url if image_url
   
         if @merchandise.save
-          format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
-          format.json { render :show, status: :created, location: @merchandise }
+          format.html { redirect_to merchandises_path, notice: 'Merchandise was successfully created.' }
+          format.json { render :index, status: :created, location: @merchandise }
         else
-          format.html { render :index, status: :unprocessable_entity }
+          format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @merchandise.errors, status: :unprocessable_entity }
         end
       else
