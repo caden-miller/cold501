@@ -154,7 +154,7 @@ textarea::-webkit-resizer {
 }
 
 .back{
-  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 .new-title{
@@ -177,7 +177,7 @@ textarea::-webkit-resizer {
 }
   
 /* Container Styling */
-.container, .new-wrapper {
+.container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,6 +188,7 @@ textarea::-webkit-resizer {
   margin: 0 auto;
   border-radius: var(--border-radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  width: 80%;
 }
 
 /* Header Styling */
@@ -206,6 +207,7 @@ textarea::-webkit-resizer {
   font-size: 55px !important;
   color: black;
   margin: 0;
+  margin-left: 90px;
 }
 
 .header-button {
@@ -259,4 +261,41 @@ form:focus-within .save-button {
   color: gray;
   margin-left: 5px;
 }
+
+.ideas-title{
+  font-size: 55px !important;
+}
+
+
+.new-wrapper {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  height: 80%;
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.submit-button{
+  background-color:  #4c6444;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.submit-button:hover{
+  background-color: #0056b3;
+}
+
 
