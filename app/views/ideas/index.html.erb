@@ -4,7 +4,7 @@
       <h1>Ideas</h1>
     </div>
     <div class="header-button">
-      <%= link_to "New Idea", new_idea_path, data: { turbo_frame: dom_id(Idea.new) } %>
+      <%= link_to "New Idea", new_idea_path, class: "button-link header-button", data: { turbo_frame: dom_id(Idea.new) } %>
     </div>
   </header>
 

@@ -1,37 +1,49 @@
-<%= form_with(model: merchandise, local: true) do |form| %>
-  <% if merchandise.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(merchandise.errors.count, "error") %> prohibited this merchandise from being saved:</h2>
-
-      <ul>
-        <% merchandise.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<main class="container">
+  <header class="header">
+    <% if merchandise.persisted? %>
+      <h1 class="header-title">Edit Merchandise</h1>
+    <% else %>
+      <h1 class="header-title">New Merchandise</h1>
+    <% end %>
+    <div class="back">
+      <%= link_to "← Back to Merchandise", merchandises_path, class: "button-link" %>
     </div>
-  <% end %>
+  </header>
 
-  <div>
-    <%= form.label :link, style: "display: block" %>
-    <%= form.text_field :link %>
-  </div>
+  <div class="new-wrapper">
+    <%= form_with(model: merchandise, local: true) do |form| %>
 
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
+      <!-- Error Display Section -->
+      <% if merchandise.errors.any? %>
+        <div class="error-messages" style="color: red; margin-bottom: 20px;">
+          <h2><%= pluralize(merchandise.errors.count, "error") %> prohibited this merchandise from being saved:</h2>
+          <ul>
+            <% merchandise.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+      <!-- Form Fields -->
+      <div class="form-group">
+        <%= form.label :link, "Link", style: "display: block" %>
+        <%= form.text_field :link, class: 'item-link new-link' %>
+      </div>
 
-  <div>
-    <%= form.label :stock, style: "display: block" %>
-    <%= form.number_field :stock %>
-  </div>
+      <div class="form-group">
+        <%= form.label :title, "Title", style: "display: block" %>
+        <%= form.text_field :title, class: 'item-title new-title' %>
+      </div>
 
-  <div>
-    <%= form.submit %>
+      <div class="form-group">
+        <%= form.label :description, "Description", style: "display: block" %>
+        <%= form.text_area :description, class: 'idea-desc new-desc' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit "Submit", class: 'submit-button' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</main>

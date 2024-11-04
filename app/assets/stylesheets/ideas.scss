@@ -176,7 +176,8 @@ textarea::-webkit-resizer {
   color: black;
 }
   
-.container {
+/* Container Styling */
+.container, .new-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -186,70 +187,76 @@ textarea::-webkit-resizer {
   max-width: 1200px;
   margin: 0 auto;
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional for added depth
-
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
 }
 
+/* Header Styling */
 .header {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  position: relative; /* Allows button to position to the right */
+  position: relative;
   width: 100%;
-
-  .header-title {
-      flex: 1;
-      text-align: center;
-  }
-
-  .header-button {
-      position: absolute;
-      right: 0;
-  }
-
-  h1 {
-      font-size: 55px;
-      color: black;
-      margin: 0;
-  }
 }
 
-// textarea:focus {
-//   outline: none;           /* Removes the default outline */
-//   border: none;            /* Ensures no visible border on focus */
-//   box-shadow: none;        /* Removes any shadow effect */
-// }
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 55px !important;
+  color: black;
+  margin: 0;
+}
 
-textarea{
+.header-button {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+
+/* Button Link Styling */
+.button-link {
+  display: inline-block;       /* Ensures button width adjusts based on content */
+  padding: 10px 20px;          /* Padding for consistent size */
+  background-color: #4c6444;   /* Background color */
+  color: white;                /* Text color */
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;         /* Prevents text wrapping */
+}
+
+.button-link:hover {
+  background-color: #0056b3;   /* Hover color */
+}
+
+/* Ensure Textarea Stays Full Width Without Focus Borders */
+textarea {
   width: 100% !important;
+  background-color: transparent;
+  border: none;
+  resize: none;
 }
 
-
-.new-wrapper{
-  background-color: white;
-  width: 80%;
-  height: 500px;
-  border-radius: var(--border-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
-  margin: auto;
-  margin-top: 0px !important;
+textarea:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
 }
 
-/* Hide save button initially */
+/* Save Button Visibility Based on Focus */
 .save-button {
   display: none;
 }
 
-/* Show save button when the form or any of its children (like textarea) is focused */
 form:focus-within .save-button {
   display: inline-block;
 }
 
-
+/* Edited Label Styling */
 .edited-label {
   font-style: italic;
-  color: gray; /* Adjust color as desired */
+  color: gray;
   margin-left: 5px;
 }
+

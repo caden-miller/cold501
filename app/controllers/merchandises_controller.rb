@@ -37,7 +37,7 @@ class MerchandisesController < ApplicationController
           format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
           format.json { render :show, status: :created, location: @merchandise }
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { render :index, status: :unprocessable_entity }
           format.json { render json: @merchandise.errors, status: :unprocessable_entity }
         end
       else
@@ -53,7 +53,7 @@ class MerchandisesController < ApplicationController
   def update
     @merchandise = Merchandise.find(params[:id])
     Rails.logger.debug("Updating Merchandise link: #{@merchandise.link}")
-
+  
     respond_to do |format|
       @merchandise.assign_attributes(merchandise_params) 
       if @merchandise.link.present? && valid_flywire_link(@merchandise.link)
@@ -61,10 +61,10 @@ class MerchandisesController < ApplicationController
         @merchandise.image = image_url if image_url
   
         if @merchandise.save
-          format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
-          format.json { render :show, status: :created, location: @merchandise }
+          format.html { redirect_to merchandises_path, notice: 'Merchandise was successfully updated.' }
+          format.json { render :index, status: :ok, location: @merchandise }
         else
-          format.html { render :new, status: :unprocessable_entity }
+          format.html { render :edit, status: :unprocessable_entity }
           format.json { render json: @merchandise.errors, status: :unprocessable_entity }
         end
       else
@@ -74,6 +74,7 @@ class MerchandisesController < ApplicationController
       end
     end
   end
+  
 
   # DELETE /merchandises/1 or /merchandises/1.json
   def destroy

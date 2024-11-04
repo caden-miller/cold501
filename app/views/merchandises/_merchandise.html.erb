@@ -12,11 +12,6 @@
   <p>
     <%= merchandise.description %>
   </p>
-
-  <p>
-    <strong>Stock:</strong>
-    <%= merchandise.stock %>
-  </p>
   
   <p>
     <%= link_to 'Purchase', merchandise.link, target: '_blank', role: 'button' if merchandise.link.present? %>
