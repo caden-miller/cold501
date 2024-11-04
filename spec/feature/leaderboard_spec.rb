@@ -65,27 +65,43 @@ RSpec.feature 'Leaderboard Management', type: :feature do
       expect_category_deletion_success
     end
 
+    # Additional failure handling scenarios
+    scenario 'fails to create category and triggers handle_create_failure' do
+      create_category('', '') # Empty fields to trigger create failure
+      expect(page).to have_content("Category name can't be blank")
+      expect(page).to have_content("Min points can't be blank")
+    end
+
+    scenario 'fails to update category and triggers handle_update_failure' do
+      create_category('Initial Category', '5')
+      find('.categories-table__button.edit').click
+
+      update_category('', '') # Empty fields to trigger update failure
+      expect(page).to have_content("Category name can't be blank")
+      expect(page).to have_content("Min points can't be blank")
+    end
+
     describe '#color_is_dark?' do
-    it 'returns true for a dark color' do
-      category = LeaderboardCategory.new(color: '000000') # Black
-      expect(category.color_is_dark?).to be true
-    end
+      it 'returns true for a dark color' do
+        category = LeaderboardCategory.new(color: '000000') # Black
+        expect(category.color_is_dark?).to be true
+      end
 
-    it 'returns false for a light color' do
-      category = LeaderboardCategory.new(color: 'FFFFFF') # White
-      expect(category.color_is_dark?).to be false
-    end
+      it 'returns false for a light color' do
+        category = LeaderboardCategory.new(color: 'FFFFFF') # White
+        expect(category.color_is_dark?).to be false
+      end
 
-    it 'returns true for a moderately dark color' do
-      category = LeaderboardCategory.new(color: '333333') # Dark gray
-      expect(category.color_is_dark?).to be true
-    end
+      it 'returns true for a moderately dark color' do
+        category = LeaderboardCategory.new(color: '333333') # Dark gray
+        expect(category.color_is_dark?).to be true
+      end
 
-    it 'returns false for a moderately light color' do
-      category = LeaderboardCategory.new(color: 'AAAAAA') # Light gray
-      expect(category.color_is_dark?).to be false
+      it 'returns false for a moderately light color' do
+        category = LeaderboardCategory.new(color: 'AAAAAA') # Light gray
+        expect(category.color_is_dark?).to be false
+      end
     end
-  end
   end
 
   # Helper methods

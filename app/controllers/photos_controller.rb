@@ -4,6 +4,7 @@
 # It ensures that photos are associated with users and handles validations during photo creation and updates.
 class PhotosController < ApplicationController
   before_action :set_photo, except: %i[index new create gallery]
+  include ActionView::RecordIdentifier
 
   # GET /photos
   def index
