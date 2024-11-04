@@ -69,6 +69,9 @@ form {
     border-radius: 4px;
     font-weight: bold;
   }
+  .button-link:hover {
+    background-color: #0056b3;   /* Hover color */
+  }
 
   .modal-overlay {
     position: fixed;
@@ -135,5 +138,10 @@ form {
     background-color: #0056b3;
   }
   
+  .item-title{
+    text-align: center;
+  }
   
-  
+.item-description{
+    font-size: 20px;
+}
