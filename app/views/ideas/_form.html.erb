@@ -17,32 +17,25 @@
             <ul>
               <% @idea.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
-              <% end %>
+              <% end %> 
             </ul>
           </div>
         <% end %>
 
-    <div class="idea-item">
-    <%= form_with(model: idea, local: true) do |form| %>
-    
-    <!-- Title Field with Placeholder -->
-    <div class="form-group">
-      <%= form.text_area :title, placeholder: "Write your title here", class: "item-title" %>
-    </div>
+        <div class="idea-item">
+          <div class="form-group">
+            <%= form.text_area :title, placeholder: "Write your title here", class: "item-title" %>
+          </div>
 
-    <!-- Description Field with Placeholder -->
-    <div class="form-group">
-      <%= form.text_area :description, placeholder: "Write description here", class: "idea-desc" %>
-    </div>
+          <div class="form-group">
+            <%= form.text_area :description, placeholder: "Write description here", class: "idea-desc" %>
+          </div>
 
-    <!-- Submit Button -->
-    <div class="form-group">
-      <%= form.submit "Submit", class: "submit-button" %>
-    </div>
-
-  <% end %>
-  </div>
-
+          <!-- Submit Button -->
+          <div class="form-group">
+            <%= form.submit "Submit", class: "submit-button" %>
+          </div>
+        </div>
 
       <% end %>
     </div>
