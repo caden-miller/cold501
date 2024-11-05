@@ -1,18 +1,46 @@
 <main class="container">
-  <div class="wrapper">
+  <header class="header">
+    <div class="header-title">
+      <h1 class="ideas-title">Ideas</h1>
+    </div>
+    <div class="header-button">
+      <%= link_to "New Idea", new_idea_path, class: "button-link header-button", data: { turbo_frame: dom_id(Idea.new) } %>
+    </div>
+  </header>
+
   <p style="color: green"><%= notice %></p>
-  <h1 class="ideas-title">Ideas</h1>
 
   <div id="ideas" class="ideas-board">
     <% @ideas.each do |idea| %>
       <div class="idea-item">
-      <%= render idea %>
-      <p class="show-button">
-        <%= link_to "Show this idea", idea %>
-      </p>
+        <%= render "idea", idea: idea %>
       </div>
     <% end %>
   </div>
-    <%= link_to "New idea", new_idea_path %>
-  </div>
 </main>
+
+
+
+
+
+<script>
+  function showModal(modalId) {
+    const modal = document.getElementById(modalId);
+    console.log(modal);
+    if (modal) {
+      modal.classList.remove('hidden');
+      console.log(`Showing modal with ID: ${modalId}`);
+    }
+  }
+
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  }
+</script>
+
+
+
+

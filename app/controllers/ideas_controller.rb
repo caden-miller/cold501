@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+include ActionView::RecordIdentifier
 
-# IdeasController manages the creation, viewing, editing, and deletion of ideas.
 class IdeasController < ApplicationController
+  include ActionView::RecordIdentifier
   before_action :set_idea, only: %i[show edit update destroy]
 
   # GET /ideas or /ideas.json
@@ -22,32 +23,51 @@ class IdeasController < ApplicationController
 
   # POST /ideas or /ideas.json
   def create
-    @idea = build_idea
-
+    @idea = Idea.new(idea_params)
+    @idea.user = current_user if current_user
+  
     if @idea.save
-      handle_successful_create
+      redirect_to ideas_path, notice: 'Idea was successfully created.' # Redirect directly to index on success
     else
-      handle_failed_create
+      render :new, status: :unprocessable_entity
     end
   end
+  
+  
+  
 
   # PATCH/PUT /ideas/1 or /ideas/1.json
   def update
-    if @idea.update(idea_params)
-      handle_successful_update
-    else
-      handle_failed_update
+    respond_to do |format|
+      if @idea.update(idea_params)
+        format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully updated.' }
+        format.json { render :show, status: :ok, location: @idea }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: "ideas/idea", locals: { idea: @idea }) }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @idea.errors, status: :unprocessable_entity }
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: "ideas/idea", locals: { idea: @idea }), status: :unprocessable_entity }
+      end
     end
   end
+  
+  
+  
 
   # DELETE /ideas/1 or /ideas/1.json
-  def destroy
-    @idea.destroy
-    respond_to do |format|
-      format.html { redirect_to ideas_url, notice: 'Idea was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+# ideas_controller.rb
+def destroy
+  @idea = Idea.find(params[:id])
+  @idea.destroy
+
+  respond_to do |format|
+    format.turbo_stream { render turbo_stream: turbo_stream.remove(@idea) }
+    format.html { redirect_to ideas_path, notice: "Idea was successfully deleted." }
   end
+end
+
+
+
 
   private
 

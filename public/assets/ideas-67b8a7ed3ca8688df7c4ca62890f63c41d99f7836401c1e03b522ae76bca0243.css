@@ -1,0 +1,266 @@
+/* line 2, app/assets/stylesheets/ideas.scss */
+.ideas-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 20px;
+}
+
+/* line 9, app/assets/stylesheets/ideas.scss */
+form {
+  border: 10px black;
+  text-align: center;
+}
+
+/* line 14, app/assets/stylesheets/ideas.scss */
+.idea-item {
+  background-image: url(/assets/stickynote.png);
+  background-size: cover;
+  /* Ensures the image covers the entire grid item */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents repeating */
+  width: 375px;
+  /* Set width of grid item */
+  height: 375px;
+  /* Set height of grid item */
+  padding: 20px;
+  /* Adds some internal space around the content */
+  color: black;
+}
+
+/* line 26, app/assets/stylesheets/ideas.scss */
+.wrapper {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 31, app/assets/stylesheets/ideas.scss */
+.ideas-title {
+  margin-bottom: 10px;
+  font-size: 55px;
+}
+
+/* line 37, app/assets/stylesheets/ideas.scss */
+.item-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  height: 100px !important;
+  overflow-y: hidden;
+  width: 75%;
+  color: black;
+}
+
+/* line 49, app/assets/stylesheets/ideas.scss */
+.idea-footer {
+  margin-top: auto;
+}
+
+/* line 53, app/assets/stylesheets/ideas.scss */
+.idea-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+/* line 60, app/assets/stylesheets/ideas.scss */
+.show-button {
+  padding-bottom: 10px;
+}
+
+/* line 64, app/assets/stylesheets/ideas.scss */
+.idea-desc {
+  background-color: transparent;
+  border: none;
+  overflow-y: hidden;
+  height: 100%;
+  color: black;
+}
+
+/* line 72, app/assets/stylesheets/ideas.scss */
+a {
+  color: black;
+}
+
+/* line 76, app/assets/stylesheets/ideas.scss */
+textarea::-webkit-resizer {
+  display: none;
+}
+
+/* line 80, app/assets/stylesheets/ideas.scss */
+.title-and-delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+/* line 86, app/assets/stylesheets/ideas.scss */
+.item-title {
+  flex: 1;
+  /* Allows the textarea or title to expand and take up space */
+}
+
+/* line 90, app/assets/stylesheets/ideas.scss */
+.delete-button {
+  font-size: 50px;
+  font-weight: bold;
+  color: black;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: -30px;
+  margin-right: -10px;
+}
+
+/* line 102, app/assets/stylesheets/ideas.scss */
+.delete-button:hover {
+  color: red;
+}
+
+/* Dimming background effect for main content */
+/* line 107, app/assets/stylesheets/ideas.scss */
+.dim-background {
+  opacity: 0.5;
+  /* Darkens the background */
+  transition: opacity 0.3s;
+  /* Smooth fade-in and fade-out */
+  pointer-events: none;
+  /* Prevents interaction with background content */
+}
+
+/* CSS for modal overlay and positioning */
+/* line 114, app/assets/stylesheets/ideas.scss */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  /* Dims the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* line 127, app/assets/stylesheets/ideas.scss */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+  z-index: 1001;
+}
+
+/* line 137, app/assets/stylesheets/ideas.scss */
+.hidden {
+  display: none;
+}
+
+/* line 141, app/assets/stylesheets/ideas.scss */
+.new-idea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* line 148, app/assets/stylesheets/ideas.scss */
+.center {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* line 156, app/assets/stylesheets/ideas.scss */
+.back {
+  font-size: 30px;
+}
+
+/* line 160, app/assets/stylesheets/ideas.scss */
+.new-title {
+  margin-top: 40px;
+  width: 100%;
+  height: 100px;
+}
+
+/* line 166, app/assets/stylesheets/ideas.scss */
+.new-desc {
+  width: 100%;
+  height: 150px;
+}
+
+/* line 171, app/assets/stylesheets/ideas.scss */
+.new-title::placeholder {
+  color: black;
+}
+
+/* line 175, app/assets/stylesheets/ideas.scss */
+.new-desc::placeholder {
+  color: black;
+}
+
+/* line 179, app/assets/stylesheets/ideas.scss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* line 193, app/assets/stylesheets/ideas.scss */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+  /* Allows button to position to the right */
+  width: 100%;
+}
+
+/* line 201, app/assets/stylesheets/ideas.scss */
+.header .header-title {
+  flex: 1;
+  text-align: center;
+}
+
+/* line 206, app/assets/stylesheets/ideas.scss */
+.header .header-button {
+  position: absolute;
+  right: 0;
+}
+
+/* line 211, app/assets/stylesheets/ideas.scss */
+.header h1 {
+  font-size: 55px;
+  color: black;
+  margin: 0;
+}
+
+/* line 218, app/assets/stylesheets/ideas.scss */
+textarea:focus {
+  outline: none;
+  /* Removes the default outline */
+  border: none;
+  /* Ensures no visible border on focus */
+  box-shadow: none;
+  /* Removes any shadow effect */
+}
