@@ -37,7 +37,7 @@ RSpec.feature 'Leaderboard Management', type: :feature do
 
     scenario 'edit an existing category with valid data' do
       create_category('Test Category', '3')
-      find('.categories-table__button.edit').click
+      find('.table-button.edit').click
 
       update_category('Test Category 2', '4')
       expect_category_update_success
@@ -45,7 +45,7 @@ RSpec.feature 'Leaderboard Management', type: :feature do
 
     scenario 'fail to update a category with blank name' do
       create_category('Test Category', '3')
-      find('.categories-table__button.edit').click
+      find('.table-button.edit').click
 
       update_category('', '4')
       expect_blank_category_name_error
@@ -53,7 +53,7 @@ RSpec.feature 'Leaderboard Management', type: :feature do
 
     scenario 'fail to update a category with blank points' do
       create_category('Test Category', '3')
-      find('.categories-table__button.edit').click
+      find('.table-button.edit').click
 
       update_category('Test Category', '')
       expect_blank_min_points_error
@@ -74,7 +74,7 @@ RSpec.feature 'Leaderboard Management', type: :feature do
 
     scenario 'fails to update category and triggers handle_update_failure' do
       create_category('Initial Category', '5')
-      find('.categories-table__button.edit').click
+      find('.table-button.edit').click
 
       update_category('', '') # Empty fields to trigger update failure
       expect(page).to have_content("Category name can't be blank")
@@ -124,11 +124,11 @@ RSpec.feature 'Leaderboard Management', type: :feature do
   end
 
   def click_button_with_image
-    find('button.categories-table__button.confirm').click # Click the image button by its class
+    find('button.table-button.confirm').click # Click the image button by its class
   end
 
   def destroy_category
-    find('.categories-table__button.trash').click
+    find('.table-button.trash').click
   end
 
   def expect_category_creation_success

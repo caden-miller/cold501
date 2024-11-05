@@ -14,6 +14,5 @@ class LeaderboardCategory < ApplicationRecord
     r, g, b = color.scan(/../).map { |hex| hex.to_i(16) }
     brightness = (r * 299 + g * 587 + b * 114) / 1000
     brightness < 128
-    
   end
 end

@@ -96,9 +96,6 @@ class EventsController < ApplicationController
   # Find event by ID for show, edit, update, and destroy actions
   def set_event
     @event = Event.find_by(id: params[:id])
-    return unless @event.nil?
-
-    redirect_to root_path, alert: 'Event not found.'
   end
 
   # Strong parameters to prevent mass assignment issues
