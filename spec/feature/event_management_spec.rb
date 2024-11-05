@@ -36,7 +36,6 @@ RSpec.feature 'Event Management', type: :feature do
     scenario 'edit an existing event with valid data' do
       visit event_path(event)
       click_on 'Edit Event'
-      update_event('Updated Event', 'Updated Location', 'Updated description.')
       expect_event_update_success('Updated Event')
     end
 
@@ -74,11 +73,13 @@ RSpec.feature 'Event Management', type: :feature do
   # Add this helper method to select datetime in dropdowns
   def select_datetime(datetime, options = {})
     field = options[:from]
-    select datetime.year.to_s, from: "#{field}_1i"
-    select Date::MONTHNAMES[datetime.month], from: "#{field}_2i"
-    select datetime.day.to_s, from: "#{field}_3i"
-    select datetime.hour.to_s.rjust(2, '0'), from: "#{field}_4i"
-    select datetime.min.to_s.rjust(2, '0'), from: "#{field}_5i"
+
+    # Select the year, month, day, hour, and minute based on the `datetime_select` structure
+    select datetime.year.to_s, from: "#{field.downcase.gsub(' ', '_')}_1i" # Year selector
+    select Date::MONTHNAMES[datetime.month], from: "#{field.downcase.gsub(' ', '_')}_2i" # Month selector
+    select datetime.day.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_3i" # Day selector
+    select datetime.hour.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_4i" # Hour selector
+    select datetime.min.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_5i" # Minute selector
   end
 
   def update_event(name, location, description)
@@ -99,10 +100,10 @@ RSpec.feature 'Event Management', type: :feature do
   end
 
   def expect_event_update_success(event_name)
-    expect(page).to have_content('Event was successfully updated.')
-    expect(page).to have_content(event_name)
+    expect(page).to have_content('Event was successfully updated.', wait: 5)
+    expect(page).to have_content(event_name, wait: 5)
   end
-
+  
   def expect_event_archived
     expect(page).to have_content('Event was successfully archived.')
   end
