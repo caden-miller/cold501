@@ -1,0 +1,10 @@
+<%= turbo_stream.replace "flash_messages" do %>
+    <%= render "shared/flash" %> 
+<% end %>
+
+<%= turbo_stream.replace dom_id(LeaderboardCategory.new) do %>
+    <%= turbo_frame_tag dom_id(LeaderboardCategory.new) do %>
+      <%= render 'form', leaderboard_category: @leaderboard_category %>
+    <% end %>
+<% end %>
+  

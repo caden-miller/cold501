@@ -1,7 +1,4 @@
 <%= simple_form_for user, html: { class: "user form", data: { turbo_frame: "user_#{user.id}" } } do |form| %>
-  <% if user.errors.any? %>
-    <%= form.error_notification %>
-  <% end %>
 
   <div class="table-row">
     <div class="table-cell user-cell">

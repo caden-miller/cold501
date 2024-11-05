@@ -1,6 +1,10 @@
+<%= turbo_stream.replace "flash_messages" do %>
+  <%= render "shared/flash" %> 
+<% end %>
+
 <%= turbo_stream.replace dom_id(Photo.new) do %>
     <%= turbo_frame_tag dom_id(Photo.new) do %>
       <%= render 'form', photo: @photo %>
     <% end %>
-  <% end %>
+<% end %>
   

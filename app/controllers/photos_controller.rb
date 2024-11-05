@@ -114,9 +114,6 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { render :edit, status: :unprocessable_entity }
       format.turbo_stream { render :edit, status: :unprocessable_entity }
-      
     end
   end
-  
-  
 end

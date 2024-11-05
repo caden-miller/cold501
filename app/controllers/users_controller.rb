@@ -60,11 +60,10 @@ class UsersController < ApplicationController
   end
 
   def handle_update_failure
+    flash[:alert] = @user.errors.full_messages.to_sentence
     respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("user_#{@user.id}", partial: 'form', locals: { user: @user })
-      end
       format.html { render :edit, status: :unprocessable_entity }
+      format.turbo_stream { render :edit, status: :unprocessable_entity }
     end
   end
 end

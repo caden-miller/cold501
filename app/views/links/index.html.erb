@@ -16,10 +16,12 @@
       </div>
     </div>
     <div class="link__table-body" id="links">
-      <%= turbo_frame_tag Link.new %>
       <% @links.each do |link| %>
-        <%= render partial: 'link', locals: { link: link } %>
+        <%= turbo_frame_tag dom_id(link) do %>
+          <%= render partial: 'link', locals: { link: link } %>
+        <% end %>
       <% end %>
+      <%= turbo_frame_tag dom_id(Link.new) %>
     </div>
   </div>
 </main>
