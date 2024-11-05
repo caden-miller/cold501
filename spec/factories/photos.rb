@@ -2,9 +2,10 @@
 
 FactoryBot.define do
   factory :photo do
-    link { 'MyString' }
-    title { 'MyString' }
-    description { 'MyText' }
-    created_by { nil }
+    title { 'Sample Photo' }
+    description { 'This is a sample photo.' }
+    image { Rack::Test::UploadedFile.new(Rails.root.join('spec/fixtures/sample.jpg'), 'image/jpeg') }
+    association :user
   end
 end
+

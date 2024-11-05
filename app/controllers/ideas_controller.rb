@@ -61,9 +61,10 @@ class IdeasController < ApplicationController
 
   def build_idea
     idea = Idea.new(idea_params)
-    idea.user = current_user.id if current_user
+    idea.user = current_user if current_user # Assign the entire user object, not just the ID
     idea
   end
+  
 
   def handle_successful_create
     respond_to do |format|
