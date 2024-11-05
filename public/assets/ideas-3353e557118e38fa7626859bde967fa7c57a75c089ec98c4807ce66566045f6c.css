@@ -1,0 +1,93 @@
+/* line 2, app/assets/stylesheets/ideas.scss */
+.ideas-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 20px;
+}
+
+/* line 9, app/assets/stylesheets/ideas.scss */
+form {
+  border: 10px black;
+  text-align: center;
+}
+
+/* line 14, app/assets/stylesheets/ideas.scss */
+.idea-item {
+  background-image: url(/assets/stickynote.png);
+  background-size: cover;
+  /* Ensures the image covers the entire grid item */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents repeating */
+  width: 375px;
+  /* Set width of grid item */
+  height: 375px;
+  /* Set height of grid item */
+  padding: 20px;
+  /* Adds some internal space around the content */
+  color: black;
+}
+
+/* line 26, app/assets/stylesheets/ideas.scss */
+.wrapper {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 31, app/assets/stylesheets/ideas.scss */
+.ideas-title {
+  margin-bottom: 10px;
+  font-size: 55px;
+}
+
+/* line 37, app/assets/stylesheets/ideas.scss */
+.item-title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  overflow-y: hidden;
+}
+
+/* line 48, app/assets/stylesheets/ideas.scss */
+.idea-footer {
+  margin-top: auto;
+}
+
+/* line 52, app/assets/stylesheets/ideas.scss */
+.idea-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* line 59, app/assets/stylesheets/ideas.scss */
+.show-button {
+  padding-bottom: 10px;
+}
+
+/* line 63, app/assets/stylesheets/ideas.scss */
+.idea-desc {
+  background-color: transparent;
+  border: none;
+}
+
+/* line 68, app/assets/stylesheets/ideas.scss */
+a {
+  color: black;
+}
+
+/* line 72, app/assets/stylesheets/ideas.scss */
+textarea::-webkit-resizer {
+  display: none;
+}
+
+/* line 76, app/assets/stylesheets/ideas.scss */
+textarea {
+  outline: none;
+}

@@ -1,0 +1,30 @@
+/* line 1, app/assets/stylesheets/merch.scss */
+a, h1, p, h2 {
+  color: white;
+}
+
+/* line 5, app/assets/stylesheets/merch.scss */
+.merchtitle {
+  margin-bottom: 10px;
+  font-size: 55px;
+}
+
+/* line 10, app/assets/stylesheets/merch.scss */
+.merch-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 20px;
+}
+
+/* line 17, app/assets/stylesheets/merch.scss */
+form {
+  border: 10px black;
+  text-align: center;
+}
+
+/* line 22, app/assets/stylesheets/merch.scss */
+.wrapper {
+  margin-left: 20px;
+  margin-top: 10px;
+}
