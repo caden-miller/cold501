@@ -3,7 +3,3 @@
     <%= render partial: 'photo', locals: { photo: @photo } %>
   <% end %>
 <% end %>
-
-<%= turbo_stream.replace "flash_messages" do %>
-  <%= render "shared/flash" %>
-<% end %>

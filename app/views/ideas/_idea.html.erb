@@ -4,7 +4,7 @@
       <% if idea.user == current_user %>
         <%= form_with(model: idea, url: idea_path(idea), method: :patch) do |form| %>
           <%= form.text_area :title, class: 'item-title', placeholder: 'Write your title here', onfocus: "showSaveButton(this)", onblur: "hideSaveButton(this)" %>
-          <%= form.submit "Save", class: "save-button" %>
+          <%= form.submit "Save", class: "save-button btn btn--primary" %>
         <% end %>
       <% else %>
         <p class="item-title"><%= h(idea.title) %></p>
@@ -21,7 +21,7 @@
     <% if idea.user == current_user %>
       <%= form_with(model: idea, url: idea_path(idea), method: :patch) do |form| %>
         <%= form.text_area :description, class: 'idea-desc', placeholder: 'Write description here', onfocus: "showSaveButton(this)", onblur: "hideSaveButton(this)" %>
-        <%= form.submit "Save", class: "save-button" %>
+        <%= form.submit "Save", class: "save-button btn btn--primary" %>
       <% end %>
     <% else %>
       <p class="idea-desc"><%= h(idea.description.squish) %></p>

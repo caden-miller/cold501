@@ -2,6 +2,11 @@ a {
     color: black;
 }
 
+.merch-item {
+  border-radius: var(--border-radius);
+  background-color: var(--color-primary-rotate);
+}
+
 .merchtitle{
     margin-bottom: 10px;
     font-size: 55px;
@@ -151,4 +156,12 @@ form {
 
 .merch-title{
     text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--space-m);
+  margin-bottom: var(--space-s);
 }

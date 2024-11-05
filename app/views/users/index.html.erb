@@ -3,21 +3,23 @@
   <header class="header">
     <h1>MEMBERS</h1>
   </header>
-  
-  <%= button_to 'Reset Member Points', reset_points_path, method: :post, data: { turbo_confirm: 'Are you sure you want to update all records?' }, class: 'user__button' %>
-  <div class="user__table">
-    <div class="user__table-header">
-      <div class="user__table-row">
-        <div class="user__table-cell">Avatar</div>
-        <div class="user__table-cell">Full Name</div>
-        <div class="user__table-cell">Committee</div>
-        <div class="user__table-cell">Points</div>
-        <div class="user__table-cell">Dues</div>
-        <div class="user__table-cell">Role</div>
-        <div class="user__table-cell">Actions</div>
+  <div id="reset-button">
+    <%= button_to 'Reset Member Points', reset_points_path, method: :post, data: { turbo_confirm: 'Are you sure you want to update all records?' }, class: 'btn btn--danger' %>
+  </div>
+  <br>
+  <div class="table">
+    <div class="table-header">
+      <div class="table-row">
+        <div class="table-cell user-cell">Avatar</div>
+        <div class="table-cell user-cell">Full Name</div>
+        <div class="table-cell user-cell">Committee</div>
+        <div class="table-cell user-cell">Points</div>
+        <div class="table-cell user-cell">Dues</div>
+        <div class="table-cell user-cell">Role</div>
+        <div class="table-cell user-cell actions">Actions</div>
       </div>
     </div>
-    <div class="user__table-body" id="users">
+    <div class="table-body" id="users">
       <% @users.each do |user| %>
         <%= render partial: 'user', locals: { user: user } %>
       <% end %>

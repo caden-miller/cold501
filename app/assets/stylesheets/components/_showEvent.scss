@@ -25,8 +25,8 @@
 
 /* Event Information Bubbles */
 .event-info {
-  display: grid;
-  grid-template-columns: 1fr; // Single column layout for smaller screens
+  display: flex;
+  flex-direction: column;
   gap: 20px; // Space between each bubble
 
   @media (min-width: 600px) {
@@ -35,7 +35,7 @@
 
   .event-bubble {
     background-color: #ffffff; // White background for contrast
-    border: 2px solid #a0c4a0; // Light green border
+    border: 2px solid var(--color-secondary-rotate); // Light green border
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -129,39 +129,39 @@
   text-align: center;
 }
 
-/* Button styling - maintain color scheme and consistency */
-.btn--primary {
-  background-color: #4e892f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
+// /* Button styling - maintain color scheme and consistency */
+// .btn--primary {
+//   background-color: #4e892f;
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   cursor: pointer;
+// }
 
-.btn--secondary {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
+// .btn--secondary {
+//   background-color: #6c757d;
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   cursor: pointer;
+// }
 
-.btn--tertiary {
-  background-color: #2a5215;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
+// .btn--tertiary {
+//   background-color: #2a5215;
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   cursor: pointer;
+// }
 
-.btn--danger {
-  background-color: #2a5215;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-}
+// .btn--danger {
+//   background-color: #2a5215;
+//   color: white;
+//   border: none;
+//   border-radius: 4px;
+//   padding: 8px 16px;
+//   cursor: pointer;
+// }

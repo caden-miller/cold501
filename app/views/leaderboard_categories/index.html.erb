@@ -46,9 +46,9 @@
         </div>
           </div>
         </div>
-
+        <br>
         <% if @role == "admin" %>
-          <%= link_to "New Category", new_leaderboard_category_path, class: 'leaderboard_category__new-button', data: { turbo_frame: dom_id(LeaderboardCategory.new) } %><br><br>
+          <%= link_to "New Category", new_leaderboard_category_path, class: 'btn btn--primary', data: { turbo_frame: dom_id(LeaderboardCategory.new) } %><br><br>
         <% end %>
       </div>
     </div>

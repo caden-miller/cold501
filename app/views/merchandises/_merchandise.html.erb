@@ -13,8 +13,8 @@
     <%= merchandise.description %>
   </strong>
   
-  <p>
-    <%= link_to 'Purchase', merchandise.link, target: '_blank', role: 'button' if merchandise.link.present? %>
+  <p class="flex">
+    <%= link_to 'Purchase', merchandise.link, class: 'btn btn--primary', target: '_blank', role: 'button' if merchandise.link.present? %>
   </p>
 
 

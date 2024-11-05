@@ -18,16 +18,21 @@ class LeaderboardCategoriesController < ApplicationController
   # GET /leaderboard_categories/new
   def new
     @leaderboard_category = LeaderboardCategory.new
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
   end
 
   # GET /leaderboard_categories/1/edit
-  def edit;
-  respond_to do |format|
-    format.turbo_stream do
-      render turbo_stream: turbo_stream.replace(dom_id(@leaderboard_category), partial: 'leaderboard_categories/form', locals: { leaderboard_category: @leaderboard_category })
+  def edit
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(dom_id(@leaderboard_category), partial: 'leaderboard_categories/form',
+                                                                                 locals: { leaderboard_category: @leaderboard_category })
+      end
+      format.html
     end
-    format.html
-  end
   end
 
   # POST /leaderboard_categories or /leaderboard_categories.json
@@ -54,7 +59,9 @@ class LeaderboardCategoriesController < ApplicationController
   def destroy
     @leaderboard_category.destroy
     respond_to do |format|
-      format.html { redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully destroyed.' }
+      format.html do
+        redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully destroyed.'
+      end
       format.turbo_stream
     end
   end
@@ -77,31 +84,26 @@ class LeaderboardCategoriesController < ApplicationController
     end
   end
 
-
   def handle_update_success
     respond_to do |format|
-      format.turbo_stream
       format.html { redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully updated.' }
+      format.turbo_stream
     end
   end
 
   def handle_create_failure
-    Rails.logger.debug 'Leaderboard Category Not Created'
+    flash.now[:alert] = @leaderboard_category.errors.full_messages.to_sentence
     respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("leaderboard_category_form_#{@leaderboard_category.id}", partial: 'leaderboard_categories/form', locals: { leaderboard_category: @leaderboard_category })
-      end
       format.html { render :new, status: :unprocessable_entity }
+      format.turbo_stream { render :new, status: :unprocessable_entity }
     end
   end
-  
+
   def handle_update_failure
+    flash.now[:alert] = @leaderboard_category.errors.full_messages.to_sentence
     respond_to do |format|
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace("leaderboard_category_form_#{@leaderboard_category.id}", partial: 'leaderboard_categories/form', locals: { leaderboard_category: @leaderboard_category })
-      end
       format.html { render :edit, status: :unprocessable_entity }
+      format.turbo_stream { render :edit, status: :unprocessable_entity }
     end
   end
-  
 end

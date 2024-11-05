@@ -1,16 +1,15 @@
 <main class="container">
-  <p style="color: green"><%= notice %></p>
   <header class="header">
-    <h1 class="header">SHOWING MERCHANDISE</h1>
+    <h1>SHOWING MERCHANDISE</h1>
   </header>
 
   <%= render @merchandise %>
 
   <div>
     <% if @role == "admin" %>
-      <%= link_to "Edit this merchandise", edit_merchandise_path(@merchandise) %> 
-      <%= button_to "Destroy this merchandise", @merchandise, method: :delete %>
+      <%= link_to "Edit this merchandise", edit_merchandise_path(@merchandise), class: 'btn btn--primary' %> 
+      <%= button_to "Destroy this merchandise", @merchandise, method: :delete, class: 'btn btn--danger' %>
     <% end %>
-    <%= link_to "Back to merchandises", merchandises_path %>
+    <%= link_to "Back to merchandises", merchandises_path, class: 'btn btn--secondary' %>
   </div>
 </main>

@@ -40,16 +40,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_11_04_003607) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "passcode"
-    t.datetime "date"
-    t.string "location"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.string "location"
     t.boolean "archived", default: false, null: false
     t.text "description"
   end
 
   create_table "ideas", force: :cascade do |t|
-    t.string "title", null: false
+    t.string "title"
     t.string "description"
     t.integer "created_by"
     t.datetime "created_at", null: false

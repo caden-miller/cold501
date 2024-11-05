@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 include ActionView::RecordIdentifier
 
 class IdeasController < ApplicationController
@@ -25,16 +26,13 @@ class IdeasController < ApplicationController
   def create
     @idea = Idea.new(idea_params)
     @idea.user = current_user if current_user
-  
+
     if @idea.save
       redirect_to ideas_path, notice: 'Idea was successfully created.' # Redirect directly to index on success
     else
       render :new, status: :unprocessable_entity
     end
   end
-  
-  
-  
 
   # PATCH/PUT /ideas/1 or /ideas/1.json
   def update
@@ -42,32 +40,31 @@ class IdeasController < ApplicationController
       if @idea.update(idea_params)
         format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully updated.' }
         format.json { render :show, status: :ok, location: @idea }
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: "ideas/idea", locals: { idea: @idea }) }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/idea', locals: { idea: @idea })
+        end
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @idea.errors, status: :unprocessable_entity }
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: "ideas/idea", locals: { idea: @idea }), status: :unprocessable_entity }
+        format.turbo_stream do
+          render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/idea', locals: { idea: @idea }),
+                 status: :unprocessable_entity
+        end
       end
     end
   end
-  
-  
-  
 
   # DELETE /ideas/1 or /ideas/1.json
-# ideas_controller.rb
-def destroy
-  @idea = Idea.find(params[:id])
-  @idea.destroy
+  # ideas_controller.rb
+  def destroy
+    @idea = Idea.find(params[:id])
+    @idea.destroy
 
-  respond_to do |format|
-    format.turbo_stream { render turbo_stream: turbo_stream.remove(@idea) }
-    format.html { redirect_to ideas_path, notice: "Idea was successfully deleted." }
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(@idea) }
+      format.html { redirect_to ideas_path, notice: 'Idea was successfully deleted.' }
+    end
   end
-end
-
-
-
 
   private
 
@@ -81,7 +78,7 @@ end
 
   def build_idea
     idea = Idea.new(idea_params)
-    idea.user = current_user.id if current_user
+    idea.user = current_user if current_user # Assign the entire user object, not just the ID
     idea
   end
 

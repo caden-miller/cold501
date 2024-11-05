@@ -1,8 +1,8 @@
 <main class="container">
   <header class="header">
-    <h1 class="header-title">Merchandise</h1>
+    <h1>MERCH</h1>
     <% if current_user.role == "admin" %>
-      <%= link_to "New Merchandise", new_merchandise_path, class: "button-link header-button" %>
+      <%= link_to "New Merchandise", new_merchandise_path, class: "btn btn--primary" %>
     <% end %>
   </header>
 
@@ -13,14 +13,18 @@
         <%= render merchandise %>
 
         <% if current_user.role == "admin" %>
-          <%= link_to "Edit", edit_merchandise_path(merchandise), class: "edit-button" %>
-          <%= link_to "Delete", "#", data: { modal_id: "delete-confirmation-modal-#{merchandise.id}" }, onclick: "showModal('delete-confirmation-modal-#{merchandise.id}')", class: "delete" %>
+          <div class="flex">
+            <%= link_to "Edit", edit_merchandise_path(merchandise), class: "btn btn--secondary" %>
+            <%= link_to "Delete", "#", data: { modal_id: "delete-confirmation-modal-#{merchandise.id}" }, onclick: "showModal('delete-confirmation-modal-#{merchandise.id}')", class: "btn btn--danger first" %>
+          </div>
 
           <div id="delete-confirmation-modal-<%= merchandise.id %>" class="modal-overlay hidden">
             <div class="modal-content">
               <p>Are you sure you want to delete this merchandise item?</p>
-              <%= button_to "Delete", merchandise_path(merchandise), method: :delete, data: { turbo: false }, class: "confirm-delete-button" %>
-              <button class="cancel-button" onclick="closeModal('delete-confirmation-modal-<%= merchandise.id %>')">Cancel</button>
+              <div class="flex">
+                <%= button_to "Delete", merchandise_path(merchandise), method: :delete, data: { turbo: false }, class: "btn btn--danger confirmation" %>
+                <button class="btn btn--secondary" onclick="closeModal('delete-confirmation-modal-<%= merchandise.id %>')">Cancel</button>
+              </div>
             </div>
           </div>
         <% end %>

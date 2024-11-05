@@ -4,6 +4,7 @@
 # It ensures that photos are associated with users and handles validations during photo creation and updates.
 class PhotosController < ApplicationController
   before_action :set_photo, except: %i[index new create gallery]
+  include ActionView::RecordIdentifier
 
   # GET /photos
   def index
@@ -104,7 +105,6 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to photos_path, notice: 'Photo was successfully updated.' }
       format.turbo_stream
-      
     end
   end
 
@@ -113,9 +113,6 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { render :edit, status: :unprocessable_entity }
       format.turbo_stream { render :edit, status: :unprocessable_entity }
-      
     end
   end
-  
-  
 end

@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   draw :events
 
   # Home routes
-  resources :home
+  get 'support' => 'home#support', as: :support
 end
