@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   has_many :photos, dependent: :destroy
   has_many :attendances, dependent: :destroy
-  has_many :ideas, dependent: :destroy
+  has_many :ideas, foreign_key: 'created_by', dependent: :destroy, inverse_of: :user
   # has_many :ideas, dependent: :destroy
 
   # Ensure devise works with omniauth-google_oauth2
