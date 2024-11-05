@@ -1,2 +1,8 @@
-<%= turbo_stream.prepend "links", partial: 'link', locals: { link: @link } %>
-<%= turbo_stream.update dom_id(@link), "" %>
+<%= turbo_stream.append "links" do %>
+    <%= turbo_frame_tag dom_id(@link) do %>
+        <%= render partial: 'link', locals: { link: @link } %>
+    <% end %>
+<% end %>
+  
+<%= turbo_stream.update dom_id(Link.new), "" %>
+  

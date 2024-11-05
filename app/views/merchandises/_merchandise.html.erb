@@ -1,7 +1,7 @@
 <div id="<%= dom_id merchandise %>">
   
 
-  <h1>
+  <h1 class="merch-title">
     <%= merchandise.title %>
   </h1>
   
@@ -9,18 +9,13 @@
      <%= image_tag(merchandise.image) if merchandise.link.present? &&  merchandise.image.present? %>
   </p>
 
-  <p>
+  <strong class="item-description">
     <%= merchandise.description %>
+  </strong>
+  
+  <p class="flex">
+    <%= link_to 'Purchase', merchandise.link, class: 'btn btn--primary', target: '_blank', role: 'button' if merchandise.link.present? %>
   </p>
 
-  <p>
-    <strong>Stock:</strong>
-    <%= merchandise.stock %>
-  </p>
-  
-  <p>
-    <strong>Link:</strong>
-    <%= link_to merchandise.link, merchandise.link, target: '_blank' if merchandise.link.present? %>
-  </p>
 
 </div>

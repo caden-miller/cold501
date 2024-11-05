@@ -4,10 +4,11 @@
 # It ensures that photos are associated with users and handles validations during photo creation and updates.
 class PhotosController < ApplicationController
   before_action :set_photo, except: %i[index new create gallery]
+  include ActionView::RecordIdentifier
 
   # GET /photos
   def index
-    @photos = Photo.order(:id)
+    @photos = Photo.order(id: :desc)
   end
 
   # GET /photos/1
@@ -16,6 +17,10 @@ class PhotosController < ApplicationController
   # GET /photos/new
   def new
     @photo = Photo.new
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
   end
 
   # GET /photos/1/edit
@@ -28,6 +33,14 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
+    if params[:photo].blank?
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(Photo.new), '') }
+        format.html { redirect_to photos_path, alert: 'Photo creation was canceled.' }
+      end
+      return
+    end
+
     @photo = current_user.photos.build(photo_params)
 
     if @photo.save
@@ -50,9 +63,10 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo.destroy
+    flash.now[:notice] = 'Photo was successfully deleted.'
     respond_to do |format|
-      format.html { redirect_to photos_path, notice: 'Photo was successfully deleted.' }
       format.turbo_stream
+      format.html { redirect_to photos_path, notice: 'Photo was successfully deleted.' }
     end
   end
 
@@ -71,7 +85,7 @@ class PhotosController < ApplicationController
   end
 
   def handle_create_success
-    Rails.logger.debug 'Photo Created'
+    flash.now[:notice] = 'Photo Created'
     respond_to do |format|
       format.html { redirect_to photos_path, notice: 'Photo Created' }
       format.turbo_stream
@@ -79,27 +93,26 @@ class PhotosController < ApplicationController
   end
 
   def handle_create_failure
-    Rails.logger.debug 'Photo Not Created'
-    render :new, status: :unprocessable_entity
+    flash.now[:alert] = @photo.errors.full_messages.to_sentence
+    respond_to do |format|
+      format.html { render :new, status: :unprocessable_entity }
+      format.turbo_stream { render :new, status: :unprocessable_entity }
+    end
   end
 
   def handle_update_success
+    flash.now[:notice] = 'Photo was successfully updated.'
     respond_to do |format|
-      format.turbo_stream
       format.html { redirect_to photos_path, notice: 'Photo was successfully updated.' }
+      format.turbo_stream
     end
   end
 
   def handle_update_failure
+    flash[:alert] = @photo.errors.full_messages.to_sentence
     respond_to do |format|
-      format.html { render :gallery, status: :unprocessable_entity }
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace(
-          dom_id(@photo),
-          partial: 'photos/form',
-          locals: { photo: @photo }
-        ), status: :unprocessable_entity
-      end
+      format.html { render :edit, status: :unprocessable_entity }
+      format.turbo_stream { render :edit, status: :unprocessable_entity }
     end
   end
 end

@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :photos, dependent: :destroy
   has_many :attendances, dependent: :destroy
+  has_many :ideas, foreign_key: 'created_by', dependent: :destroy, inverse_of: :user
   # has_many :ideas, dependent: :destroy
 
   # Ensure devise works with omniauth-google_oauth2
@@ -18,6 +19,6 @@ class User < ApplicationRecord
 
   # Create or find a user from Google OAuth data
   def self.from_google(email:, full_name:, uid:, avatar_url:)
-    create_with(uid:, full_name:, avatar_url:, role: 'admin', points: 0).find_or_create_by!(email:)
+    create_with(uid:, full_name:, avatar_url:, role: 'user', points: 0).find_or_create_by!(email:)
   end
 end

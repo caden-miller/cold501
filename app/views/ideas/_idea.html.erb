@@ -1,36 +1,57 @@
-<div id="<%= dom_id idea %>" class="idea-wrapper">
-  <p class="item-title">
-    <%= idea.title %>
-  </p>
+<%= turbo_frame_tag dom_id(idea) do %>
+  <div class="idea-wrapper">
+    <div class="title-and-delete">
+      <% if idea.user == current_user %>
+        <%= form_with(model: idea, url: idea_path(idea), method: :patch) do |form| %>
+          <%= form.text_area :title, class: 'item-title', placeholder: 'Write your title here', onfocus: "showSaveButton(this)", onblur: "hideSaveButton(this)" %>
+          <%= form.submit "Save", class: "save-button btn btn--primary" %>
+        <% end %>
+      <% else %>
+        <p class="item-title"><%= h(idea.title) %></p>
+      <% end %>
 
-  <textarea class="idea-desc">
-    <%= h(idea.description.squish) %>
-  </textarea>
+      <% if idea.user == current_user || current_user.admin? || current_user.officer? %>
+        <%= link_to "×", "#", 
+            class: "delete-button", 
+            data: { modal_id: "delete-confirmation-modal-#{idea.id}", turbo: false }, 
+            onclick: "showModal('delete-confirmation-modal-#{idea.id}')" %>
+      <% end %>
+    </div>
 
-  <div class="idea-footer">
-  <p>
-    <strong>Created by:</strong>
-    <%= idea.user ? idea.user&.full_name : "Unknown" %>
-  </p>
+    <% if idea.user == current_user %>
+      <%= form_with(model: idea, url: idea_path(idea), method: :patch) do |form| %>
+        <%= form.text_area :description, class: 'idea-desc', placeholder: 'Write description here', onfocus: "showSaveButton(this)", onblur: "hideSaveButton(this)" %>
+        <%= form.submit "Save", class: "save-button btn btn--primary" %>
+      <% end %>
+    <% else %>
+      <p class="idea-desc"><%= h(idea.description.squish) %></p>
+    <% end %>
 
-  <p>
-    <strong>Created at:</strong>
-    <span class="utc-time" data-utc-time="<%= idea.created_at.iso8601 %>">
-      <%= idea.created_at.strftime('%Y-%m-%d %H %M %S %Z') %>
-    </span>
-    
-  </p>
+    <div class="idea-footer">
+      <p>
+        <strong class="idea-user">&mdash;</strong> <%= idea.user ? idea.user&.full_name : "Unknown" %>
+        <% if idea.updated_at != idea.created_at %>
+          <span class="edited-label">(edited)</span>
+        <% end %>
+      </p>
+      <p><span class="utc-time" data-utc-time="<%= idea.created_at.iso8601 %>"><%= idea.created_at.strftime('%m/%d/%Y') %></span></p>
+    </div>
   </div>
 
-</div>
+  <!-- Delete Confirmation Modal -->
+  <% if idea.user == current_user || current_user.admin? || current_user.officer? %>
+    <div id="delete-confirmation-modal-<%= idea.id %>" class="modal-overlay hidden">
+      <div class="modal-content">
+        <p>Are you sure you want to delete this idea?</p>
+        <%= button_to "Delete", idea_path(idea), method: :delete, data: { turbo: false }, class: "confirm-delete-button" %>
+        <button class="cancel-button" onclick="closeModal('delete-confirmation-modal-<%= idea.id %>')">Cancel</button>
+      </div>
+    </div>
+  <% end %>
+<% end %>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const elements = document.querySelectorAll('.utc-time');
-    elements.forEach(function(element) {
-      const utcTime = element.getAttribute('data-utc-time');
-      const localTime = new Date(utcTime).toLocaleString(); // Converts to the user's local time zone
-      element.textContent = localTime; // Replace the content with local time
-    });
-  });
-</script>
+
+
+
+
+

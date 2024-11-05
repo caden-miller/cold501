@@ -1,0 +1,32 @@
+  .support-section {
+    margin-bottom: 30px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: var(--color-primary-bg);
+  }
+  
+  .support-section h2 {
+    color: var(--color-secondary);
+    margin-top: 0;
+    margin-bottom: var(--space-m);
+  }
+  
+  .support-section p {
+    color: var(--color-dark);
+    padding-left: var(--space-m);
+  }
+  
+  .support-section img {
+    // display: block;
+    // width: 100%;
+    max-width: 66%;
+    // height: auto;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-s);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: var(--border-radius);
+    // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -12,6 +12,10 @@ class LinksController < ApplicationController
   # GET /links/new
   def new
     @link = Link.new
+    respond_to do |format|
+      format.turbo_stream
+      format.html
+    end
   end
 
   # POST /links
@@ -66,7 +70,6 @@ class LinksController < ApplicationController
   end
 
   def handle_create_success
-    Rails.logger.debug 'Link Created'
     respond_to do |format|
       format.html { redirect_to links_path, notice: 'Link was successfully created.' }
       format.turbo_stream
@@ -74,8 +77,11 @@ class LinksController < ApplicationController
   end
 
   def handle_create_failure
-    Rails.logger.debug 'Link Not Created'
-    render :new, status: :unprocessable_entity
+    flash.now[:alert] = @link.errors.full_messages.to_sentence
+    respond_to do |format|
+      format.html { render :new, status: :unprocessable_entity }
+      format.turbo_stream { render :new, status: :unprocessable_entity }
+    end
   end
 
   def handle_update_success
@@ -86,15 +92,10 @@ class LinksController < ApplicationController
   end
 
   def handle_update_failure
+    flash[:alert] = @link.errors.full_messages.to_sentence
     respond_to do |format|
-      format.html { render :new, status: :unprocessable_entity }
-      format.turbo_stream do
-        render turbo_stream: turbo_stream.replace(
-          dom_id(@link),
-          partial: 'links/form',
-          locals: { link: @link }
-        ), status: :unprocessable_entity
-      end
+      format.html { render :edit, status: :unprocessable_entity }
+      format.turbo_stream { render :edit, status: :unprocessable_entity }
     end
   end
 end
