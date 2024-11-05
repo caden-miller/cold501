@@ -74,7 +74,7 @@ class EventsController < ApplicationController
 
   def archived
     @archived_events = Event.where(archived: true) # Fetches only archived events
-    render :archived # You may need to create this view
+    render :archived 
   end
 
   def archive
