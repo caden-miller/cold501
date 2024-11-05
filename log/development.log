@@ -11718,3 +11718,180 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 9435)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/users" for ::1 at 2024-11-04 23:03:57 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Redirected to http://www.localhost:3000/
+Filter chain halted as :authenticate_admin! rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 2899)
+
+
+Started GET "/" for ::1 at 2024-11-04 23:03:57 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.7ms | Allocations: 709)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2528)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 820)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 183)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 11.2ms | Allocations: 6490)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 15646)
+Completed 200 OK in 29ms (Views: 22.1ms | ActiveRecord: 3.9ms | Allocations: 19243)
+
+
+Started GET "/" for ::1 at 2024-11-04 23:03:58 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 308)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1191)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 485)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 25)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.5ms | Allocations: 2078)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4912)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.2ms | Allocations: 5637)
+
+
+Started GET "/support" for ::1 at 2024-11-04 23:04:00 -0600
+Processing by HomeController#support as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/support.html.erb within layouts/application
+  Rendered home/support.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1353)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 474)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.4ms | Allocations: 2016)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4970)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5588)
+
+
+Started GET "/support" for ::1 at 2024-11-04 23:04:31 -0600
+Processing by HomeController#support as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/support.html.erb within layouts/application
+  Rendered home/support.html.erb within layouts/application (Duration: 0.9ms | Allocations: 859)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 474)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.0ms | Allocations: 2016)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 4476)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5107)
+
+
+Started GET "/" for ::1 at 2024-11-04 23:04:35 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 473)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.4ms | Allocations: 2016)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4781)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 5404)
+
+
+Started GET "/" for ::1 at 2024-11-04 23:04:43 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 338)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1281)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 461)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 27)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.2ms | Allocations: 2006)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4913)
+Completed 200 OK in 28ms (Views: 5.8ms | ActiveRecord: 4.7ms | Allocations: 16356)
+
+
+Started GET "/support" for ::1 at 2024-11-04 23:04:45 -0600
+Processing by HomeController#support as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/support.html.erb within layouts/application
+  Rendered home/support.html.erb within layouts/application (Duration: 0.8ms | Allocations: 859)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 454)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.2ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4443)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.5ms | Allocations: 5908)
+
+
+Started GET "/support" for ::1 at 2024-11-04 23:04:58 -0600
+Processing by HomeController#support as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/support.html.erb within layouts/application
+  Rendered home/support.html.erb within layouts/application (Duration: 1.0ms | Allocations: 859)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 454)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.2ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 4443)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 0.7ms | Allocations: 5847)
+
+
+Started GET "/" for ::1 at 2024-11-04 23:05:39 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.3ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4748)
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.5ms | Allocations: 6160)
+
+
+Started GET "/support" for ::1 at 2024-11-04 23:05:42 -0600
+Processing by HomeController#support as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/support.html.erb within layouts/application
+  Rendered home/support.html.erb within layouts/application (Duration: 1.1ms | Allocations: 859)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 454)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.7ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4443)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 5846)
+
+
