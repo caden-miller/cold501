@@ -1,0 +1,120 @@
+/* line 2, app/assets/stylesheets/ideas.scss */
+.ideas-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1em;
+  row-gap: 20px;
+}
+
+/* line 9, app/assets/stylesheets/ideas.scss */
+form {
+  border: 10px black;
+  text-align: center;
+}
+
+/* line 14, app/assets/stylesheets/ideas.scss */
+.idea-item {
+  background-image: url(/assets/stickynote.png);
+  background-size: cover;
+  /* Ensures the image covers the entire grid item */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents repeating */
+  width: 375px;
+  /* Set width of grid item */
+  height: 375px;
+  /* Set height of grid item */
+  padding: 20px;
+  /* Adds some internal space around the content */
+  color: black;
+}
+
+/* line 26, app/assets/stylesheets/ideas.scss */
+.wrapper {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* line 31, app/assets/stylesheets/ideas.scss */
+.ideas-title {
+  margin-bottom: 10px;
+  font-size: 55px;
+}
+
+/* line 37, app/assets/stylesheets/ideas.scss */
+.item-title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  height: 120px !important;
+  overflow-y: hidden;
+  width: 75%;
+}
+
+/* line 49, app/assets/stylesheets/ideas.scss */
+.idea-footer {
+  margin-top: auto;
+}
+
+/* line 53, app/assets/stylesheets/ideas.scss */
+.idea-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+
+/* line 60, app/assets/stylesheets/ideas.scss */
+.show-button {
+  padding-bottom: 10px;
+}
+
+/* line 64, app/assets/stylesheets/ideas.scss */
+.idea-desc {
+  background-color: transparent;
+  border: none;
+  overflow-y: hidden;
+  height: 100%;
+}
+
+/* line 71, app/assets/stylesheets/ideas.scss */
+a {
+  color: black;
+}
+
+/* line 75, app/assets/stylesheets/ideas.scss */
+textarea::-webkit-resizer {
+  display: none;
+}
+
+/* line 79, app/assets/stylesheets/ideas.scss */
+.title-and-delete {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* line 85, app/assets/stylesheets/ideas.scss */
+.item-title {
+  flex: 1;
+  /* Allows the textarea or title to expand and take up space */
+}
+
+/* line 89, app/assets/stylesheets/ideas.scss */
+.delete-button {
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 99, app/assets/stylesheets/ideas.scss */
+.delete-button:hover {
+  color: darkred;
+}

@@ -1,0 +1,2 @@
+<%= turbo_stream.append "ideas", partial: "idea", locals: { idea: @idea } %>
+<%= turbo_stream.update dom_id(@idea), partial: "idea", locals: { idea: @idea } %>
