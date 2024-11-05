@@ -1,0 +1,303 @@
+
+.ideas-board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1em;
+    row-gap: 20px;
+}
+
+form {
+    border: 10px black;
+    text-align: center;
+}
+
+.idea-item {
+    background-image: url('/assets/stickynote.png');
+    background-size: cover;  /* Ensures the image covers the entire grid item */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    width: 375px; /* Set width of grid item */
+    height: 375px; /* Set height of grid item */
+    padding: 20px; /* Adds some internal space around the content */
+    color: black;
+}
+
+
+.wrapper {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.ideas-title{
+    margin-bottom: 10px;
+    font-size: 55px;
+    
+}
+
+.item-title{
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background-color: transparent;
+    border: none;
+    height: 100px !important;
+    overflow-y: hidden;
+    width: 75%;
+    color: black;
+}
+
+.idea-footer{
+    margin-top: auto;
+}
+
+.idea-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90%;
+}
+
+.show-button {
+    padding-bottom: 10px;
+}
+
+.idea-desc{
+    background-color: transparent;
+    border: none;
+    overflow-y: hidden;
+    height: 100%;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+textarea::-webkit-resizer {
+    display: none; 
+  }
+
+  .title-and-delete {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+  
+  .item-title {
+    flex: 1; /* Allows the textarea or title to expand and take up space */
+    text-align: left;
+  }
+  
+  .delete-button {
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: -30px;
+    margin-right: -10px;
+  }
+  
+  .delete-button:hover {
+    color: red;
+  }
+
+/* Dimming background effect for main content */
+.dim-background {
+    opacity: 0.5;               /* Darkens the background */
+    transition: opacity 0.3s;   /* Smooth fade-in and fade-out */
+    pointer-events: none;       /* Prevents interaction with background content */
+  }
+  
+/* CSS for modal overlay and positioning */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Dims the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 80%;
+  text-align: center;
+  z-index: 1001;
+}
+
+.hidden {
+  display: none;
+}
+
+.new-idea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.center {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.back{
+  margin-bottom: 20px;
+}
+
+.new-title{
+  margin-top: 40px;
+  width: 100%;
+  height: 100px;
+}
+
+.new-desc{
+  width: 100%;
+  height: 150px;
+}
+
+.new-title::placeholder{
+  color: black;
+}
+
+.new-desc::placeholder{
+  color: black;
+}
+  
+/* Container Styling */
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
+  width: 80%;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 55px !important;
+  color: black;
+  margin: 0;
+  margin-left: 90px;
+}
+
+.header-button {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
+
+/* Button Link Styling */
+.button-link {
+  display: inline-block;       /* Ensures button width adjusts based on content */
+  padding: 10px 20px;          /* Padding for consistent size */
+  background-color: #4c6444;   /* Background color */
+  color: white;                /* Text color */
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;         /* Prevents text wrapping */
+}
+
+.button-link:hover {
+  background-color: #0056b3;   /* Hover color */
+}
+
+/* Ensure Textarea Stays Full Width Without Focus Borders */
+textarea {
+  width: 100% !important;
+  background-color: transparent;
+  border: none;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Save Button Visibility Based on Focus */
+.save-button {
+  display: none;
+}
+
+form:focus-within .save-button {
+  display: inline-block;
+}
+
+/* Edited Label Styling */
+.edited-label {
+  font-style: italic;
+  color: gray;
+  margin-left: 5px;
+}
+
+.ideas-title{
+  font-size: 55px !important;
+}
+
+
+.new-wrapper {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  height: 80%;
+  box-shadow: none !important;
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.submit-button{
+  background-color:  #4c6444;
+  font-size: 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.submit-button:hover{
+  background-color: #0056b3;
+}
+
+

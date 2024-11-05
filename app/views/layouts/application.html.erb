@@ -8,19 +8,20 @@
 
     <!-- Application Stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+
+  <% if controller_name == 'merchandises' %>
+    <%= stylesheet_link_tag 'merch', media: 'all', 'data-turbo-track': 'reload' %>
+  <% end %>
+
+  <% if controller_name == 'ideas' %>
+    <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
+  <% end %>
+
 
     <!-- Importmap for JavaScript -->
     <%= javascript_importmap_tags %>
 
-    <!-- Controller-Specific Stylesheets -->
-    <% if controller_name == 'merchandises' %>
-      <%= stylesheet_link_tag 'merch', media: 'all', 'data-turbo-track': 'reload' %>
-    <% end %>
-
-    <% if controller_name == 'ideas' %>
-      <%= stylesheet_link_tag 'ideas', media: 'all', 'data-turbo-track': 'reload' %>
-    <% end %>
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <%= favicon_link_tag 'favicon.ico' %>
 

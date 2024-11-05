@@ -14,7 +14,7 @@
 
         <% if current_user.officer? %>
           <%= link_to "Edit", edit_merchandise_path(merchandise), class: "edit-button" %>
-          <%= link_to "Delete", "#", class: "delete-button", data: { modal_id: "delete-confirmation-modal-#{merchandise.id}" }, onclick: "showModal('delete-confirmation-modal-#{merchandise.id}')" %>
+          <%= link_to "Delete", "#", data: { modal_id: "delete-confirmation-modal-#{merchandise.id}" }, onclick: "showModal('delete-confirmation-modal-#{merchandise.id}')" %>
 
           <div id="delete-confirmation-modal-<%= merchandise.id %>" class="modal-overlay hidden">
             <div class="modal-content">
