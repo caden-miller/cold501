@@ -71,8 +71,8 @@ scenario 'Admin deletes an existing merchandise item' do
     merchandise = create(:merchandise, title: 'To Be Deleted', description: 'A delete test', link: 'https://tamu.estore.flywire.com/delete-test')
     visit merchandises_path
 
-    find('.delete', visible: :all).click 
-    find('.confirm-delete-button').click
+    find('.btn--danger.first', visible: :all).click 
+    find('.btn--danger.confirmation').click
 
     expect(page).to have_content('Merchandise was successfully destroyed.')
     expect(page).not_to have_content('To Be Deleted')

@@ -11497,3 +11497,74 @@ Processing by IdeasController#index as HTML
 Completed 200 OK in 19ms (Views: 13.0ms | ActiveRecord: 2.0ms | Allocations: 7601)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/merch" for ::1 at 2024-11-04 22:46:37 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MerchandisesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.5ms | Allocations: 421)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 8476)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 762)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 191)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 6.6ms | Allocations: 4133)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | Allocations: 19224)
+Completed 200 OK in 49ms (Views: 19.8ms | ActiveRecord: 8.7ms | Allocations: 35011)
+
+
+Started GET "/merch" for ::1 at 2024-11-04 22:46:37 -0600
+Processing by MerchandisesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.5ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.3ms | Allocations: 103)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.3ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2772)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 457)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 2059)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 6477)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 1.4ms | Allocations: 8153)
+
+
+Started GET "/merch" for ::1 at 2024-11-04 22:46:37 -0600
+Processing by MerchandisesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 95)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2698)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 453)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 2.3ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 6302)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 7717)
+
+

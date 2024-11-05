@@ -12,7 +12,7 @@ RSpec.feature 'Ideas', type: :feature do
 
   scenario 'User views the ideas index page' do
     visit ideas_path
-    expect(page).to have_content('Ideas')
+    expect(page).to have_content('IDEAS')
   end
 
 # spec/feature/ideas_spec.rb
