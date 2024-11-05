@@ -3,7 +3,7 @@ require 'rails_helper'
 
 RSpec.describe PhotosController, type: :controller do
   include Devise::Test::ControllerHelpers
-  let(:photo) { create(:photo, user: user) }
+  let(:photo) { create(:photo, user:) }
 
   let!(:user) do
     create(:user, email: 'testuser@example.com', full_name: 'Test User', role: 'admin', committee: 'Test Committee',
@@ -108,7 +108,7 @@ RSpec.describe PhotosController, type: :controller do
 
   describe 'DELETE #destroy' do
     it 'deletes the photo and redirects to photos path' do
-      photo_to_delete = create(:photo, user: user)
+      photo_to_delete = create(:photo, user:)
       delete :destroy, params: { id: photo_to_delete.id }
       expect { photo_to_delete.reload }.to raise_error(ActiveRecord::RecordNotFound)
       expect(response).to redirect_to(photos_path)

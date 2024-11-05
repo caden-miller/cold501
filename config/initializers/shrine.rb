@@ -21,4 +21,3 @@ Shrine.plugin :restore_cached_data    # for re-extracting metadata when attachin
 Shrine.plugin :validation_helpers
 Shrine.plugin :validation
 Shrine.plugin :determine_mime_type
-

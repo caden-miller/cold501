@@ -26,12 +26,12 @@ class MerchandisesController < ApplicationController
   def create
     @merchandise = Merchandise.new(merchandise_params)
     Rails.logger.debug("Merchandise link: #{@merchandise.link}")
-  
+
     respond_to do |format|
       if @merchandise.link.present? && valid_flywire_link(@merchandise.link)
         image_url = get_image(@merchandise.link)
         @merchandise.image = image_url if image_url
-  
+
         if @merchandise.save
           format.html { redirect_to merchandises_path, notice: 'Merchandise was successfully created.' }
           format.json { render :index, status: :created, location: @merchandise }
@@ -51,13 +51,13 @@ class MerchandisesController < ApplicationController
   def update
     @merchandise = Merchandise.find(params[:id])
     Rails.logger.debug("Updating Merchandise link: #{@merchandise.link}")
-  
+
     respond_to do |format|
-      @merchandise.assign_attributes(merchandise_params) 
+      @merchandise.assign_attributes(merchandise_params)
       if @merchandise.link.present? && valid_flywire_link(@merchandise.link)
         image_url = get_image(@merchandise.link)
         @merchandise.image = image_url if image_url
-  
+
         if @merchandise.save
           format.html { redirect_to merchandises_path, notice: 'Merchandise was successfully updated.' }
           format.json { render :index, status: :ok, location: @merchandise }
@@ -72,7 +72,6 @@ class MerchandisesController < ApplicationController
       end
     end
   end
-  
 
   # DELETE /merchandises/1 or /merchandises/1.json
   def destroy

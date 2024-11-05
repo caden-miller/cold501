@@ -106,11 +106,9 @@ RSpec.feature 'Leaderboard Management', type: :feature do
 
   # Helper methods
   def create_category(name, points)
-    if page.has_link?('New Category') # Check if the link exists
-      click_on 'New Category'
-    else
-      raise "Unable to find 'New Category' link"
-    end
+    raise "Unable to find 'New Category' link" unless page.has_link?('New Category') # Check if the link exists
+
+    click_on 'New Category'
 
     fill_in 'Category name', with: name
     fill_in 'Min points', with: points

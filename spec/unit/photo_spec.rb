@@ -3,17 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-  let(:user) { create(:user) }
-  let(:image) { File.open(Rails.root.join('spec/fixtures/sample.jpg')) } # Make sure to have a test image in this path
-
   subject do
     described_class.new(
       title: 'Sample Photo',
       description: 'This is a sample photo description',
-      image: image,
-      user: user
+      image:,
+      user:
     )
   end
+
+  let(:user) { create(:user) }
+  let(:image) { File.open(Rails.root.join('spec/fixtures/sample.jpg')) } # Make sure to have a test image in this path
 
   describe 'validations' do
     it 'is valid with valid attributes' do
@@ -44,6 +44,4 @@ RSpec.describe Photo, type: :model do
       expect(subject.errors[:user]).to include('must exist')
     end
   end
-
-  
 end

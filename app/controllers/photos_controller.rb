@@ -105,7 +105,6 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to photos_path, notice: 'Photo was successfully updated.' }
       format.turbo_stream
-      
     end
   end
 

@@ -59,7 +59,7 @@ RSpec.feature 'Event Management', type: :feature do
       expect_event_unarchived('Test Event')
     end
 
-    scenario 'delete an event', js: true do
+    scenario 'delete an event', :js do
       visit event_path(event)
       accept_confirm do
         click_on 'Delete Event'
@@ -77,7 +77,7 @@ RSpec.feature 'Event Management', type: :feature do
     fill_in 'Description', with: description
     click_button 'Submit'
   end
-  
+
   # Add this helper method to select datetime in dropdowns
   def select_datetime(datetime, options = {})
     field = options[:from]
@@ -110,9 +110,8 @@ RSpec.feature 'Event Management', type: :feature do
   def expect_event_update_success(event_name)
     expect(page).to have_content(event_name.upcase)
   end
-  
-  def expect_event_archived
-  end
+
+  def expect_event_archived; end
 
   def expect_event_unarchived(event_name)
     expect(page).to have_content(event_name)

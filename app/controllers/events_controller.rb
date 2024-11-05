@@ -12,10 +12,10 @@ class EventsController < ApplicationController
   # Display all events
   def index
     start_date = params[:start_date] ? Date.parse(params[:start_date]).beginning_of_month : Date.today.beginning_of_month
-  end_date = start_date.end_of_month
+    end_date = start_date.end_of_month
 
-    sort_column = params[:sort] || "start_time" # Replace with your default column
-    sort_direction = params[:direction] || "asc"
+    sort_column = params[:sort] || 'start_time' # Replace with your default column
+    sort_direction = params[:direction] || 'asc'
 
     @events = Event.where(archived: false, start_time: start_date..end_date).order("#{sort_column} #{sort_direction}")
   end
@@ -74,7 +74,7 @@ class EventsController < ApplicationController
 
   def archived
     @archived_events = Event.where(archived: true) # Fetches only archived events
-    render :archived 
+    render :archived
   end
 
   def archive
@@ -102,5 +102,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:name, :passcode, :start_time, :end_time, :location, :description)
   end
-  
 end

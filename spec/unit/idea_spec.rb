@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe Idea, type: :model do
   let(:user) { create(:user) }
-  let(:idea) { build(:idea, user: user) }  # Use Factory Bot to build an idea with an associated user
+  let(:idea) { build(:idea, user:) } # Use Factory Bot to build an idea with an associated user
 
   describe 'validations' do
     it 'is valid with valid attributes' do

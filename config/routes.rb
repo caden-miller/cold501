@@ -12,5 +12,4 @@ Rails.application.routes.draw do
 
   # Home routes
   get 'support' => 'home#support', as: :support
-
 end
