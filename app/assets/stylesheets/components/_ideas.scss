@@ -190,6 +190,8 @@ textarea::-webkit-resizer {
   border-radius: var(--border-radius);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for depth */
   width: 80%;
+  padding-top: 95px !important;
+
 }
 
 /* Header Styling */
