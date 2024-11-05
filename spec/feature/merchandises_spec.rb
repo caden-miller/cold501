@@ -5,10 +5,10 @@ require 'rails_helper'
 require 'capybara/rspec'
 
 RSpec.feature 'Merchandises', type: :feature do
-  let(:officer_user) { create(:user, email: "officer#{Time.now.to_i}@example.com", role: 'officer') }
+  let(:admin_user) { create(:user, email: "admin@example.com", role: 'admin') }
 
   before do
-    login_as(officer_user, scope: :user) # Logs in as an officer user before each scenario
+    login_as(admin_user, scope: :user) # Logs in as an officer user before each scenario
   end
 
   scenario 'User views the merchandise index page' do
@@ -67,11 +67,11 @@ scenario 'User creates new merchandise with valid Flywire link' do
   end
   
 
-scenario 'Officer deletes an existing merchandise item' do
+scenario 'Admin deletes an existing merchandise item' do
     merchandise = create(:merchandise, title: 'To Be Deleted', description: 'A delete test', link: 'https://tamu.estore.flywire.com/delete-test')
     visit merchandises_path
 
-    find('.delete-button', visible: :all).click 
+    find('.delete', visible: :all).click 
     find('.confirm-delete-button').click
 
     expect(page).to have_content('Merchandise was successfully destroyed.')
