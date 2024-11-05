@@ -11568,3 +11568,153 @@ Processing by MerchandisesController#index as HTML
 Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.9ms | Allocations: 7717)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "cadenmiller@tamu.edu"], ["id", 24], ["LIMIT", 1]]
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "uid" = $1, "avatar_url" = $2, "committee" = $3, "points" = $4, "dues" = $5, "created_at" = $6, "updated_at" = $7 WHERE "users"."id" = $8[0m  [["uid", "1"], ["avatar_url", "https://developers.google.com/static/workspace/chat/images/chat-product-icon.png"], ["committee", "Development"], ["points", 12], ["dues", 0], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"], ["id", 24]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erikachtermann@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erikachtermann@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "erikachtermann@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "erikachtermann@tamu.edu"], ["full_name", "Erik Achtermann"], ["uid", "2"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJ56OzJMcpYDm3gLwARkJ2P8iBLIXH61GdZgzi_nVLBOJXf8A=s96-c"], ["committee", "Development"], ["points", 12], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jimmy57guandolo@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "jimmy57guandolo@tamu.edu"], ["id", 17], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "scpanakin@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "scpanakin@tamu.edu"], ["id", 18], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sammycfigueroa@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sammycfigueroa@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sammycfigueroa@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "sammycfigueroa@tamu.edu"], ["full_name", "Samantha Figueroa"], ["uid", "5"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJo684Q6bzUhBBSquTf_DYY26jpktwPmU42EijRiW_3wzNyUA=s96-c"], ["committee", "Goat"], ["points", 0], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kflores205@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kflores205@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kflores205@tamu.edu"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "full_name", "uid", "avatar_url", "committee", "points", "dues", "role", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "kflores205@tamu.edu"], ["full_name", "Katherine Flores"], ["uid", "6"], ["avatar_url", "https://lh3.googleusercontent.com/a/ACg8ocJML4QmnK3k8A9l7FEwiCXY8_91omVaIO128TqblWlxyuxjRdI=s96-c"], ["committee", "Goat"], ["points", 0], ["dues", 0], ["role", "admin"], ["created_at", "2024-09-16 18:55:30"], ["updated_at", "2024-09-16 18:55:30"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."title" = $1 LIMIT $2[0m  [["title", "BUILD X HEAT"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLink Update (0.3ms)[0m  [1m[33mUPDATE "links" SET "updated_at" = $1 WHERE "links"."id" = $2[0m  [["updated_at", "2024-09-26 21:19:30"], ["id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."title" = $1 LIMIT $2[0m  [["title", "Street Cleanup 09/20/24"], ["LIMIT", 1]]
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."title" = $1 LIMIT $2[0m  [["title", "TAMU Menstrual Equity Petition!"], ["LIMIT", 1]]
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."title" = $1 LIMIT $2[0m  [["title", "Period Project Usage/Feedback Form"], ["LIMIT", 1]]
+  [1m[36mLink Load (0.1ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."title" = $1 LIMIT $2[0m  [["title", "Flywire- pay dues and get merch!"], ["LIMIT", 1]]
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-11-04 23:00:52 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.7ms | Allocations: 739)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2559)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 781)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 191)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 7.4ms | Allocations: 5095)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 14249)
+Completed 200 OK in 44ms (Views: 15.8ms | ActiveRecord: 5.3ms | Allocations: 29359)
+
+
+Started GET "/users" for ::1 at 2024-11-04 23:00:54 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."role" ASC, "users"."full_name" ASC[0m
+  ↳ app/views/users/index.html.erb:23
+  Rendered users/_user.html.erb (Duration: 0.9ms | Allocations: 897)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5408)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 461)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 30)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.2ms | Allocations: 2077)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 9149)
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.9ms | Allocations: 11497)
+
+
+Started GET "/users" for ::1 at 2024-11-04 23:01:59 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."role" ASC, "users"."full_name" ASC[0m
+  ↳ app/views/users/index.html.erb:23
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 404)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 384)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4418)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 453)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.3ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 8002)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 1.0ms | Allocations: 9603)
+
+
+Started GET "/users" for ::1 at 2024-11-04 23:02:30 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."role" ASC, "users"."full_name" ASC[0m
+  ↳ app/views/users/index.html.erb:23
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 404)
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 4418)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 453)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:15
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 2004)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 8002)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.8ms | Allocations: 9435)
+
+
