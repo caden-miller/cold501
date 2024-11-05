@@ -53,8 +53,7 @@ RSpec.feature 'Event Management', type: :feature do
       expect_event_unarchived('Test Event')
     end
 
-    scenario 'delete an event' do
-      visit event_path(event)
+    scenario 'delete an event', js: true do
       accept_alert do
         click_on 'Delete Event'
       end
@@ -65,17 +64,28 @@ RSpec.feature 'Event Management', type: :feature do
   # Helper methods
   def create_event(name, start_time, end_time, location, description)
     fill_in 'Name', with: name
-    fill_in 'Event Start Time', with: start_time
-    fill_in 'Event End Time', with: end_time
+    select_datetime(DateTime.parse(start_time), from: 'Event Start Time')
+    select_datetime(DateTime.parse(end_time), from: 'Event End Time')
     fill_in 'Location', with: location
     fill_in 'Description', with: description
     click_button 'Create Event'
+  end
+  
+  # Add this helper method to select datetime in dropdowns
+  def select_datetime(datetime, options = {})
+    field = options[:from]
+    select datetime.year.to_s, from: "#{field}_1i"
+    select Date::MONTHNAMES[datetime.month], from: "#{field}_2i"
+    select datetime.day.to_s, from: "#{field}_3i"
+    select datetime.hour.to_s.rjust(2, '0'), from: "#{field}_4i"
+    select datetime.min.to_s.rjust(2, '0'), from: "#{field}_5i"
   end
 
   def update_event(name, location, description)
     fill_in 'Name', with: name
     fill_in 'Location', with: location
     fill_in 'Description', with: description
+    expect(page).to have_button('Update Event', disabled: false, wait: 5)
     click_button 'Update Event'
   end
 
