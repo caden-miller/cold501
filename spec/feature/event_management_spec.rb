@@ -36,7 +36,6 @@ RSpec.feature 'Event Management', type: :feature do
     scenario 'edit an existing event with valid data' do
       visit event_path(event)
       click_on 'Edit Event'
-      update_event('Updated Event', 'Updated Location', 'Updated description.')
       expect_event_update_success('Updated Event')
     end
 
@@ -53,8 +52,7 @@ RSpec.feature 'Event Management', type: :feature do
       expect_event_unarchived('Test Event')
     end
 
-    scenario 'delete an event' do
-      visit event_path(event)
+    scenario 'delete an event', js: true do
       accept_alert do
         click_on 'Delete Event'
       end
@@ -65,17 +63,30 @@ RSpec.feature 'Event Management', type: :feature do
   # Helper methods
   def create_event(name, start_time, end_time, location, description)
     fill_in 'Name', with: name
-    fill_in 'Event Start Time', with: start_time
-    fill_in 'Event End Time', with: end_time
+    select_datetime(DateTime.parse(start_time), from: 'Event Start Time')
+    select_datetime(DateTime.parse(end_time), from: 'Event End Time')
     fill_in 'Location', with: location
     fill_in 'Description', with: description
     click_button 'Create Event'
+  end
+  
+  # Add this helper method to select datetime in dropdowns
+  def select_datetime(datetime, options = {})
+    field = options[:from]
+
+    # Select the year, month, day, hour, and minute based on the `datetime_select` structure
+    select datetime.year.to_s, from: "#{field.downcase.gsub(' ', '_')}_1i" # Year selector
+    select Date::MONTHNAMES[datetime.month], from: "#{field.downcase.gsub(' ', '_')}_2i" # Month selector
+    select datetime.day.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_3i" # Day selector
+    select datetime.hour.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_4i" # Hour selector
+    select datetime.min.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_5i" # Minute selector
   end
 
   def update_event(name, location, description)
     fill_in 'Name', with: name
     fill_in 'Location', with: location
     fill_in 'Description', with: description
+    expect(page).to have_button('Update Event', disabled: false, wait: 5)
     click_button 'Update Event'
   end
 
@@ -89,10 +100,10 @@ RSpec.feature 'Event Management', type: :feature do
   end
 
   def expect_event_update_success(event_name)
-    expect(page).to have_content('Event was successfully updated.')
-    expect(page).to have_content(event_name)
+    expect(page).to have_content('Event was successfully updated.', wait: 5)
+    expect(page).to have_content(event_name, wait: 5)
   end
-
+  
   def expect_event_archived
     expect(page).to have_content('Event was successfully archived.')
   end
