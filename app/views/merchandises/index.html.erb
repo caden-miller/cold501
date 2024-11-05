@@ -1,19 +1,53 @@
-<main class="container">  
-  <div class="wrapper">
-  <p style="color: green"><%= notice %></p>
-
-  <h1 class="merchtitle">Merchandise</h1>
+<main class="container">
+  <header class="header">
+    <h1>MERCH</h1>
+    <% if current_user.role == "admin" %>
+      <%= link_to "New Merchandise", new_merchandise_path, class: "btn btn--primary" %>
+    <% end %>
+  </header>
 
   <div id="merchandises" class="merch-list">
     <% @merchandises.each do |merchandise| %>
-      <div class="merch-item"h1>
-      <%= render merchandise %>
-      <p>
-        <%= link_to "Show this merchandise", merchandise %>
-      </p>
+      <div class="merch-item">
+        <!-- Content for the merchandise item -->
+        <%= render merchandise %>
+
+        <% if current_user.role == "admin" %>
+          <div class="flex">
+            <%= link_to "Edit", edit_merchandise_path(merchandise), class: "btn btn--secondary" %>
+            <%= link_to "Delete", "#", data: { modal_id: "delete-confirmation-modal-#{merchandise.id}" }, onclick: "showModal('delete-confirmation-modal-#{merchandise.id}')", class: "btn btn--danger first" %>
+          </div>
+
+          <div id="delete-confirmation-modal-<%= merchandise.id %>" class="modal-overlay hidden">
+            <div class="modal-content">
+              <p>Are you sure you want to delete this merchandise item?</p>
+              <div class="flex">
+                <%= button_to "Delete", merchandise_path(merchandise), method: :delete, data: { turbo: false }, class: "btn btn--danger confirmation" %>
+                <button class="btn btn--secondary" onclick="closeModal('delete-confirmation-modal-<%= merchandise.id %>')">Cancel</button>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
-  <%= link_to "New merchandise", new_merchandise_path %>
-  </div>
 </main>
+
+<script>
+  function showModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.remove('hidden');
+    }
+  }
+
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('hidden');
+    }
+  }
+</script>
+
+
+

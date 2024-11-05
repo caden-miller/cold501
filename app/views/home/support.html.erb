@@ -1,0 +1,54 @@
+<main class="container">
+    <header class="header">
+        <h1>SUPPORT</h1>
+    </header>
+
+        <div class="support-section">
+            <h2>Setting Up Deployment with Heroku</h2>
+            <p>Heroku needs to reference a Github repository for deployment.<p>
+            <p>So, first fork the <%= link_to sanitize("cold501 repository"), "https://github.com/caden-miller/cold501", style: "color: var(--color-tertiary)" %> to your own Github account.</p>
+            <%= image_tag "fork_step1.png", alt: "Github Fork Image 1" %>
+            <p>Then choose your account as the owner and create the repository.</p>
+            <%= image_tag "fork_step2.png", alt: "Github Fork Image 2" %>
+            <p>Then create a new app in Heroku.</p>
+            <%= image_tag "deploy_step1.png", alt: "Heroku Setup Image 1" %>
+            <p>Then, give the app a name.</p>
+            <%= image_tag "deploy_step2.png", alt: "Heroku Setup Image 2" %>
+            <p>Next, connect the app to your GitHub repository.</p>
+            <%= image_tag "deploy_step3.png", alt: "Heroku Setup Image 3" %>
+            <p>Now we need to connect the database to the app. Go to the "Resources" tab and search for "Heroku Postgres".</p>
+            <p>A pop-up will appear, just click "Submit Order Form", make sure your Heroku account is utilizing the Student Developer Pack for free credits.</p>
+            <%= image_tag "deploy_step4.png", alt: "Heroku Setup Image 4" %>
+            <p>Next, navigate to the "Settings" tab and click "Reveal Config Vars".</p>
+            <%= image_tag "deploy_step5.png", alt: "Heroku Setup Image 5" %>
+            <p>Then fill in the environment variables according to what you received from the team and what is on the project <%= link_to sanitize("README"), "https://github.com/caden-miller/cold501/?tab=readme-ov-file#how-to-setup-environment-variables", style: "color: var(--color-tertiary)" %>.</p>
+            <%= image_tag "deploy_step6.png", alt: "Heroku Setup Image 6" %>
+            <p>Finally navigate back to the "Deploy" tab, if you want to modify the code of the website and have the deployed site reflect that, enable automatic deploys.</p>
+            <p>In either case, deploy the site by clicking the "Deploy Branch" button.</p>
+            <%= image_tag "deploy_step7.png", alt: "Heroku Setup Image 7" %>
+        </div>
+
+        <br>
+
+        <div class="support-section">
+            <h2>Redeploying from Heroku</h2>
+            <p>Follow these steps to redeploy your project on Heroku after making changes.</p>
+            <%= image_tag "placeholder.jpg", alt: "Redeployment Image" %>
+        </div>
+
+        <br>
+
+        <div class="support-section">
+            <h2>Backing Up the Database</h2>
+            <p>Here are the steps to back up your project’s database on Heroku.</p>
+            <%= image_tag "placeholder.jpg", alt: "Database Backup Image" %>
+        </div>
+
+        <br>
+
+        <div class="support-section">
+            <h2>Restoring Backup to Database</h2>
+            <p>Here's how to restore a backup to your database on Heroku.</p>
+            <%= image_tag "placeholder.jpg", alt: "Restore Backup Image" %>
+        </div>
+</main>

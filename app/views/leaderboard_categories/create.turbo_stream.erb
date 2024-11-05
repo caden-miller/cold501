@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "leaderboard_categories" do %>
+   <%= turbo_frame_tag dom_id(@leaderboard_category) do %>
+     <%= render partial: 'leaderboard_category', locals: { leaderboard_category: @leaderboard_category } %>
+    <% end %>
+<% end %>
+
+<%= turbo_stream.update dom_id(LeaderboardCategory.new), "" %>

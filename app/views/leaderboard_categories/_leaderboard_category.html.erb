@@ -1,17 +1,22 @@
-<div id="<%= dom_id leaderboard_category %>">
-  <p>
-    <strong>Category name:</strong>
-    <%= leaderboard_category.category_name %>
-  </p>
+<%= turbo_frame_tag dom_id(leaderboard_category) do %>
+  <div class="table-row">
+    <div class="table-cell"><%= leaderboard_category.category_name %></div>
+    <div class="table-cell"><%= leaderboard_category.min_points %></div>
+    <div class="table-cell"><div class="color-example" style="background-color: <%= leaderboard_category.color %>;"></div></div>
+    <% if @role == "admin" %>
+      <div class="table-cell actions">
+        <%= link_to edit_leaderboard_category_path(leaderboard_category), class: 'table-button edit', data: { turbo_frame: dom_id(leaderboard_category) } do %>
+          <%= image_tag 'pencil-svgrepo-com.svg', class: 'table-button-svg', alt: 'Edit category', width: '20', height: '40' %>
+        <% end %>
+        <%= link_to leaderboard_category_path(leaderboard_category), class: 'table-button trash', data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } do %>
+          <%= image_tag 'trash-blank-svgrepo-com.svg', class: 'table-button-svg', alt: 'Delete category', width: '20', height: '40' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
-  <p>
-    <strong>Min points:</strong>
-    <%= leaderboard_category.min_points %>
-  </p>
 
-  <p>
-    <strong>Color:</strong>
-    <%= leaderboard_category.color %>
-  </p>
 
-</div>
+
+

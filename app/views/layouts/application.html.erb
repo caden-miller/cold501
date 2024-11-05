@@ -8,12 +8,12 @@
 
     <!-- Application Stylesheet -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload' %>
+
 
     <!-- Importmap for JavaScript -->
     <%= javascript_importmap_tags %>
 
-    
     <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
     <%= favicon_link_tag 'favicon.ico' %>
 
@@ -24,13 +24,9 @@
 
   <body>
     <%= render "shared/navbar" %>
-    <% if flash.any? %>
-      <% flash.each do |key, value| -%>
-        <div class="flash__container">
-          <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
-        </div>
-      <% end -%>
-    <% end %>
+    <div id="flash_messages">
+      <%= render "shared/flash" %>
+    </div>
     <%= yield %>
     <%= render "shared/footer" %>
   </body>

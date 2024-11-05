@@ -1,33 +1,23 @@
-<%= form_with(model: @leaderboard_category, local: true) do |form| %>
-  <% if @leaderboard_category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@leaderboard_category.errors.count, "error") %> prohibited this category from being saved:</h2>
 
-      <ul>
-        <% @leaderboard_category.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<%= simple_form_for leaderboard_category, html: { class: "link form", data: { turbo: true, controller: 'leaderboard_category' }, multipart: true } do |form| %>
+  <div class="table-row">
+    <div class="table-cell">
+      <%= form.input :category_name %>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :category_name %>
-    <%= form.text_field :category_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :min_points %>
-    <%= form.number_field :min_points %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.color_field :color %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="table-cell">
+      <%= form.input :min_points %>
+    </div>
+    <div class="table-cell">
+      <%= form.color_field :color %>
+    </div>
+    <div class="table-cell actions">
+      <%= button_tag(type: 'submit', class: 'table-button confirm') do %>
+        <%= image_tag 'check-svgrepo-com.svg', class: 'table-button-svg', alt: 'Save link', width: '20', height: '40' %>
+      <% end %>
+      <%= link_to leaderboard_categories_path, class: 'table-button cancel' do %>
+        <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'table-button-svg', alt: 'Back to links', width: '20', height: '40' %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 

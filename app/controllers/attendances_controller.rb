@@ -5,10 +5,19 @@ class AttendancesController < ApplicationController
   before_action :set_event
 
   def create
-    if valid_passcode?(params[:passcode])
-      process_attendance
+    passcode_entered = params[:passcode]
+
+    if passcode_entered == @event.passcode
+      attendance = @event.attendances.find_or_initialize_by(user: current_user)
+      attendance.present = true
+      attendance.checked_in_at = Time.current
+      if attendance.save
+        redirect_to @event, notice: 'You have successfully checked in.'
+      else
+        redirect_to @event, alert: 'Unable to check in.'
+      end
     else
-      redirect_to @event, alert: 'Invalid passcode.'
+      redirect_to @event, alert: 'Incorrect passcode.'
     end
   end
 

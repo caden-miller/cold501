@@ -1,14 +1,10 @@
-<main class="container">
-  <header class="header">
-    <h1>EDITING LEADERBOARD CATEGORY</h1>
-  </header>
 
-  <%= render "form", leaderboard_category: @leaderboard_category %>
-
-  <br>
-
-  <div>
-    <%= link_to "Show this leaderboard category", @leaderboard_category %> |
-    <%= link_to "Back to leaderboard categories", leaderboard_categories_path %>
-  </div>
-</main>
+<%= link_to sanitize("&larr; Back to leaderboard"), leaderboard_categories_path %>
+<div class="header">
+  <h1>
+    Edit <%= @leaderboard_category.category_name %>
+  </h1>
+</div>
+<%= turbo_frame_tag dom_id(@leaderboard_category) do %>
+  <%= render 'form', leaderboard_category: @leaderboard_category %>
+<% end %>

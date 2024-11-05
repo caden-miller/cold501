@@ -1,22 +1,27 @@
 <main class="container">
   <header class="header">
-    <h1 class="header">Links</h1>
+    <h1>LINKS</h1>
   </header>
-
-  <%= link_to "New Link", new_link_path, class: 'link__new-button', data: { turbo_frame: dom_id(Link.new) } %><br><br>
+  <% if @role == "admin" %>
+    <%= link_to "New Link", new_link_path, class: 'btn btn--primary', data: { turbo_frame: dom_id(Link.new) } %><br><br>
+  <% end %>
 
   <div class="link__table">
     <div class="link__table-header">
       <div class="link__table-row">
         <div class="link__table-cell">Link</div>
-        <div class="link__table-cell">Actions</div>
+        <% if @role == "admin" %>
+          <div class="link__table-cell">Actions</div>
+        <% end %>
       </div>
     </div>
     <div class="link__table-body" id="links">
-      <%= turbo_frame_tag Link.new %>
       <% @links.each do |link| %>
-        <%= render partial: 'link', locals: { link: link } %>
+        <%= turbo_frame_tag dom_id(link) do %>
+          <%= render partial: 'link', locals: { link: link } %>
+        <% end %>
       <% end %>
+      <%= turbo_frame_tag dom_id(Link.new) %>
     </div>
   </div>
 </main>

@@ -1,7 +1,5 @@
 <footer class='footer'>
   <!-- Render Non-Instagram Links -->
-  
-    
   <div class="footer__logo-container">
     <%= link_to root_path do %>
       <%= image_tag 'green-logo.jpg', alt: 'heat logo', class: 'footer__logo' %>
@@ -9,7 +7,6 @@
   </div>
   
   <!-- GitHub Link Section -->
-
   <div class='footer__info-container'>
     <div class="footer__links-container">
       <% @links.each do |link| %>
@@ -19,6 +16,17 @@
     <div class="footer__git">
       <p class='footer__text'>Open Source on: </p>
       <%= link_to sanitize("GitHub"), "https://github.com/caden-miller/cold501", class: 'footer__link' %>
+    </div>
+    
+    <!-- Support Link Section based on User Role -->
+    <div class="footer__links-container">
+      <% if current_user&.role == 'admin' %>
+        <%= link_to "Support", "https://docs.google.com/document/d/1wG-3DUKUfp2ZWg6QTAvOXX2XeKY7lvBdlBG0FUY-F5s/edit?usp=sharing", class: 'footer__link' %>
+      <% elsif current_user&.role == 'member' %>
+        <%= link_to "Support", "https://docs.google.com/document/d/1gQT0v7MLKSHieD8TnyT--Efj2lDUkiPZmdskDXmbgAQ/edit?usp=sharing", class: 'footer__link' %>
+      <% else %> <!-- Treats no login or 'user' role as basic user support -->
+        <%= link_to "Support", "https://docs.google.com/document/d/1R7xL5DeF3ZRryWLvv5vE1w0lndaxuv7VLNWm2DyuDgk/edit?usp=sharing", class: 'footer__link' %>
+      <% end %>
     </div>
   </div>
 

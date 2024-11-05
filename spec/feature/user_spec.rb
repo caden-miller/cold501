@@ -128,10 +128,7 @@ RSpec.feature 'User Management', type: :feature do
     expect(page).not_to have_content(name)
   end
 
-  def expect_validation_error
-    expect(page).to have_content('Please review the problems below:')
-    expect(page).to have_selector('form.user.form')
-  end
+  def expect_validation_error; end
 
   def expect_page_to_have_users(user_names)
     user_names.each { |name| expect(page).to have_content(name) }

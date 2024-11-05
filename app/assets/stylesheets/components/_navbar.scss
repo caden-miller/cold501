@@ -2,13 +2,21 @@
 
 .navbar {
   background-color: var(--color-secondary);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000;
   opacity: 1;
+
+  &-sub {
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+  }
 
   &__navigation {
     width: 70rem;
@@ -90,6 +98,12 @@
         }
       }
     }
+
+    form {
+      @include media(mobile) {
+        margin: 30px;
+      }
+    }
   }
 
   &__list .navbar__list-auth {
@@ -140,25 +154,9 @@
   }
 
   &__profile {
-    background-color: var(--color-tertiary);
-    padding: 0.5em 1em;
-    border-radius: var(--border-radius);
-    border: 0px solid var(--color-secondary);
-    cursor: pointer;
-
-    color: var(--color-text-header);
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: background-color 0.5s ease, color 0.5s ease;
     @include media(mobile) {
       display: none;
     }
-  }
-
-  &__profile:hover {
-    background-color: var(--color-glint);
-    color: var(--color-text-body);
   }
 }
 

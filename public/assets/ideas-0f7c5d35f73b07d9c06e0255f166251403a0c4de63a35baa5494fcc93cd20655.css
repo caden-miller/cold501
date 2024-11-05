@@ -1,0 +1,159 @@
+/* Main Container Styling */
+/* line 2, app/assets/stylesheets/ideas.scss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+/* New Form Wrapper */
+/* line 17, app/assets/stylesheets/ideas.scss */
+.new-wrapper {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Form Container for New/Edit Form */
+/* line 30, app/assets/stylesheets/ideas.scss */
+.form-container {
+  background-image: url(/assets/stickynote.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 375px;
+  height: 375px;
+  padding: 20px;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header Styling */
+/* line 45, app/assets/stylesheets/ideas.scss */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* line 53, app/assets/stylesheets/ideas.scss */
+.header-title {
+  font-size: 55px;
+  color: black;
+  margin: 0;
+  text-align: center;
+}
+
+/* line 60, app/assets/stylesheets/ideas.scss */
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4c6444;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* line 71, app/assets/stylesheets/ideas.scss */
+.button-link:hover {
+  background-color: #0056b3;
+}
+
+/* Form Field Styling */
+/* line 76, app/assets/stylesheets/ideas.scss */
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* line 81, app/assets/stylesheets/ideas.scss */
+.item-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+/* line 88, app/assets/stylesheets/ideas.scss */
+.new-title, .new-desc {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 96, app/assets/stylesheets/ideas.scss */
+.new-title::placeholder, .new-desc::placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
+/* Submit Button Styling */
+/* line 102, app/assets/stylesheets/ideas.scss */
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  align-self: center;
+}
+
+/* line 113, app/assets/stylesheets/ideas.scss */
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for Back Button */
+/* line 118, app/assets/stylesheets/ideas.scss */
+.back {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+/* Additional Styling for Text Areas */
+/* line 124, app/assets/stylesheets/ideas.scss */
+textarea {
+  width: 100% !important;
+  background-color: transparent;
+  border: none;
+  resize: none;
+}
+
+/* line 131, app/assets/stylesheets/ideas.scss */
+textarea:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Edited Label Styling */
+/* line 138, app/assets/stylesheets/ideas.scss */
+.edited-label {
+  font-style: italic;
+  color: gray;
+  margin-left: 5px;
+}
