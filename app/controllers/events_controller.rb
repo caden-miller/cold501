@@ -1,12 +1,23 @@
 # frozen_string_literal: true
 
+# EventsController
 class EventsController < ApplicationController
+  helper EventsHelper
+
   before_action :set_event, only: %i[show edit update destroy archive unarchive]
-  before_action :set_user, :set_role, :set_navbar_variables
+  before_action :set_user, :role, :set_navbar_variables
+  before_action :authenticate_admin!, only: %i[new create edit update delete archive unarchive]
+  before_action :authenticate_member!, only: %i[show attendance]
 
   # Display all events
   def index
-    @events = Event.where(archived: false)  # Fetches only non-archived events
+    start_date = params[:start_date] ? Date.parse(params[:start_date]).beginning_of_month : Date.today.beginning_of_month
+  end_date = start_date.end_of_month
+
+    sort_column = params[:sort] || "start_time" # Replace with your default column
+    sort_direction = params[:direction] || "asc"
+
+    @events = Event.where(archived: false, start_time: start_date..end_date).order("#{sort_column} #{sort_direction}")
   end
 
   # Show a single event
@@ -24,7 +35,7 @@ class EventsController < ApplicationController
 
   # Create a new event in the database
   def create
-    puts params[:event]
+    Rails.logger.debug params[:event]
     @event = Event.new(event_params)
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
@@ -62,8 +73,8 @@ class EventsController < ApplicationController
   end
 
   def archived
-    @archived_events = Event.where(archived: true)  # Fetches only archived events
-    render :archived  # You may need to create this view
+    @archived_events = Event.where(archived: true) # Fetches only archived events
+    render :archived # You may need to create this view
   end
 
   def archive
@@ -92,6 +103,7 @@ class EventsController < ApplicationController
 
   # Strong parameters to prevent mass assignment issues
   def event_params
-    params.require(:event).permit(:name, :passcode, :start_time, :end_time, :location)
+    params.require(:event).permit(:name, :passcode, :start_time, :end_time, :location, :description)
   end
+  
 end

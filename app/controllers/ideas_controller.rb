@@ -71,13 +71,45 @@ end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_idea
     @idea = Idea.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def idea_params
     params.require(:idea).permit(:title, :description, :created_by, :created_at)
+  end
+
+  def build_idea
+    idea = Idea.new(idea_params)
+    idea.user = current_user.id if current_user
+    idea
+  end
+
+  def handle_successful_create
+    respond_to do |format|
+      format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully created.' }
+      format.json { render :show, status: :created, location: @idea }
+    end
+  end
+
+  def handle_failed_create
+    respond_to do |format|
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @idea.errors, status: :unprocessable_entity }
+    end
+  end
+
+  def handle_successful_update
+    respond_to do |format|
+      format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully updated.' }
+      format.json { render :show, status: :ok, location: @idea }
+    end
+  end
+
+  def handle_failed_update
+    respond_to do |format|
+      format.html { render :edit, status: :unprocessable_entity }
+      format.json { render json: @idea.errors, status: :unprocessable_entity }
+    end
   end
 end

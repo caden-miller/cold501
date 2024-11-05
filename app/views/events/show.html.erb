@@ -4,6 +4,7 @@
   <p><strong>Event Name:</strong> <%= @event.name %></p>
   <p><strong>Event Start Date:</strong> <%= @event.start_time.strftime("%B %d, %Y") %></p>
   <p><strong>Start Time:</strong> <%= @event.start_time.strftime("%l:%M %p") %></p>
+  <p><strong>Description:</strong> <%= @event.description %></p>
 
   <% if @event.end_time.present? %>
     <p><strong>End Time:</strong> <%= @event.end_time.strftime("%l:%M %p") %></p>
@@ -17,23 +18,22 @@
     <%= form_with url: event_attendances_path(@event), local: true do |form| %>
       <div class="form-group">
         <%= form.label :passcode, "Enter Attendance Passcode" %>
-        <%= form.text_field :passcode, class: 'form-control' %>
+        <%= form.text_field :passcode, name: 'passcode', class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= form.submit "Check In", class: 'btn btn-success' %>
+        <%= form.submit "Check In", class: 'btn btn--secondary' %>
       </div>
     <% end %>
   <% end %>
 
-  <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn-primary' %> |
-  <%= link_to 'Delete Event', event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-  <%= link_to 'Back to Events', events_path, class: 'btn btn-secondary' %> |
-  <%= link_to 'Return to Home', root_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn--primary' %> |
+  <%= link_to 'Delete Event', event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
+  <%= link_to 'Back to Events', events_path, class: 'btn btn--secondary' %>
 
   <% if @event.archived? %>
-    <%= link_to 'Unarchive Event', unarchive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %>
+    <%= link_to 'Unarchive Event', unarchive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
   <% else %>
-    <%= link_to 'Archive Event', archive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <%= link_to 'Archive Event', archive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
   <% end %>
 
   <h2>Attendance List</h2>

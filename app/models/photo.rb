@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Photo
 class Photo < ApplicationRecord
   include ImageUploader::Attachment(:image) # Include Shrine uploader
 

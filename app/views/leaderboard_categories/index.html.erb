@@ -1,49 +1,55 @@
-<div class="page-layout">
-  <!-- Leaderboard table -->
-  <div class="page-layout__leaderboard">
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
-          <% category = LeaderboardCategory.category_for_user(user.points) %>
-          <tr class="page-layout__leaderboard--highlighted" style="background-color: <%= category&.color || 'none' %>">
-            <td><%= user.full_name %></td>
-            <td><%= user.points %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
 
-  <!-- Categories table -->
-  <div class="page-layout__categories">
-    <h1>Categories</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Category Name</th>
-          <th>Minimum Points</th>
-          <th>Color</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @leaderboard_categories.each do |category| %>
-          <tr>
-            <td><%= category.category_name %></td>
-            <td><%= category.min_points %></td>
-            <td class="color-example" style="background-color: <%= category.color %>"></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <main class="container-full" data-controller="fullscreen">
+    <header class="header">
+      <h1 class="header">LEADERBOARD</h1>
+    </header>
+    <div class="page-layout">
+      <!-- Leaderboard table -->
+      <div class="page-layout__leaderboard">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <% category = LeaderboardCategory.category_for_user(user.points) %>
+              <% color_class = category && category.color && category.color_is_dark? ? 'light-text' : 'dark-text' %>
+              <tr class="page-layout__leaderboard--highlighted <%= color_class %>" style="background-color: <%= category&.color || 'none' %>">
+                <td><%= user.full_name %></td>
+                <td><%= user.points %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
 
-    <div style="text-align: right; margin-bottom: 20px;">
-      <%= link_to 'New Category', new_leaderboard_category_path, class: 'btn btn-primary' %>
+      <!-- Categories section using Turbo Stream-compatible div layout -->
+      <div class="page-layout__categories">
+        <h1>Categories</h1>
+        <div class="categories">
+          <div class="categories-table__header">
+            <div class="categories-table__cell">Category</div>
+            <div class="categories-table__cell">Minimum</div>
+            <div class="categories-table__cell">Color</div>
+            <div class="categories-table__cell">Actions</div>
+          </div>
+
+          <div id="categories">
+          <div class="categories-table__body" id="leaderboard_categories">
+          <%= turbo_frame_tag LeaderboardCategory.new %>
+          <% @leaderboard_categories.each do |leaderboard_category| %>
+            <%= render partial: 'leaderboard_category', locals: { leaderboard_category: leaderboard_category } %>
+          <% end %>
+        </div>
+          </div>
+        </div>
+
+        <% if @role == "admin" %>
+          <%= link_to "New Category", new_leaderboard_category_path, class: 'leaderboard_category__new-button', data: { turbo_frame: dom_id(LeaderboardCategory.new) } %><br><br>
+        <% end %>
+      </div>
     </div>
-  </div>
-</div>
+  </main>

@@ -1,0 +1,29 @@
+<div data-controller="carousel" data-carousel-descriptions-value='<%= descriptions.to_json %>' class="carousel-container">
+  <!-- Slides -->
+  <div class="carousel-slides">
+    <% images.each_with_index do |image, index| %>
+      <div data-carousel-target="slide" class="<%= 'hidden' unless index == 0 %> carousel-slide">
+        <%= image_tag image, alt: "Image #{index + 1}", class: 'carousel-image' %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="carousel-content">
+    <h1><%= title %></h1>
+    <p data-carousel-target="description"><%= descriptions.first %></p>
+  </div>
+
+  <!-- Previous Button -->
+  <button data-action="click->carousel#previous" class="carousel-button carousel-button-left">
+    <svg xmlns="http://www.w3.org/2000/svg" class="carousel-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
+
+  <!-- Next Button -->
+  <button data-action="click->carousel#next" class="carousel-button carousel-button-right">
+    <svg xmlns="http://www.w3.org/2000/svg" class="carousel-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
+</div>

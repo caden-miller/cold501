@@ -90,18 +90,19 @@
         background-color: var(--color-secondary);
         cursor: pointer;
     }
+    
 }
 
 .edit,
 .confirm {
-    background-color: var(--color-secondary);
+    background-color: var(--color-secondary-rotate);
     transition: background-color 0.5s ease;
     z-index: 1;
 }
 
 .edit:hover,
 .confirm:hover {
-    background-color: var(--color-secondary-rotate);
+    background-color: var(--color-secondary);
 }
 
 .trash,
@@ -119,3 +120,7 @@
 [id^="photo_"] {
     width: 100%;
 }
+
+turbo-frame:empty {
+    display: none;
+  }

@@ -1,9 +1,8 @@
 # frozen_string_literal: true
-require 'httparty'
-require 'nokogiri'
 
 class MerchandisesController < ApplicationController
   before_action :set_merchandise, only: %i[show edit update destroy]
+  before_action :authenticate_admin!, only: %i[new create edit update destroy]
 
   # GET /merchandises or /merchandises.json
   def index
@@ -47,7 +46,6 @@ class MerchandisesController < ApplicationController
       end
     end
   end
-  
 
   # PATCH/PUT /merchandises/1 or /merchandises/1.json
   def update
@@ -79,7 +77,6 @@ class MerchandisesController < ApplicationController
   # DELETE /merchandises/1 or /merchandises/1.json
   def destroy
     @merchandise.destroy
-
     respond_to do |format|
       format.html { redirect_to merchandises_url, notice: 'Merchandise was successfully destroyed.' }
       format.json { head :no_content }
@@ -88,32 +85,56 @@ class MerchandisesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_merchandise
     @merchandise = Merchandise.find(params[:id])
   end
 
-  # Only allow a list of trusted parameters through.
   def merchandise_params
     params.require(:merchandise).permit(:link, :title, :description, :image, :stock)
   end
 
   def valid_flywire_link(link)
-      link =~ /\Ahttps?:\/\/(www\.)?tamu\.estore\.flywire\.com\//i
+    link =~ %r{\Ahttps?://(www\.)?tamu\.estore\.flywire\.com/}i
   end
 
   def get_image(link)
     response = HTTParty.get(link)
     parsed_page = Nokogiri::HTML(response.body)
-
-     # Use the specific class name to target the product image
-    image_tag = parsed_page.css('img.js-main-product-img').first
-
-    image_tag ||= parsed_page.css('img').first
+    image_tag = parsed_page.css('img.js-main-product-img').first || parsed_page.css('img').first
     image_url = image_tag['src'] if image_tag
-
     URI.join(link, image_url).to_s if image_url
-
   end
 
+  def process_merchandise_creation
+    image_url = get_image(@merchandise.link)
+    @merchandise.image = image_url if image_url
+
+    if @merchandise.save
+      handle_create_success
+    else
+      handle_create_failure
+    end
+  end
+
+  def handle_invalid_link
+    respond_to do |format|
+      flash.now[:alert] = 'Please enter a valid Flywire link.'
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: { error: 'Invalid Flywire link' }, status: :unprocessable_entity }
+    end
+  end
+
+  def handle_create_success
+    respond_to do |format|
+      format.html { redirect_to merchandise_url(@merchandise), notice: 'Merchandise was successfully created.' }
+      format.json { render :show, status: :created, location: @merchandise }
+    end
+  end
+
+  def handle_create_failure
+    respond_to do |format|
+      format.html { render :new, status: :unprocessable_entity }
+      format.json { render json: @merchandise.errors, status: :unprocessable_entity }
+    end
+  end
 end

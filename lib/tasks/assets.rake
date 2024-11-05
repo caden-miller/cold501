@@ -2,7 +2,7 @@
 
 namespace :assets do
   desc 'Precompile assets for Heroku'
-  task :precompile do
+  task precompile: :environment do
     Rake::Task['assets:precompile'].invoke
   end
 end

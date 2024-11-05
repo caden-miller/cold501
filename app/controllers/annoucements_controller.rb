@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# AnnoucementsController
 class AnnoucementsController < ApplicationController
   before_action :set_annoucement, only: %i[show edit update destroy]
 

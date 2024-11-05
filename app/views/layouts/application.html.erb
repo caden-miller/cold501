@@ -31,15 +31,11 @@
   </head>
 
   <body>
-    <%= render "layouts/navbar" %>
-    <% if flash.any? %>
-      <% flash.each do |key, value| -%>
-        <div class="flash__container">
-          <section class="flash flash__<%= key %>"><%= value.html_safe %></section>
-        </div>
-      <% end -%>
-    <% end %>
+    <%= render "shared/navbar" %>
+    <div id="flash_messages">
+      <%= render "shared/flash" %>
+    </div>
     <%= yield %>
-    <%= render "layouts/footer" %>
+    <%= render "shared/footer" %>
   </body>
 </html>
