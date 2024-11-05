@@ -3,31 +3,31 @@
     <%= form.error_notification %>
   <% end %>
 
-  <div class="user__table-row">
-    <div class="user__table-cell">
+  <div class="table-row">
+    <div class="table-cell user-cell">
       <%= image_tag user.avatar_url, alt: "User Avatar", class: "user__image" %>
     </div>
-    <div class="user__table-cell">
+    <div class="table-cell user-cell">
       <%= form.input :full_name %>
     </div>
-    <div class="user__table-cell">
+    <div class="table-cell user-cell">
       <%= form.input :committee %>
     </div>
-    <div class="user__table-cell">
+    <div class="table-cell user-cell">
       <%= form.input :points %>
     </div>
-    <div class="user__table-cell">
+    <div class="table-cell user-cell">
       <%= form.input :dues %>
     </div>
-    <div class="user__table-cell">
+    <div class="table-cell user-cell">
       <%= form.select :role, User::ROLES, {} %>
     </div>
-    <div class="user__table-cell">
-      <%= button_tag(type: 'submit', class: 'user__table-button confirm') do %>
-        <%= image_tag 'check-svgrepo-com.svg', class: 'user__table-svg', alt: 'Save User', width: '40', height: '40' %>
+    <div class="table-cell user-cell actions">
+      <%= button_tag(type: 'submit', class: 'table-button confirm') do %>
+        <%= image_tag 'check-svgrepo-com.svg', class: 'user__table-svg', alt: 'Save User', width: '20', height: '40' %>
       <% end %>
-      <%= link_to users_path, class: 'user__table-button cancel'  do %>
-        <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'user__table-svg', alt: 'Back to users', width: '40', height: '40' %>
+      <%= link_to users_path, class: 'table-button cancel'  do %>
+        <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'user__table-svg', alt: 'Back to users', width: '20', height: '40' %>
       <% end %>
     </div>
   </div>

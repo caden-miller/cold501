@@ -34,7 +34,7 @@
         width: 100%;
         height: 100%;
         background-color: var(--color-tertiary); /* Header background color */
-        color: var(--color-primary-bg); /* Header text color */
+        color: var(--color-primary); /* Header text color */
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
     }
@@ -67,7 +67,7 @@
             border-bottom: none; /* Remove border for last row */
         }
 
-        & .link__table-cell {
+        .link__table-cell {
             flex: 1;
             padding: 10px;
             color: black;

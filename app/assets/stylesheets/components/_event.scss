@@ -159,6 +159,21 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
+
+  thead {
+    width: 100%;
+    
+    tr {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    // gap: auto;
+
+    th {
+      width: 100%;
+    }
+  }
 }
 
 .calendar-heading {

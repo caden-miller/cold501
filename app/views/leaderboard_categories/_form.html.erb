@@ -11,22 +11,22 @@
       </div>
     <% end %>
 
-    <div class="categories-table__row">
-      <div class="categories-table__cell">
+    <div class="table-row">
+      <div class="table-cell">
         <%= form.input :category_name %>
       </div>
-      <div class="categories-table__cell">
+      <div class="table-cell">
         <%= form.input :min_points %>
       </div>
-      <div class="categories-table__cell">
+      <div class="table-cell">
         <%= form.color_field :color %>
       </div>
-      <div class="categories-table__cell-links">
-        <%= button_tag(type: 'submit', class: 'categories-table__button confirm') do %>
-          <%= image_tag 'check-svgrepo-com.svg', class: 'categories-table__button-svg', alt: 'Save link', width: '40', height: '40' %>
+      <div class="table-cell actions">
+        <%= button_tag(type: 'submit', class: 'table-button confirm') do %>
+          <%= image_tag 'check-svgrepo-com.svg', class: 'table-button-svg', alt: 'Save link', width: '40', height: '40' %>
         <% end %>
-        <%= link_to leaderboard_categories_path, class: 'categories-table__button cancel' do %>
-          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'categories-table__button-svg', alt: 'Back to links', width: '40', height: '40' %>
+        <%= link_to leaderboard_categories_path, class: 'table-button cancel' do %>
+          <%= image_tag 'cancel-close-delete-svgrepo-com.svg', class: 'table-button-svg', alt: 'Back to links', width: '40', height: '40' %>
         <% end %>
       </div>
     </div>

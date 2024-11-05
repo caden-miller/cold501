@@ -1,43 +1,34 @@
 <main class="container event-details">
-  <header class="event-header">
-    <h1>Event Details</h1>
+  <header class="header">
+    <h1>EVENT DETAILS</h1>
   </header>
 
   <section class="event-info">
-    <div class="event-bubble">
-      <h3>Event Start Date</h3>
-      <p><%= @event.start_time.strftime("%B %d, %Y") %></p>
-    </div>
-
-    <div class="event-bubble">
-      <h3>Start Time</h3>
-      <p><%= @event.start_time.strftime("%l:%M %p") %></p>
-    </div>
-
-    <% if @event.end_time.present? %>
       <div class="event-bubble">
-        <h3>End Time</h3>
-        <p><%= @event.end_time.strftime("%l:%M %p") %></p>
+        <h3>Date</h3>
+        <p><%= @event.start_time.strftime("%B %d, %Y %l:%M %p") %> - <%= @event.end_time.strftime("%l:%M %p") %></p>
       </div>
-    <% end %>
+
+      <% if current_user.role == 'admin' %>
+        <div class="event-bubble">
+          <h3>Attendance Passcode</h3>
+          <p><%= @event.passcode %></p>
+        </div>
+      <% end %>
+
 
     <div class="event-bubble">
       <h3>Description</h3>
       <p><%= @event.description %></p>
     </div>
 
-    <% if current_user.role == 'admin' %>
-      <div class="event-bubble">
-        <h3>Attendance Passcode</h3>
-        <p><%= @event.passcode %></p>
-      </div>
-    <% end %>
+    
   </section>
 
   <section class="action-buttons">
+    <%= link_to 'Back to Events', events_path, class: 'btn btn--secondary' %>
     <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn--primary' %>
     <%= link_to 'Delete Event', event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn--danger' %>
-    <%= link_to 'Back to Events', events_path, class: 'btn btn--secondary' %>
 
     <% if @event.archived? %>
       <%= link_to 'Unarchive Event', unarchive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
