@@ -28,7 +28,7 @@ users_data = [
     committee: 'Development',
     points: '0',
     dues: '0',
-    role: 'member',
+    role: 'admin',
     created_at: '2024-09-16 18:55:30',
     updated_at: '2024-09-16 18:55:30' },
   { email: 'erikachtermann@tamu.edu',
