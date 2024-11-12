@@ -12,7 +12,7 @@
 
       <% if idea.user == current_user || current_user.role == "admin" %>
         <%= link_to "×", "#", 
-            class: "delete-button", 
+            class: "delete-button",
             data: { modal_id: "delete-confirmation-modal-#{idea.id}", turbo: false }, 
             onclick: "showModal('delete-confirmation-modal-#{idea.id}')" %>
       <% end %>

@@ -2605,13 +2605,7 @@ form {
 
 /* line 14, app/assets/stylesheets/components/_ideas.scss */
 .idea-item {
-  background-image: url(/assets/stickynote.png);
-  background-size: cover;
-  /* Ensures the image covers the entire grid item */
-  background-position: center;
-  /* Centers the image */
-  background-repeat: no-repeat;
-  /* Prevents repeating */
+  background-color: #FFFF90;
   width: 375px;
   /* Set width of grid item */
   height: 375px;
@@ -2621,19 +2615,19 @@ form {
   color: black;
 }
 
-/* line 26, app/assets/stylesheets/components/_ideas.scss */
+/* line 27, app/assets/stylesheets/components/_ideas.scss */
 .wrapper {
   margin-left: 20px;
   margin-top: 10px;
 }
 
-/* line 31, app/assets/stylesheets/components/_ideas.scss */
+/* line 32, app/assets/stylesheets/components/_ideas.scss */
 .ideas-title {
   margin-bottom: 10px;
   font-size: 55px;
 }
 
-/* line 37, app/assets/stylesheets/components/_ideas.scss */
+/* line 38, app/assets/stylesheets/components/_ideas.scss */
 .item-title {
   font-size: 25px;
   font-weight: bold;
@@ -2646,12 +2640,12 @@ form {
   color: black;
 }
 
-/* line 49, app/assets/stylesheets/components/_ideas.scss */
+/* line 50, app/assets/stylesheets/components/_ideas.scss */
 .idea-footer {
   margin-top: auto;
 }
 
-/* line 53, app/assets/stylesheets/components/_ideas.scss */
+/* line 54, app/assets/stylesheets/components/_ideas.scss */
 .idea-wrapper {
   display: flex;
   flex-direction: column;
@@ -2659,12 +2653,12 @@ form {
   height: 90%;
 }
 
-/* line 60, app/assets/stylesheets/components/_ideas.scss */
+/* line 61, app/assets/stylesheets/components/_ideas.scss */
 .show-button {
   padding-bottom: 10px;
 }
 
-/* line 64, app/assets/stylesheets/components/_ideas.scss */
+/* line 65, app/assets/stylesheets/components/_ideas.scss */
 .idea-desc {
   background-color: transparent;
   border: none;
@@ -2673,32 +2667,33 @@ form {
   color: black;
 }
 
-/* line 72, app/assets/stylesheets/components/_ideas.scss */
+/* line 73, app/assets/stylesheets/components/_ideas.scss */
 a {
   color: black;
 }
 
-/* line 76, app/assets/stylesheets/components/_ideas.scss */
+/* line 77, app/assets/stylesheets/components/_ideas.scss */
 textarea::-webkit-resizer {
   display: none;
 }
 
-/* line 80, app/assets/stylesheets/components/_ideas.scss */
+/* line 81, app/assets/stylesheets/components/_ideas.scss */
 .title-and-delete {
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
-/* line 86, app/assets/stylesheets/components/_ideas.scss */
+/* line 87, app/assets/stylesheets/components/_ideas.scss */
 .item-title {
   flex: 1;
   /* Allows the textarea or title to expand and take up space */
   text-align: left;
 }
 
-/* line 91, app/assets/stylesheets/components/_ideas.scss */
+/* line 92, app/assets/stylesheets/components/_ideas.scss */
 .delete-button {
+  z-index: 100;
   font-size: 50px;
   font-weight: bold;
   color: black;
@@ -2710,13 +2705,13 @@ textarea::-webkit-resizer {
   margin-right: -10px;
 }
 
-/* line 103, app/assets/stylesheets/components/_ideas.scss */
+/* line 105, app/assets/stylesheets/components/_ideas.scss */
 .delete-button:hover {
   color: red;
 }
 
 /* Dimming background effect for main content */
-/* line 108, app/assets/stylesheets/components/_ideas.scss */
+/* line 110, app/assets/stylesheets/components/_ideas.scss */
 .dim-background {
   opacity: 0.5;
   /* Darkens the background */
@@ -2727,7 +2722,7 @@ textarea::-webkit-resizer {
 }
 
 /* CSS for modal overlay and positioning */
-/* line 115, app/assets/stylesheets/components/_ideas.scss */
+/* line 117, app/assets/stylesheets/components/_ideas.scss */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -2742,7 +2737,7 @@ textarea::-webkit-resizer {
   z-index: 1000;
 }
 
-/* line 128, app/assets/stylesheets/components/_ideas.scss */
+/* line 130, app/assets/stylesheets/components/_ideas.scss */
 .modal-content {
   background: #fff;
   padding: 20px;
@@ -2753,12 +2748,12 @@ textarea::-webkit-resizer {
   z-index: 1001;
 }
 
-/* line 138, app/assets/stylesheets/components/_ideas.scss */
+/* line 140, app/assets/stylesheets/components/_ideas.scss */
 .hidden {
   display: none;
 }
 
-/* line 142, app/assets/stylesheets/components/_ideas.scss */
+/* line 144, app/assets/stylesheets/components/_ideas.scss */
 .new-idea {
   display: flex;
   justify-content: center;
@@ -2766,7 +2761,7 @@ textarea::-webkit-resizer {
   margin-bottom: 20px;
 }
 
-/* line 149, app/assets/stylesheets/components/_ideas.scss */
+/* line 151, app/assets/stylesheets/components/_ideas.scss */
 .center {
   position: fixed;
   top: 30%;
@@ -2775,36 +2770,36 @@ textarea::-webkit-resizer {
   transform: translate(-50%, -50%);
 }
 
-/* line 157, app/assets/stylesheets/components/_ideas.scss */
+/* line 159, app/assets/stylesheets/components/_ideas.scss */
 .back {
   margin-bottom: 20px;
 }
 
-/* line 161, app/assets/stylesheets/components/_ideas.scss */
+/* line 163, app/assets/stylesheets/components/_ideas.scss */
 .new-title {
   margin-top: 40px;
   width: 100%;
   height: 100px;
 }
 
-/* line 167, app/assets/stylesheets/components/_ideas.scss */
+/* line 169, app/assets/stylesheets/components/_ideas.scss */
 .new-desc {
   width: 100%;
   height: 150px;
 }
 
-/* line 172, app/assets/stylesheets/components/_ideas.scss */
+/* line 174, app/assets/stylesheets/components/_ideas.scss */
 .new-title::placeholder {
   color: black;
 }
 
-/* line 176, app/assets/stylesheets/components/_ideas.scss */
+/* line 178, app/assets/stylesheets/components/_ideas.scss */
 .new-desc::placeholder {
   color: black;
 }
 
 /* Container Styling */
-/* line 181, app/assets/stylesheets/components/_ideas.scss */
+/* line 183, app/assets/stylesheets/components/_ideas.scss */
 .container {
   display: flex;
   flex-direction: column;
@@ -2822,7 +2817,7 @@ textarea::-webkit-resizer {
 }
 
 /* Header Styling */
-/* line 198, app/assets/stylesheets/components/_ideas.scss */
+/* line 200, app/assets/stylesheets/components/_ideas.scss */
 .header {
   display: flex;
   justify-content: center;
@@ -2832,7 +2827,7 @@ textarea::-webkit-resizer {
   width: 100%;
 }
 
-/* line 207, app/assets/stylesheets/components/_ideas.scss */
+/* line 209, app/assets/stylesheets/components/_ideas.scss */
 .header-title {
   flex: 1;
   text-align: center;
@@ -2842,7 +2837,7 @@ textarea::-webkit-resizer {
   margin-left: 90px;
 }
 
-/* line 216, app/assets/stylesheets/components/_ideas.scss */
+/* line 218, app/assets/stylesheets/components/_ideas.scss */
 .header-button {
   position: absolute;
   right: 0;
@@ -2850,7 +2845,7 @@ textarea::-webkit-resizer {
 }
 
 /* Button Link Styling */
-/* line 223, app/assets/stylesheets/components/_ideas.scss */
+/* line 225, app/assets/stylesheets/components/_ideas.scss */
 .button-link {
   display: inline-block;
   /* Ensures button width adjusts based on content */
@@ -2867,14 +2862,14 @@ textarea::-webkit-resizer {
   /* Prevents text wrapping */
 }
 
-/* line 234, app/assets/stylesheets/components/_ideas.scss */
+/* line 236, app/assets/stylesheets/components/_ideas.scss */
 .button-link:hover {
   background-color: #0056b3;
   /* Hover color */
 }
 
 /* Ensure Textarea Stays Full Width Without Focus Borders */
-/* line 239, app/assets/stylesheets/components/_ideas.scss */
+/* line 241, app/assets/stylesheets/components/_ideas.scss */
 textarea {
   width: 100% !important;
   background-color: transparent;
@@ -2882,7 +2877,7 @@ textarea {
   resize: none;
 }
 
-/* line 246, app/assets/stylesheets/components/_ideas.scss */
+/* line 248, app/assets/stylesheets/components/_ideas.scss */
 textarea:focus {
   outline: none;
   border: none;
@@ -2890,30 +2885,30 @@ textarea:focus {
 }
 
 /* Save Button Visibility Based on Focus */
-/* line 253, app/assets/stylesheets/components/_ideas.scss */
+/* line 255, app/assets/stylesheets/components/_ideas.scss */
 .save-button {
   display: none;
 }
 
-/* line 257, app/assets/stylesheets/components/_ideas.scss */
+/* line 259, app/assets/stylesheets/components/_ideas.scss */
 form:focus-within .save-button {
   display: inline-block;
 }
 
 /* Edited Label Styling */
-/* line 262, app/assets/stylesheets/components/_ideas.scss */
+/* line 264, app/assets/stylesheets/components/_ideas.scss */
 .edited-label {
   font-style: italic;
   color: gray;
   margin-left: 5px;
 }
 
-/* line 268, app/assets/stylesheets/components/_ideas.scss */
+/* line 270, app/assets/stylesheets/components/_ideas.scss */
 .ideas-title {
   font-size: 55px !important;
 }
 
-/* line 273, app/assets/stylesheets/components/_ideas.scss */
+/* line 275, app/assets/stylesheets/components/_ideas.scss */
 .new-wrapper {
   width: 80%;
   max-width: 800px;
@@ -2925,7 +2920,7 @@ form:focus-within .save-button {
   box-shadow: none !important;
 }
 
-/* line 285, app/assets/stylesheets/components/_ideas.scss */
+/* line 287, app/assets/stylesheets/components/_ideas.scss */
 .form-container {
   display: flex;
   justify-content: center;
@@ -2933,7 +2928,7 @@ form:focus-within .save-button {
   border-radius: 8px;
 }
 
-/* line 292, app/assets/stylesheets/components/_ideas.scss */
+/* line 294, app/assets/stylesheets/components/_ideas.scss */
 .submit-button {
   background-color: #4c6444;
   font-size: 20px;
@@ -2943,7 +2938,7 @@ form:focus-within .save-button {
   font-weight: bold;
 }
 
-/* line 301, app/assets/stylesheets/components/_ideas.scss */
+/* line 303, app/assets/stylesheets/components/_ideas.scss */
 .submit-button:hover {
   background-color: #0056b3;
 }
