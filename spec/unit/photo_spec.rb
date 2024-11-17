@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Photo, type: :model do
-  subject do
+  subject(:photo) do
     described_class.new(
       title: 'Sample Photo',
       description: 'This is a sample photo description',
@@ -13,35 +13,73 @@ RSpec.describe Photo, type: :model do
   end
 
   let(:user) { create(:user) }
-  let(:image) { File.open(Rails.root.join('spec/fixtures/sample.jpg')) } # Make sure to have a test image in this path
+  let(:image) { File.open(Rails.root.join('spec/fixtures/sample.jpg')) }
 
   describe 'validations' do
-    it 'is valid with valid attributes' do
-      expect(subject).to be_valid
+    context 'with valid attributes' do
+      it 'is valid' do
+        expect(photo).to be_valid
+      end
     end
 
-    it 'is not valid without a title' do
-      subject.title = nil
-      expect(subject).not_to be_valid
-      expect(subject.errors[:title]).to include("can't be blank")
+    context 'without a title' do
+      before do
+        photo.title = nil
+      end
+
+      it 'is not valid' do
+        expect(photo).not_to be_valid
+      end
+
+      it 'adds an error for title' do
+        photo.validate
+        expect(photo.errors[:title]).to include("can't be blank")
+      end
     end
 
-    it 'is not valid without a description' do
-      subject.description = nil
-      expect(subject).not_to be_valid
-      expect(subject.errors[:description]).to include("can't be blank")
+    context 'without a description' do
+      before do
+        photo.description = nil
+      end
+
+      it 'is not valid' do
+        expect(photo).not_to be_valid
+      end
+
+      it 'adds an error for description' do
+        photo.validate
+        expect(photo.errors[:description]).to include("can't be blank")
+      end
     end
 
-    it 'is not valid without an image' do
-      subject.image = nil
-      expect(subject).not_to be_valid
-      expect(subject.errors[:image]).to include("can't be blank")
+    context 'without an image' do
+      before do
+        photo.image = nil
+      end
+
+      it 'is not valid' do
+        expect(photo).not_to be_valid
+      end
+
+      it 'adds an error for image' do
+        photo.validate
+        expect(photo.errors[:image]).to include("can't be blank")
+      end
     end
 
-    it 'is not valid without a user' do
-      subject.user = nil
-      expect(subject).not_to be_valid
-      expect(subject.errors[:user]).to include('must exist')
+    context 'without a user' do
+      before do
+        photo.user = nil
+      end
+
+      it 'is not valid' do
+        expect(photo).not_to be_valid
+      end
+
+      it 'adds an error for user' do
+        photo.validate
+        expect(photo.errors[:user]).to include('must exist')
+      end
     end
   end
 end

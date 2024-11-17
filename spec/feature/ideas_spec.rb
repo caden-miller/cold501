@@ -3,8 +3,8 @@
 require 'rails_helper'
 require 'capybara/rspec'
 
-RSpec.feature 'Ideas', type: :feature do
-  let!(:user) { create(:user) } # Create a test user for authentication
+RSpec.feature 'Ideas Management', type: :feature do
+  let!(:user) { create(:user) }
 
   before do
     login_as(user, scope: :user)
@@ -15,90 +15,93 @@ RSpec.feature 'Ideas', type: :feature do
     expect(page).to have_content('IDEAS')
   end
 
-  # spec/feature/ideas_spec.rb
-
-  scenario 'User creates a new idea with valid data' do
-    visit new_idea_path
-
-    fill_in placeholder: 'Write your title here', with: 'New Idea'
-    fill_in placeholder: 'Write description here', with: 'An innovative concept'
-    click_button 'Submit'
-
-    expect(page).to have_content('Idea was successfully created.')
-    expect(page).to have_content('New Idea')
-    expect(page).to have_content('An innovative concept')
-  end
-
-  scenario 'User fails to create a new idea with invalid data' do
-    visit new_idea_path
-
-    fill_in placeholder: 'Write your title here', with: ''
-    fill_in placeholder: 'Write description here', with: ''
-    click_button 'Submit'
-
-    expect(page).to have_content("Title can't be blank")
-    expect(page).to have_content("Description can't be blank")
-  end
-
-  scenario 'User updates an existing idea with valid data' do
-    idea = create(:idea, title: 'Old Title', description: 'Old Description', user:)
-    visit edit_idea_path(idea)
-
-    fill_in placeholder: 'Write your title here', with: 'Updated Title'
-    fill_in placeholder: 'Write description here', with: 'Updated Description'
-    click_button 'Submit'
-
-    expect(page).to have_content('Idea was successfully updated.')
-    expect(page).to have_content('Updated Title')
-    expect(page).to have_content('Updated Description')
-  end
-
-  scenario 'User fails to update an idea with invalid data' do
-    idea = create(:idea, title: 'Old Title', description: 'Old Description', user:)
-    visit edit_idea_path(idea)
-
-    fill_in placeholder: 'Write your title here', with: ''
-    fill_in placeholder: 'Write description here', with: ''
-    click_button 'Submit'
-
-    expect(page).to have_content("Title can't be blank")
-    expect(page).to have_content("Description can't be blank")
-  end
-
-  scenario 'User updates an existing idea with valid data' do
-    idea = create(:idea, title: 'Old Title', description: 'Old Description', user:)
-    visit edit_idea_path(idea)
-
-    fill_in placeholder: 'Write your title here', with: 'Updated Title'
-    fill_in placeholder: 'Write description here', with: 'Updated Description'
-    click_button 'Submit'
-
-    expect(page).to have_content('Idea was successfully updated.')
-    expect(page).to have_content('Updated Title')
-    expect(page).to have_content('Updated Description')
-  end
-
-  scenario 'User fails to update an idea with invalid data' do
-    idea = create(:idea, title: 'Old Title', description: 'Old Description', user:)
-    visit edit_idea_path(idea)
-
-    fill_in placeholder: 'Write your title here', with: ''
-    fill_in placeholder: 'Write description here', with: ''
-    click_button 'Submit'
-
-    expect(page).to have_content("Title can't be blank")
-    expect(page).to have_content("Description can't be blank")
-  end
-
-  scenario 'User deletes an existing idea' do
-    idea = create(:idea, title: 'Delete Me', description: 'To be deleted', user:)
-    visit ideas_path
-
-    within("#idea_#{idea.id}") do
-      click_button 'Delete'
+  context 'when creating a new idea' do
+    def fill_in_new_idea_form(title:, description:)
+      visit new_idea_path
+      fill_in 'Write your title here', with: title
+      fill_in 'Write description here', with: description
+      click_button 'Submit'
     end
 
-    expect(page).to have_content('Idea was successfully deleted.')
-    expect(page).not_to have_content('Delete Me')
+    scenario 'successfully creates an idea with valid data' do
+      fill_in_new_idea_form(title: 'New Idea', description: 'An innovative concept')
+      expect(page).to have_content('Idea was successfully created.')
+    end
+
+    scenario 'displays the created idea title' do
+      fill_in_new_idea_form(title: 'New Idea', description: 'An innovative concept')
+      expect(page).to have_content('New Idea')
+    end
+
+    scenario 'displays the created idea description' do
+      fill_in_new_idea_form(title: 'New Idea', description: 'An innovative concept')
+      expect(page).to have_content('An innovative concept')
+    end
+
+    scenario 'fails to create an idea without a title' do
+      fill_in_new_idea_form(title: '', description: 'An innovative concept')
+      expect(page).to have_content("Title can't be blank")
+    end
+
+    scenario 'fails to create an idea without a description' do
+      fill_in_new_idea_form(title: 'New Idea', description: '')
+      expect(page).to have_content("Description can't be blank")
+    end
+  end
+
+  context 'when updating an existing idea' do
+    let!(:idea) { create(:idea, title: 'Old Title', description: 'Old Description', user:) }
+
+    def fill_in_edit_idea_form(title:, description:)
+      visit edit_idea_path(idea)
+      fill_in 'Write your title here', with: title
+      fill_in 'Write description here', with: description
+      click_button 'Submit'
+    end
+
+    scenario 'successfully updates an idea with valid data' do
+      fill_in_edit_idea_form(title: 'Updated Title', description: 'Updated Description')
+      expect(page).to have_content('Idea was successfully updated.')
+    end
+
+    scenario 'displays the updated idea title' do
+      fill_in_edit_idea_form(title: 'Updated Title', description: 'Updated Description')
+      expect(page).to have_content('Updated Title')
+    end
+
+    scenario 'displays the updated idea description' do
+      fill_in_edit_idea_form(title: 'Updated Title', description: 'Updated Description')
+      expect(page).to have_content('Updated Description')
+    end
+
+    scenario 'fails to update an idea without a title' do
+      fill_in_edit_idea_form(title: '', description: 'Updated Description')
+      expect(page).to have_content("Title can't be blank")
+    end
+
+    scenario 'fails to update an idea without a description' do
+      fill_in_edit_idea_form(title: 'Updated Title', description: '')
+      expect(page).to have_content("Description can't be blank")
+    end
+  end
+
+  context 'when deleting an existing idea' do
+    let!(:idea) { create(:idea, title: 'Delete Me', description: 'To be deleted', user:) }
+
+    scenario 'successfully deletes an idea and shows success message' do
+      visit ideas_path
+      within("#idea_#{idea.id}") do
+        click_button 'Delete'
+      end
+      expect(page).to have_content('Idea was successfully deleted.')
+    end
+
+    scenario 'removes the deleted idea from the list' do
+      visit ideas_path
+      within("#idea_#{idea.id}") do
+        click_button 'Delete'
+      end
+      expect(page).not_to have_content('Delete Me')
+    end
   end
 end
