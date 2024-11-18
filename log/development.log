@@ -10532,3 +10532,138 @@ Completed 200 OK in 25ms (Views: 18.0ms | ActiveRecord: 1.5ms | Allocations: 809
 
 [dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
 [dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/links" for ::1 at 2024-11-18 00:56:53 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LinksController#index as HTML
+Started GET "/links" for ::1 at 2024-11-18 00:56:53 -0600
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:24
+  [1m[36mLink Load (1.4ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:24
+  Rendered links/_link.html.erb (Duration: 2.7ms | Allocations: 1055)
+  Rendered links/_link.html.erb (Duration: 3.0ms | Allocations: 1333)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 395)
+  Rendered links/_link.html.erb (Duration: 0.8ms | Allocations: 395)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 397)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 397)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 394)
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 394)
+  Rendered links/index.html.erb within layouts/application (Duration: 31.0ms | Allocations: 11174)
+  Rendered links/index.html.erb within layouts/application (Duration: 30.9ms | Allocations: 11219)
+  Rendered shared/_navbar.html.erb (Duration: 4.7ms | Allocations: 3082)
+  Rendered shared/_navbar.html.erb (Duration: 2.1ms | Allocations: 979)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 208)
+  Rendered shared/_flash.html.erb (Duration: 1.0ms | Allocations: 223)
+  Rendered shared/_footer.html.erb (Duration: 10.8ms | Allocations: 3146)
+  Rendered shared/_footer.html.erb (Duration: 6.2ms | Allocations: 1925)
+  Rendered layout layouts/application.html.erb (Duration: 62.7ms | Allocations: 26326)
+  Rendered layout layouts/application.html.erb (Duration: 63.9ms | Allocations: 26534)
+Completed 200 OK in 127ms (Views: 58.5ms | ActiveRecord: 24.5ms | Allocations: 44693)
+
+
+Completed 200 OK in 148ms (Views: 70.9ms | ActiveRecord: 15.6ms | Allocations: 48623)
+
+
+Started GET "/links" for ::1 at 2024-11-18 00:56:53 -0600
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:24
+  Rendered links/_link.html.erb (Duration: 0.9ms | Allocations: 447)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 395)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 397)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 0.7ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 0.6ms | Allocations: 394)
+  Rendered links/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 3818)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 469)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 2.9ms | Allocations: 1281)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 6724)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 1.2ms | Allocations: 8339)
+
+
+Started GET "/links" for ::1 at 2024-11-18 00:56:59 -0600
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.1ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:24
+  Rendered links/_link.html.erb (Duration: 2.8ms | Allocations: 812)
+  Rendered links/_link.html.erb (Duration: 1.1ms | Allocations: 395)
+  Rendered links/_link.html.erb (Duration: 0.8ms | Allocations: 397)
+  Rendered links/_link.html.erb (Duration: 1.1ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 1.7ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 1.4ms | Allocations: 394)
+  Rendered links/index.html.erb within layouts/application (Duration: 19.8ms | Allocations: 4702)
+  Rendered shared/_navbar.html.erb (Duration: 1.7ms | Allocations: 739)
+  Rendered shared/_flash.html.erb (Duration: 0.7ms | Allocations: 172)
+  Rendered shared/_footer.html.erb (Duration: 6.9ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 9018)
+Completed 200 OK in 45ms (Views: 37.1ms | ActiveRecord: 1.7ms | Allocations: 11073)
+
+
+Started GET "/links" for ::1 at 2024-11-18 00:57:27 -0600
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:24
+  Rendered links/_link.html.erb (Duration: 2.8ms | Allocations: 812)
+  Rendered links/_link.html.erb (Duration: 1.0ms | Allocations: 395)
+  Rendered links/_link.html.erb (Duration: 1.8ms | Allocations: 397)
+  Rendered links/_link.html.erb (Duration: 1.4ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 1.1ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 1.0ms | Allocations: 394)
+  Rendered links/index.html.erb within layouts/application (Duration: 18.1ms | Allocations: 4708)
+  Rendered shared/_navbar.html.erb (Duration: 2.2ms | Allocations: 739)
+  Rendered shared/_flash.html.erb (Duration: 0.8ms | Allocations: 172)
+  Rendered shared/_footer.html.erb (Duration: 5.6ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 9024)
+Completed 200 OK in 43ms (Views: 34.9ms | ActiveRecord: 1.4ms | Allocations: 11208)
+
+
+Started GET "/links" for ::1 at 2024-11-18 00:57:38 -0600
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" ORDER BY "links"."id" ASC[0m
+  ↳ app/views/links/index.html.erb:24
+  Rendered links/_link.html.erb (Duration: 3.1ms | Allocations: 812)
+  Rendered links/_link.html.erb (Duration: 1.1ms | Allocations: 395)
+  Rendered links/_link.html.erb (Duration: 1.1ms | Allocations: 397)
+  Rendered links/_link.html.erb (Duration: 1.2ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 1.3ms | Allocations: 396)
+  Rendered links/_link.html.erb (Duration: 1.6ms | Allocations: 394)
+  Rendered links/index.html.erb within layouts/application (Duration: 20.3ms | Allocations: 4702)
+  Rendered shared/_navbar.html.erb (Duration: 2.8ms | Allocations: 739)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 172)
+  Rendered shared/_footer.html.erb (Duration: 6.2ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 9017)
+Completed 200 OK in 52ms (Views: 41.0ms | ActiveRecord: 1.6ms | Allocations: 11179)
+
+
