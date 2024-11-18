@@ -3,3 +3,9 @@
     <%= render partial: 'leaderboard_category', locals: { leaderboard_category: @leaderboard_category } %>
   <% end %>
 <% end %>
+
+<%= turbo_stream.replace "leaderboard" do %>
+  <div class="page-layout__leaderboard" id="leaderboard">
+    <%= render partial: 'leaderboard', locals: { users: @users } %>
+  </div>
+<% end %>

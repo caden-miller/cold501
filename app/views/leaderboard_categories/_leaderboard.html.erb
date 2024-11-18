@@ -1,0 +1,18 @@
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Points</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% users.each do |user| %>
+        <% category = LeaderboardCategory.category_for_user(user.points) %>
+        <% color_class = category && category.color && category.color_is_dark? ? 'light-text' : 'dark-text' %>
+        <tr class="page-layout__leaderboard--highlighted <%= color_class %>" style="background-color: <%= category&.color || 'none' %>">
+        <td><%= user.full_name %></td>
+        <td><%= user.points %></td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>

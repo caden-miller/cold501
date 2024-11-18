@@ -5,10 +5,10 @@ class LeaderboardCategoriesController < ApplicationController
   before_action :authenticate_member!
   before_action :set_leaderboard_category, only: %i[show edit update destroy]
   before_action :authenticate_admin!, only: %i[new create edit update destroy]
+  before_action :set_users
 
   # GET /leaderboard_categories or /leaderboard_categories.json
   def index
-    @users = User.order(points: :desc, full_name: :asc)
     @leaderboard_categories = LeaderboardCategory.order(min_points: :desc)
   end
 
@@ -40,6 +40,7 @@ class LeaderboardCategoriesController < ApplicationController
     @leaderboard_category = LeaderboardCategory.new(leaderboard_category_params)
 
     if @leaderboard_category.save
+      broadcast_leaderboard_update
       handle_create_success
     else
       handle_create_failure
@@ -58,6 +59,7 @@ class LeaderboardCategoriesController < ApplicationController
   # DELETE /leaderboard_categories/1 or /leaderboard_categories/1.json
   def destroy
     @leaderboard_category.destroy
+    broadcast_leaderboard_update
     respond_to do |format|
       format.html do
         redirect_to leaderboard_categories_path, notice: 'Leaderboard category was successfully destroyed.'
@@ -105,5 +107,18 @@ class LeaderboardCategoriesController < ApplicationController
       format.html { render :edit, status: :unprocessable_entity }
       format.turbo_stream { render :edit, status: :unprocessable_entity }
     end
+  end
+
+  def set_users
+    @users = User.order(points: :desc, full_name: :asc)
+  end
+
+  def broadcast_leaderboard_update
+    Turbo::StreamsChannel.broadcast_replace_to(
+      "leaderboard",
+      target: "leaderboard",
+      partial: "leaderboard_categories/leaderboard",
+      locals: { users: @users }
+    )
   end
 end
