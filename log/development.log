@@ -1031,3 +1031,220 @@ Processing by MerchandisesController#index as HTML
 Completed 200 OK in 58ms (Views: 24.4ms | ActiveRecord: 8.9ms | Allocations: 34947)
 
 
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/" for ::1 at 2024-11-17 21:48:40 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.6ms | Allocations: 740)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 2561)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 820)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 191)
+  [1m[36mLink Load (1.1ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 12.0ms | Allocations: 6489)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 15731)
+Completed 200 OK in 35ms (Views: 19.6ms | ActiveRecord: 5.2ms | Allocations: 21493)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:48:40 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 340)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1283)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 489)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.5ms | Allocations: 1980)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4913)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms | Allocations: 5665)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-11-17 21:48:44 -0600
+Started GET "/users/auth/google_oauth2/callback?state=73a4039f62799dbac951795b541dda8267a88468c38983b1&code=4%2F0AeanS0bBfq3LiV1pdwxXej3ey7QF0_AjhERvr-1LKOyydRQIUU6hVWpf2xCnD25dWbIkdw&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-11-17 21:48:48 -0600
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"73a4039f62799dbac951795b541dda8267a88468c38983b1", "code"=>"4/0AeanS0bBfq3LiV1pdwxXej3ey7QF0_AjhERvr-1LKOyydRQIUU6hVWpf2xCnD25dWbIkdw", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 3.4ms | Allocations: 8996)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:48:49 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 320)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1263)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 461)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 5.4ms | Allocations: 1881)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4766)
+Completed 200 OK in 12ms (Views: 8.9ms | ActiveRecord: 0.9ms | Allocations: 6374)
+
+
+Started GET "/users" for ::1 at 2024-11-17 21:49:21 -0600
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."role" ASC, "users"."full_name" ASC[0m
+  ↳ app/views/users/index.html.erb:23
+  Rendered users/_user.html.erb (Duration: 0.9ms | Allocations: 895)
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 382)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 384)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 385)
+  Rendered users/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 5855)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 461)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.2ms | Allocations: 1951)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 9470)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 1.0ms | Allocations: 11745)
+
+
+Started GET "/users/sign_out" for ::1 at 2024-11-17 21:49:55 -0600
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 3ms (ActiveRecord: 0.2ms | Allocations: 2341)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:49:55 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 322)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1265)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 483)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.4ms | Allocations: 1907)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4817)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5485)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-11-17 21:49:57 -0600
+Started GET "/" for ::1 at 2024-11-17 21:51:36 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.6ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2005)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 792)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 172)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.9ms | Allocations: 2459)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 7078)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 8407)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-11-17 21:51:38 -0600
+Started GET "/users/auth/google_oauth2/callback?state=a34609113968fcc95e64f48896210b6c566ab46a8a0fef77&code=4%2F0AeanS0bQnvD50IHTjiS2E1LrYUP27autHtq4Z1XNQ96XXLO5KSB5LAy8vNYPPn3XFfQTrA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-11-17 21:51:42 -0600
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"a34609113968fcc95e64f48896210b6c566ab46a8a0fef77", "code"=>"4/0AeanS0bQnvD50IHTjiS2E1LrYUP27autHtq4Z1XNQ96XXLO5KSB5LAy8vNYPPn3XFfQTrA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1202)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:51:43 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.2ms | Allocations: 1879)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 4647)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.5ms | Allocations: 6017)
+
+
+Started GET "/users/sign_out" for ::1 at 2024-11-17 21:51:45 -0600
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 4ms (ActiveRecord: 0.3ms | Allocations: 1735)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:51:45 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 487)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.2ms | Allocations: 1903)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 4688)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 5302)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-11-17 21:51:48 -0600
+Started GET "/users/auth/google_oauth2/callback?state=e4bcffd756728eb674186112fb7685415103f6cf3a8e6164&code=4%2F0AeanS0asokQ75VB23MrmTfTfNKYJNgVjrBJUl3Lydqnn7UM5iQk3LmwWO3HafN_rZq-ERA&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-11-17 21:51:52 -0600
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"e4bcffd756728eb674186112fb7685415103f6cf3a8e6164", "code"=>"4/0AeanS0asokQ75VB23MrmTfTfNKYJNgVjrBJUl3Lydqnn7UM5iQk3LmwWO3HafN_rZq-ERA", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1086)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:51:53 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 288)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1165)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.2ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4643)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 5969)
+
+
