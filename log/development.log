@@ -5172,3 +5172,536 @@ Processing by LeaderboardCategoriesController#index as HTML
 Completed 200 OK in 89ms (Views: 77.7ms | ActiveRecord: 5.8ms | Allocations: 13192)
 
 
+Started GET "/events" for ::1 at 2024-11-17 22:43:26 -0600
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."archived" = $1 AND "events"."start_time" BETWEEN $2 AND $3 ORDER BY start_time asc[0m  [["archived", false], ["start_time", "2024-11-01"], ["start_time", "2024-11-30"]]
+  ↳ app/views/events/index.html.erb:16
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 11.4ms | Allocations: 8598)
+  Rendered events/index.html.erb within layouts/application (Duration: 25.8ms | Allocations: 16672)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 486)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 30)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.4ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 20383)
+Completed 200 OK in 45ms (Views: 33.1ms | ActiveRecord: 4.5ms | Allocations: 25091)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:43:29 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 13.5ms | Allocations: 9660)
+  Rendered events/edit.html.erb within layouts/application (Duration: 15.3ms | Allocations: 10413)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 475)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.6ms | Allocations: 2015)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 14096)
+Completed 200 OK in 28ms (Views: 21.6ms | ActiveRecord: 1.1ms | Allocations: 16749)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:44:31 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 8.0ms | Allocations: 8315)
+  Rendered events/edit.html.erb within layouts/application (Duration: 8.9ms | Allocations: 8680)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.1ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 12165)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 1.1ms | Allocations: 14171)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:44:44 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 28.2ms | Allocations: 10310)
+  Rendered events/edit.html.erb within layouts/application (Duration: 31.1ms | Allocations: 11502)
+  Rendered shared/_navbar.html.erb (Duration: 1.8ms | Allocations: 780)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 191)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 15.7ms | Allocations: 5254)
+  Rendered layout layouts/application.html.erb (Duration: 55.6ms | Allocations: 23435)
+Completed 200 OK in 115ms (Views: 55.1ms | ActiveRecord: 12.9ms | Allocations: 46462)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:44:44 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 7.8ms | Allocations: 8363)
+  Rendered events/edit.html.erb within layouts/application (Duration: 9.3ms | Allocations: 8736)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 472)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (1.0ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 8.8ms | Allocations: 1935)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 12321)
+Completed 200 OK in 30ms (Views: 21.2ms | ActiveRecord: 2.3ms | Allocations: 14439)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:20 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:20 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 19.5ms | Allocations: 11711)
+  Rendered events/edit.html.erb within layouts/application (Duration: 22.5ms | Allocations: 12904)
+  [1m[36mEvent Load (1.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendered shared/_navbar.html.erb (Duration: 4.8ms | Allocations: 1699)
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 7.5ms | Allocations: 8318)
+  Rendered events/edit.html.erb within layouts/application (Duration: 8.8ms | Allocations: 8746)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 3.1ms | Allocations: 1880)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 89)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  [1m[36mLink Load (1.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 17.4ms | Allocations: 5928)
+  Rendered shared/_footer.html.erb (Duration: 20.5ms | Allocations: 7105)
+  Rendered layout layouts/application.html.erb (Duration: 70.9ms | Allocations: 39285)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 17844)
+Completed 200 OK in 156ms (Views: 69.9ms | ActiveRecord: 21.5ms | Allocations: 66528)
+
+
+Completed 200 OK in 96ms (Views: 30.1ms | ActiveRecord: 33.1ms | Allocations: 50034)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:21 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 11.3ms | Allocations: 8362)
+  Rendered events/edit.html.erb within layouts/application (Duration: 13.0ms | Allocations: 8735)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 472)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.9ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 8.0ms | Allocations: 1935)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 12320)
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 2.0ms | Allocations: 14425)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:21 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (3.1ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 33.6ms | Allocations: 8244)
+  Rendered events/edit.html.erb within layouts/application (Duration: 38.1ms | Allocations: 8590)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 7.4ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 12074)
+Completed 200 OK in 70ms (Views: 49.7ms | ActiveRecord: 5.3ms | Allocations: 13921)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:56 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 12.2ms | Allocations: 10310)
+  Rendered events/edit.html.erb within layouts/application (Duration: 15.4ms | Allocations: 11502)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 780)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 191)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 13.8ms | Allocations: 5254)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 23435)
+Completed 200 OK in 95ms (Views: 37.0ms | ActiveRecord: 12.2ms | Allocations: 46461)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:57 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 11.2ms | Allocations: 8363)
+  Rendered events/edit.html.erb within layouts/application (Duration: 12.2ms | Allocations: 8736)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 472)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.9ms | Allocations: 1935)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 12321)
+Completed 200 OK in 27ms (Views: 19.4ms | ActiveRecord: 1.3ms | Allocations: 14427)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:45:57 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 6.5ms | Allocations: 8244)
+  Rendered events/edit.html.erb within layouts/application (Duration: 7.6ms | Allocations: 8590)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.5ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 12074)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 1.2ms | Allocations: 13924)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:46:47 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 8.1ms | Allocations: 10310)
+  Rendered events/edit.html.erb within layouts/application (Duration: 10.3ms | Allocations: 11502)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 780)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 191)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 11.2ms | Allocations: 5254)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 23435)
+Completed 200 OK in 75ms (Views: 27.4ms | ActiveRecord: 10.7ms | Allocations: 46455)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:46:47 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 6.6ms | Allocations: 8363)
+  Rendered events/edit.html.erb within layouts/application (Duration: 7.4ms | Allocations: 8736)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 472)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 5.9ms | Allocations: 1935)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 12321)
+Completed 200 OK in 36ms (Views: 15.8ms | ActiveRecord: 4.8ms | Allocations: 14448)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:48:41 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 9.5ms | Allocations: 10310)
+  Rendered events/edit.html.erb within layouts/application (Duration: 11.9ms | Allocations: 11502)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 780)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 191)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 10.4ms | Allocations: 5254)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 23435)
+Completed 200 OK in 71ms (Views: 26.4ms | ActiveRecord: 9.7ms | Allocations: 46473)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:48:42 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 7.3ms | Allocations: 8364)
+  Rendered events/edit.html.erb within layouts/application (Duration: 8.4ms | Allocations: 8737)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 472)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.7ms | Allocations: 1935)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 12322)
+Completed 200 OK in 20ms (Views: 13.2ms | ActiveRecord: 1.3ms | Allocations: 14457)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:48:42 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 4.5ms | Allocations: 8245)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.1ms | Allocations: 8591)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 12076)
+Completed 200 OK in 15ms (Views: 10.4ms | ActiveRecord: 1.1ms | Allocations: 13942)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:48:43 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.1ms | Allocations: 8245)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.9ms | Allocations: 8591)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.8ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 12076)
+Completed 200 OK in 16ms (Views: 10.7ms | ActiveRecord: 1.3ms | Allocations: 13939)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:48:43 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 4.6ms | Allocations: 8245)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.2ms | Allocations: 8591)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.8ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 12076)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 1.2ms | Allocations: 13930)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:48:44 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 4.9ms | Allocations: 8244)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 8590)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.8ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 12074)
+Completed 200 OK in 16ms (Views: 10.0ms | ActiveRecord: 1.1ms | Allocations: 13933)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:49:25 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 8.0ms | Allocations: 10310)
+  Rendered events/edit.html.erb within layouts/application (Duration: 10.0ms | Allocations: 11502)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 780)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 191)
+  [1m[36mLink Load (0.6ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 10.1ms | Allocations: 5254)
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 23435)
+Completed 200 OK in 66ms (Views: 23.7ms | ActiveRecord: 10.6ms | Allocations: 46431)
+
+
+Started GET "/events" for ::1 at 2024-11-17 22:49:52 -0600
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."archived" = $1 AND "events"."start_time" BETWEEN $2 AND $3 ORDER BY start_time asc[0m  [["archived", false], ["start_time", "2024-11-01"], ["start_time", "2024-11-30"]]
+  ↳ app/views/events/index.html.erb:16
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 13.2ms | Allocations: 8563)
+  Rendered events/index.html.erb within layouts/application (Duration: 25.7ms | Allocations: 11881)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 471)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.1ms | Allocations: 1933)
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 15466)
+Completed 200 OK in 53ms (Views: 30.9ms | ActiveRecord: 3.2ms | Allocations: 17372)
+
+
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+[dotenv] Set [36mGOOGLE_OAUTH_CLIENT_ID[0m, [36mGOOGLE_OAUTH_CLIENT_SECRET[0m, [36mDATABASE_PASSWORD[0m, [36mDATABASE_USER[0m, [36mHOST_URL[0m, [36mAWS_ACCESS_KEY_ID[0m, [36mAWS_SECRET_ACCESS_KEY[0m, [36mAWS_REGION[0m, and [36mAWS_BUCKET[0m
+[dotenv] Loaded [33m.env[0m
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:50:09 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 8.8ms | Allocations: 10310)
+  Rendered events/edit.html.erb within layouts/application (Duration: 10.7ms | Allocations: 11502)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 780)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 191)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 9.8ms | Allocations: 5255)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 23436)
+Completed 200 OK in 71ms (Views: 26.3ms | ActiveRecord: 9.5ms | Allocations: 46474)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:50:10 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.0ms | Allocations: 8363)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 8736)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 472)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.7ms | Allocations: 1935)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 12321)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 14442)
+
+
+Started GET "/events/14/edit" for ::1 at 2024-11-17 22:50:10 -0600
+Processing by EventsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/events_controller.rb:98:in `set_event'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/edit.html.erb within layouts/application
+  Rendered events/_form.html.erb (Duration: 5.0ms | Allocations: 8244)
+  Rendered events/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 8590)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.3ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 12074)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 1.1ms | Allocations: 13942)
+
+
