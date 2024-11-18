@@ -6,7 +6,7 @@ class EventsController < ApplicationController
 
   before_action :set_event, only: %i[show edit update destroy archive unarchive]
   before_action :set_user, :role, :set_navbar_variables
-  before_action :authenticate_admin!, only: %i[new create edit update delete archive unarchive]
+  before_action :authenticate_admin!, only: %i[new create edit update destroy archive unarchive]
   before_action :authenticate_member!, only: %i[show attendance]
 
   # Display all events

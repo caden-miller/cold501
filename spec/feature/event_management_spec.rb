@@ -71,24 +71,40 @@ RSpec.feature 'Event Management', type: :feature do
   # Helper methods
   def create_event(name, start_time, end_time, location, description)
     fill_in 'Name', with: name
-    select_datetime(DateTime.parse(start_time), from: 'Event Start Time')
-    select_datetime(DateTime.parse(end_time), from: 'Event End Time')
+    select_datetime(DateTime.parse(start_time), from: 'event_start_time', ampm: true, include_date: true)
+    select_datetime(DateTime.parse(end_time), from: 'event_end_time', ampm: true, include_date: false)
     fill_in 'Location', with: location
     fill_in 'Description', with: description
     click_button 'Submit'
   end
+  
 
   # Add this helper method to select datetime in dropdowns
   def select_datetime(datetime, options = {})
     field = options[:from]
+    prefix = field.downcase.gsub(' ', '_')
+    ampm = options[:ampm]
 
-    # Select the year, month, day, hour, and minute based on the `datetime_select` structure
-    select datetime.year.to_s, from: "#{field.downcase.gsub(' ', '_')}_1i" # Year selector
-    select Date::MONTHNAMES[datetime.month], from: "#{field.downcase.gsub(' ', '_')}_2i" # Month selector
-    select datetime.day.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_3i" # Day selector
-    select datetime.hour.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_4i" # Hour selector
-    select datetime.min.to_s.rjust(2, '0'), from: "#{field.downcase.gsub(' ', '_')}_5i" # Minute selector
+    # Determine if date components are included
+    if options[:include_date] != false
+      select datetime.year.to_s, from: "#{prefix}_1i" # Year selector
+      select Date::MONTHNAMES[datetime.month], from: "#{prefix}_2i" # Month selector
+      select datetime.day.to_s.rjust(2, '0'), from: "#{prefix}_3i" # Day selector
+      hour_index = 4
+    else
+      hour_index = 1
+    end
+
+    # Handle AM/PM
+    hour_display = datetime.hour > 12 ? (datetime.hour - 12).to_s : datetime.hour.to_s
+    am_pm_value = datetime.hour >= 12 ? 'PM' : 'AM'
+    select hour_display.rjust(2, '0'), from: "#{prefix}_#{hour_index}i" # Hour selector
+    select datetime.min.to_s.rjust(2, '0'), from: "#{prefix}_#{hour_index + 1}i" # Minute selector
+    select am_pm_value, from: "#{prefix}_#{hour_index + 2}i" if ampm
   end
+
+
+
 
   def update_event(name, location, description)
     fill_in 'Name', with: name
