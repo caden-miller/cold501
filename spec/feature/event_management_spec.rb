@@ -70,14 +70,14 @@ RSpec.feature 'Event Management', type: :feature do
 
   # Helper methods
   def create_event(name, start_time, end_time, location, description)
-    fill_in 'Name', with: name
-    select_datetime(DateTime.parse(start_time), from: 'event_start_time', ampm: true, include_date: true)
-    select_datetime(DateTime.parse(end_time), from: 'event_end_time', ampm: true, include_date: false)
-    fill_in 'Location', with: location
-    fill_in 'Description', with: description
-    click_button 'Submit'
-  end
-  
+  fill_in 'Name', with: name
+  select_datetime(DateTime.parse(start_time), from: 'event_start_time', ampm: true, include_date: true)
+  select_datetime(DateTime.parse(end_time), from: 'event_end_time', ampm: true, include_date: false)
+  fill_in 'Location', with: location
+  fill_in 'Description', with: description
+  click_button 'Submit'
+end
+
 
   # Add this helper method to select datetime in dropdowns
   def select_datetime(datetime, options = {})

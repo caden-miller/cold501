@@ -3,8 +3,13 @@
     <h1>LINKS</h1>
   </header>
   <% if @role == "admin" %>
-    <%= link_to "New Link", new_link_path, class: 'btn btn--primary', data: { turbo_frame: dom_id(Link.new) } %><br><br>
+    <%= link_to "New Link", new_link_path, class: 'btn btn--primary', data: { turbo_frame: dom_id(Link.new) } %><br>
   <% end %>
+
+  <div style="height: auto; width: 75%; background-color: white; border: 1px solid black; font-weight: bold; border-radius: 0.375rem; text-align: center; color: red;">
+    <p>Ensure that links use the full URL, including the protocol (e.g., https://google.com)</p>
+  </div>
+  <br>
 
   <div class="link__table">
     <div class="link__table-header">
