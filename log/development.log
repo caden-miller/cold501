@@ -1248,3 +1248,271 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 0.6ms | Allocations: 5969)
 
 
+Started GET "/" for ::1 at 2024-11-17 21:54:34 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.7ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.4ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2008)
+  Rendered shared/_navbar.html.erb (Duration: 0.8ms | Allocations: 760)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 172)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.9ms | Allocations: 2430)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 7020)
+Completed 200 OK in 14ms (Views: 9.3ms | ActiveRecord: 0.7ms | Allocations: 9015)
+
+
+Started GET "/photos" for ::1 at 2024-11-17 21:54:35 -0600
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  Rendered photos/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5309)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5407)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.3ms | Allocations: 9880)
+
+
+  
+ActionView::Template::Error (undefined method `current_user?' for #<ActionView::Base:0x00000000013f38>
+
+'.freeze;   if current_user? and current_user.role != 'user' 
+               ^^^^^^^^^^^^^
+Did you mean?  current_user
+               current_page?):
+    3:     <h1>PHOTO GALLERY</h1>
+    4:   </header>
+    5: 
+    6:   <% if current_user? and current_user.role != 'user' %>
+    7:     <%= link_to "New Photo", new_photo_path, data: { turbo_frame: dom_id(Photo.new) }, class: 'btn btn--primary' %>
+    8:     <br><br>
+    9:   <% end %>
+  
+app/views/photos/index.html.erb:6
+Started GET "/photos" for ::1 at 2024-11-17 21:54:47 -0600
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  Rendered photos/index.html.erb within layouts/application (Duration: 10.1ms | Allocations: 4935)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5023)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.2ms | Allocations: 7292)
+
+
+  
+ActionView::Template::Error (undefined method `user_logged_in?' for #<ActionView::Base:0x00000000014258>
+
+'.freeze;   if user_logged_in? and current_user.role != 'user' 
+               ^^^^^^^^^^^^^^^
+Did you mean?  user_signed_in?):
+    3:     <h1>PHOTO GALLERY</h1>
+    4:   </header>
+    5: 
+    6:   <% if user_logged_in? and current_user.role != 'user' %>
+    7:     <%= link_to "New Photo", new_photo_path, data: { turbo_frame: dom_id(Photo.new) }, class: 'btn btn--primary' %>
+    8:     <br><br>
+    9:   <% end %>
+  
+app/views/photos/index.html.erb:6
+Started GET "/photos" for ::1 at 2024-11-17 21:55:27 -0600
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (1.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" DESC[0m
+  ↳ app/views/photos/index.html.erb:20
+  Rendered photos/_photo.html.erb (Duration: 46.0ms | Allocations: 149690)
+  Rendered photos/_photo.html.erb (Duration: 2.5ms | Allocations: 2319)
+  Rendered photos/_photo.html.erb (Duration: 2.8ms | Allocations: 2319)
+  Rendered photos/_photo.html.erb (Duration: 2.9ms | Allocations: 2319)
+  Rendered photos/_photo.html.erb (Duration: 2.2ms | Allocations: 2319)
+  Rendered photos/index.html.erb within layouts/application (Duration: 65.5ms | Allocations: 163831)
+  Rendered shared/_navbar.html.erb (Duration: 1.1ms | Allocations: 739)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 172)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.9ms | Allocations: 2410)
+  Rendered layout layouts/application.html.erb (Duration: 79.3ms | Allocations: 168813)
+Completed 200 OK in 84ms (Views: 77.7ms | ActiveRecord: 2.9ms | Allocations: 171125)
+
+
+Started GET "/users/sign_out" for ::1 at 2024-11-17 21:55:30 -0600
+Processing by Users::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 4ms (ActiveRecord: 0.3ms | Allocations: 1890)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:55:30 -0600
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.7ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2020)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 530)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 33)
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.6ms | Allocations: 1999)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 5774)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.2ms | Allocations: 6817)
+
+
+Started GET "/photos" for ::1 at 2024-11-17 21:55:31 -0600
+Processing by PhotosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" DESC[0m
+  ↳ app/views/photos/index.html.erb:20
+  Rendered photos/_photo.html.erb (Duration: 2.2ms | Allocations: 2306)
+  Rendered photos/_photo.html.erb (Duration: 1.7ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 1.6ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 1.9ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 3.4ms | Allocations: 2050)
+  Rendered photos/index.html.erb within layouts/application (Duration: 13.2ms | Allocations: 11782)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 492)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.3ms | Allocations: 1900)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 15300)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.6ms | Allocations: 16064)
+
+
+Started GET "/photos" for ::1 at 2024-11-17 21:55:34 -0600
+Processing by PhotosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" DESC[0m
+  ↳ app/views/photos/index.html.erb:20
+  Rendered photos/_photo.html.erb (Duration: 2.8ms | Allocations: 2072)
+  Rendered photos/_photo.html.erb (Duration: 2.0ms | Allocations: 2051)
+  Rendered photos/_photo.html.erb (Duration: 2.7ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 2.4ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 2.7ms | Allocations: 2050)
+  Rendered photos/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 11536)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 487)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.4ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 15048)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.7ms | Allocations: 15718)
+
+
+Started GET "/photos" for ::1 at 2024-11-17 21:55:45 -0600
+Processing by PhotosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" DESC[0m
+  ↳ app/views/photos/index.html.erb:20
+  Rendered photos/_photo.html.erb (Duration: 3.0ms | Allocations: 2757)
+  Rendered photos/_photo.html.erb (Duration: 2.6ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 3.3ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 3.5ms | Allocations: 2050)
+  Rendered photos/_photo.html.erb (Duration: 3.3ms | Allocations: 2050)
+  Rendered photos/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 12679)
+  Rendered shared/_navbar.html.erb (Duration: 1.0ms | Allocations: 786)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 171)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.0ms | Allocations: 2430)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 17712)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.8ms | Allocations: 19074)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2024-11-17 21:55:58 -0600
+Started GET "/users/auth/google_oauth2/callback?state=1133d2257ef2c912f23b4cdf8569e798cda88443d0c049cf&code=4%2F0AeanS0ZFg71XKwqPlWfhERGQEQmDd-dgj6BP8IDI6MoEAgccBQuTs7Z1-NwPBkd6bmkmNg&scope=email+profile+openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&authuser=0&hd=tamu.edu&prompt=consent" for ::1 at 2024-11-17 21:56:01 -0600
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"1133d2257ef2c912f23b4cdf8569e798cda88443d0c049cf", "code"=>"4/0AeanS0ZFg71XKwqPlWfhERGQEQmDd-dgj6BP8IDI6MoEAgccBQuTs7Z1-NwPBkd6bmkmNg", "scope"=>"email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email", "authuser"=>"0", "hd"=>"tamu.edu", "prompt"=>"consent"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cadenmiller@tamu.edu"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:22:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1200)
+
+
+Started GET "/" for ::1 at 2024-11-17 21:56:02 -0600
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.6ms | Allocations: 623)
+  Rendered shared/_carousel.html.erb (Duration: 0.2ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2025)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 499)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 33)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.8ms | Allocations: 1970)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 5719)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 7491)
+
+
+Started GET "/events" for ::1 at 2024-11-17 21:56:04 -0600
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" WHERE "events"."archived" = $1 AND "events"."start_time" BETWEEN $2 AND $3 ORDER BY start_time asc[0m  [["archived", false], ["start_time", "2024-11-01"], ["start_time", "2024-11-30"]]
+  ↳ app/views/events/index.html.erb:16
+  Rendered simple_calendar/_month_calendar.html.erb (Duration: 6.9ms | Allocations: 8603)
+  Rendered events/index.html.erb within layouts/application (Duration: 15.8ms | Allocations: 16494)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 486)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 30)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.3ms | Allocations: 1952)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 20205)
+Completed 200 OK in 29ms (Views: 18.4ms | ActiveRecord: 3.7ms | Allocations: 24958)
+
+
+Started GET "/photos" for ::1 at 2024-11-17 21:56:04 -0600
+Processing by PhotosController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering photos/index.html.erb within layouts/application
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT "photos".* FROM "photos" ORDER BY "photos"."id" DESC[0m
+  ↳ app/views/photos/index.html.erb:20
+  Rendered photos/_photo.html.erb (Duration: 2.3ms | Allocations: 2591)
+  Rendered photos/_photo.html.erb (Duration: 3.0ms | Allocations: 2319)
+  Rendered photos/_photo.html.erb (Duration: 2.5ms | Allocations: 2319)
+  Rendered photos/_photo.html.erb (Duration: 1.8ms | Allocations: 2319)
+  Rendered photos/_photo.html.erb (Duration: 1.5ms | Allocations: 2319)
+  Rendered photos/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 13136)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 1879)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 16609)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.7ms | Allocations: 18104)
+
+
+Started GET "/photos/57/edit" for ::1 at 2024-11-17 21:56:06 -0600
+Processing by PhotosController#edit as HTML
+  Parameters: {"id"=>"57"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mPhoto Load (0.1ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/photos_controller.rb:80:in `set_photo'
+  Rendering layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering photos/edit.html.erb within layouts/turbo_rails/frame
+  Rendered photos/_form.html.erb (Duration: 29.9ms | Allocations: 24786)
+  Rendered photos/edit.html.erb within layouts/turbo_rails/frame (Duration: 30.8ms | Allocations: 25305)
+  Rendered layout /home/caden/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/turbo-rails-1.5.0/app/views/layouts/turbo_rails/frame.html.erb (Duration: 31.3ms | Allocations: 25564)
+Completed 200 OK in 35ms (Views: 31.9ms | ActiveRecord: 0.3ms | Allocations: 28422)
+
+
