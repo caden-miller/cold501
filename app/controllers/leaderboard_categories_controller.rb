@@ -115,9 +115,9 @@ class LeaderboardCategoriesController < ApplicationController
 
   def broadcast_leaderboard_update
     Turbo::StreamsChannel.broadcast_replace_to(
-      "leaderboard",
-      target: "leaderboard",
-      partial: "leaderboard_categories/leaderboard",
+      'leaderboard',
+      target: 'leaderboard',
+      partial: 'leaderboard_categories/leaderboard',
       locals: { users: @users }
     )
   end

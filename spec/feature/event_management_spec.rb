@@ -66,45 +66,52 @@ RSpec.feature 'Event Management', type: :feature do
       end
       expect_event_deletion_success('Test Event')
     end
+
   end
 
   # Helper methods
   def create_event(name, start_time, end_time, location, description)
-  fill_in 'Name', with: name
-  select_datetime(DateTime.parse(start_time), from: 'event_start_time', ampm: true, include_date: true)
-  select_datetime(DateTime.parse(end_time), from: 'event_end_time', ampm: true, include_date: false)
-  fill_in 'Location', with: location
-  fill_in 'Description', with: description
-  click_button 'Submit'
-end
-
-
-  # Add this helper method to select datetime in dropdowns
-  def select_datetime(datetime, options = {})
-    field = options[:from]
-    prefix = field.downcase.gsub(' ', '_')
-    ampm = options[:ampm]
-
-    # Determine if date components are included
-    if options[:include_date] != false
-      select datetime.year.to_s, from: "#{prefix}_1i" # Year selector
-      select Date::MONTHNAMES[datetime.month], from: "#{prefix}_2i" # Month selector
-      select datetime.day.to_s.rjust(2, '0'), from: "#{prefix}_3i" # Day selector
-      hour_index = 4
-    else
-      hour_index = 1
-    end
-
-    # Handle AM/PM
-    hour_display = datetime.hour > 12 ? (datetime.hour - 12).to_s : datetime.hour.to_s
-    am_pm_value = datetime.hour >= 12 ? 'PM' : 'AM'
-    select hour_display.rjust(2, '0'), from: "#{prefix}_#{hour_index}i" # Hour selector
-    select datetime.min.to_s.rjust(2, '0'), from: "#{prefix}_#{hour_index + 1}i" # Minute selector
-    select am_pm_value, from: "#{prefix}_#{hour_index + 2}i" if ampm
+    fill_in 'Name', with: name
+    select_datetime(DateTime.parse(start_time), from: 'event_start_time', ampm: true, include_date: true)
+    select_datetime(DateTime.parse(end_time), from: 'event_end_time', ampm: true, include_date: true)
+    fill_in 'Location', with: location
+    fill_in 'Description', with: description
+    click_button 'Submit'
   end
 
+  def select_datetime(datetime, options = {})
+    field = options[:from]
+    ampm = options[:ampm]
+    prefix = field.downcase.gsub(' ', '_')
 
+    within("##{prefix}") do
+      if options[:include_date] != false
+        select datetime.year.to_s, from: "#{prefix}_1i" # Year selector
+        select Date::MONTHNAMES[datetime.month], from: "#{prefix}_2i" # Month selector
+        select datetime.day.to_s.rjust(2, '0'), from: "#{prefix}_3i" # Day selector
+        hour_index = 4
+      end
 
+      hour = if ampm
+               (datetime.hour % 12).zero? ? 12 : datetime.hour % 12
+             end
+      minute = datetime.min.to_s.rjust(2, '0')
+      period = datetime.hour < 12 ? 'AM' : 'PM'
+
+      if ampm
+        # Construct the full option text, e.g., "10 AM"
+        option_text = "#{hour.to_s.rjust(2, '0')} #{period}"
+        select option_text, from: "#{prefix}_#{hour_index}i" # Select "10 AM"
+        select minute, from: "#{prefix}_#{hour_index + 1}i" # Select minutes
+
+        # Only attempt to select AM/PM if the select exists
+        select period, from: "#{prefix}_#{hour_index + 2}i" if has_selector?("select##{prefix}_#{hour_index + 2}i")
+      else
+        select hour.to_s.rjust(2, '0'), from: "#{prefix}_#{hour_index}i"
+        select minute, from: "#{prefix}_#{hour_index + 1}i"
+      end
+    end
+  end
 
   def update_event(name, location, description)
     fill_in 'Name', with: name

@@ -5,7 +5,7 @@ class LeaderboardCategory < ApplicationRecord
   validates :category_name, presence: true
   validates :min_points, presence: true
   validates :color, presence: true
-  after_commit :broadcast_leaderboard_update, on: [:create, :update, :destroy]
+  after_commit :broadcast_leaderboard_update, on: %i[create update destroy]
 
   def self.category_for_user(points)
     where('min_points <= ?', points).order(min_points: :desc).first
@@ -22,10 +22,10 @@ class LeaderboardCategory < ApplicationRecord
   def broadcast_leaderboard_update
     users = User.all # Adjust this query as needed
     Turbo::StreamsChannel.broadcast_replace_to(
-      "leaderboard",
-      target: "leaderboard",
-      partial: "leaderboard_categories/leaderboard",
-      locals: { users: users }
+      'leaderboard',
+      target: 'leaderboard',
+      partial: 'leaderboard_categories/leaderboard',
+      locals: { users: }
     )
   end
 end

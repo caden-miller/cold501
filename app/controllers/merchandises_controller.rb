@@ -24,7 +24,7 @@ class MerchandisesController < ApplicationController
 
   # POST /merchandises or /merchandises.json
   def create
-    @merchandise = Merchandise.new(merchandise_params)  
+    @merchandise = Merchandise.new(merchandise_params)
 
     if valid_flywire_link?(@merchandise.link)
       attach_image_from_link(@merchandise)

@@ -55,7 +55,6 @@ class EventsController < ApplicationController
 
   # set up delete
   def delete
-    @event = Event.find(params[:id])
   end
 
   # Delete an event

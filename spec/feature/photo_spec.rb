@@ -16,7 +16,7 @@ RSpec.describe PhotosController, type: :controller do
     )
   end
 
-  let(:photo) { create(:photo, user: user) }
+  let(:photo) { create(:photo, user:) }
 
   before do
     sign_in user # Ensure user is signed in for all tests
@@ -188,7 +188,7 @@ RSpec.describe PhotosController, type: :controller do
   end
 
   describe 'DELETE #destroy' do
-    let!(:photo_to_delete) { create(:photo, user: user) }
+    let!(:photo_to_delete) { create(:photo, user:) }
 
     it 'deletes the photo' do
       expect do
