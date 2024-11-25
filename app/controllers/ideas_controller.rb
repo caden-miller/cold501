@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-include ActionView::RecordIdentifier
-
+# Controller for managing Idea resources, including CRUD operations.
 class IdeasController < ApplicationController
   include ActionView::RecordIdentifier
+
   before_action :set_idea, only: %i[show edit update destroy]
+  before_action :authenticate_user! # Ensure the user is authenticated
 
   # GET /ideas or /ideas.json
   def index
@@ -27,10 +28,12 @@ class IdeasController < ApplicationController
     @idea = Idea.new(idea_params)
     @idea.user = current_user if current_user
 
-    if @idea.save
-      redirect_to ideas_path, notice: 'Idea was successfully created.' # Redirect directly to index on success
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @idea.save
+        handle_successful_create(format)
+      else
+        handle_failed_create(format)
+      end
     end
   end
 
@@ -38,75 +41,68 @@ class IdeasController < ApplicationController
   def update
     respond_to do |format|
       if @idea.update(idea_params)
-        format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully updated.' }
-        format.json { render :show, status: :ok, location: @idea }
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/idea', locals: { idea: @idea })
-        end
+        handle_successful_update(format)
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @idea.errors, status: :unprocessable_entity }
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/idea', locals: { idea: @idea }),
-                 status: :unprocessable_entity
-        end
+        handle_failed_update(format)
       end
     end
   end
 
   # DELETE /ideas/1 or /ideas/1.json
-  # ideas_controller.rb
   def destroy
-    @idea = Idea.find(params[:id])
     @idea.destroy
-
     respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.remove(@idea) }
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@idea)) }
       format.html { redirect_to ideas_path, notice: 'Idea was successfully deleted.' }
+      format.json { head :no_content }
     end
   end
 
   private
 
+  # Set the @idea instance variable based on the provided ID.
   def set_idea
     @idea = Idea.find(params[:id])
   end
 
+  # Strong parameters to prevent mass assignment vulnerabilities.
   def idea_params
-    params.require(:idea).permit(:title, :description, :created_by, :created_at)
+    params.require(:idea).permit(:title, :description, :created_by)
   end
 
-  def build_idea
-    idea = Idea.new(idea_params)
-    idea.user = current_user if current_user # Assign the entire user object, not just the ID
-    idea
-  end
-
-  def handle_successful_create
-    respond_to do |format|
-      format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully created.' }
-      format.json { render :show, status: :created, location: @idea }
+  # Handle successful creation of an idea.
+  def handle_successful_create(format)
+    format.html { redirect_to ideas_path, notice: 'Idea was successfully created.' }
+    format.json { render :show, status: :created, location: @idea }
+    format.turbo_stream do
+      render turbo_stream: turbo_stream.append('ideas', partial: 'ideas/idea', locals: { idea: @idea })
     end
   end
 
-  def handle_failed_create
-    respond_to do |format|
-      format.html { render :new, status: :unprocessable_entity }
-      format.json { render json: @idea.errors, status: :unprocessable_entity }
+  # Handle failed creation of an idea.
+  def handle_failed_create(format)
+    format.html { render :new, status: :unprocessable_entity }
+    format.json { render json: @idea.errors, status: :unprocessable_entity }
+    format.turbo_stream do
+      render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/form', locals: { idea: @idea })
     end
   end
 
-  def handle_successful_update
-    respond_to do |format|
-      format.html { redirect_to idea_url(@idea), notice: 'Idea was successfully updated.' }
-      format.json { render :show, status: :ok, location: @idea }
+  # Handle successful update of an idea.
+  def handle_successful_update(format)
+    format.html { redirect_to @idea, notice: 'Idea was successfully updated.' }
+    format.json { render :show, status: :ok, location: @idea }
+    format.turbo_stream do
+      render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/idea', locals: { idea: @idea })
     end
   end
 
-  def handle_failed_update
-    respond_to do |format|
-      format.html { render :edit, status: :unprocessable_entity }
-      format.json { render json: @idea.errors, status: :unprocessable_entity }
+  # Handle failed update of an idea.
+  def handle_failed_update(format)
+    format.html { render :edit, status: :unprocessable_entity }
+    format.json { render json: @idea.errors, status: :unprocessable_entity }
+    format.turbo_stream do
+      render turbo_stream: turbo_stream.replace(dom_id(@idea), partial: 'ideas/form', locals: { idea: @idea })
     end
   end
 end

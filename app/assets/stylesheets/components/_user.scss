@@ -84,9 +84,14 @@
         }
     }
 
-    &__table-row .user__table-cell:nth-child(4),
-    &__table-row .user__table-cell:nth-child(5) {
+    &__table-row .user__table-cell:nth-child(4) {
         flex: 0 0 65px;
+    }
+    &__table-row .user__table-cell:nth-child(5) {
+        flex-grow: 1;
+        @include media(mobile) {
+            flex: 1 0 100px; /* Fixed width */
+        }
     }
 
     &__table-row .user__table-cell:nth-child(6) {

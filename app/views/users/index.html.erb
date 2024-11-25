@@ -11,11 +11,11 @@
     <div class="table-header">
       <div class="table-row">
         <div class="table-cell user-cell">Avatar</div>
-        <div class="table-cell user-cell">Full Name</div>
-        <div class="table-cell user-cell">Committee</div>
-        <div class="table-cell user-cell">Points</div>
-        <div class="table-cell user-cell">Dues</div>
-        <div class="table-cell user-cell">Role</div>
+        <div class="table-cell user-cell"><%= sortable 'full_name', 'Full Name' %></div>
+        <div class="table-cell user-cell"><%= sortable 'committee', 'Committee' %></div>
+        <div class="table-cell user-cell"><%= sortable 'dues', 'Dues' %></div>
+        <div class="table-cell user-cell"><%= sortable 'points', 'Points' %></div>
+        <div class="table-cell user-cell"><%= sortable 'role', 'Role' %></div>
         <div class="table-cell user-cell actions">Actions</div>
       </div>
     </div>

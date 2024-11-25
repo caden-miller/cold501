@@ -24,14 +24,9 @@ class MerchandisesController < ApplicationController
 
   # POST /merchandises or /merchandises.json
   def create
-    @merchandise = Merchandise.new(merchandise_params)  
+    @merchandise = Merchandise.new(merchandise_params)
 
-    if valid_flywire_link?(@merchandise.link)
-      attach_image_from_link(@merchandise)
-    else
-      handle_invalid_link(:new)
-      return
-    end
+    return unless validate_and_attach_image(@merchandise, :new)
 
     respond_to do |format|
       if @merchandise.save
@@ -46,12 +41,7 @@ class MerchandisesController < ApplicationController
   def update
     Rails.logger.debug("Updating Merchandise link: #{@merchandise.link}")
 
-    if merchandise_params[:link].present? && valid_flywire_link?(merchandise_params[:link])
-      attach_image_from_link(@merchandise)
-    else
-      handle_invalid_link(:edit)
-      return
-    end
+    return unless validate_and_attach_image(@merchandise, :edit)
 
     respond_to do |format|
       if @merchandise.update(merchandise_params)
@@ -81,6 +71,17 @@ class MerchandisesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def merchandise_params
     params.require(:merchandise).permit(:link, :title, :description, :image, :stock)
+  end
+
+  # Validate Flywire link and attach image. Returns true if successful, false otherwise.
+  def validate_and_attach_image(merchandise, action)
+    if merchandise_params[:link].present? && valid_flywire_link?(merchandise_params[:link])
+      attach_image_from_link(merchandise)
+      true
+    else
+      handle_invalid_link(action)
+      false
+    end
   end
 
   # Validate Flywire link format.

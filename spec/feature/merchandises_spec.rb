@@ -58,12 +58,13 @@ RSpec.feature 'Merchandises Management', type: :feature do
   end
 
   context 'when updating an existing merchandise' do
-    let!(:merchandise) { create(:merchandise, title: 'Old Title', description: 'Old Description', link: 'https://tamu.estore.flywire.com/sample-link') }
+    let(:merchandise) { create(:merchandise, title: 'Old Title', description: 'Old Description', link: 'https://tamu.estore.flywire.com/sample-link') }
     let(:updated_title) { 'Updated Title' }
     let(:updated_description) { 'Updated Description' }
     let(:updated_link) { 'https://tamu.estore.flywire.com/updated-link' }
 
     before do
+      merchandise # Ensures the merchandise is created
       visit edit_merchandise_path(merchandise)
       fill_in 'Title', with: updated_title
       fill_in 'Description', with: updated_description
@@ -92,19 +93,22 @@ RSpec.feature 'Merchandises Management', type: :feature do
   end
 
   context 'when deleting an existing merchandise' do
-    let!(:merchandise) { create(:merchandise, title: 'To Be Deleted', description: 'A delete test', link: 'https://tamu.estore.flywire.com/delete-test') }
+    let(:merchandise) { create(:merchandise, title: 'To Be Deleted', description: 'A delete test', link: 'https://tamu.estore.flywire.com/delete-test') }
+
+    before do
+      merchandise # Ensures the merchandise is created
+      visit merchandises_path
+    end
 
     scenario 'successfully deletes a merchandise and shows success message' do
-      visit merchandises_path
-      within('.merch-item') do
+      within(find('.merch-item', text: merchandise.title)) do
         click_button 'Delete'
       end
       expect(page).to have_content('Merchandise was successfully destroyed.')
     end
 
     scenario 'removes the deleted merchandise from the list' do
-      visit merchandises_path
-      within('.merch-item') do
+      within(find('.merch-item', text: merchandise.title)) do
         click_button 'Delete'
       end
       expect(page).not_to have_content('To Be Deleted')

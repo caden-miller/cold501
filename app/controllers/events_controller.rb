@@ -1,23 +1,24 @@
 # frozen_string_literal: true
 
-# EventsController
+# Controller for managing events, including CRUD operations and attendance tracking.
 class EventsController < ApplicationController
   helper EventsHelper
 
   before_action :set_event, only: %i[show edit update destroy archive unarchive]
   before_action :set_user, :role, :set_navbar_variables
-  before_action :authenticate_admin!, only: %i[new create edit update delete archive unarchive]
-  before_action :authenticate_member!, only: %i[show attendance]
+  before_action :authenticate_admin!, only: %i[new create edit update destroy archive unarchive]
+  before_action :authenticate_member!, only: %i[show]
 
   # Display all events
   def index
-    start_date = params[:start_date] ? Date.parse(params[:start_date]).beginning_of_month : Date.today.beginning_of_month
+    start_date = parse_start_date(params[:start_date])
     end_date = start_date.end_of_month
 
-    sort_column = params[:sort] || 'start_time' # Replace with your default column
+    sort_column = params[:sort] || 'start_time'
     sort_direction = params[:direction] || 'asc'
 
-    @events = Event.where(archived: false, start_time: start_date..end_date).order("#{sort_column} #{sort_direction}")
+    @events = Event.where(archived: false, start_time: start_date..end_date)
+                   .order("#{sort_column} #{sort_direction}")
   end
 
   # Show a single event
@@ -37,10 +38,11 @@ class EventsController < ApplicationController
   def create
     Rails.logger.debug params[:event]
     @event = Event.new(event_params)
+
     if @event.save
       redirect_to @event, notice: 'Event was successfully created.'
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -49,18 +51,12 @@ class EventsController < ApplicationController
     if @event.update(event_params)
       redirect_to @event, notice: 'Event was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
-  end
-
-  # set up delete
-  def delete
-    @event = Event.find(params[:id])
   end
 
   # Delete an event
   def destroy
-    @event = Event.find(params[:id])
     if @event.destroy
       redirect_to events_path, notice: 'Event was successfully deleted.'
     else
@@ -68,22 +64,22 @@ class EventsController < ApplicationController
     end
   end
 
-  def attendance
-    @attendance = @event.attendances
-  end
-
+  # Display all archived events
   def archived
-    @archived_events = Event.where(archived: true) # Fetches only archived events
-    render :archived
+    @archived_events = Event.where(archived: true)
   end
 
+  # Archive an event
   def archive
-    @event.update(archived: true)
-    redirect_to events_path, notice: 'Event was successfully archived.'
+    if @event.update(archived: true)
+      redirect_to events_path, notice: 'Event was successfully archived.'
+    else
+      redirect_to @event, alert: 'Failed to archive event.'
+    end
   end
 
+  # Unarchive an event
   def unarchive
-    @event = Event.find(params[:id])
     if @event.update(archived: false)
       redirect_to archived_events_path, notice: 'Event was successfully unarchived and restored to the main list.'
     else
@@ -92,6 +88,15 @@ class EventsController < ApplicationController
   end
 
   private
+
+  # Parse the start date from parameters or default to the current month.
+  def parse_start_date(start_date_param)
+    if start_date_param.present?
+      Time.zone.parse(start_date_param).beginning_of_month
+    else
+      Time.zone.today.beginning_of_month
+    end
+  end
 
   # Find event by ID for show, edit, update, and destroy actions
   def set_event
