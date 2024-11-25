@@ -5,25 +5,8 @@
     </header>
     <div class="page-layout">
       <!-- Leaderboard table -->
-      <div class="page-layout__leaderboard">
-        <table>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Points</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @users.each do |user| %>
-              <% category = LeaderboardCategory.category_for_user(user.points) %>
-              <% color_class = category && category.color && category.color_is_dark? ? 'light-text' : 'dark-text' %>
-              <tr class="page-layout__leaderboard--highlighted <%= color_class %>" style="background-color: <%= category&.color || 'none' %>">
-                <td><%= user.full_name %></td>
-                <td><%= user.points %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+      <div class="page-layout__leaderboard" id="leaderboard">
+        <%= render partial: 'leaderboard', locals: { users: @users } %>
       </div>
 
       <!-- Categories section using Turbo Stream-compatible div layout -->

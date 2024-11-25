@@ -5,3 +5,9 @@
 <% end %>
 
 <%= turbo_stream.update dom_id(LeaderboardCategory.new), "" %>
+
+<%= turbo_stream.replace "leaderboard" do %>
+  <div class="page-layout__leaderboard" id="leaderboard">
+    <%= render partial: 'leaderboard', locals: { users: @users } %>
+  </div>
+<% end %>

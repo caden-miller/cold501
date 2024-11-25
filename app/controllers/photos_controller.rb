@@ -33,13 +33,7 @@ class PhotosController < ApplicationController
 
   # POST /photos
   def create
-    if params[:photo].blank?
-      respond_to do |format|
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(Photo.new), '') }
-        format.html { redirect_to photos_path, alert: 'Photo creation was canceled.' }
-      end
-      return
-    end
+    handle_blank_photo and return if params[:photo].blank?
 
     @photo = current_user.photos.build(photo_params)
 
@@ -59,8 +53,7 @@ class PhotosController < ApplicationController
     end
   end
 
-  def delete; end
-
+  # DELETE /photos/1
   def destroy
     @photo.destroy
     flash.now[:notice] = 'Photo was successfully deleted.'
@@ -70,20 +63,32 @@ class PhotosController < ApplicationController
     end
   end
 
+  # GET /photos/gallery
   def gallery
     @photos = Photo.all
   end
 
   private
 
+  # Use callbacks to share common setup or constraints between actions.
   def set_photo
     @photo = Photo.find(params[:id])
   end
 
+  # Only allow a list of trusted parameters through.
   def photo_params
     params.require(:photo).permit(:title, :description, :image)
   end
 
+  # Handle the scenario when params[:photo] is blank.
+  def handle_blank_photo
+    respond_to do |format|
+      format.turbo_stream { render turbo_stream: turbo_stream.replace(dom_id(Photo.new), '') }
+      format.html { redirect_to photos_path, alert: 'Photo creation was canceled.' }
+    end
+  end
+
+  # Handle successful creation of a photo.
   def handle_create_success
     flash.now[:notice] = 'Photo Created'
     respond_to do |format|
@@ -92,6 +97,7 @@ class PhotosController < ApplicationController
     end
   end
 
+  # Handle failed creation of a photo.
   def handle_create_failure
     flash.now[:alert] = @photo.errors.full_messages.to_sentence
     respond_to do |format|
@@ -100,6 +106,7 @@ class PhotosController < ApplicationController
     end
   end
 
+  # Handle successful update of a photo.
   def handle_update_success
     flash.now[:notice] = 'Photo was successfully updated.'
     respond_to do |format|
@@ -108,6 +115,7 @@ class PhotosController < ApplicationController
     end
   end
 
+  # Handle failed update of a photo.
   def handle_update_failure
     flash[:alert] = @photo.errors.full_messages.to_sentence
     respond_to do |format|

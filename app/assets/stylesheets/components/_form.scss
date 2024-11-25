@@ -1,6 +1,9 @@
 .form {
   display: flex;
-  
+
+  #photo_description {
+    background-color: white;
+  }
 
   &__group {
     flex: 1;
@@ -21,5 +24,16 @@
     &--invalid {
       border-color: var(--color-primary);
     }
+  }
+}
+
+form {
+  #event_description,
+  #user_dues {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--border-radius);
+    border-width: 2px !important;
+    background-color: white;
   }
 }
