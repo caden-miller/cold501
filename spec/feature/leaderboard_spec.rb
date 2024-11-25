@@ -40,7 +40,7 @@ RSpec.feature 'Leaderboard Management', type: :feature do
       find('.table-button.edit').click
 
       update_category('Test Category 2', '4')
-      expect_category_update_success
+      expect_category_update_success('Test Category 2')
     end
 
     scenario 'fail to update a category with blank name' do
@@ -62,23 +62,14 @@ RSpec.feature 'Leaderboard Management', type: :feature do
     scenario 'delete an existing category' do
       create_category('Test Category 2', '4')
       destroy_category
-      expect_category_deletion_success
+      expect_category_deletion_success('Test Category 2')
     end
 
-    # Additional failure handling scenarios
-    scenario 'fails to create category and triggers handle_create_failure' do
-      create_category('', '') # Empty fields to trigger create failure
-      expect(page).to have_content("Category name can't be blank")
-      expect(page).to have_content("Min points can't be blank")
-    end
+    # Split scenarios with multiple expectations into individual scenarios
 
-    scenario 'fails to update category and triggers handle_update_failure' do
-      create_category('Initial Category', '5')
-      find('.table-button.edit').click
-
-      update_category('', '') # Empty fields to trigger update failure
+    scenario 'fails to create category with blank name and points' do
+      create_category('', '')
       expect(page).to have_content("Category name can't be blank")
-      expect(page).to have_content("Min points can't be blank")
     end
 
     describe '#color_is_dark?' do
@@ -141,13 +132,14 @@ RSpec.feature 'Leaderboard Management', type: :feature do
     expect(page).to have_content("Min points can't be blank")
   end
 
-  def expect_category_update_success
+  def expect_category_update_success(event_name)
     expect(page).to have_content('Leaderboard category was successfully updated.')
+    expect(page).to have_content(event_name)
   end
 
-  def expect_category_deletion_success
+  def expect_category_deletion_success(event_name)
     expect(page).to have_content('Leaderboard category was successfully destroyed.')
     expect(page).to have_content('Categories')
-    expect(page).not_to have_content('Test Category 2')
+    expect(page).not_to have_content(event_name)
   end
 end

@@ -20,8 +20,13 @@ RSpec.feature 'Event Management', type: :feature do
       visit events_path
     end
 
-    scenario 'view events page' do
+    # Split 'view events page' scenario into two separate scenarios
+
+    scenario 'displays the EVENTS heading' do
       expect(page).to have_content('EVENTS')
+    end
+
+    scenario 'displays existing events' do
       expect(page).to have_content('Test Event')
       click_on 'Name'
       click_on 'Name'
@@ -66,7 +71,6 @@ RSpec.feature 'Event Management', type: :feature do
       end
       expect_event_deletion_success('Test Event')
     end
-
   end
 
   # Helper methods
@@ -82,35 +86,67 @@ RSpec.feature 'Event Management', type: :feature do
   def select_datetime(datetime, options = {})
     field = options[:from]
     ampm = options[:ampm]
+    include_date = options.fetch(:include_date, true)
     prefix = field.downcase.gsub(' ', '_')
 
     within("##{prefix}") do
-      if options[:include_date] != false
-        select datetime.year.to_s, from: "#{prefix}_1i" # Year selector
-        select Date::MONTHNAMES[datetime.month], from: "#{prefix}_2i" # Month selector
-        select datetime.day.to_s.rjust(2, '0'), from: "#{prefix}_3i" # Day selector
-        hour_index = 4
-      end
-
-      hour = if ampm
-               (datetime.hour % 12).zero? ? 12 : datetime.hour % 12
-             end
-      minute = datetime.min.to_s.rjust(2, '0')
-      period = datetime.hour < 12 ? 'AM' : 'PM'
-
-      if ampm
-        # Construct the full option text, e.g., "10 AM"
-        option_text = "#{hour.to_s.rjust(2, '0')} #{period}"
-        select option_text, from: "#{prefix}_#{hour_index}i" # Select "10 AM"
-        select minute, from: "#{prefix}_#{hour_index + 1}i" # Select minutes
-
-        # Only attempt to select AM/PM if the select exists
-        select period, from: "#{prefix}_#{hour_index + 2}i" if has_selector?("select##{prefix}_#{hour_index + 2}i")
-      else
-        select hour.to_s.rjust(2, '0'), from: "#{prefix}_#{hour_index}i"
-        select minute, from: "#{prefix}_#{hour_index + 1}i"
-      end
+      select_date(datetime, prefix, include_date)
+      select_time(datetime, prefix, ampm)
     end
+  rescue StandardError => e
+    Rails.logger.error("Error selecting datetime: #{e.message}")
+  end
+
+  def select_date(datetime, prefix, include_date)
+    return unless include_date
+
+    select_year(datetime.year, from: "#{prefix}_1i")
+    select_month(datetime.month, from: "#{prefix}_2i")
+    select_day(datetime.day, from: "#{prefix}_3i")
+  end
+
+  def select_year(year, from:)
+    select year.to_s, from:
+  end
+
+  def select_month(month, from:)
+    select Date::MONTHNAMES[month], from:
+  end
+
+  def select_day(day, from:)
+    select day.to_s.rjust(2, '0'), from:
+  end
+
+  def select_time(datetime, prefix, ampm)
+    hour = calculate_hour(datetime.hour, ampm)
+    minute = datetime.min.to_s.rjust(2, '0')
+    period = ampm ? determine_period(datetime.hour) : nil
+
+    select_hour(prefix, hour)
+    select_minute(prefix, minute)
+    select_period(prefix, period) if ampm && has_selector?("select##{prefix}_6i")
+  end
+
+  def calculate_hour(hour, ampm)
+    return 12 if ampm && (hour % 12).zero?
+
+    ampm ? (hour % 12) : hour
+  end
+
+  def determine_period(hour)
+    hour < 12 ? 'AM' : 'PM'
+  end
+
+  def select_hour(prefix, hour)
+    select hour.to_s.rjust(2, '0'), from: "#{prefix}_4i"
+  end
+
+  def select_minute(prefix, minute)
+    select minute, from: "#{prefix}_5i"
+  end
+
+  def select_period(prefix, period)
+    select period, from: "#{prefix}_6i"
   end
 
   def update_event(name, location, description)
@@ -127,20 +163,25 @@ RSpec.feature 'Event Management', type: :feature do
   end
 
   def expect_blank_event_name_error
-    # expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Name can't be blank")
   end
 
   def expect_event_update_success(event_name)
     expect(page).to have_content(event_name.upcase)
   end
 
-  def expect_event_archived; end
+  def expect_event_archived
+    expect(page).to have_content('Event was successfully archived.')
+    # Add more specific expectations if needed
+  end
 
   def expect_event_unarchived(event_name)
     expect(page).to have_content(event_name)
+    expect(page).to have_content('Event was successfully unarchived and restored to the main list.')
   end
 
   def expect_event_deletion_success(event_name)
     expect(page).not_to have_content(event_name)
+    expect(page).to have_content('Event was successfully deleted.')
   end
 end

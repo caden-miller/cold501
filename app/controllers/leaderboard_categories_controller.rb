@@ -28,8 +28,9 @@ class LeaderboardCategoriesController < ApplicationController
   def edit
     respond_to do |format|
       format.turbo_stream do
-        render turbo_stream: turbo_stream.replace(dom_id(@leaderboard_category), partial: 'leaderboard_categories/form',
-                                                                                 locals: { leaderboard_category: @leaderboard_category })
+        render turbo_stream: turbo_stream.replace(dom_id(@leaderboard_category),
+                                                  partial: 'leaderboard_categories/form',
+                                                  locals: { leaderboard_category: @leaderboard_category })
       end
       format.html
     end

@@ -13184,3 +13184,255 @@ Processing by EventsController#edit as HTML
 Completed 200 OK in 43ms (Views: 32.9ms | ActiveRecord: 2.1ms | Allocations: 13912)
 
 
+Started GET "/" for ::1 at 2024-11-24 18:16:00 -0600
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered shared/_carousel.html.erb (Duration: 0.7ms | Allocations: 636)
+  Rendered shared/_carousel.html.erb (Duration: 0.3ms | Allocations: 260)
+  Rendered shared/_carousel.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2069)
+  Rendered shared/_navbar.html.erb (Duration: 0.9ms | Allocations: 501)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 30)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 7.6ms | Allocations: 3187)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 10794)
+Completed 200 OK in 28ms (Views: 18.4ms | ActiveRecord: 1.2ms | Allocations: 16529)
+
+
+Started GET "/merch" for ::1 at 2024-11-24 18:16:03 -0600
+Processing by MerchandisesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (1.9ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 2.0ms | Allocations: 397)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 29.0ms | Allocations: 7341)
+  Rendered shared/_navbar.html.erb (Duration: 0.4ms | Allocations: 483)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 30)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 3.3ms | Allocations: 2032)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 11122)
+Completed 200 OK in 49ms (Views: 30.0ms | ActiveRecord: 8.1ms | Allocations: 13943)
+
+
+Started GET "/merch/2/edit" for ::1 at 2024-11-24 18:16:07 -0600
+Processing by MerchandisesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/edit.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 1.8ms | Allocations: 1376)
+  Rendered merchandises/edit.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1596)
+  Rendered shared/_navbar.html.erb (Duration: 1.2ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 4.7ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 5081)
+Completed 200 OK in 16ms (Views: 10.6ms | ActiveRecord: 1.1ms | Allocations: 7772)
+
+
+Started PATCH "/merch/2" for ::1 at 2024-11-24 18:16:10 -0600
+Processing by MerchandisesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"https://tamu.estore.flywire.com/products/mental-health-shirts-141286", "title"=>"t shirt", "description"=>"test123"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `set_merchandise'
+Redirected to http://localhost:3000/merch
+Completed 302 Found in 243ms (ActiveRecord: 0.7ms | Allocations: 4594)
+
+
+Started GET "/merch" for ::1 at 2024-11-24 18:16:11 -0600
+Processing by MerchandisesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 2796)
+  Rendered shared/_navbar.html.erb (Duration: 1.6ms | Allocations: 471)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 5.4ms | Allocations: 1923)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 6372)
+Completed 200 OK in 25ms (Views: 20.2ms | ActiveRecord: 0.8ms | Allocations: 7816)
+
+
+Started GET "/merch" for ::1 at 2024-11-24 18:16:13 -0600
+Processing by MerchandisesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.9ms | Allocations: 95)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.4ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 1.0ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2698)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 6.0ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 6190)
+Completed 200 OK in 28ms (Views: 19.7ms | ActiveRecord: 1.3ms | Allocations: 7532)
+
+
+Started GET "/merch/2/edit" for ::1 at 2024-11-24 18:16:15 -0600
+Processing by MerchandisesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/edit.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 4.6ms | Allocations: 814)
+  Rendered merchandises/edit.html.erb within layouts/application (Duration: 4.8ms | Allocations: 874)
+  Rendered shared/_navbar.html.erb (Duration: 0.5ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 9.8ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 4358)
+Completed 200 OK in 31ms (Views: 20.6ms | ActiveRecord: 1.0ms | Allocations: 6193)
+
+
+Started PATCH "/merch/2" for ::1 at 2024-11-24 18:16:18 -0600
+Processing by MerchandisesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"https://tamu.estore.flywire.com/products/mental-health-shirts-141286", "title"=>"t shirt", "description"=>"test123"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:52:in `set_merchandise'
+Redirected to http://localhost:3000/merch
+Completed 302 Found in 331ms (ActiveRecord: 0.5ms | Allocations: 3166)
+
+
+Started GET "/merch" for ::1 at 2024-11-24 18:16:19 -0600
+Processing by MerchandisesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 95)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 2701)
+  Rendered shared/_navbar.html.erb (Duration: 0.3ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 23)
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.5ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6196)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.8ms | Allocations: 7564)
+
+
+Started GET "/merch" for ::1 at 2024-11-24 18:16:46 -0600
+Processing by MerchandisesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.4ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.9ms | Allocations: 135)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.4ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.2ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.4ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 5194)
+  Rendered shared/_navbar.html.erb (Duration: 0.6ms | Allocations: 483)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 30)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 10.7ms | Allocations: 3367)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 14117)
+Completed 200 OK in 45ms (Views: 27.7ms | ActiveRecord: 7.6ms | Allocations: 20536)
+
+
+Started GET "/merch/2/edit" for ::1 at 2024-11-24 18:16:47 -0600
+Processing by MerchandisesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mMerchandise Load (0.6ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:78:in `set_merchandise'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/edit.html.erb within layouts/application
+  Rendered merchandises/_form.html.erb (Duration: 5.2ms | Allocations: 863)
+  Rendered merchandises/edit.html.erb within layouts/application (Duration: 5.8ms | Allocations: 925)
+  Rendered shared/_navbar.html.erb (Duration: 0.7ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 5.4ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 4410)
+Completed 200 OK in 30ms (Views: 20.1ms | ActiveRecord: 1.9ms | Allocations: 7025)
+
+
+Started PATCH "/merch/2" for ::1 at 2024-11-24 18:16:49 -0600
+Processing by MerchandisesController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "merchandise"=>{"link"=>"https://tamu.estore.flywire.com/products/mental-health-shirts-141286", "title"=>"t shirt", "description"=>"test123"}, "commit"=>"Submit", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  [1m[36mMerchandise Load (0.3ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises" WHERE "merchandises"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/merchandises_controller.rb:78:in `set_merchandise'
+Updating Merchandise link: https://tamu.estore.flywire.com/products/mental-health-shirts-141286
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/merchandises_controller.rb:57:in `block in update'
+  [1m[36mMerchandise Update (0.4ms)[0m  [1m[33mUPDATE "merchandises" SET "description" = $1, "updated_at" = $2 WHERE "merchandises"."id" = $3[0m  [["description", "test123"], ["updated_at", "2024-11-24 18:16:50.143439"], ["id", 2]]
+  ↳ app/controllers/merchandises_controller.rb:57:in `block in update'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/merchandises_controller.rb:57:in `block in update'
+Redirected to http://localhost:3000/merch
+Completed 302 Found in 220ms (ActiveRecord: 4.2ms | Allocations: 6105)
+
+
+Started GET "/merch" for ::1 at 2024-11-24 18:16:50 -0600
+Processing by MerchandisesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:24:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering merchandises/index.html.erb within layouts/application
+  [1m[36mMerchandise Load (0.2ms)[0m  [1m[34mSELECT "merchandises".* FROM "merchandises"[0m
+  ↳ app/views/merchandises/index.html.erb:10
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 95)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/_merchandise.html.erb (Duration: 0.1ms | Allocations: 94)
+  Rendered merchandises/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2701)
+  Rendered shared/_navbar.html.erb (Duration: 0.2ms | Allocations: 467)
+  Rendered shared/_flash.html.erb (Duration: 0.0ms | Allocations: 24)
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links"[0m
+  ↳ app/views/shared/_footer.html.erb:12
+  Rendered shared/_footer.html.erb (Duration: 2.2ms | Allocations: 1878)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6197)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 7573)
+
+

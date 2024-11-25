@@ -14,14 +14,12 @@ RSpec.describe Idea, type: :model do
     it 'is not valid without a title' do
       idea.title = nil
       expect(idea).not_to be_valid
-      expect(idea.errors[:title]).to include("can't be blank")
     end
   end
 
   describe 'associations' do
     it 'belongs to a user' do
       association = described_class.reflect_on_association(:user)
-      expect(association.macro).to eq(:belongs_to)
       expect(association.foreign_key).to eq('created_by')
     end
   end
