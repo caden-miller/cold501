@@ -60,6 +60,10 @@
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 0px;
         font-weight: bold;
+
+        a {
+            color: var(--color-primary-bg);
+        }
     }
     
     &-body {
@@ -101,9 +105,14 @@
         }
     }
     
-    &-row .user-cell:nth-child(4),
+    &-row .user-cell:nth-child(4) {
+        flex-grow: 1;
+        @include media(mobile) {
+            flex: 1 0 75px; /* Fixed width */
+        }
+    }
     &-row .user-cell:nth-child(5) {
-        flex: 0 0 65px;
+        flex: 0 0 80px;
     }
     
     &-row .user-cell:nth-child(6) {

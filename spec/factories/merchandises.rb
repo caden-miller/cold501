@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Model for storing merchandise items.
 FactoryBot.define do
   factory :merchandise do
     title { 'Test Merchandise' }

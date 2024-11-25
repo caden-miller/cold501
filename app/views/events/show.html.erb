@@ -27,46 +27,49 @@
 
   <section class="action-buttons">
     <%= link_to 'Back to Events', events_path, class: 'btn btn--secondary' %>
-    <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn--primary' %>
-    <%= link_to 'Delete Event', event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn--danger' %>
+    <% if current_user&.role == 'admin' %>
+      <%= link_to 'Edit Event', edit_event_path(@event), class: 'btn btn--primary' %>
+      <%= link_to 'Delete Event', event_path(@event), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn--danger' %>
 
-    <% if @event.archived? %>
-      <%= link_to 'Unarchive Event', unarchive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
-    <% else %>
-      <%= link_to 'Archive', archive_event_path(@event), method: :put, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
+      <% if @event.archived? %>
+        <%= link_to 'Unarchive Event', unarchive_event_path(@event), method: :put, data: { confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
+      <% else %>
+        <%= link_to 'Archive', archive_event_path(@event), method: :put, data: { turbo_confirm: 'Are you sure?' }, class: 'btn btn--tertiary' %>
+      <% end %>
     <% end %>
   </section>
 
   <% if current_user.role == 'member' %>
+    <br>
     <section class="checkin-form">
       <%= form_with url: event_attendances_path(@event), local: true do |form| %>
-        <div class="form-group">
+        <div class="form-group event-bubble" style="display: flex; flex-direction: column;">
           <%= form.label :passcode, "Enter Attendance Passcode" %>
           <%= form.text_field :passcode, name: 'passcode', class: 'form-control' %>
         </div>
+        <br>
         <div class="form-group">
-          <%= form.submit "Check In", class: 'btn btn--secondary' %>
+          <%= form.submit "Check In", class: 'btn btn--primary' %>
         </div>
       <% end %>
     </section>
+    <br>
   <% end %>
 
-  <section class="attendance-list">
+  <section class="attendance-list" style="width: auto;">
     <h2>Attendance List</h2>
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>User</th>
-          <th>Present?</th>
-          <th>Checked In At</th>
+    <table class="table table-bordered" style="width: 500px;">
+      <thead style="width: 100%;">
+        <tr style="width: 100%;">
+          <th style="width: 50%;">Member</th>
+          <th style="width: 300px;">Checked In At</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody style="width: 100%;">
         <% @attendances.each do |attendance| %>
-          <tr>
-            <td><%= attendance.user.full_name %></td>
-            <td><%= attendance.present? ? 'Yes' : 'No' %></td>
-            <td><%= attendance.checked_in_at ? attendance.checked_in_at.strftime("%B %d, %Y %l:%M %p") : 'N/A' %></td>
+          <tr style="width: 100%;">
+            <td style="width: 50%;"><%= attendance.user.full_name %></td>
+            <td style="width: 300px;"><%= attendance.checked_in_at ? attendance.checked_in_at.strftime("%B %d, %Y %l:%M %p") : 'N/A' %></td>
           </tr>
         <% end %>
       </tbody>

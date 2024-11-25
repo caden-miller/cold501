@@ -7,7 +7,10 @@ class UsersController < ApplicationController
   before_action :authenticate_admin!
 
   def index
-    @users = User.order(:role, :full_name)
+    sort_column = params[:sort] || 'full_name' # Default to sorting by full_name
+    sort_direction = params[:direction] || 'asc' # Default to ascending order
+
+    @users = User.order("#{sort_column} #{sort_direction}")
   end
 
   def show; end

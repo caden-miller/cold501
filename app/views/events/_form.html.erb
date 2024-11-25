@@ -1,3 +1,4 @@
+<!-- app/views/events/_form.html.erb -->
 <%= form_with(model: @event, local: true) do |form| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -15,14 +16,14 @@
     <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" id="event_start_time">
     <%= form.label :start_time, "Event Start Time" %><br>
-    <%= form.datetime_select :start_time, include_seconds: false, class: 'form-control' %> 
+    <%= form.datetime_select :start_time, ampm: true, include_seconds: false, class: 'form-control' %> 
   </div>
 
-  <div class="form-group">
+  <div class="form-group" id="event_end_time">
     <%= form.label :end_time, "Event End Time" %><br>
-    <%= form.datetime_select :end_time, include_seconds: false, class: 'form-control' %> 
+    <%= form.datetime_select :end_time, ampm: true, include_seconds: false, class: 'form-control' %> 
   </div>
 
   <div class="form-group">
